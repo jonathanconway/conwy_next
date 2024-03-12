@@ -32,3 +32,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Coding standards
+
+### Dependencies
+
+- Minimise number and size
+- Use latest where possible
+- `devDependencies` should have primarily dependencies directly used for dev or build purposes, especially called by npm scripts
+- `dependencies` should have all other dependencies, including libraries used for building the static site
+
+### Structure
+
+- Prefer many+smaller modules and files over fewer+larger modules and files

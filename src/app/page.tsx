@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { Header } from "./components";
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.description}>
         <p>
           Get started by editing&nbsp;
@@ -17,8 +19,8 @@ export default function Home() {
           >
             By{" "}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
+              src="/conwy.svg"
+              alt="conwy Logo"
               className={styles.vercelLogo}
               width={100}
               height={24}
