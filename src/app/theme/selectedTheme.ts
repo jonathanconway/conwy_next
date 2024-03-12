@@ -1,7 +1,5 @@
-"use client";
-
-import { LocalStorageKey } from "../localStorage";
-import { Theme } from "./types";
+import { SESSION_STORAGE_KEYS } from "../localStorage";
+import { THEMES, Theme } from "./types";
 
 const isClient = typeof window !== "undefined";
 
@@ -10,7 +8,9 @@ function getSelectedThemeFromLocalStorage(): Theme | undefined {
     return undefined;
   }
 
-  return localStorage?.getItem(LocalStorageKey.Theme) as Theme | undefined;
+  return sessionStorage?.getItem(SESSION_STORAGE_KEYS.THEME) as
+    | Theme
+    | undefined;
 }
 
 function getSelectedThemeDefault(): Theme {
@@ -19,7 +19,7 @@ function getSelectedThemeDefault(): Theme {
   }
 
   const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  return (prefersDarkScheme.matches ? "dark" : "light") as Theme;
+  return (prefersDarkScheme.matches ? THEMES.DARK : THEMES.LIGHT) as Theme;
 }
 
 export function getSelectedThemeFromLocalStorageOrDefault() {
@@ -31,5 +31,5 @@ export function setSelectedThemeToLocalStorage(theme: Theme) {
     return undefined;
   }
 
-  localStorage?.setItem(LocalStorageKey.Theme, theme);
+  sessionStorage?.setItem(SESSION_STORAGE_KEYS.THEME, theme);
 }

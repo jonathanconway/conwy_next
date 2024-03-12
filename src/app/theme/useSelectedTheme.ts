@@ -1,14 +1,27 @@
-import { useState } from "react";
-import { Theme } from "./types";
+"use client";
+
+import { useEffect, useState } from "react";
+import { THEMES, Theme } from "./types";
 import {
   getSelectedThemeFromLocalStorageOrDefault,
   setSelectedThemeToLocalStorage,
 } from "./selectedTheme";
 
 export function useSelectedTheme() {
+  console.log("useSelectedTheme");
   const [selectedThemeState, setSelectedThemeState] = useState<Theme>(
-    getSelectedThemeFromLocalStorageOrDefault()
+    THEMES.LIGHT
   );
+
+  useEffect(() => {
+    setSelectedThemeState(getSelectedThemeFromLocalStorageOrDefault());
+  }, []);
+
+  useEffect(() => {
+    window.document.body.classList.remove(...Object.values(THEMES));
+    window.document.body.classList.add(selectedThemeState);
+    console.log("useSelectedTheme/useEffect@2", { selectedThemeState });
+  }, [selectedThemeState]);
 
   const selectedTheme = selectedThemeState;
 
@@ -16,10 +29,6 @@ export function useSelectedTheme() {
     if (typeof window === "undefined") {
       return;
     }
-
-    window.document.body.classList.remove("dark");
-    window.document.body.classList.remove("light");
-    window.document.body.classList.add(theme);
 
     setSelectedThemeState(theme);
     setSelectedThemeToLocalStorage(theme);

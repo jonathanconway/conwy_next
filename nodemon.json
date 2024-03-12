@@ -1,6 +1,6 @@
 {
   "watch": ["src"],
-  "ext": "ts,tsx,mdx",
+  "ext": "ts,tsx,mdx,css",
   "verbose": true,
   "ignore": ["*.test.ts"],
   "exec": "npm run build"
