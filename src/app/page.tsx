@@ -1,12 +1,22 @@
-import styles from "./page.module.css";
+import { ArticlesList, FragmentsAboutMe, PageLayout } from "@/components";
+import * as articles from "@/content/articles";
+import * as micros from "@/content/micros";
+import { sliceAllTopListItems } from "@/framework";
 
 export default function Home() {
+  const items = sliceAllTopListItems({
+    itemSets: [articles, micros],
+    limit: 10,
+  });
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p></p>
-        <div></div>
-      </div>
-    </main>
+    <PageLayout
+      main={
+        <>
+          <ArticlesList items={items} />
+          <FragmentsAboutMe />
+        </>
+      }
+    />
   );
 }

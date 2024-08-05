@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google";
 
+import { PrismJSThemeLink, cn } from "@/framework";
+
+import { Fonts } from "./fonts";
 import "./globals.css";
-import { Header } from "./components";
-import { Container } from "@mui/material";
-import { useSelectedTheme } from "./theme";
+import * as styles from "./layout.styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,26 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn(styles.html, inter.className)}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={inter.className}>
-        <Container maxWidth="md">
-          <Header />
+        <Fonts />
 
-          {children}
-        </Container>
-      </body>
+        <PrismJSThemeLink />
+      </head>
+      <body className={cn(styles.body)}>{children}</body>
     </html>
   );
 }

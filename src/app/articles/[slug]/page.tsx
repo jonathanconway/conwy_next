@@ -1,17 +1,24 @@
-import { FrontEndObservability } from "@/articles/front-end-observability/front-end-observability";
+import { Article, ArticleLayout, ArticleSidebar } from "@/components";
+import * as articles from "@/content/articles";
+import { Article as ArticleModel } from "@/framework";
 
-export default function Page({ params }: { params: { slug: string } }) {
+interface PageProps {
+  readonly params: { readonly slug: string };
+}
+
+export default async function Page({ params: { slug } }: PageProps) {
+  const articleModule = await import(`@/content/articles/${slug}`);
+  const article = Object.values(articleModule)[0] as ArticleModel;
+
   return (
-    <div>
-      My Post: {params.slug} <FrontEndObservability />
-    </div>
+    <ArticleLayout
+      main={<Article article={article} />}
+      aside={<ArticleSidebar article={article} />}
+    />
   );
 }
 
 export async function generateStaticParams() {
-  const posts = [{ slug: "one" }, { slug: "two" }];
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  const allArticleMetas = Object.values(articles).map((item) => item.meta);
+  return allArticleMetas;
 }
