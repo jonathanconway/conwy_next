@@ -11,7 +11,7 @@ export type MdxULProps = DetailedHTMLProps<
 
 export function MdxUL({ className, children, ...restProps }: MdxULProps) {
   return (
-    <ul className={cn(styles.ul, className)} {...restProps}>
+    <ul className={cn(styles.ul, className ?? "")} {...restProps}>
       {children}
     </ul>
   );

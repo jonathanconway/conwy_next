@@ -10,7 +10,7 @@ import {
   text_ellipsis,
   text_sm,
   whitespace_nowrap,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../../label/label.styles";
 import * as linkStyles from "../../link/link.styles";

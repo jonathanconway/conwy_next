@@ -11,7 +11,7 @@ export type MdxOLProps = DetailedHTMLProps<
 
 export function MdxOL({ className, children, ...restProps }: MdxOLProps) {
   return (
-    <ol className={cn(styles.ol, className)} {...restProps}>
+    <ol className={cn(styles.ol, className ?? "")} {...restProps}>
       {children}
     </ol>
   );

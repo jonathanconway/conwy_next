@@ -6,7 +6,8 @@ import {
   items_center,
   justify_between,
   py_8,
-} from "tailwindjs";
+  w_arb,
+} from "@jonathanconway/tailwindjs";
 
 export const container = cn(
   flex,

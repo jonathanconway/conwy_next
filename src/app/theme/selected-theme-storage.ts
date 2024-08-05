@@ -1,7 +1,8 @@
-// import { isClient } from "@/framework/client";
 import { LocalStorageKeys } from "../local-storage-keys";
 
 import { THEMES, Theme } from "./themes";
+
+const DEFAULT_THEME = THEMES.LIGHT;
 
 export class SelectedThemeChangedEvent extends Event {
   static type = "selectedThemeChange";
@@ -14,31 +15,14 @@ export class SelectedThemeChangedEvent extends Event {
 }
 
 function getSelectedThemeFromLocalStorage(): Theme | undefined {
-  // if (!isClient) {
-  //   return undefined;
-  // }
-
   return localStorage?.getItem(LocalStorageKeys.Theme) as Theme | undefined;
 }
 
-function getSelectedThemeDefault(): Theme {
-  // if (!isClient) {
-  //   return "light";
-  // }
-
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  return (prefersDarkScheme.matches ? THEMES.DARK : THEMES.LIGHT) as Theme;
-}
-
 export function getSelectedThemeFromLocalStorageOrDefault() {
-  return getSelectedThemeFromLocalStorage() ?? getSelectedThemeDefault();
+  return getSelectedThemeFromLocalStorage() ?? DEFAULT_THEME;
 }
 
 export function setSelectedThemeToLocalStorage(theme: Theme) {
-  // if (!isClient) {
-  //   return undefined;
-  // }
-
   localStorage?.setItem(LocalStorageKeys.Theme, theme);
   window.dispatchEvent(new SelectedThemeChangedEvent(theme));
 }

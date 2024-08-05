@@ -1,4 +1,4 @@
-import { max_w_52, max_w_96 } from "tailwindjs";
+import { max_w_52, max_w_96 } from "@jonathanconway/tailwindjs";
 
 export const container = () => `
   mt-10

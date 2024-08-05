@@ -10,9 +10,8 @@ import {
   pb_6,
   px_8,
   py_10,
-  w,
   w_arbitrary,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const container = cn(
   m_auto,

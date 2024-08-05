@@ -1,9 +1,8 @@
 import {
   absolute,
-  applyArbitrary,
+  all,
   bg_stone_100,
   bg_stone_900,
-  children,
   cn,
   dark,
   flex,
@@ -22,29 +21,28 @@ import {
   right_0,
   sticky,
   top_0,
-  w,
   w_72,
   w_arbitrary,
   w_full,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const headerWrapper = cn(
   absolute,
   top_0,
 
-  children(m_auto),
-
   w_full,
-  w_arbitrary("65rem"),
 
-  children(px_8),
+  all(m_auto),
+  all(w_arbitrary("65rem")),
+  all(px_8),
 );
 
 export const mainWrapper = cn(
   ml_auto,
   mt_28,
 
-  w_arbitrary("43rem"),
+  // w_arbitrary("43rem"),
+  "w-[43rem]",
 
   flex,
   flex_row,
@@ -74,9 +72,9 @@ export const footerWrapper = cn(
   right_0,
 
   mt_28,
-  children(m_auto),
+  all(m_auto),
 
-  children(w_arbitrary("65rem")),
+  all(w_arbitrary("65rem")),
 
   py_10,
   px_8,

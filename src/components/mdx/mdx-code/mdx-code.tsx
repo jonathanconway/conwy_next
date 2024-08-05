@@ -16,8 +16,6 @@ import * as styles from "./mdx-code.styles";
 type MdxCodeProps = DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>;
 
 export function MdxCode({ className, children, ...restProps }: MdxCodeProps) {
-  console.log("MdxCode", { className, children });
-
   const codeRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

@@ -21,7 +21,7 @@ export function ArticleSidebarHeadings({
 
   return (
     <div className={styles.container}>
-      <label className={styles.label()}>Contents</label>
+      <label className={styles.label}>Contents</label>
 
       <ul className={styles.list}>
         {articleHeadings.map(({ id, title, shortTitle }) => (

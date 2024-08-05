@@ -2,7 +2,6 @@ import {
   bg_stone_100,
   bg_stone_900,
   bg_white,
-  cn,
   dark,
   flex,
   gap_8,
@@ -11,7 +10,9 @@ import {
   overflow_y_visible,
   relative,
   scroll_m_10,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
+
+import { cn } from "@/framework";
 
 import * as textStyles from "../components/text/text.styles";
 

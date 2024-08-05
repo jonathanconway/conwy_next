@@ -13,6 +13,7 @@ import {
   left_7,
   neg,
   pl_2,
+  pl_4,
   pt_2,
   pt_5,
   relative,
@@ -23,7 +24,7 @@ import {
   text_xl,
   top_0,
   visible,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 import * as headingStyles from "../../heading/heading.styles";
 
@@ -47,7 +48,7 @@ export const linkHoverHash = cn(
 
   text_stone_500,
   invisible,
-  group(hover, visible),
-  // pl_2,
+  group(hover.name, visible),
+  pl_4,
   text_sm,
 );

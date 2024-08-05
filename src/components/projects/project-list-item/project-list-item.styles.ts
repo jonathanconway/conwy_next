@@ -20,7 +20,7 @@ import {
   underline,
   uppercase,
   w_96,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 import * as listItemStyles from "../../list-item/list-item.styles";
 
@@ -32,7 +32,7 @@ export const asideColumn = listItemStyles.asideColumn;
 
 export const image = cn(rounded_md);
 
-export const title = cn(font_bold, group(hover, underline));
+export const title = cn(font_bold, group(hover.name, underline));
 
 export const date = text_xs;
 

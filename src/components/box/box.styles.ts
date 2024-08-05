@@ -6,7 +6,7 @@ import {
   dark,
   p_3,
   rounded_md,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const container = cn(
   rounded_md,

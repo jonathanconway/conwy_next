@@ -28,10 +28,10 @@ import {
   text_xs,
   top_0,
   top_arbitrary,
-  w_1_2nd,
+  w_1_on_2,
   w_arbitrary,
   whitespace_pre_line,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 import * as boxStyles from "../../box/box.styles";
 import * as labelStyles from "../../label/label.styles";
@@ -44,7 +44,7 @@ export const container = cn(
   gap_10,
 );
 
-export const main = cn(flex, flex_col, gap_4, w_1_2nd);
+export const main = cn(flex, flex_col, gap_4, w_1_on_2);
 
 export const header = cn(flex, flex_col, gap_2);
 
@@ -54,7 +54,7 @@ export const jobTitle = cn(text_sm, font_semibold);
 
 export const blurb = "";
 
-export const aside = cn(w_1_2nd, flex, flex_col, gap_4);
+export const aside = cn(w_1_on_2, flex, flex_col, gap_4);
 
 export const asideImagesContainer = cn(relative, h_40);
 
@@ -93,13 +93,13 @@ export const asideImage4 = cn(
 
 export const techAndFeedbackContainer = cn(flex, flex_row, gap_4);
 
-export const techContainer = cn(grow, w_1_2nd);
+export const techContainer = cn(grow, w_1_on_2);
 
 export const techCategory = "";
 
 export const techItem = "";
 
-export const feedbackContainer = cn(grow, w_1_2nd);
+export const feedbackContainer = cn(grow, w_1_on_2);
 
 export const feedbackItem = mt_2;
 
@@ -107,4 +107,4 @@ export const feedbackItemQuote = cn(text_sm, whitespace_pre_line);
 
 export const feedbackItemAuthor = cn(mt_1, text_xs);
 
-export const label = labelStyles.label();
+export const label = labelStyles.label;

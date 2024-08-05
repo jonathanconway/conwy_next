@@ -1,5 +1,5 @@
+import { cn } from "@jonathanconway/tailwindjs";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { cn } from "tailwindjs";
 
 import * as styles from "./heading.styles";
 

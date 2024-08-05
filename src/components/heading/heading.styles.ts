@@ -8,7 +8,7 @@ import {
   text_2xl,
   text_3xl,
   text_4xl,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const h1 = cn(my_5, text_4xl, font_semibold);
 

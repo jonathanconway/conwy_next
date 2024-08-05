@@ -18,7 +18,7 @@ import {
   w_52,
   w_72,
   w_80,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 import * as boxStyles from "../box/box.styles";
 

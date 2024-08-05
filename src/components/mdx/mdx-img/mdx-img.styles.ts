@@ -13,7 +13,7 @@ import {
   py_12,
   text_xs,
   w_full,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const container = cn(px_8, py_12);
 

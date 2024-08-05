@@ -12,7 +12,7 @@ import {
   rounded,
   rounded_md,
   text_base,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const aside = () =>
   cn(

@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@jonathanconway/tailwindjs";
 import { isArray, isString } from "lodash";
 import Prism from "prismjs";
 import "prismjs/components/prism-java";
@@ -10,7 +11,6 @@ import "prismjs/plugins/line-highlight/prism-line-highlight.js";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.js";
 import { DetailedHTMLProps, HTMLAttributes, useEffect, useRef } from "react";
-import { cn } from "tailwindjs";
 
 import * as styles from "./code-sample.styles";
 
@@ -54,7 +54,7 @@ export function CodeSample({
 
   return (
     <pre
-      className={cn(styles.pre, className, lineNumbersClassName)}
+      className={cn(styles.pre, className ?? "", lineNumbersClassName)}
       suppressHydrationWarning
       data-line={linesHighlightedString}
     >

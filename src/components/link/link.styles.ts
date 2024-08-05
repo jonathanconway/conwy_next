@@ -9,7 +9,7 @@ import {
   text_sky_500,
   text_sky_600,
   underline,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const link = cn(
   inline_block,

@@ -1,12 +1,14 @@
-import { join } from "path";
+import { scanTailwindJSClasses } from "@jonathanconway/tailwindjs/build";
 import type { Config } from "tailwindcss";
-import { getClassesUsed } from "tailwindjs";
 
-getClassesUsed(join(__dirname, "src"));
+scanTailwindJSClasses(`${__dirname}/src`);
 
 module.exports = {
   darkMode: "selector",
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx,json}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx,json}",
+    "./src/tailwind-js-classes.json",
+  ],
   theme: {
     extend: {},
     fontFamily: {

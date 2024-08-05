@@ -1,9 +1,9 @@
 import {
+  all,
   bg_stone_200,
   bg_stone_800,
   border,
   border_stone_400,
-  children,
   cn,
   dark,
   my_4,
@@ -11,7 +11,7 @@ import {
   p_4,
   rounded_md,
   whitespace_pre_wrap,
-} from "tailwindjs";
+} from "@jonathanconway/tailwindjs";
 
 export const pre = cn(
   my_4,
@@ -21,7 +21,7 @@ export const pre = cn(
   border,
   border_stone_400,
   rounded_md,
-  children(whitespace_pre_wrap),
+  all(whitespace_pre_wrap),
 );
 
 export const preInline = { marginTop: "2rem", marginBottom: "2rem" };

@@ -11,7 +11,7 @@ export type MdxLIProps = DetailedHTMLProps<
 
 export function MdxLI({ className, children, ...restProps }: MdxLIProps) {
   return (
-    <li className={cn(styles.li, className)} {...restProps}>
+    <li className={cn(styles.li, className ?? "")} {...restProps}>
       {children}
     </li>
   );
