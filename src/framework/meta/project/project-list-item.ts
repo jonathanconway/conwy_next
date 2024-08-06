@@ -11,4 +11,5 @@ export type ProjectListItem = Pick<
   | "subType"
   | "blurb"
   | "mainImage"
+  | "redirectUrl"
 >;

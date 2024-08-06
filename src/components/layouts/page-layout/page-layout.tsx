@@ -14,7 +14,7 @@ export function PageLayout({ main, selectedNavPath }: PageLayoutProps) {
     <div className={styles.container}>
       <Header selectedNavPath={selectedNavPath} />
 
-      {main}
+      <div className={styles.mainWrapper}>{main}</div>
 
       <div className={styles.footerWrapper}>
         <Footer />

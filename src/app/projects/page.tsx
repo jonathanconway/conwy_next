@@ -10,13 +10,13 @@ export default function Projects() {
     <PageLayout
       selectedNavPath="/projects"
       main={
-        <div className="flex flex-col gap-8">
+        <>
           <Fragment>
             <ProjectsFragment />
           </Fragment>
 
           <ProjectsList items={projectModules} />
-        </div>
+        </>
       }
     />
   );

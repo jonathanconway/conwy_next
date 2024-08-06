@@ -1,10 +1,7 @@
 import {
   absolute,
   all,
-  bg_stone_100,
-  bg_stone_900,
   cn,
-  dark,
   flex,
   flex_row,
   gap_8,
@@ -26,6 +23,8 @@ import {
   w_full,
 } from "@jonathanconway/tailwindjs";
 
+import { appContainer } from "@/components/app-container/app-container.styles";
+
 export const headerWrapper = cn(
   absolute,
   top_0,
@@ -41,16 +40,14 @@ export const mainWrapper = cn(
   ml_auto,
   mt_28,
 
-  // w_arbitrary("43rem"),
-  "w-[43rem]",
+  w_arbitrary("43rem"),
 
   flex,
   flex_row,
   gap_8,
   px_8,
 
-  bg_stone_100,
-  dark(bg_stone_900),
+  appContainer,
 );
 
 export const asideWrapper = cn(
@@ -58,9 +55,10 @@ export const asideWrapper = cn(
 
   top_0,
 
+  w_72,
+
   mt_48,
   mr_auto,
-  w_72,
 
   pt_10,
   pr_8,
@@ -72,10 +70,9 @@ export const footerWrapper = cn(
   right_0,
 
   mt_28,
-  all(m_auto),
-
-  all(w_arbitrary("65rem")),
-
   py_10,
   px_8,
+
+  all(m_auto),
+  all(w_arbitrary("65rem")),
 );

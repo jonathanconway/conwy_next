@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# environment
+.env
+
 # dependencies
 /node_modules
 /.pnp
@@ -18,7 +21,7 @@
 # misc
 .DS_Store
 *.pem
-src/class-names-used.json
+src/tailwind-js-classes.json
 
 # debug
 npm-debug.log*

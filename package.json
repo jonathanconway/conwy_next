@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:watch": "concurrently \"npm run dev\" \"npm run build-tailwind:watch\"",
     "build": "next build",
-    "build:watch": "nodemon",
+    "build-tailwind": "node ./scripts/build-tailwind.js",
+    "build:watch": "nodemon \"npm run build\" ./src --ext ts,tsx,mdx,css --ignore *.test.*",
+    "build-tailwind:watch": "nodemon \"./scripts/build-tailwind.js\" ./src",
     "start": "npx serve@latest out",
     "start:watch": "concurrently \"npm run start\" \"npm run build:watch\"",
     "lint": "next lint",
@@ -63,6 +66,7 @@
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
     "serve": "^14.2.3",
-    "storybook": "^7.6.10"
+    "storybook": "^7.6.10",
+    "ts-node": "^10.9.2"
   }
 }

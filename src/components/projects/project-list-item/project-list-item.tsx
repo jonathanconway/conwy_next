@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { REDIRECTS } from "@/content";
 import {
   ProjectListItem as ProjectListItemModel,
   getMainImageUrl,
 } from "@/framework";
 
-import { Date } from "../../date";
 import { SocialLinks } from "../../social-links";
 
 import * as styles from "./project-list-item.styles";
@@ -14,13 +14,15 @@ import * as styles from "./project-list-item.styles";
 export type ProjectListItemProps = ProjectListItemModel;
 
 export function ProjectListItem(props: ProjectListItemProps) {
+  const href = props.redirectUrl
+    ? REDIRECTS[props.redirectUrl]
+    : `projects/${props.slug}`;
+
+  const target = props.redirectUrl ? "_blank" : undefined;
+
   return (
     <div className={styles.container}>
-      <Link className={styles.mainColumn} href={`projects/${props.slug}`}>
-        <div className={styles.date}>
-          <Date>{props.date}</Date>
-        </div>
-
+      <Link className={styles.mainColumn} href={href} target={target}>
         <div className={styles.title}>{props.title}</div>
 
         <p className={styles.blurb}>{props.blurb}</p>

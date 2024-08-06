@@ -15,4 +15,5 @@ export const tailwindjs: ProjectMeta = {
     },
   ],
   mainImage: "main.svg",
+  redirectUrl: "tailwindjs",
 };
