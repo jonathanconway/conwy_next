@@ -1,4 +1,4 @@
-import { Article } from "@/framework";
+import { Article as Article_ } from "@/framework";
 
 import { getArticleHeadings } from "../article-headings";
 
@@ -7,7 +7,7 @@ import { ArticleSidebarImage } from "./article-sidebar-image";
 import * as styles from "./article-sidebar.styles";
 
 export interface ArticleSidebarProps {
-  readonly article: Article;
+  readonly article: Article_;
 }
 
 export async function ArticleSidebar({ article }: ArticleSidebarProps) {

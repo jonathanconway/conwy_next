@@ -1,4 +1,5 @@
-import { Fragment, PageLayout } from "@/components";
+import { PageLayout } from "@/components";
+import { site } from "@/content";
 import { ContactFragment } from "@/content/fragments/contact";
 
 export default function Contact() {
@@ -6,12 +7,14 @@ export default function Contact() {
     <PageLayout
       selectedNavPath="/contact"
       main={
-        <div className="flex flex-col gap-8">
-          <Fragment>
-            <ContactFragment />
-          </Fragment>
+        <div>
+          <ContactFragment />
         </div>
       }
     />
   );
 }
+
+export const metadata = {
+  title: `${site.title} - contact`,
+};

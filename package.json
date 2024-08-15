@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "dev:watch": "concurrently \"npm run dev\" \"npm run build-tailwind:watch\"",
     "build": "next build",
     "build-tailwind": "node ./scripts/build-tailwind.js",

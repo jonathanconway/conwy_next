@@ -13,8 +13,8 @@ export default function Home() {
     <PageLayout
       main={
         <>
-          <ArticlesList items={items} />
           <FragmentsAboutMe />
+          <ArticlesList items={items} />
         </>
       }
     />

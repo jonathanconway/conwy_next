@@ -1,12 +1,11 @@
 import { WorkMeta } from "@/framework";
 
-import blurbShort from "./blurb-short.mdx";
-
-export const revolut: WorkMeta = {
+export const meta: WorkMeta = {
   client: "Revolut",
-  blurbShort,
-  startDate: "20/02/2020",
-  endDate: "20/02/2024",
+  blurbShort:
+    "Owned Business Backoffice system onboarding >10k businesses monthly during a fast growth period.",
+  startDate: "2020-02-20",
+  endDate: "2024-02-20",
   jobTitle: "Senior Frontend Engineer",
   feedbacks: [
     {
@@ -25,6 +24,7 @@ export const revolut: WorkMeta = {
       author: "KYB Analyst",
     },
   ],
+  images: [],
   slug: "revolut",
   tags: [],
   type: "work",

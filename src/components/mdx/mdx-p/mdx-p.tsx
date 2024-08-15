@@ -10,6 +10,7 @@ export type MdxPProps = DetailedHTMLProps<
 >;
 
 export function MdxP({ className, children, ...restProps }: MdxPProps) {
+  console.log("MdxP", { className, children, ...restProps });
   return (
     <p className={cn(styles.p, className ?? "")} {...restProps}>
       {children}

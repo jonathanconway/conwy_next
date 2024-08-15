@@ -2,8 +2,6 @@ import Image from "next/image";
 
 import { AboutMeFragment } from "@/content/fragments";
 
-import { Fragment } from "../fragment";
-
 import * as styles from "./about-me.styles";
 
 export function FragmentsAboutMe() {
@@ -19,9 +17,9 @@ export function FragmentsAboutMe() {
         height="100"
       />
 
-      <Fragment className={styles.fragmentWrapper()}>
+      <div className={styles.fragmentWrapper()}>
         <AboutMeFragment />
-      </Fragment>
+      </div>
     </div>
   );
 }

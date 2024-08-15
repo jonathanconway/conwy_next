@@ -1,5 +1,5 @@
 ---
-to: src/content/projects/<%= name %>/meta.tsx
+to: src/content/projects/<%= name %>/meta.ts
 ---
 
 import { ProjectMeta, SocialLinkTypes } from "@/framework";

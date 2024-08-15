@@ -11,7 +11,6 @@ export function Figure(props: FigureProps) {
 
   return (
     <>
-      fff
       <figure {...props} className={className} />
     </>
   );

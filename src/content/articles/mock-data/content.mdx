@@ -117,7 +117,9 @@ describe("validate username", () => {
 });
 ```
 
-Notice how clean and readable this test is! The naming of the mock constant reveals the intent of the test beautifully. Rather than pollute our test code with concrete values, we can extract them to well-named constants and have the test code focus on the _relationships_ between the values.
+Notice how clean and readable this test is!
+
+The naming of the mock constant reveals the intent of the test beautifully. Rather than pollute our test code with concrete values, we can extract them to well-named constants and have the test code focus on the _relationships_ between the values.
 
 The re-use can go even further. Suppose, in a different part of the code, we want to display a user profile which includes the user's username. We want to style the text differently depending on what kind of username the user has.
 
@@ -215,52 +217,32 @@ Secondly, we need to be able to switch the Application state between the real da
 
 - In other cases (typically a SPA or a micro-service), an HTTP API client sits between the Application state and the HTTP API and calls the HTTP API to fetch data. We could add a `setMockState` method here, which sets a private `isMockMode` field which, when `true`, uses mock data rather than making a real HTTP call. Or we could set up a Dependency Injection (DI) system, in which an abstract `APIClient` interface is implemented by `HttpAPIClient` and `MockAPIClient`, which can be substituted at runtime.
 
-![UML diagram depicting application state switching between real and mock data](https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgQXBwbGljYXRpb25TdGF0ZSB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBBcHBsaWNhdGlvblN0YXRlIC4uPiBBUElDbGllbnRcblxuICAgIGNsYXNzIEFQSUNsaWVudCB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICAgQVBJQ2xpZW50XG4gICAgfVxuXG4gICAgY2xhc3MgSHR0cEFQSUNsaWVudCB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBIdHRwQVBJQ2xpZW50IC4ufD4gQVBJQ2xpZW50XG5cbiAgICBjbGFzcyBNb2NrQVBJQ2xpZW50IHtcbiAgICAgICAgPDxjbGFzcz4-XG4gICAgICAgIE1vY2tBUElDbGllbnRcbiAgICB9XG4gICAgTW9ja0FQSUNsaWVudCAuLnw-IEFQSUNsaWVudFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ "UML diagram depicting application state switching between real and mock data")
-
-{/* 
-<figure class="article-image-container">
-  <a
-    target="_blank"
-    href="https://mermaid.live/edit/#eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgQXBwbGljYXRpb25TdGF0ZSB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBBcHBsaWNhdGlvblN0YXRlIC4uPiBBUElDbGllbnRcblxuICAgIGNsYXNzIEFQSUNsaWVudCB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICAgQVBJQ2xpZW50XG4gICAgfVxuXG4gICAgY2xhc3MgSHR0cEFQSUNsaWVudCB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBIdHRwQVBJQ2xpZW50IC4ufD4gQVBJQ2xpZW50XG5cbiAgICBjbGFzcyBNb2NrQVBJQ2xpZW50IHtcbiAgICAgICAgPDxjbGFzcz4-XG4gICAgICAgIE1vY2tBUElDbGllbnRcbiAgICB9XG4gICAgTW9ja0FQSUNsaWVudCAuLnw-IEFQSUNsaWVudFxuIiwibWVybWFpZCI6IntcbiAgXCJ0aGVtZVwiOiBcImRlZmF1bHRcIlxufSIsInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0"
-  >
-    <img
-      class="article-image"
-      src="https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgQXBwbGljYXRpb25TdGF0ZSB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBBcHBsaWNhdGlvblN0YXRlIC4uPiBBUElDbGllbnRcblxuICAgIGNsYXNzIEFQSUNsaWVudCB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICAgICAgQVBJQ2xpZW50XG4gICAgfVxuXG4gICAgY2xhc3MgSHR0cEFQSUNsaWVudCB7XG4gICAgICAgIDw8Y2xhc3M-PlxuICAgIH1cbiAgICBIdHRwQVBJQ2xpZW50IC4ufD4gQVBJQ2xpZW50XG5cbiAgICBjbGFzcyBNb2NrQVBJQ2xpZW50IHtcbiAgICAgICAgPDxjbGFzcz4-XG4gICAgICAgIE1vY2tBUElDbGllbnRcbiAgICB9XG4gICAgTW9ja0FQSUNsaWVudCAuLnw-IEFQSUNsaWVudFxuIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ"
-    />
-  </a>
-
-  <figcaption>UML diagram depicting application state switching between real and mock data</figcaption>
-</figure> */}
-
 The "switch" could be activated by clicking a UI element, e.g. a small checkbox in the footer area of a web page, which is only visible to Admin users. The click handler toggles the Application state between real data-source vs. mocks.
-
 
 ![Screenshot of a mock data checkbox](/images/articles/mock-data/mock-data-checkbox.svg)
 
-{/* <figure class="article-image-container">
-  <img
-    class="article-image"
-    src="mock-data-checkbox.png"
-    alt="Screenshot of a mock data checkbox"
-  />
-  <figcaption></figcaption>
-</figure> */}
-
 Thirdly, we need all of our application state to be mocked in a set of mock constants. This is easiest if the application state is modelled in some more abstract way, e.g. using classes, interfaces, types, etc. That way, we can easily construct our mock data as a realisation of those abstractions.
 
-<figure class="article-image-container">
-  <a
-    target="_blank"
-    href="https://mermaid.live/edit/#eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgQWNjb3VudCB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICB9XG5cbiAgICBjbGFzcyBNb2NrQWNjb3VudCB7XG4gICAgICAgIDw8b2JqZWN0Pj5cbiAgICB9XG4gICAgTW9ja0FjY291bnQgLi58PiBBY2NvdW50XG4gICAgXG4gICAgY2xhc3MgSW52b2ljZSB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICB9XG5cbiAgICBjbGFzcyBNb2NrSW52b2ljZSB7XG4gICAgICAgIDw8b2JqZWN0Pj5cbiAgICB9XG4gICAgTW9ja0ludm9pY2UgLi58PiBJbnZvaWNlXG4iLCJtZXJtYWlkIjoie1xuICBcInRoZW1lXCI6IFwiZGVmYXVsdFwiLFxuICBcImhlaWdodFwiOiBcIjMwMHB4XCJcbn0iLCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9"
-  >
-    <img
-      class="article-image"
-      src="https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgQWNjb3VudCB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICB9XG5cbiAgICBjbGFzcyBNb2NrQWNjb3VudCB7XG4gICAgICAgIDw8b2JqZWN0Pj5cbiAgICB9XG4gICAgTW9ja0FjY291bnQgLi58PiBBY2NvdW50XG4gICAgXG4gICAgY2xhc3MgSW52b2ljZSB7XG4gICAgICAgIDw8aW50ZXJmYWNlPj5cbiAgICB9XG5cbiAgICBjbGFzcyBNb2NrSW52b2ljZSB7XG4gICAgICAgIDw8b2JqZWN0Pj5cbiAgICB9XG4gICAgTW9ja0ludm9pY2UgLi58PiBJbnZvaWNlXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCIsImhlaWdodCI6IjMwMHB4In0sInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0"
-    />
-  </a>
+<MdxMermaid item={meta} alt="UML diagram depicting relationships between mock constants and application types">{`
+  classDiagram
+    class Account {
+        <<interface>>
+    }
 
-  <figcaption>UML diagram depicting relationships between mock constants and application types</figcaption>
-</figure>
+    class MockAccount {
+        <<object>>
+    }
+    MockAccount ..|> Account
+    
+    class Invoice {
+        <<interface>>
+    }
+
+    class MockInvoice {
+        <<object>>
+    }
+    MockInvoice ..|> Invoice
+`}</MdxMermaid>
 
 It would take significant effort to completely mock the data-sources of a pre-existing application. But that effort could be broken down into smaller pieces and pursued incrementally, similar to adding unit tests.
 
@@ -273,16 +255,9 @@ How about switching between _multiple_ mock states? One way would be via a colle
 The following screenshot depicts mock controls for a hypothetical online banking application, allowing the user's home country, preferred currency and business / personal accounts to be adjusted.
 
 ![Screenshot of controls for more complex customization of mock data](/images/articles/mock-data/mock-data-controls.svg)
-{/* 
-<figure class="article-image-container">
-  <img
-    class="article-image"
-    src="mock-data-controls.png"
-  />
-  <figcaption>Screenshot of controls for more complex customization of mock data</figcaption>
-</figure> */}
 
 ## Decoupling development teams
+
 <MdxH2Short>Decoupling teams</MdxH2Short>
 
 Once our entire Application is able to run off mocked data, not only can we _operate_ the application while a data-source is unavailable, but we can also _operate and develop_ application features prior to the data-source even supporting them.
@@ -294,47 +269,38 @@ For example, imagine we are working in an _Invoicing_ team in an online banking 
 But with mock data, the Invoicing team no longer needs to wait for the Accounts team to support a Foreign Accounts feature, but rather, it can immediately begin developing the Foreign Accounts feature. We merely need to model Foreign Accounts interface in a way that makes sense for Invoicing purposes, and from those models, derive mocks.
 
 <MdxMermaid item={meta} alt="GANTT chart depicting hypothetical timelines with vs. without mocks">{`
-gantt
-  section Without Mock Data
-      Accounts team progress              :active,  2014-01-11 00:00, 2h
-      Integration                         :active,  2014-01-11 02:00, 1h
-      Invoicing team progress             :active,  2014-01-11 03:00, 2h
+  gantt
+    section Without Mock Data
+        Accounts team progress              :active,  2014-01-11 00:00, 2h
+        Integration                         :active,  2014-01-11 02:00, 1h
+        Invoicing team progress             :active,  2014-01-11 03:00, 2h
 
-  section With Mock Data
-      Invoicing team progress             :active,  2014-01-11 00:00, 2h
-      Accounts team progress              :active,  2014-01-11 00:00, 2h
-      Integration                         :active,  2014-01-11 02:00, 1h
+    section With Mock Data
+        Invoicing team progress             :active,  2014-01-11 00:00, 2h
+        Accounts team progress              :active,  2014-01-11 00:00, 2h
+        Integration                         :active,  2014-01-11 02:00, 1h
 `}</MdxMermaid>
-{/* <figure class="article-image-container">
-  <a
-    target="_blank"
-    href="https://mermaid.live/edit/#eyJjb2RlIjoiZ2FudHRcbiAgICBzZWN0aW9uIFdpdGhvdXQgTW9jayBEYXRhXG4gICAgICAgIEFjY291bnRzIHRlYW0gcHJvZ3Jlc3MgICAgICAgICAgICAgIDphY3RpdmUsICAyMDE0LTAxLTExIDAwOjAwLCAyaFxuICAgICAgICBJbnRlZ3JhdGlvbiAgICAgICAgICAgICAgICAgICAgICAgICA6YWN0aXZlLCAgMjAxNC0wMS0xMSAwMjowMCwgMWhcbiAgICAgICAgSW52b2ljaW5nIHRlYW0gcHJvZ3Jlc3MgICAgICAgICAgICAgOmFjdGl2ZSwgIDIwMTQtMDEtMTEgMDM6MDAsIDJoXG5cbiAgICBzZWN0aW9uIFdpdGggTW9jayBEYXRhXG4gICAgICAgIEludm9pY2luZyB0ZWFtIHByb2dyZXNzICAgICAgICAgICAgIDphY3RpdmUsICAyMDE0LTAxLTExIDAwOjAwLCAyaFxuICAgICAgICBBY2NvdW50cyB0ZWFtIHByb2dyZXNzICAgICAgICAgICAgICA6YWN0aXZlLCAgMjAxNC0wMS0xMSAwMDowMCwgMmhcbiAgICAgICAgSW50ZWdyYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgOmFjdGl2ZSwgIDIwMTQtMDEtMTEgMDI6MDAsIDFoXG5cbiIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJkZWZhdWx0XCIsXG4gIFwiZ2FudHRcIjoge1xuICAgIFwiYmFySGVpZ2h0XCI6IDgwLFxuICAgIFwiZm9udFNpemVcIjogMjUsXG4gICAgXCJzZWN0aW9uRm9udFNpemVcIjogMjUsXG4gICAgXCJsZWZ0UGFkZGluZ1wiOiAzMDAsXG4gICAgXCJiYXJHYXBcIjogMjVcbiAgfVxufSIsInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0"
-  >
-    <img
-      class="article-image"
-      src="https://mermaid.ink/img/eyJjb2RlIjoiZ2FudHRcbiAgICBzZWN0aW9uIFdpdGhvdXQgTW9jayBEYXRhXG4gICAgICAgIEFjY291bnRzIHRlYW0gcHJvZ3Jlc3MgICAgICAgICAgICAgIDphY3RpdmUsICAyMDE0LTAxLTExIDAwOjAwLCAyaFxuICAgICAgICBJbnRlZ3JhdGlvbiAgICAgICAgICAgICAgICAgICAgICAgICA6YWN0aXZlLCAgMjAxNC0wMS0xMSAwMjowMCwgMWhcbiAgICAgICAgSW52b2ljaW5nIHRlYW0gcHJvZ3Jlc3MgICAgICAgICAgICAgOmFjdGl2ZSwgIDIwMTQtMDEtMTEgMDM6MDAsIDJoXG5cbiAgICBzZWN0aW9uIFdpdGggTW9jayBEYXRhXG4gICAgICAgIEludm9pY2luZyB0ZWFtIHByb2dyZXNzICAgICAgICAgICAgIDphY3RpdmUsICAyMDE0LTAxLTExIDAwOjAwLCAyaFxuICAgICAgICBBY2NvdW50cyB0ZWFtIHByb2dyZXNzICAgICAgICAgICAgICA6YWN0aXZlLCAgMjAxNC0wMS0xMSAwMDowMCwgMmhcbiAgICAgICAgSW50ZWdyYXRpb24gICAgICAgICAgICAgICAgICAgICAgICAgOmFjdGl2ZSwgIDIwMTQtMDEtMTEgMDI6MDAsIDFoXG5cbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwiZ2FudHQiOnsiYmFySGVpZ2h0Ijo4MCwiZm9udFNpemUiOjI1LCJzZWN0aW9uRm9udFNpemUiOjI1LCJsZWZ0UGFkZGluZyI6MzAwLCJiYXJHYXAiOjI1fX0sInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0"
-      alt="Screenshot of a mock data controls"
-    />
-  </a>
-
-  <figcaption></figcaption>
-</figure> */}
 
 We can develop and test all the Invoicing logic against those mocks. When the Accounts team does finally support Foreign Accounts we can connect our Invoices system to theirs. Any dissonance between their models and ours can be solved by adding a mapping layer, e.g. an `AccountsAPIDataSource` which implements `AccountsDataSource` methods by calling AccountsAPI methods.
 
-<figure class="article-image-container">
-  <a
-    target="_blank"
-    href="https://mermaid.live/edit/#eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgSW52b2ljaW5nQXBwbGljYXRpb24ge1xuICAgIH1cbiAgICBJbnZvaWNpbmdBcHBsaWNhdGlvbiAuLj4gRm9yZWlnbkFjY291bnRzRGF0YVNvdXJjZVxuXG4gICAgY2xhc3MgRm9yZWlnbkFjY291bnRzRGF0YVNvdXJjZSB7XG4gICAgfVxuXG4gICAgY2xhc3MgRm9yZWlnbkFjY291bnRzQVBJRGF0YVNvdXJjZSB7XG4gICAgfVxuXG4gICAgRm9yZWlnbkFjY291bnRzQVBJRGF0YVNvdXJjZSAuLnw-IEZvcmVpZ25BY2NvdW50c0RhdGFTb3VyY2VcbiAgICBGb3JlaWduQWNjb3VudHNBUElEYXRhU291cmNlIC4uPiBBY2NvdW50c0FQSVxuICAgIFxuICAgIGNsYXNzIEFjY291bnRzQVBJIHtcbiAgICB9XG4gICAgIiwibWVybWFpZCI6IntcbiAgXCJ0aGVtZVwiOiBcImRlZmF1bHRcIlxufSIsInVwZGF0ZUVkaXRvciI6ZmFsc2UsImF1dG9TeW5jIjp0cnVlLCJ1cGRhdGVEaWFncmFtIjpmYWxzZX0"
-  >
-    <img
-      alt=""
-      src="https://mermaid.ink/img/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgSW52b2ljaW5nQXBwbGljYXRpb24ge1xuICAgIH1cbiAgICBJbnZvaWNpbmdBcHBsaWNhdGlvbiAuLj4gRm9yZWlnbkFjY291bnRzRGF0YVNvdXJjZVxuXG4gICAgY2xhc3MgRm9yZWlnbkFjY291bnRzRGF0YVNvdXJjZSB7XG4gICAgfVxuXG4gICAgY2xhc3MgRm9yZWlnbkFjY291bnRzQVBJRGF0YVNvdXJjZSB7XG4gICAgfVxuXG4gICAgRm9yZWlnbkFjY291bnRzQVBJRGF0YVNvdXJjZSAuLnw-IEZvcmVpZ25BY2NvdW50c0RhdGFTb3VyY2VcbiAgICBGb3JlaWduQWNjb3VudHNBUElEYXRhU291cmNlIC4uPiBBY2NvdW50c0FQSVxuICAgIFxuICAgIGNsYXNzIEFjY291bnRzQVBJIHtcbiAgICB9XG4gICAgIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZSwiYXV0b1N5bmMiOnRydWUsInVwZGF0ZURpYWdyYW0iOmZhbHNlfQ"
-    />
-  </a>
+<MdxMermaid item={meta} alt="UML diagram depicting mapping layout between Accounts application and data-source">{`
+  classDiagram
+    class InvoicingApplication {
+    }
+    InvoicingApplication ..> ForeignAccountsDataSource
 
-  <figcaption>UML diagram depicting mapping layout between Accounts application and data-source</figcaption>
-</figure>
+    class ForeignAccountsDataSource {
+    }
+
+    class ForeignAccountsAPIDataSource {
+    }
+
+    ForeignAccountsAPIDataSource ..|> ForeignAccountsDataSource
+    ForeignAccountsAPIDataSource ..> AccountsAPI
+    
+    class AccountsAPI {
+    }
+`}</MdxMermaid>
 
 Notice how we are building our Foreign Accounts feature against a `ForeignAccountsDataSource`, which functions as a kind of contract between the `InvoicingApplication` (which we control) and the `AccountsAPI` (which the other team controls).
 

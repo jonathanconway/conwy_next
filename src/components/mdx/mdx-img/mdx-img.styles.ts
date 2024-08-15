@@ -6,6 +6,7 @@ import {
   cn,
   dark,
   invert,
+  leading_4,
   max_h_80,
   mt_4,
   p_2,
@@ -30,4 +31,4 @@ export const img = cn(
   dark(invert),
 );
 
-export const figCaption = cn(mt_4, text_xs);
+export const figCaption = cn(mt_4, text_xs, leading_4);

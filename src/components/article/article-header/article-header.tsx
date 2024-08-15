@@ -1,4 +1,4 @@
-import { Article as ArticleModel } from "@/framework";
+import { Article as Article_ } from "@/framework";
 
 import { Date } from "../../date";
 import { Heading } from "../../heading";
@@ -6,7 +6,7 @@ import { Heading } from "../../heading";
 import * as styles from "./article-header.styles";
 
 export interface ArticleHeaderProps {
-  readonly article: ArticleModel;
+  readonly article: Article_;
 }
 
 export function ArticleHeader({

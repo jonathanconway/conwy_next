@@ -1,3 +1,13 @@
+import {
+  bg_left,
+  bg_right,
+  cn,
+  flex,
+  flex_1,
+  h_2,
+  w_full,
+} from "@jonathanconway/tailwindjs";
+
 export const container = () => `
   relative
   lowercase
@@ -7,27 +17,11 @@ export const container = () => `
 
 export const text = () => `
   text-lg
+  px-2
 `;
 
-export const cursor = (active: boolean) => `
-  absolute
-  inline-block
-  bottom-0
-  left-0
-  w-full
-  h-1.5
-  rounded
-  bg-stone-300
-  dark:bg-stone-600
+export const activeIndicator = cn(w_full, flex, h_2);
 
-  ${
-    active
-      ? `
-    opacity-100
-  `
-      : `
-    opacity-0
-    group-hover:opacity-35
-  `
-  }
-`;
+export const activeIndicatorLeft = cn(flex_1, bg_left, h_2);
+
+export const activeIndicatorRight = cn(flex_1, bg_right, h_2);

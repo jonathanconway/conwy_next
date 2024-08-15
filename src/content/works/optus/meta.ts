@@ -1,12 +1,11 @@
 import { WorkMeta } from "@/framework";
 
-import blurbShort from "./blurb-short.mdx";
-
-export const optus: WorkMeta = {
+export const meta: WorkMeta = {
   client: "Optus",
-  blurbShort,
-  startDate: "22/03/2024",
-  endDate: "20/09/2023",
+  blurbShort:
+    "Built SubHub Agent frontend and parts of SubHub and Credit Offer backend.",
+  startDate: "2023-09-20",
+  endDate: "2024-03-22",
   jobTitle: "Senior Backend Engineer",
   feedbacks: [
     {
@@ -17,6 +16,12 @@ export const optus: WorkMeta = {
   slug: "optus",
   tags: [],
   type: "work",
+  images: [
+    { imageUrl: "subhub-promo.png", notes: [] },
+    { imageUrl: "agent-subhub-2.png", notes: [] },
+    { imageUrl: "agent-subhub-1.svg", notes: [] },
+    { imageUrl: "drawings.png", notes: [] },
+  ],
   techs: [
     {
       categoryName: "react",

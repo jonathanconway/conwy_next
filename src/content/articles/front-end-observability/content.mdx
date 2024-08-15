@@ -1,149 +1,92 @@
-import { CodeSample, MdxCode, MdxPre } from "@/components";
+import { CodeSample, MdxCode, MdxPre, MdxAside, MdxAsideHeading, MdxP } from "@/components";
 
 I've been reading the book [_Observability Engineering_](https://info.honeycomb.io/observability-engineering-oreilly-book-2022) by Charity Majors and thinking about how to apply the ideas to front end development.
 
-I find most interesting the concept of a **_structured event_** - an event "which captures everything that occurred while one particular request interacted with your service" <br />(Chapter 5).
+She describes the concept of a **_structured event_** - an event "which captures everything that occurred while one particular request interacted with your service" (Chapter 5).
 
-Translating this into the world of front end, a structured event might capture everything that happened during a user interaction or receipt of an HTTP response. This might be done by placing event publishing calls at key points in the code, similar to how we might place `console.log` statements for local debugging.
+On the front end, a structured event might capture everything that happened during, say, a user interaction or receipt of an HTTP response. This might be done by placing logging calls at key points in the code, similar to how we might place `console.log` statements for local debugging.
 
-A key benefit of structured events (compared to, say, unstructured logs) is that they are formatted in the shape of a map (a set of key-value pairs), making them queryable. Structured events containing rich contextual information (e.g. current user id, entities being interacted with, etc.) can be sliced and diced in various ways, using the querying facilities of a monitoring platform such as [Sentry](https://sentry.io/).
-
-With structured logging in place developers can "ask" arbitrary questions about how the application is behaving in production, pro-actively search for unanticipated bugs or diagnose difficult errors involving complex front end logic.
-
-In this article I'll describe how I see observability being applied on the front end and cover some examples, based on real life applications I've worked on, using [Sentry](https://sentry.io/) (a popular monitoring platform).
+In this article I'll give an overview of front-end observability with some examples using [Sentry](https://sentry.io/).
 
 ## Observability on the front end
 
-In defining "observability" (Chapter 1), Majors lists the following capabilities:
+A key benefit of structured events (compared to unstructured logs) is that they can contain ***rich contextual data points***:
 
-> - Understand the inner workings of your application
-> - Understand any system state your application may have gotten itself into, even new ones you have never seen before and couldn’t have predicted
-> - Understand the inner workings and system state solely by observing and interrogating with external tools
-> - Understand the internal state without shipping any new custom code to handle it (because that implies you needed prior knowledge to explain it)
+- **User events**, such as what value was entered into an input
+- **HTTP events**, such as responses received from a backend
+- **Browser events**, such as location data
 
-Back end services generally respond to requests from a front end or another service.
+![Observability points for typical front end applications: HTTP, user and browser events](/images/articles/front-end-observability/observability-points.svg)
 
-In contrast, front end applications can respond to:
+These data points are ***queryable*** and we can filter for them using the powerful querying facilities of monitoring platforms such as [Sentry](https://sentry.io/), [DynaTrace](http://dynatrace.com), [AWS CloudWatch RUM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html), and [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview).
 
-1. **User events**, such as selecting a drop-down value or clicking a button
-2. **HTTP events**, such as receiving a response or receiving a WebSockets message
-3. **Browser events**, such as receiving location data or having a `setTimout` elapse or a WebWorker job complete
+![Querying structured logs in Sentry](/images/articles/front-end-observability/example-stake-error-sentry-query.png)
 
-The above, then, are the points at which we can trigger structured events on the front end, which will allow us to monitor our front end application state in production.
+With structured logs in place, developers can "ask" arbitrary questions about how the application is behaving in production.
 
-<figure>
-  <a href="observability-points.svg">
-    <img src="observability-points.svg" />
-  </a>
-  <figcaption>Observability points for typical front end applications: HTTP, user and browser events</figcaption>
-</figure>
+We can pro-actively search for unanticipated bugs or diagnose difficult errors involving complex front end logic.
+
+<MdxAside>
+  <MdxAsideHeading>Capabilities of observable systems</MdxAsideHeading>
+  
+  <MdxP>
+    In defining "observability" (Chapter 1), Majors lists the following capabilities:
+  </MdxP>
+
+  <MdxP>
+     - Understand the inner workings of your application
+     - Understand any system state your application may have gotten itself into, even new ones you have never seen before and couldn’t have predicted
+     - Understand the inner workings and system state solely by observing and interrogating with external tools
+     - Understand the internal state without shipping any new custom code to handle it (because that implies you needed prior knowledge to explain it)
+  </MdxP>
+</MdxAside>
+
+Let's look at some examples.
 
 ## Example 1 - User event
 
-{/* <figure style="float: right">
-  <a href="observability-points-user-event.svg">
-    <img src="observability-points-user-event.svg" />
-  </a>
-  <figcaption>Observability point: user interaction.</figcaption>
-</figure> */}
+![Observability point: user interaction](/images/articles/front-end-observability/observability-points-user-event.svg)
 
 Suppose our front end app validates a change to a numeric field:
 
-When the user edits the stake of a shareholder, we want to validate that the total of all shareholder stakes is never more than 100%. But this only applies to _active_ shareholders – we want to skip shareholders which have been turned off (`enabled: false`).
-
-Here's some sample code (in Typescript with React):
-
-```javascript
-// ShareholderStakeEditor.tsx
-...
-function ShareholderStakeEditor({
-  companyId,
-  shareholder,
-  onClickClose,
-}: ShareholderStakeEditorProps) {
-  const [stake, setStake] = useState(shareholder.stake);
-
-  const { shareholders, refetchShareholders } = useShareholders();
-
-  const { enableds, others, othersStakesSum, patchShareholderStake } =
-    useShareholder({ shareholder, shareholders });
-
-  const othersAndThisStakesSum = othersStakesSum + stake;
-
-  const handleClickSave = async () => {
-    if (othersAndThisStakesSum <= 100) {
-      await patchShareholderStake(stake);
-
-      await refetchShareholders();
-    } else {
-      showValidationErrorSelectedNodeStake();
-    }
-  };
-  ...
-}
-```
+When the user edits the stake of a shareholder, we want to validate that the total of all shareholder stakes is never more than 100%. But this only applies to _active_ shareholders – we want to skip shareholders which have been turned off.
 
 We want to make the state of our component observable.
 
 Let's log two structured events:
 
-1. `useShareholderStakeEditor/changeStakeValid` - stake was valid and we will submit a PATCH request
-2. `useShareholderStakeEditor/changeStakeSumError` - stakes sum was too high, so we will show an error2
+1. ***changeStakeValid*** - stake was valid; we'll submit a PATCH
+2. ***changeStakeSumError*** - stakes sum was too high; we'll show an error
+<br />
 
-<CodeSample language="javascript" lineNumbers linesHighlighted={[[8,23], [27,33], [42,48]]}>{`
-function ShareholderStakeEditor({
-  companyId,
-  shareholder,
-  onClickClose,
-}: ShareholderStakeEditorProps) {
-  ...
+<CodeSample language="javascript" lineNumbers linesHighlighted={[[3,9], [18,24]]}>{`
+const handleClickSave = async (e) => {
+  if (othersAndThisStakesSum <= 100) {
+    captureEvent({
+      message: "useShareholderStakeEditor/changeStakeValid",
+      tags: event.tags,
+      contexts: {
+        ["useShareholderStakeEditor/changeStakeValid"]: event.data,
+      },
+    });
 
-  const event = {
-    tags: {
-      companyId,
-      shareholderId: shareholder.id,
+    await patchShareholderStake({
+      id: shareholder.id,
       stake,
-      enabledsIds: JSON.stringify(map(enableds, "id")),
-      othersIds: JSON.stringify(map(others, "id")),
-      othersStakesSum,
-      othersAndThisStakesSum,
-    },
-    data: {
-      shareholders: JSON.stringify(shareholders),
-      enableds: JSON.stringify(enableds),
-      others: JSON.stringify(others),
-    },
-  };
+    });
 
-  const handleClickSave = async (e) => {
-    if (othersAndThisStakesSum <= 100) {
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakeValid",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakeValid"]: event.data,
-        },
-      });
+    refreshShareholders();
+  } else {
+    captureEvent({
+      message: "useShareholderStakeEditor/changeStakeSumError",
+      tags: event.tags,
+      contexts: {
+        ["useShareholderStakeEditor/changeStakeSumError"]: event.data,
+      },
+    });
 
-      await patchShareholderStake({
-        id: shareholder.id,
-        stake,
-      });
-
-      refreshShareholders();
-    } else {
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakeSumError",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakeSumError"]: event.data,
-        },
-      });
-
-      showShareholderStakeError();
-    }
+    showShareholderStakeError();
   }
-  ...
 }
 `}
 </CodeSample>
@@ -206,7 +149,7 @@ function ShareholderStakeEditor({
 }
 </code>
 </pre> */}
-
+{/* 
 <aside class="note">
   <h3 class="note-heading">Aside: Tags vs. contexts</h3>
   <p>In the example, you'll notice that we provide two objects to Sentry: tags and contexts.</p>
@@ -216,7 +159,7 @@ function ShareholderStakeEditor({
   </ul>
     
   <p>My approach is to put as much queryable data as possible into <code>tags</code> and put everything else into <code>contexts</code>.</p>
-</aside>
+</aside> */}
 
 Suppose we subsequently receive a bug report:
 
@@ -236,37 +179,17 @@ Let's query Sentry for:
 - For this user - `user.id:1234`
 - And this company - `companyId:5678`
 
-<figure>
-  <a href="example-stake-error-sentry-query.png">
-    <img src="example-stake-error-sentry-query.png" />
-  </a>
-  <figcaption>Querying Sentry for structured events by message, user id and company id</figcaption>
-</figure>
+![Querying Sentry for structured events by message, user id and company id](/images/articles/front-end-observability/example-stake-error-sentry-query.png)
 
 We find our error event - `changeStakeSumError`:
 
-<figure>
-  <a href="example-stake-sentry-query-results.png">
-    <img src="example-stake-sentry-query-results.png" />
-  </a>
-  <figcaption>Sentry query results indicating an error was logged</figcaption>
-</figure>
+![Sentry query results indicating an error was logged](/images/articles/front-end-observability/example-stake-sentry-query-results.png)
 
 Clicking on the row reveals some interesting details:
 
-<figure>
-  <a href="example-stake-sentry-query-result-detail-tags.png">
-    <img src="example-stake-sentry-query-result-detail-tags.png" />
-  </a>
-  <figcaption>Sentry error details, showing an item with the tags shareholderId: 113 and stake: 30</figcaption>
-</figure>
+![Sentry error details, showing an item with the tags shareholderId: 113 and stake: 30](/images/articles/front-end-observability/example-stake-sentry-query-result-detail-tags.png)
 
-<figure>
-  <a href="example-stake-sentry-query-result-detail.png">
-    <img src="example-stake-sentry-query-result-detail.png" />
-  </a>
-  <figcaption>Sentry error details, showing an item (id: 112) with the word "[Deleted]" in its name</figcaption>
-</figure>
+![Sentry error details, showing an item (id: 112) with the word "[Deleted]" in its name](/images/articles/front-end-observability/example-stake-sentry-query-result-detail.png)
 
 We see that the user was trying to set one shareholder (id: 113) to have a stake of 30%.
 
@@ -288,12 +211,7 @@ When you think about it, observability is not all that different from the standa
 
 ## Example 2 - HTTP event
 
-{/* <figure style="float: right">
-  <a href="observability-points-http-event.svg">
-    <img src="observability-points-http-event.svg" />
-  </a>
-  <figcaption>Observability point: HTTP event.</figcaption>
-</figure> */}
+![Observability point: HTTP event](/images/articles/front-end-observability/observability-points-http-event.svg)
 
 On saving a shareholder's stake, the front end app should refresh the list of all shareholders' stakes.
 
@@ -362,32 +280,18 @@ As in the previous example, let's query Sentry for:
 
 We find our two events - `changeStakePatchCompleted` and `changeStakeRefreshCompleted` - were both logged:
 
-<figure>
-  <a href="example-stake-sentry-update-results.png">
-    <img src="example-stake-sentry-update-results.png" />
-  </a>
-  <figcaption>Sentry query results, indicating that both the patch and refresh completed successfully</figcaption>
-</figure>
+![Sentry query results, indicating that both the patch and refresh completed successfully](/images/articles/front-end-observability/example-stake-sentry-update-results.png)
+
 
 However, examining the refresh event, we see that the new stake value was not provided.
 
-<figure>
-  <a href="example-stake-sentry-update-result-detail-refetch.png">
-    <img src="example-stake-sentry-update-result-detail-refetch.png" />
-  </a>
-  <figcaption>Sentry refresh details, showing stale value for stake of id: 113</figcaption>
-</figure>
+![Sentry refresh details, showing stale value for stake of id: 113](/images/articles/front-end-observability/example-stake-sentry-update-result-detail-refetch.png)
 
 Now we know why the stake did not refresh properly – the back end is returning stale data! We'll need to discuss cache-busting with the back end developers.
 
 ## Example 3 - Browser event
 
-{/* <figure style="float: right">
-  <a href="observability-points-browser-event.svg">
-    <img src="observability-points-browser-event.svg" />
-  </a>
-  <figcaption>Observability point: browser events.</figcaption>
-</figure> */}
+![Observability point: browser events](/images/articles/front-end-observability/observability-points-browser-event.svg)
 
 For our final example, suppose the front end app should refresh the list of all shareholders' stakes periodically, e.g. every 30 seconds.
 
@@ -408,30 +312,15 @@ Let's query Sentry for observability on the auto-refresh hook:
 
 We find our autorefresh event - `useShareholdersAutoRefresh` - was logged:
 
-<figure>
-  <a href="example-stake-sentry-auto-refresh-results.png">
-    <img src="example-stake-sentry-auto-refresh-results.png" />
-  </a>
-  <figcaption>Sentry query results, indicating that the auto refresh completed successfully</figcaption>
-</figure>
+![Sentry query results, indicating that the auto refresh completed successfully](/images/articles/front-end-observability/example-stake-sentry-auto-refresh-results.png)
 
 And hovering over the events column, it looks like it has been running at regular intervals:
 
-<figure>
-  <a href="example-stake-sentry-auto-refresh-results-period.png">
-    <img src="example-stake-sentry-auto-refresh-results-period.png" />
-  </a>
-  <figcaption>Sentry query results, indicating that the auto refresh ran many times over the last 24 hours</figcaption>
-</figure>
+![Sentry query results, indicating that the auto refresh ran many times over the last 24 hours](/images/articles/front-end-observability/example-stake-sentry-auto-refresh-results-period.png)
 
 What could have gone wrong? Inspecting the details, we see that different values were returned for one user than for another:
 
-<figure>
-  <a href="example-stake-sentry-auto-refresh-details-compare.png">
-    <img src="example-stake-sentry-auto-refresh-details-compare.png" />
-  </a>
-  <figcaption>Sentry event details, indicating a discrepancy between data received for two different users</figcaption>
-</figure>
+![Sentry event details, indicating a discrepancy between data received for two different users](/images/articles/front-end-observability/example-stake-sentry-auto-refresh-details-compare.png)
 
 This indicates that the back end may be serving stale updates for some users, rather than propagating changes to all users at once.
 
@@ -443,12 +332,7 @@ Wouldn't it be nice if we could see a sequence or "flow" of events together in a
 
 Thanks to Sentry's [breadcrumbs feature](https://docs.sentry.io/product/issues/issue-details/breadcrumbs/), we can. Simply open the details of one of the events, scroll down to the Breadcrumbs section, then filter by "Tranaction".
 
-<figure>
-  <a href="example-breadcrumbs-transactions.png">
-    <img src="example-breadcrumbs-transactions.png" />
-  </a>
-  <figcaption>Sentry event details, breadcrumbs section, listing a sequence of antecedent events</figcaption>
-</figure>
+![Sentry event details, breadcrumbs section, listing a sequence of antecedent events](/images/articles/front-end-observability/example-breadcrumbs-transactions.png)
 
 ## Querying across events
 
@@ -468,12 +352,7 @@ For example, from our previous example, wouldn't it be great if a new team membe
 
 We could achieve this by querying Sentry for all events with `message:"*shareholderStake*"`, grabbing a link to that query and pasting it into a "Shareholder stakes" wiki page, perhaps under a heading titled "Observability" with a link titled "shareholderStake events".
 
-<figure>
-  <a href="docs-observability-section.svg">
-    <img src="docs-observability-section.svg" />
-  </a>
-  <figcaption>Example: Shareholder stake feature documentation with Observability section and link to `shareholderStake` event query</figcaption>
-</figure>
+![Example: Shareholder stake feature documentation with Observability section and link to `shareholderStake` event query](/images/articles/front-end-observability/docs-observability-section.svg)
 
 Imagine if all feature documentation was augmented with links to observability queries. This could give newcomers and experienced team members alike a boost in understanding how each of those features functions in production.
 

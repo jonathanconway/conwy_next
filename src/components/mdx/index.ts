@@ -1,5 +1,6 @@
 export * from "./mdx-a";
 export * from "./mdx-aside";
+export * from "./mdx-blockquote";
 export * from "./mdx-code";
 export * from "./mdx-h1";
 export * from "./mdx-h2-short";

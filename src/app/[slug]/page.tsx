@@ -1,6 +1,5 @@
-import { Fragment, PageLayout } from "@/components";
-import { Redirect as RedirectComponent } from "@/components";
-import { REDIRECTS } from "@/content";
+import { PageLayout, Redirect as RedirectComponent } from "@/components";
+import { REDIRECTS, site } from "@/content";
 import { RedirectFragment } from "@/content/fragments";
 
 interface RedirectProps {
@@ -13,11 +12,10 @@ export default async function Redirect({ params: { slug } }: RedirectProps) {
   return (
     <PageLayout
       main={
-        <div className="flex flex-col gap-8">
-          <Fragment>
-            <RedirectFragment />
-            <RedirectComponent redirectUrl={redirectUrl} />
-          </Fragment>
+        <div>
+          <RedirectFragment />
+
+          <RedirectComponent redirectUrl={redirectUrl} />
         </div>
       }
     />
@@ -27,3 +25,7 @@ export default async function Redirect({ params: { slug } }: RedirectProps) {
 export async function generateStaticParams() {
   return Object.keys(REDIRECTS).map((slug) => ({ slug }));
 }
+
+export const metadata = {
+  title: `${site.title} - redirect`,
+};

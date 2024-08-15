@@ -1,7 +1,7 @@
 import { kebabCase, takeWhile } from "lodash";
 import { FunctionComponent, JSXElementConstructor, ReactElement } from "react";
 
-import { Article, ArticleMeta } from "@/framework";
+import { Article as Article_ } from "@/framework";
 
 import { MdxH2, MdxH2Short } from "../mdx";
 
@@ -45,7 +45,7 @@ function getNextChildOfTypeAndNotType(
 }
 
 export function getArticleHeadings(
-  article: Article,
+  article: Article_,
 ): readonly ArticleHeading[] {
   const content = article.content?.({});
   const children: readonly ReactElement[] = content?.props?.children ?? [];

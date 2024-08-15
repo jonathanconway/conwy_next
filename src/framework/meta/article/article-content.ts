@@ -1,8 +1,10 @@
 import { MDXContent } from "mdx/types";
 
-import { Article } from "./article";
+import { ArticleMeta } from "./article";
 
-export async function getArticleContent(article: Article): Promise<MDXContent> {
+export async function getArticleContent(
+  article: ArticleMeta,
+): Promise<MDXContent> {
   return (await import(`@/content/articles/${article.meta.slug}/content.mdx`))
     .default;
 }

@@ -1,26 +1,29 @@
 import {
-  all,
   bg_stone_200,
   bg_stone_800,
   border,
   border_stone_400,
   cn,
   dark,
-  my_4,
-  p_4,
+  group_name,
+  px_1_5,
   rounded_md,
+  text_sm,
   whitespace_pre_wrap,
 } from "@jonathanconway/tailwindjs";
 
-export const code = cn(whitespace_pre_wrap);
+import { pre_group_name } from "../mdx-pre/mdx-pre.styles";
 
-export const pre = cn(
-  my_4,
-  p_4,
+export const code = cn(
+  whitespace_pre_wrap,
+
   bg_stone_200,
   dark(bg_stone_800),
-  border,
-  border_stone_400,
-  rounded_md,
-  all(whitespace_pre_wrap),
+
+  text_sm,
+
+  group_name(pre_group_name, border),
+  group_name(pre_group_name, border_stone_400),
+  group_name(pre_group_name, rounded_md),
+  group_name(pre_group_name, px_1_5),
 );

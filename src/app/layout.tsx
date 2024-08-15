@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 
+import { FavIcons } from "@/components";
 import { PrismJSThemeLink, cn } from "@/framework";
 
 import { Fonts } from "./fonts";
@@ -21,6 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(styles.html, inter.className)}>
       <head>
+        <FavIcons />
+
         <Fonts />
 
         <PrismJSThemeLink />

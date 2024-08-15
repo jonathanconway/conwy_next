@@ -1,11 +1,11 @@
-import { Article } from "@/framework";
+import { Article as Article_ } from "@/framework";
 
 import { ARTICLE_HEADING_INTRO } from "../article-heading-intro";
 
 import * as styles from "./article-body.styles";
 
 export interface ArticleBodyProps {
-  readonly article: Article;
+  readonly article: Article_;
 }
 
 export function ArticleBody({

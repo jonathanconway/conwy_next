@@ -3,6 +3,7 @@ import type { MDXComponents } from "mdx/types";
 import {
   MdxA,
   MdxAside,
+  MdxBlockQuote,
   MdxCode,
   MdxH1,
   MdxH2,
@@ -19,6 +20,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     a: MdxA,
     aside: MdxAside,
+    blockquote: MdxBlockQuote,
     code: MdxCode,
     h1: MdxH1,
     h2: MdxH2,

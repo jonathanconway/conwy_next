@@ -1,4 +1,5 @@
-import { Fragment, PageLayout, ProjectsList } from "@/components";
+import { PageLayout, ProjectsList } from "@/components";
+import { site } from "@/content";
 import { ProjectsFragment } from "@/content/fragments";
 import * as projects from "@/content/projects";
 import { sortByDate } from "@/framework";
@@ -11,9 +12,9 @@ export default function Projects() {
       selectedNavPath="/projects"
       main={
         <>
-          <Fragment>
+          <div>
             <ProjectsFragment />
-          </Fragment>
+          </div>
 
           <ProjectsList items={projectModules} />
         </>
@@ -21,3 +22,7 @@ export default function Projects() {
     />
   );
 }
+
+export const metadata = {
+  title: `${site.title} - projects`,
+};

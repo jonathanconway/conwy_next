@@ -77,4 +77,5 @@ export const REDIRECTS: Redirects = {
   tailwindjs: "https://github.com/jonathanconway/tailwindjs",
   codeselectors: "https://usecodeselectors.surge.sh",
   testmatic: "https://testmatic-docs.surge.sh",
+  htmldoc: "http://usehtmldoc.surge.sh",
 };

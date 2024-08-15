@@ -1,10 +1,10 @@
-import { max_w_52, max_w_96 } from "@jonathanconway/tailwindjs";
+import { leading_8, max_w_52, max_w_96 } from "@jonathanconway/tailwindjs";
 
 export const container = () => `
-  mt-10
-  pt-10
+  mb-10
+  pb-10
   
-  border-t
+  border-b
   border-stone-300
   dark:border-stone-700
 
@@ -18,6 +18,7 @@ export const fragmentWrapper = () => `
   w-4/5
   md:w-3/5
   ${max_w_96}
+  ${leading_8}
 `;
 
 export const face = () => `
@@ -26,4 +27,5 @@ export const face = () => `
   border-2
   border-stone-900
   dark:border-stone-700
+  mt-4
 `;
