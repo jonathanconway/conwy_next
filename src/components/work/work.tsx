@@ -25,10 +25,9 @@ export function Work({ work }: WorkProps) {
 
       <div className={styles.main}>
         <div className={styles.blurb}>
-          <div>
-            <span className={styles.label}>Duties + Achievements</span>
-          </div>
-          {Content && <Content />}
+          <span className={styles.label}>Duties + Achievements</span>
+
+          <div className={styles.blurbContent}>{Content && <Content />}</div>
         </div>
 
         <div className={styles.aside}>
@@ -60,19 +59,21 @@ export function Work({ work }: WorkProps) {
             <div className={styles.feedbackContainer}>
               <span className={styles.label}>Feedback</span>
 
-              {feedbacks.map((feedback) => (
-                <div key={feedback.quote} className={styles.feedbackItem}>
-                  <div className={styles.feedbackItemQuote}>
-                    {feedback.quote}
-                  </div>
-
-                  {feedback.author && (
-                    <div className={styles.feedbackItemAuthor}>
-                      – {feedback.author}
+              <div className={styles.feedbackItems}>
+                {feedbacks.map((feedback) => (
+                  <div key={feedback.quote} className={styles.feedbackItem}>
+                    <div className={styles.feedbackItemQuote}>
+                      {feedback.quote}
                     </div>
-                  )}
-                </div>
-              ))}
+
+                    {feedback.author && (
+                      <div className={styles.feedbackItemAuthor}>
+                        – {feedback.author}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

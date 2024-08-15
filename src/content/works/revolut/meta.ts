@@ -3,7 +3,7 @@ import { WorkMeta } from "@/framework";
 export const meta: WorkMeta = {
   client: "Revolut",
   blurbShort:
-    "Owned Business Backoffice system onboarding >10k businesses monthly during a fast growth period.",
+    "Owned Business Backoffice onboarding >10k businesses monthly during a fast growth period.",
   startDate: "2020-02-20",
   endDate: "2024-02-20",
   jobTitle: "Senior Frontend Engineer",

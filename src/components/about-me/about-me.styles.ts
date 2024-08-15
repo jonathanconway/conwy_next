@@ -1,31 +1,48 @@
-import { leading_8, max_w_52, max_w_96 } from "@jonathanconway/tailwindjs";
+import {
+  border_2,
+  border_b,
+  border_stone_300,
+  border_stone_700,
+  border_stone_900,
+  cn,
+  dark,
+  flex,
+  flex_row,
+  gap_6,
+  items_start,
+  leading_8,
+  max_w_96,
+  md,
+  mt_4,
+  my_10,
+  pb_10,
+  rounded_full,
+  w_3_on_5,
+  w_4_on_5,
+  w_14,
+} from "@jonathanconway/tailwindjs";
 
-export const container = () => `
-  mb-10
-  pb-10
-  
-  border-b
-  border-stone-300
-  dark:border-stone-700
+export const container = cn(
+  my_10,
 
-  flex
-  flex-row
-  gap-6
-  items-start
-`;
+  flex,
+  flex_row,
+  gap_6,
+  items_start,
+  pb_10,
 
-export const fragmentWrapper = () => `
-  w-4/5
-  md:w-3/5
-  ${max_w_96}
-  ${leading_8}
-`;
+  border_b,
+  border_stone_300,
+  dark(border_stone_700),
+);
 
-export const face = () => `
-  w-14
-  rounded-full
-  border-2
-  border-stone-900
-  dark:border-stone-700
-  mt-4
-`;
+export const fragmentWrapper = cn(w_4_on_5, md(w_3_on_5), max_w_96, leading_8);
+
+export const face = cn(
+  w_14,
+  rounded_full,
+  border_2,
+  border_stone_900,
+  dark(border_stone_700),
+  mt_4,
+);

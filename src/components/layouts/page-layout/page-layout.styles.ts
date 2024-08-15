@@ -14,8 +14,6 @@ import {
   w_arbitrary,
 } from "@jonathanconway/tailwindjs";
 
-import { appContainer } from "@/components/app-container/app-container.styles";
-
 export const container = cn(
   flex,
   flex_col,
@@ -28,8 +26,6 @@ export const container = cn(
 
   pb_6,
   px_8,
-
-  appContainer,
 );
 
 export const mainWrapper = cn(flex, flex_col, flex_1, gap_8);

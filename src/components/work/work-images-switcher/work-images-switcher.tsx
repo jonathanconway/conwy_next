@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import { WorkImage, WorkMeta } from "@/framework";
@@ -13,19 +14,19 @@ interface WorkImagesSwitcherProps {
 }
 
 interface WorkImagesSwitcherState {
-  readonly selectedWorkImageUrl?: string;
+  readonly selectedWorkImage?: WorkImage;
 }
 
 export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
-  const [state, setState] = useState<WorkImagesSwitcherState>({});
+  const [state, setState] = useState<WorkImagesSwitcherState>({
+    selectedWorkImage: props.work.images[0],
+  });
 
-  const handleImageThumbnailClick = (imageUrl: string) => () => {
+  const handleImageThumbnailClick = (workImage: WorkImage) => () => {
     setState({
-      selectedWorkImageUrl: imageUrl,
+      selectedWorkImage: workImage,
     });
   };
-
-  // console.log("WorkImagesSwitcher", props.workImages);
 
   return (
     <div className={styles.container}>
@@ -33,18 +34,39 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
         {props.work.images.map((workImage, workImageIndex) => (
           <div
             key={`work-image-${workImageIndex}`}
-            className={styles.imagesNavItem}
-            onClick={handleImageThumbnailClick(workImage.imageUrl)}
+            className={styles.imagesNavItem(
+              workImage === state.selectedWorkImage,
+            )}
           >
-            <img src={workImageFullPath(props.work)(workImage)} />
+            <Image
+              className={styles.imagesNavItemImage}
+              onClick={handleImageThumbnailClick(workImage)}
+              src={workImageFullPath(props.work)(workImage)}
+              alt={workImage.title ?? `Image ${workImageIndex + 1}`}
+              priority
+              unoptimized={true}
+              width={190}
+              height={64}
+            />
           </div>
         ))}
       </nav>
 
-      {state.selectedWorkImageUrl && (
-        <div>
-          <img src={state.selectedWorkImageUrl} />
-        </div>
+      {state.selectedWorkImage && (
+        // <div className={styles.selectedItem}>
+        <Image
+          className={styles.selectedItemImage}
+          src={workImageFullPath(props.work)(state.selectedWorkImage)}
+          alt={
+            state.selectedWorkImage.title ??
+            `Image ${props.work.images.indexOf(state.selectedWorkImage) + 1}`
+          }
+          priority
+          unoptimized={true}
+          width={768}
+          height={480}
+        />
+        // </div>
       )}
     </div>
   );

@@ -9,6 +9,7 @@ import {
   h_14,
   hover,
   inline_block,
+  leading_5,
   right_3,
   rounded_md,
   text_sm,
@@ -33,7 +34,7 @@ export const title = cn(font_bold, group(hover.name, underline));
 
 export const date = text_xs;
 
-export const blurb = text_sm;
+export const blurb = cn(text_xs, leading_5);
 
 export const type = cn(
   absolute,

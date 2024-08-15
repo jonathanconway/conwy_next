@@ -4,6 +4,8 @@ import { cn } from "@jonathanconway/tailwindjs";
 import { isArray, isString } from "lodash";
 import Prism from "prismjs";
 import "prismjs/components/prism-java";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-mermaid";
 import "prismjs/components/prism-typescript";
 import "prismjs/plugins/line-highlight/prism-line-highlight.css";

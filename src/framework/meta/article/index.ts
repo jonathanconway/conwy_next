@@ -3,4 +3,3 @@ export * from "./article-meta";
 export * from "./article-meta.mocks";
 export * from "./articles";
 export * from "./articles.mocks";
-export * from "./article-list-item";

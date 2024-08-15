@@ -10,6 +10,7 @@ import {
   gap_3,
   group,
   h_14,
+  h_full,
   hover,
   inline_block,
   right_3,
@@ -21,6 +22,7 @@ import {
   underline,
   uppercase,
   w_16,
+  w_full,
 } from "@jonathanconway/tailwindjs";
 
 import * as listItemStyles from "../../list-item/list-item.styles";
@@ -32,6 +34,8 @@ export const mainColumn = listItemStyles.mainColumn;
 export const asideColumn = cn(w_16, flex, flex_col, gap_3);
 
 export const image = cn(rounded_md, h_14, text_stone_400, dark(text_stone_500));
+
+export const iconQuote = cn(w_full, h_full);
 
 export const title = cn(font_bold, group(hover.name, underline));
 

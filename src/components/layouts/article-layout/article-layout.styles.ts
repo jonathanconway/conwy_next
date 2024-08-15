@@ -5,8 +5,10 @@ import {
   flex,
   flex_row,
   gap_8,
+  hidden,
   left_0,
   m_auto,
+  md,
   ml_auto,
   mr_auto,
   mt_28,
@@ -22,8 +24,6 @@ import {
   w_arbitrary,
   w_full,
 } from "@jonathanconway/tailwindjs";
-
-import { appContainer } from "@/components/app-container/app-container.styles";
 
 export const headerWrapper = cn(
   absolute,
@@ -46,11 +46,12 @@ export const mainWrapper = cn(
   flex_row,
   gap_8,
   px_8,
-
-  appContainer,
 );
 
 export const asideWrapper = cn(
+  hidden,
+  md(flex),
+
   sticky,
 
   top_0,

@@ -1,6 +1,7 @@
 "use client";
 
-// import { loadPrismJSTheme } from "@/framework/client";
+import { loadPrismJSTheme } from "@/framework/client";
+
 import { THEMES, useSelectedTheme } from "../../../app/theme";
 
 const THEME_EMOJIS = {
@@ -13,7 +14,7 @@ const TOGGLE_THEME = {
   [THEMES.LIGHT]: THEMES.DARK,
 };
 
-// loadPrismJSTheme();
+loadPrismJSTheme();
 
 export function HeaderThemeSwitcher() {
   const { selectedTheme, setSelectedTheme } = useSelectedTheme();

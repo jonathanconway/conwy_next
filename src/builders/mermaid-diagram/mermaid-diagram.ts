@@ -66,7 +66,9 @@ async function generateMermaidFile(
 ) {
   mkDirSyncIfNotExists(mermaidPath);
 
-  const browser = await launch({});
+  const browser = await launch({
+    executablePath: "/opt/homebrew/bin/chromium",
+  });
 
   await browser.newPage();
 

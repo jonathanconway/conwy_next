@@ -1,0 +1,10 @@
+import { ArticleMeta } from "@/framework";
+
+export const meta: ArticleMeta = {
+  title: "Towards zero bugs",
+  blurb: "I am on a personal and professional mission to write bug-free code.",
+  date: "2019-12-01",
+  slug: "towards-zero-bugs",
+  type: "article",
+  tags: ["software-development"],
+};

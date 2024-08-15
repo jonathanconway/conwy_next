@@ -2,13 +2,13 @@ import Image from "next/image";
 
 import { AboutMeFragment } from "@/content/fragments";
 
-import * as styles from "./about-me.styles";
+import styles2 from "./about-me.module.css";
 
 export function FragmentsAboutMe() {
   return (
-    <div className={styles.container()}>
+    <div className={`${styles2.container}`}>
       <Image
-        className={styles.face()}
+        className={styles2.face}
         src="/face.png"
         alt="Jonathan's face pic"
         priority
@@ -17,7 +17,7 @@ export function FragmentsAboutMe() {
         height="100"
       />
 
-      <div className={styles.fragmentWrapper()}>
+      <div className={styles2.fragmentWrapper}>
         <AboutMeFragment />
       </div>
     </div>

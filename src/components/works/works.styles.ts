@@ -1,5 +1,8 @@
-export const container = () => `
+export const container = () => `  
   flex
-  flex-col
+  flex-row
+  flex-wrap
+  items-baseline
   gap-4
+  items-center
 `;

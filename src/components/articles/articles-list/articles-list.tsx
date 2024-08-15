@@ -2,7 +2,7 @@
 
 import { Post, getAreSomeSame, getItemsTags } from "@/framework/client";
 
-import { ArticleListItem, ArticleListItemProps } from "../article-list-item";
+import { ArticleListItem } from "../article-list-item";
 import { MicroListItem } from "../micro-list-item";
 import { ALL } from "../tag-filters";
 import { useTagFiltersSwitch } from "../tag-filters/use-tag-filters-switch.hook";
@@ -28,12 +28,7 @@ export function ArticlesList({ items }: ArticlesListProps) {
         .map((item) => {
           switch (item.meta.type) {
             case "article":
-              return (
-                <ArticleListItem
-                  key={item.meta.slug}
-                  {...(item.meta as ArticleListItemProps)}
-                />
-              );
+              return <ArticleListItem key={item.meta.slug} {...item.meta} />;
             case "micro":
               return <MicroListItem key={item.meta.slug} {...item.meta} />;
             default:

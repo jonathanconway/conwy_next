@@ -9,7 +9,9 @@ import {
   gap_1_5,
   gap_3,
   gap_4,
+  hidden,
   hover,
+  md,
   min_h_40,
   relative,
   w_24,
@@ -37,4 +39,4 @@ export const container = cn(
 
 export const mainColumn = cn(w_44, flex, flex_col, gap_1_5);
 
-export const asideColumn = cn(w_24, flex, flex_col, gap_3);
+export const asideColumn = cn(flex, w_24, flex_col, gap_3);

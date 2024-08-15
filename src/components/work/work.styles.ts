@@ -1,4 +1,5 @@
 import {
+  all,
   cn,
   flex,
   flex_1,
@@ -8,11 +9,17 @@ import {
   gap_2,
   gap_4,
   gap_5,
+  gap_6,
+  gap_8,
   gap_10,
   grow,
+  leading_5,
+  leading_7,
+  mr_0,
   mt_0,
   mt_1,
   mt_2,
+  pr_0,
   relative,
   text_sm,
   text_xs,
@@ -22,9 +29,9 @@ import {
 
 import * as labelStyles from "../label/label.styles";
 
-export const container = cn(relative, flex, flex_col, gap_5);
+export const container = cn(relative, flex, flex_col, gap_8);
 
-export const main = cn(flex, flex_1, flex_row, gap_4);
+export const main = cn(flex, flex_1, flex_row, gap_6);
 
 export const header = cn(flex, flex_col, gap_2);
 
@@ -33,6 +40,8 @@ export const client = mt_0;
 export const jobTitle = cn(text_sm, font_semibold);
 
 export const blurb = cn(flex_1);
+
+export const blurbContent = cn(all(mt_2), all(pr_0), all(leading_5));
 
 export const aside = cn(w_1_on_2, flex, flex_col, gap_4);
 
@@ -44,11 +53,13 @@ export const techCategory = "";
 
 export const techItem = "";
 
-export const feedbackContainer = cn(grow, w_1_on_2);
+export const feedbackContainer = cn(grow, w_1_on_2, flex, flex_col, gap_4);
 
-export const feedbackItem = mt_2;
+export const feedbackItems = cn(flex, flex_col, gap_4);
 
-export const feedbackItemQuote = cn(text_sm, whitespace_pre_line);
+export const feedbackItem = "";
+
+export const feedbackItemQuote = cn(text_xs, whitespace_pre_line, leading_5);
 
 export const feedbackItemAuthor = cn(mt_1, text_xs);
 

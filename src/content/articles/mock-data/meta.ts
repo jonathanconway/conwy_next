@@ -1,7 +1,5 @@
 import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
-import content from "./content.mdx";
-
 export const meta: ArticleMeta = {
   title: "Uses of mock data",
   blurb: "Mock data can boost developer productivity and enjoyment",

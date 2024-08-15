@@ -17,10 +17,9 @@ export const meta: WorkMeta = {
   tags: [],
   type: "work",
   images: [
-    { imageUrl: "subhub-promo.png", notes: [] },
-    { imageUrl: "agent-subhub-2.png", notes: [] },
-    { imageUrl: "agent-subhub-1.svg", notes: [] },
-    { imageUrl: "drawings.png", notes: [] },
+    { imageUrl: "optus-1.svg", notes: [] },
+    { imageUrl: "optus-2.svg", notes: [] },
+    { imageUrl: "optus-3.png", notes: [] },
   ],
   techs: [
     {

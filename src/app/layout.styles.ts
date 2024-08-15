@@ -1,5 +1,7 @@
 import {
+  bg_blue_100,
   bg_stone_100,
+  bg_stone_700,
   bg_stone_900,
   bg_white,
   dark,
@@ -10,6 +12,7 @@ import {
   overflow_y_visible,
   relative,
   scroll_m_10,
+  selection,
 } from "@jonathanconway/tailwindjs";
 
 import { cn } from "@/framework";
@@ -31,4 +34,7 @@ export const body = cn(
 
   bg_stone_100,
   dark(bg_stone_900),
+
+  selection(bg_blue_100),
+  dark(selection(bg_stone_700)),
 );

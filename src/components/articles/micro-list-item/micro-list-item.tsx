@@ -1,4 +1,4 @@
-import { Icon } from "@/components/icon";
+import { Icon, IconTypes } from "@/components/icon";
 import { MicroMeta } from "@/framework/client";
 
 import { Date } from "../../date";
@@ -20,7 +20,7 @@ export function MicroListItem(props: MicroListItemProps) {
       </div>
       <div className={styles.asideColumn}>
         <div className={styles.image}>
-          <Icon icon="quote" className="w-full h-full" />
+          <Icon icon={IconTypes.Quote} className={styles.iconQuote} />
         </div>
 
         {props.socialLinks && <SocialLinks socialLinks={props.socialLinks} />}

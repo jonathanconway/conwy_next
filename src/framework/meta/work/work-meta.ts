@@ -24,6 +24,7 @@ export interface WorkMeta extends MetaBase {
   readonly feedbacks: readonly {
     readonly quote: string;
     readonly author?: string;
+    readonly date?: string;
   }[];
 
   readonly type: "work";

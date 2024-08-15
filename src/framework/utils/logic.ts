@@ -1,3 +1,3 @@
-export function ifThen<T>(conditional?: boolean, ifTrue?: T) {
-  return conditional ? ifTrue : null;
+export function iif<T>(conditional?: boolean, ifTrue?: T) {
+  return conditional ? ifTrue : undefined;
 }

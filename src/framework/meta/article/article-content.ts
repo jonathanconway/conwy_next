@@ -1,10 +1,10 @@
 import { MDXContent } from "mdx/types";
 
-import { ArticleMeta } from "./article";
+import { ArticleMeta } from "./article-meta";
 
 export async function getArticleContent(
-  article: ArticleMeta,
+  articleMeta: ArticleMeta,
 ): Promise<MDXContent> {
-  return (await import(`@/content/articles/${article.meta.slug}/content.mdx`))
+  return (await import(`@/content/articles/${articleMeta.slug}/content.mdx`))
     .default;
 }
