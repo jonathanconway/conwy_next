@@ -28,6 +28,8 @@ export function WorkListItem({
     endDate,
   },
 }: WorkListItemProps) {
+  const techNames = techs.map((tech) => tech.categoryName).join(", ");
+
   return (
     <Link
       className={styles.container}
@@ -44,9 +46,13 @@ export function WorkListItem({
 
         <div className={styles.title}>{client}</div>
 
-        <div className={styles.subTitle}>{jobTitle}</div>
+        {/* <div className={styles.subTitle}>{jobTitle}</div> */}
 
         <p className={styles.blurb}>{blurbShort}</p>
+
+        <p className={styles.techs} title={techNames}>
+          Tech: {techNames}
+        </p>
       </div>
       <div className={styles.asideColumn}>
         <Image

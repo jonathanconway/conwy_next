@@ -8,14 +8,13 @@ import {
   font_semibold,
   gap_2,
   gap_4,
-  gap_5,
   gap_6,
   gap_8,
-  gap_10,
   grow,
+  inline_block,
   leading_5,
-  leading_7,
-  mr_0,
+  ml_2,
+  mr_2,
   mt_0,
   mt_1,
   mt_2,
@@ -51,7 +50,11 @@ export const techContainer = cn(grow, w_1_on_2);
 
 export const techCategory = "";
 
-export const techItem = "";
+export const techListItem = cn(mt_2, text_sm);
+
+export const techSubList = cn(ml_2);
+
+export const techSubListItem = cn(text_xs, inline_block, mr_2);
 
 export const feedbackContainer = cn(grow, w_1_on_2, flex, flex_col, gap_4);
 

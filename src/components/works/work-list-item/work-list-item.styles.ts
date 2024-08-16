@@ -10,8 +10,10 @@ import {
   hover,
   inline_block,
   leading_5,
+  overflow_hidden,
   right_3,
   rounded_md,
+  text_ellipsis,
   text_stone_50,
   text_stone_400,
   text_stone_500,
@@ -19,6 +21,7 @@ import {
   text_xs,
   underline,
   uppercase,
+  whitespace_nowrap,
 } from "@jonathanconway/tailwindjs";
 
 import { text } from "@/components/text/text.styles";
@@ -46,6 +49,14 @@ export const subTitle = cn(text_xs, font_bold, group(hover.name, underline));
 export const date = text_xs;
 
 export const blurb = cn(text_xs, leading_5);
+
+export const techs = cn(
+  text_xs,
+  leading_5,
+  whitespace_nowrap,
+  overflow_hidden,
+  text_ellipsis,
+);
 
 export const type = cn(
   absolute,

@@ -1,9 +1,8 @@
-import { ImageCascade, MdxH2 } from "@/components";
-import { WorkMeta, Work as Work_ } from "@/framework";
+import { MdxH2 } from "@/components";
+import { Work as Work_ } from "@/framework";
 
 import { WorkImagesSwitcher } from "./work-images-switcher";
 import * as styles from "./work.styles";
-import { workImageFullPath } from "./work.utils";
 
 interface WorkProps {
   readonly work: Work_;
@@ -37,14 +36,14 @@ export function Work({ work }: WorkProps) {
               <div>
                 <ul>
                   {techs.map((tech) => (
-                    <li key={tech.categoryName} className="mt-2 text-sm">
+                    <li key={tech.categoryName} className={styles.techListItem}>
                       {tech.categoryName}
 
-                      <ul className="ml-2">
+                      <ul className={styles.techSubList}>
                         {tech.items.map((item) => (
                           <li
                             key={item.itemName}
-                            className="text-xs inline-block mr-2"
+                            className={styles.techSubListItem}
                           >
                             {item.itemName}
                           </li>
@@ -56,25 +55,27 @@ export function Work({ work }: WorkProps) {
               </div>
             </div>
 
-            <div className={styles.feedbackContainer}>
-              <span className={styles.label}>Feedback</span>
+            {feedbacks.length > 0 ? (
+              <div className={styles.feedbackContainer}>
+                <span className={styles.label}>Feedback</span>
 
-              <div className={styles.feedbackItems}>
-                {feedbacks.map((feedback) => (
-                  <div key={feedback.quote} className={styles.feedbackItem}>
-                    <div className={styles.feedbackItemQuote}>
-                      {feedback.quote}
-                    </div>
-
-                    {feedback.author && (
-                      <div className={styles.feedbackItemAuthor}>
-                        – {feedback.author}
+                <div className={styles.feedbackItems}>
+                  {feedbacks.map((feedback) => (
+                    <div key={feedback.quote} className={styles.feedbackItem}>
+                      <div className={styles.feedbackItemQuote}>
+                        {feedback.quote}
                       </div>
-                    )}
-                  </div>
-                ))}
+
+                      {feedback.author && (
+                        <div className={styles.feedbackItemAuthor}>
+                          – {feedback.author}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : null}
           </div>
         </div>
       </div>

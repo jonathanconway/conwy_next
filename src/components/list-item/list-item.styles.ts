@@ -25,7 +25,6 @@ export const container = cn(
   relative,
 
   w_72,
-  min_h_40,
 
   boxStyles.container,
 

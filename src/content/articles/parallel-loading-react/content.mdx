@@ -26,7 +26,19 @@ The problem was: how to load a list of items, then load details of each item, ma
 
 The simplest way would be to await all the requests and then render them together at once.
 
-[![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/vfxqexp62yw29w5co3bf.png)](https://mermaid.live/edit#eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1N0YXJ0XVxuICAgICAgICBBIC0tPiBCKEZldGNoIGl0ZW1zIGxpc3QpXG4gICAgICAgIEIgLS0-IEMoRmV0Y2ggaXRlbSBuIGRldGFpbHMpXG4gICAgQyAtLT4gRHtOZXh0IGl0ZW0_fVxuICAgIEQgLS0-fFllc3wgQ1xuICAgIEQgLS0-fE5vfCBFKENvbWJpbmUgaXRlbXMgbGlzdCB3aXRoIGRldGFpbHMpXG4gICAgICAgIEUgLS0-IEYoUmVuZGVyIGl0ZW1zIGxpc3Qgd2l0aCBkZXRhaWxzKVxuICAgICAgICBGIC0tPiBHW0RvbmVdXG4gICIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJkZWZhdWx0XCJcbn0iLCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9)
+{/* 
+graph TD
+    A[Start]
+        A --> B(Fetch items list)
+        B --> C(Fetch item n details)
+    C --> D{Next item?}
+    D -->|Yes| C
+    D -->|No| E(Combine items list with details)
+        E --> F(Render items list with details)
+        F --> G[Done]
+*/}
+
+![Flowchart depicting synchronous loading of items](/images/articles/parallel-loading-react/sync-loading.svg)
 
 Here is an implementation which uses `Promise.all`.
 
@@ -75,7 +87,19 @@ It would be better if we could
 1. Load and quickly render the list of items without the details, then
 2. Load and render the detail for each item as soon as each response is received
 
-[![](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ohogu4cawjiyhhd7hu4i.png)](https://mermaid.live/edit/#eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1N0YXJ0XVxuICAgICAgICBBIC0tPiBCKEZldGNoIGl0ZW1zIGxpc3QpXG4gICAgICAgIEIgLS0-IEMoUmVuZGVyIGl0ZW1zIGxpc3QpXG4gICAgICAgIEMgLS0-IEQoRmV0Y2ggaXRlbSBuIGRldGFpbHMpXG4gICAgICAgIEQgLS0-IEUoUmVuZGVyIGl0ZW0gbiBkZXRhaWxzKVxuICAgIEUgLS0-IEZ7TmV4dCBpdGVtP31cbiAgICBGIC0tPnxZZXN8IERcbiAgICBGIC0tPnxOb3wgR1tGaW5pc2hdXG4gICIsIm1lcm1haWQiOiJ7XG4gIFwidGhlbWVcIjogXCJkYXJrXCJcbn0iLCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6dHJ1ZX0)
+{/* 
+graph TD
+    A[Start]
+        A --> B(Fetch items list)
+        B --> C(Render items list)
+        C --> D(Fetch item n details)
+        D --> E(Render item n details)
+    E --> F{Next item?}
+    F -->|Yes| D
+    F -->|No| G[Finish]  
+*/}
+
+![Flowchart depicting parallel loading of items](/images/articles/parallel-loading-react/async-loading.svg)
 
 ## Asynchronously combining results
 
