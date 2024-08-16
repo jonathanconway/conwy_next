@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { useState } from "react";
 
-import { Date, Fragment, ImageCascade, Link, MdxH2 } from "@/components";
+import { Link } from "@/components";
 import { WorkMeta } from "@/framework";
 
 import * as styles from "./work-list-item.styles";
@@ -30,8 +29,13 @@ export function WorkListItem({
   },
 }: WorkListItemProps) {
   return (
-    <div className={styles.container}>
-      <Link className={styles.mainColumn} href={`work/${slug}`} target="">
+    <Link
+      className={styles.container}
+      classNameOverride
+      href={`work/${slug}`}
+      target=""
+    >
+      <div className={styles.mainColumn}>
         {/* <div className={styles.date}>
           <Date format="MMM yyyy">{startDate}</Date>
           <span> - </span>
@@ -40,8 +44,10 @@ export function WorkListItem({
 
         <div className={styles.title}>{client}</div>
 
+        <div className={styles.subTitle}>{jobTitle}</div>
+
         <p className={styles.blurb}>{blurbShort}</p>
-      </Link>
+      </div>
       <div className={styles.asideColumn}>
         <Image
           className={styles.image}
@@ -57,6 +63,6 @@ export function WorkListItem({
 
         {/* <span className={styles.type}>{type}</span> */}
       </div>
-    </div>
+    </Link>
   );
 }

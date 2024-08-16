@@ -21,12 +21,12 @@ export function ProjectListItem(props: ProjectListItemProps) {
   const target = props.redirectUrl ? "_blank" : undefined;
 
   return (
-    <div className={styles.container}>
-      <Link className={styles.mainColumn} href={href} target={target}>
+    <Link className={styles.container} href={href} target={target}>
+      <div className={styles.mainColumn}>
         <div className={styles.title}>{props.title}</div>
 
         <p className={styles.blurb}>{props.blurb}</p>
-      </Link>
+      </div>
       <div className={styles.asideColumn}>
         <Image
           className={styles.image}
@@ -42,6 +42,6 @@ export function ProjectListItem(props: ProjectListItemProps) {
 
         <span className={styles.type}>{props.subType}</span>
       </div>
-    </div>
+    </Link>
   );
 }

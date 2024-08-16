@@ -2,6 +2,7 @@ import { TypeOfConst } from "@/framework";
 
 export const IconTypes = {
   Dev: "dev",
+  Email: "email",
   Github: "github",
   LinkedIn: "linkedin",
   Mastodon: "mastodon",
@@ -9,6 +10,7 @@ export const IconTypes = {
   Quote: "quote",
   Substack: "substack",
   Twitter: "twitter",
+  Telegram: "telegram",
   X: "x",
 } as const;
 

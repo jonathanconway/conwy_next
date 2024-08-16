@@ -12,17 +12,26 @@ import {
   leading_5,
   right_3,
   rounded_md,
-  text_sm,
+  text_stone_50,
   text_stone_400,
   text_stone_500,
+  text_stone_950,
   text_xs,
   underline,
   uppercase,
 } from "@jonathanconway/tailwindjs";
 
+import { text } from "@/components/text/text.styles";
+
 import * as listItemStyles from "../../list-item/list-item.styles";
 
-export const container = cn(listItemStyles.container);
+export const container = cn(
+  listItemStyles.container,
+  text_stone_950,
+  dark(text_stone_50),
+  hover(text_stone_950),
+  hover(dark(text_stone_50)),
+);
 
 export const mainColumn = listItemStyles.mainColumn;
 
@@ -31,6 +40,8 @@ export const asideColumn = listItemStyles.asideColumn;
 export const image = cn(rounded_md, h_14);
 
 export const title = cn(font_bold, group(hover.name, underline));
+
+export const subTitle = cn(text_xs, font_bold, group(hover.name, underline));
 
 export const date = text_xs;
 

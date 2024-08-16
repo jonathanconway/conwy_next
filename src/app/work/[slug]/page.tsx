@@ -4,7 +4,7 @@ import { PageLayout } from "@/components";
 import { Work } from "@/components/work";
 import { site } from "@/content";
 import * as works from "@/content/works";
-import { WorkMeta, Work as Work_ } from "@/framework";
+import { Work as Work_ } from "@/framework";
 
 interface PageProps {
   readonly params: { readonly slug: string };
@@ -19,7 +19,7 @@ export default async function Page({ params: { slug } }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const allArticleMetas = Object.values(works).map((item) => item);
+  const allArticleMetas = Object.values(works).map((item) => item.meta);
   return allArticleMetas;
 }
 

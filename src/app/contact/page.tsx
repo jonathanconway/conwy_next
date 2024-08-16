@@ -1,4 +1,4 @@
-import { PageLayout } from "@/components";
+import { ContactDetails, PageLayout, TwoColLayout } from "@/components";
 import { site } from "@/content";
 import { ContactFragment } from "@/content/fragments/contact";
 
@@ -7,9 +7,14 @@ export default function Contact() {
     <PageLayout
       selectedNavPath="/contact"
       main={
-        <div>
-          <ContactFragment />
-        </div>
+        <TwoColLayout>
+          <div>
+            <ContactFragment />
+
+            <ContactDetails />
+          </div>
+          <div data-tf-live="01J5CTN8SVZAQS11N9ZXMN3RRQ"></div>
+        </TwoColLayout>
       }
     />
   );

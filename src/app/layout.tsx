@@ -27,6 +27,8 @@ export default function RootLayout({
         <Fonts />
 
         <PrismJSThemeLink />
+
+        <script src="//embed.typeform.com/next/embed.js" defer></script>
       </head>
       <body className={cn(styles.body)}>{children}</body>
     </html>

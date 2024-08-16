@@ -13,7 +13,8 @@
     "start:watch": "concurrently \"npm run start\" \"npm run build:watch\"",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy": "npx surge ./out conwy.surge.sh"
   },
   "dependencies": {
     "@jonathanconway/tailwindjs": "^0.0.18",

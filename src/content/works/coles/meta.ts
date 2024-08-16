@@ -35,7 +35,11 @@ export const meta: WorkMeta = {
   slug: "coles",
   tags: [],
   type: "work",
-  images: [{ imageUrl: "coles-1.png", notes: [] }],
+  images: [
+    { imageUrl: "coles-1.png", notes: [] },
+    { imageUrl: "coles-2.png", notes: [] },
+    { imageUrl: "coles-3.png", notes: [] },
+  ],
   techs: [
     {
       categoryName: "react",

@@ -12,3 +12,15 @@ export function cn(...inputs: any[]) {
     ""
   );
 }
+
+export function cnOverride(
+  classNames: string,
+  classNameProp: string,
+  classNameOverride?: boolean,
+) {
+  if (classNameOverride) {
+    return classNameProp;
+  } else {
+    return cn(classNames, classNameProp);
+  }
+}

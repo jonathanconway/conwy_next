@@ -1,14 +1,11 @@
 import {
   absolute,
-  bg_stone_200,
-  bg_stone_800,
   bottom_3,
   cn,
   dark,
   font_bold,
   font_medium,
   group,
-  h_14,
   hover,
   inline_block,
   right_3,
@@ -19,7 +16,6 @@ import {
   text_xs,
   underline,
   uppercase,
-  w_96,
 } from "@jonathanconway/tailwindjs";
 
 import * as listItemStyles from "../../list-item/list-item.styles";

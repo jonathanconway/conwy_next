@@ -1,5 +1,5 @@
 const { basename, dirname, join } = require("path");
-const { startCase, last } = require("lodash");
+const { camelCase, last, startCase } = require("lodash");
 
 const ROOT_DIR = "./";
 
@@ -9,6 +9,10 @@ function dir() {
 
 function name() {
   return basename(last(process.argv)).split(".")[0];
+}
+
+function nameCamel() {
+  return camelCase(name()).replaceAll(" ", "");
 }
 
 function namePascal() {
@@ -26,6 +30,7 @@ module.exports = {
   helpers: {
     dir,
     name,
+    nameCamel,
     namePascal,
     nameSentence,
   }
