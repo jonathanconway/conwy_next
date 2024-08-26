@@ -8,6 +8,7 @@ import {
   group,
   hover,
   inline_block,
+  min_h_40,
   right_3,
   rounded_md,
   text_sm,
@@ -20,7 +21,7 @@ import {
 
 import * as listItemStyles from "../../list-item/list-item.styles";
 
-export const container = cn(listItemStyles.container);
+export const container = cn(listItemStyles.container, min_h_40);
 
 export const mainColumn = listItemStyles.mainColumn;
 

@@ -2,9 +2,10 @@ import { WorkMeta } from "@/framework";
 
 export const meta: WorkMeta = {
   client: "Coles",
-  blurbShort: "Led Frontend build of 1site for Coles Account and Coles Plus.",
+  blurbShort:
+    "Led Frontend build of 1site for Coles Plus Account and related sign-up incentivisation features.",
   startDate: "2023-09-20",
-  endDate: "2024-03-22",
+  endDate: "2023-11-08",
   jobTitle: "Senior Frontend Engineer",
   feedbacks: [
     {

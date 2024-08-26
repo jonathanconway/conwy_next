@@ -14,7 +14,7 @@ import {
 
 import * as labelStyles from "../../label/label.styles";
 import * as linkStyles from "../../link/link.styles";
-import * as textStyles from "../../text/text.styles";
+import * as textStyles from "../../text/text.mixin.styles";
 
 export const container = cn(flex, flex_col, gap_4);
 

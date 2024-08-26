@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-import { Article, ArticleLayout, ArticleSidebar } from "@/components";
+import { Article } from "@/components";
 import { site } from "@/content";
 import * as articles from "@/content/articles";
 import { Article as Article_ } from "@/framework";
@@ -13,12 +13,7 @@ export default async function Page({ params: { slug } }: PageProps) {
   const articleModule = await import(`@/content/articles/${slug}`);
   const article = Object.values(articleModule)[0] as Article_;
 
-  return (
-    <ArticleLayout
-      main={<Article article={article} />}
-      aside={<ArticleSidebar article={article} />}
-    />
-  );
+  return <Article article={article} />;
 }
 
 export async function generateStaticParams() {

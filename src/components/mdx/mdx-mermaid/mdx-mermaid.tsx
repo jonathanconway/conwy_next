@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import {
-  generateMermaidDiagramImage,
+  buildMermaidDiagramImage,
   generateMermaidDiagramImageUrl,
 } from "@/builders";
 import { Meta } from "@/framework";
@@ -23,7 +23,7 @@ export function MdxMermaid({
   alt,
   ...restProps
 }: MdxMermaidProps) {
-  generateMermaidDiagramImage(children, item);
+  buildMermaidDiagramImage(children, item);
 
   const mermaidUrl = generateMermaidDiagramImageUrl(children, item);
 

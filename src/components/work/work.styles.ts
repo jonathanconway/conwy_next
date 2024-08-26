@@ -66,4 +66,6 @@ export const feedbackItemQuote = cn(text_xs, whitespace_pre_line, leading_5);
 
 export const feedbackItemAuthor = cn(mt_1, text_xs);
 
+export const imageCascadeContainer = cn();
+
 export const label = labelStyles.label;

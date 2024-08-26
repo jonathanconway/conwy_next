@@ -1,8 +1,9 @@
-import { MdxH2 } from "@/components";
+import { ImageCascade, MdxH2 } from "@/components";
 import { Work as Work_ } from "@/framework";
 
 import { WorkImagesSwitcher } from "./work-images-switcher";
 import * as styles from "./work.styles";
+import { workImageFullPath } from "./work.utils";
 
 interface WorkProps {
   readonly work: Work_;
@@ -13,6 +14,11 @@ export function Work({ work }: WorkProps) {
     meta: { client, jobTitle, images, techs, feedbacks },
     content: Content,
   } = work;
+
+  const workImages = images.map((image) => ({
+    ...image,
+    imageUrl: workImageFullPath(work.meta)(image),
+  }));
 
   return (
     <div className={styles.container}>
@@ -77,11 +83,11 @@ export function Work({ work }: WorkProps) {
               </div>
             ) : null}
           </div>
-        </div>
-      </div>
 
-      <div>
-        <WorkImagesSwitcher work={work.meta} />
+          <div className={styles.imageCascadeContainer}>
+            <ImageCascade images={workImages} />
+          </div>
+        </div>
       </div>
     </div>
   );

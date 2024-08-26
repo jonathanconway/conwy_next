@@ -1,1 +1,1 @@
-Builders are functions which run server-side and generate public assets from source material.
+Builders are functions which run at build-time and generate code, public assets or other outputs.

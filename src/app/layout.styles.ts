@@ -17,7 +17,7 @@ import {
 
 import { cn } from "@/framework";
 
-import * as textStyles from "../components/text/text.styles";
+import * as textStyles from "../components/text/text.mixin.styles";
 
 export const html = cn(bg_stone_900, dark(bg_white), h_screen);
 

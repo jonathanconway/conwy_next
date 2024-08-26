@@ -12,7 +12,7 @@ export function ArticleBody({
   article: { content: Content },
 }: ArticleBodyProps) {
   return (
-    <div>
+    <div className={styles.container}>
       <h2 className={styles.topHeading} id={ARTICLE_HEADING_INTRO.id}>
         {ARTICLE_HEADING_INTRO.title}
       </h2>

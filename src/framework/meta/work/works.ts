@@ -7,5 +7,5 @@ export function pickWorkHistories(workHistories: Record<string, WorkMeta>) {
 }
 
 export function sortWorkHistories(workHistories: readonly WorkMeta[]) {
-  return orderBy(workHistories, "date", "desc");
+  return orderBy(workHistories, "endDate", "desc");
 }
