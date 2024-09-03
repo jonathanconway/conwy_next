@@ -1,9 +1,9 @@
 ---
-to: src/components/<%= name %>/<%= name %>.types.ts
+to: src/components/<%= h.namePartBranches() %>/<%= h.namePartLeaf() %>.types.ts
 ---
 
 import { ReactNode } from "react";
 
-export interface <%= h.changeCase.pascalCase(name) %>Props {
+export interface <%= h.namePascal() %>Props {
   readonly children?: ReactNode;
 }

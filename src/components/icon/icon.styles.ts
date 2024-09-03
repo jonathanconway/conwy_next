@@ -6,8 +6,6 @@ import {
   text_stone_950,
 } from "@jonathanconway/tailwindjs";
 
-export const iconSvg = cn(
-  text_stone_950,
-  dark(text_stone_50),
-  pointer_events_none,
-);
+export const iconSvgBase = cn(pointer_events_none);
+
+export const iconSvg = cn(iconSvgBase, text_stone_950, dark(text_stone_50));

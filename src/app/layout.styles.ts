@@ -6,12 +6,10 @@ import {
   bg_white,
   dark,
   flex,
-  gap_8,
   gap_16,
   h_screen,
   overflow_y_visible,
   relative,
-  scroll_m_10,
   selection,
 } from "@jonathanconway/tailwindjs";
 

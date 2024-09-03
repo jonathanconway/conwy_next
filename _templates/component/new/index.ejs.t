@@ -1,7 +1,7 @@
 ---
-to: src/components/<%= name %>/index.ts
+to: src/components/<%= h.namePartBranches() %>/index.ts
 ---
 
-export * from "./<%= name %>";
-export * from "./<%= name %>.types";
-export * from "./<%= name %>.mocks";
+export * from "./<%= h.namePartLeaf() %>";
+export * from "./<%= h.namePartLeaf() %>.types";
+export * from "./<%= h.namePartLeaf() %>.mocks";

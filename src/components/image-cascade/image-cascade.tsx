@@ -53,18 +53,10 @@ export function ImageCascade(props: ImageCascadeProps) {
         </div>
       ))}
 
-      {/* <div className={styles.imagesNav}>
-        <button className={styles.imagesNavButton} title="Previous">
-          ◀
-        </button>
-        <button className={styles.imagesNavButton} title="Next">
-          ▶
-        </button>
-      </div> */}
-
       {state.openImage && (
         <ImageModal
-          image={state.openImage}
+          workImages={props.images}
+          defaultSelectedWorkImage={state.openImage}
           onClose={handleImageModalCloseClick}
         />
       )}

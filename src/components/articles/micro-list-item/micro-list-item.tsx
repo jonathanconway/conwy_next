@@ -1,8 +1,10 @@
-import { Icon, IconTypes } from "@/components/icon";
 import { MicroMeta } from "@/framework/client";
 
 import { Date } from "../../date";
+import { Icon, IconTypes } from "../../icon";
+import { Link } from "../../link";
 import { SocialLinks } from "../../social-links";
+import { TextExpandable } from "../../text";
 
 import * as styles from "./micro-list-item.styles";
 
@@ -16,7 +18,19 @@ export function MicroListItem(props: MicroListItemProps) {
           <Date>{props.date}</Date>
         </div>
 
-        <div className={styles.blurb}>{props.blurb}</div>
+        <TextExpandable height="5rem">
+          <div className={styles.blurb}>{props.blurb}</div>
+
+          {props.mainLink && (
+            <Link
+              className={styles.mainLink}
+              href={props.mainLink}
+              target="_blank"
+            >
+              {props.mainLink}
+            </Link>
+          )}
+        </TextExpandable>
       </div>
       <div className={styles.asideColumn}>
         <div className={styles.image}>

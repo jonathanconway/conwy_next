@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-// import { isClient } from "@/framework/client";
 import { setSelectedThemeClass } from "./selected-theme-class-setter";
 import {
   getSelectedThemeFromLocalStorageOrDefault,

@@ -47,7 +47,7 @@ export function WorkFeedbackCarousel(props: WorkFeedbackCarouselProps) {
           <IconButton
             icon={IconTypes.ArrowChevronLeft}
             tooltip={{ key: "previous", contents: "Previous" }}
-            onClick={handlePreviousClick(selectedWorkFeedback)}
+            onClick={handlePreviousClick}
           />
 
           {sortedWorkFeedbacks.map((tabFeedback, tabFeedbackIndex) => (
@@ -64,7 +64,7 @@ export function WorkFeedbackCarousel(props: WorkFeedbackCarouselProps) {
           <IconButton
             icon={IconTypes.ArrowChevronRight}
             tooltip={{ key: "next", contents: "Next" }}
-            onClick={handleNextClick(selectedWorkFeedback)}
+            onClick={handleNextClick}
           />
         </div>
       )}

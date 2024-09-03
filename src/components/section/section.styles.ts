@@ -2,13 +2,13 @@ import {
   cn,
   flex,
   flex_col,
-  gap_4,
+  gap_2,
   grow,
-  w_1_on_2,
+  w_full,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../label/label.styles";
 
-export const container = cn(grow, w_1_on_2, flex, flex_col, gap_4);
+export const container = cn(grow, w_full, flex, flex_col, gap_2);
 
 export const label = labelStyles.label;

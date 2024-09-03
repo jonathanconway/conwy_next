@@ -17,7 +17,7 @@ interface IconButtonProps
 }
 
 function IconButton_(props: IconButtonProps) {
-  const { className, icon, ...restProps } = props;
+  const { className, icon, isSelected, ...restProps } = props;
 
   return (
     <button

@@ -9,6 +9,7 @@ import {
   font_medium,
   gap_3,
   group,
+  group_name,
   h_14,
   h_full,
   hover,
@@ -25,6 +26,7 @@ import {
   w_full,
 } from "@jonathanconway/tailwindjs";
 
+import * as linkStyles from "../../link/link.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
 export const container = listItemStyles.container;
@@ -37,11 +39,13 @@ export const image = cn(rounded_md, h_14, text_stone_400, dark(text_stone_500));
 
 export const iconQuote = cn(w_full, h_full);
 
-export const title = cn(font_bold, group(hover.name, underline));
+export const title = cn(font_bold, group_name(hover.name, underline));
 
 export const date = cn(text_xs);
 
 export const blurb = cn(text_sm);
+
+export const mainLink = cn(linkStyles.link, text_xs);
 
 export const type = cn(
   absolute,

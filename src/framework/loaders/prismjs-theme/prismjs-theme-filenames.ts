@@ -1,4 +1,4 @@
-import { Theme } from "@/app/theme";
+import { Theme } from "@/components/theme";
 
 export const PRISM_JS_THEME_CSS_FILENAME_BY_THEME: Record<Theme, string> = {
   dark: "prism-dark.min.css",

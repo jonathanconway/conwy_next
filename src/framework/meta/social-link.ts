@@ -9,6 +9,7 @@ export const SocialLinkTypes = {
   Substack: "substack",
   Twitter: "twitter",
   X: "x",
+  ProductHunt: "product-hunt",
 } as const;
 
 export type SocialLinkType = TypeOfConst<typeof SocialLinkTypes>;

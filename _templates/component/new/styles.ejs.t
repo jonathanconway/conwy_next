@@ -1,9 +1,7 @@
 ---
-to: src/components/<%= name %>/<%= name %>.styles.ts
+to: src/components/<%= h.namePartBranches() %>/<%= h.namePartLeaf() %>.styles.ts
 ---
 
-import styled from "styled-components";
-import { <%= h.changeCase.pascalCase(name) %>Props } from "./<%= name %>.types";
+import { cn } from "@jonathanconway/tailwindjs";
 
-export const <%= h.changeCase.pascalCase(name) %> = styled.div<<%= h.changeCase.pascalCase(name) %>Props>`
-`;
+export const container = cn();

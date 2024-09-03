@@ -9,4 +9,5 @@ export interface PostMetaBase extends MetaBase {
   readonly blurb: string;
   readonly shortBlurb?: string;
   readonly mainImage?: string;
+  readonly mainLink?: string;
 }

@@ -14,14 +14,11 @@ export interface WorkMeta extends MetaBase {
 
   readonly images: readonly WorkImage[];
 
-  readonly techs: readonly {
-    readonly categoryName: string;
-    readonly items: readonly {
-      readonly itemName: string;
-    }[];
-  }[];
+  readonly techs: readonly WorkTech[];
 
   readonly feedbacks: readonly WorkFeedback[];
+
+  readonly projects: readonly WorkProject[];
 
   readonly type: "work";
 }
@@ -36,8 +33,20 @@ export interface WorkImage {
   }[];
 }
 
+export interface WorkTech {
+  readonly categoryName: string;
+  readonly items: readonly {
+    readonly itemName: string;
+  }[];
+}
+
 export interface WorkFeedback {
   readonly quote: string;
   readonly author?: string;
+  readonly date?: string;
+}
+
+export interface WorkProject {
+  readonly title: string;
   readonly date?: string;
 }

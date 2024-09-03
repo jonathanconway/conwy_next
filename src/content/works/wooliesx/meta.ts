@@ -69,4 +69,5 @@ export const meta: WorkMeta = {
       items: [{ itemName: "brain-js" }],
     },
   ],
+  projects: [],
 };

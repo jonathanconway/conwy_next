@@ -31,12 +31,7 @@ export function WorkListItem({
   const techNames = techs.map((tech) => tech.categoryName).join(", ");
 
   return (
-    <Link
-      className={styles.container}
-      classNameOverride
-      href={`work/${slug}`}
-      target=""
-    >
+    <Link className={styles.container} href={`work/${slug}`} target="">
       <div className={styles.mainColumn}>
         {/* <div className={styles.date}>
           <Date format="MMM yyyy">{startDate}</Date>

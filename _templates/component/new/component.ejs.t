@@ -1,14 +1,14 @@
 ---
-to: src/components/<%= name %>/<%= name %>.tsx
+to: src/components/<%= h.namePartBranches() %>/<%= h.namePartLeaf() %>.tsx
 ---
 
-import { <%= h.changeCase.pascalCase(name) %>Props } from "./<%= name %>.types";
-import * as Styled from "./<%= name %>.styles";
+import { <%= h.namePascal() %>Props } from "./<%= h.namePartLeaf() %>.types";
+import * as styles from "./<%= h.namePartLeaf() %>.styles";
 
-export function <%= h.changeCase.pascalCase(name) %>(props: <%= h.changeCase.pascalCase(name) %>Props) {
+export function <%= h.namePascal() %>(props: <%= h.namePascal() %>Props) {
   return (
-    <Styled.<%= h.changeCase.pascalCase(name) %> {...props}>
+    <div className={styles.container}>
       {props.children}
-    </Styled.<%= h.changeCase.pascalCase(name) %>>
+    </div>
   );
 }

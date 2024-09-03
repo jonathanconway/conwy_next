@@ -58,4 +58,5 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
+  projects: [],
 };

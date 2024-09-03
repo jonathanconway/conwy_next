@@ -1,4 +1,4 @@
-import { Theme, addSelectedThemeStorageListener } from "@/app/theme";
+import { Theme, addSelectedThemeStorageListener } from "@/components/theme";
 
 import { isClient } from "../../utils";
 

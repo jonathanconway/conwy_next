@@ -22,7 +22,8 @@
     "deploy": "npx surge ./out conwy.surge.sh",
     "build:tailwind": "node ./scripts/build-tailwind.js",
     "build-tailwind:watch": "nodemon \"./scripts/build-tailwind.js\" ./src --ignore ./src/tailwind-js-classes.json",
-    "build:custom": "npx tsx ./src/builders/exec.ts"
+    "build:custom": "npx tsx ./src/builders/exec.ts",
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -72,7 +73,11 @@
     "@storybook/nextjs": "^8.2.9",
     "@storybook/react": "^8.2.9",
     "@storybook/test": "^8.2.9",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/jest": "^29.5.12",
     "@types/jsdom": "^21.1.6",
     "@types/lodash": "^4.17.0",
     "@types/luxon": "^3.4.2",
@@ -81,6 +86,8 @@
     "autoprefixer": "^10.4.18",
     "concurrently": "^8.2.2",
     "eslint-plugin-storybook": "^0.8.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
     "serve": "^14.2.3",

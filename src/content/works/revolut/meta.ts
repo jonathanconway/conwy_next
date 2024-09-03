@@ -114,4 +114,5 @@ export const meta: WorkMeta = {
       ],
     },
   ],
+  projects: [],
 };

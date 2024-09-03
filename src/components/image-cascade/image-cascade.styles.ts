@@ -50,9 +50,13 @@ export const imageContainer = cn(
   rounded_lg,
   p_1_5,
   border_2,
+  bg_white,
+
   border_stone_300,
   dark(border_stone_700),
-  bg_white,
+
+  hover(border_stone_700),
+  hover(dark(border_stone_300)),
 
   flex,
   items_center,

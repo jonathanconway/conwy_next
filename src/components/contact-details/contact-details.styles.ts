@@ -11,6 +11,17 @@ import {
   text_sm,
 } from "@jonathanconway/tailwindjs";
 
+import * as linkStyles from "../link/link.styles";
+
 export const container = cn(mt_4, flex, flex_col, gap_3, text_sm);
 
-export const link = cn(inline_flex, flex_row, items_center, gap_1);
+export const link = cn(
+  linkStyles.link,
+
+  inline_flex,
+  flex_row,
+  items_center,
+  gap_1,
+);
+
+export const linkIcon = cn(linkStyles.linkIcon);

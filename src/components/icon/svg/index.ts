@@ -1,6 +1,7 @@
 export * from "./arrow-chevron-left.svg";
 export * from "./arrow-chevron-right.svg";
 export * from "./arrow-triangle-left.svg";
+export * from "./check-box.svg";
 export * from "./close.svg";
 export * from "./dev.svg";
 export * from "./email.svg";
@@ -8,6 +9,8 @@ export * from "./github.svg";
 export * from "./linked-in.svg";
 export * from "./mastodon.svg";
 export * from "./medium.svg";
+export * from "./open-in-new.svg";
+export * from "./product-hunt.svg";
 export * from "./quote.svg";
 export * from "./substack.svg";
 export * from "./telegram.svg";

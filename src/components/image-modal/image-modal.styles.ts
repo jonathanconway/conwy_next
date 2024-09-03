@@ -19,7 +19,6 @@ import {
   gap_2,
   gap_4,
   h_6,
-  h_arb,
   inline_block,
   leading_6,
   left_0,
@@ -102,7 +101,6 @@ export const imageModalMain = cn(flex, flex_row, gap_4);
 
 export const image = cn(
   w_arb("600px"),
-  h_arb("377px"),
 
   p_1_5,
 

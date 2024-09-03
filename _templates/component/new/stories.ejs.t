@@ -1,23 +1,23 @@
 ---
-to: src/components/<%= name %>/<%= name %>.stories.tsx
+to: src/components/<%= h.namePartBranches() %>/<%= h.namePartLeaf() %>.stories.tsx
 ---
 
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { create<%= h.changeCase.pascalCase(name) %>PropsMock } from './<%= name %>.mocks';
-import { <%= h.changeCase.pascalCase(name) %> } from "./<%= name %>";
+import { <%= h.nameUpper() %>_PROPS_MOCK } from './<%= h.namePartLeaf() %>.mocks';
+import { <%= h.namePascal() %> } from "./<%= h.namePartLeaf() %>";
 
-export default {
-  title: "Components/<%= h.changeCase.pascalCase(name) %>",
-  component: <%= h.changeCase.pascalCase(name) %>,
-} as ComponentMeta<typeof <%= h.changeCase.pascalCase(name) %>>;
+const meta = {
+  title: "Components/<%= h.namePascal() %>",
+  component: <%= h.namePascal() %>,
+  argTypes: {},
+} satisfies Meta<typeof <%= h.namePascal() %>>;
 
-const Template: ComponentStory<typeof <%= h.changeCase.pascalCase(name) %>> = (args) => (
-  <<%= h.changeCase.pascalCase(name) %> {...args} />
-);
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-
-Primary.args = {
-  ...create<%= h.changeCase.pascalCase(name) %>PropsMock(),
+export const Primary: Story = {
+  args: {
+    ...<%= h.nameUpper() %>_PROPS_MOCK,
+  },
 };
+

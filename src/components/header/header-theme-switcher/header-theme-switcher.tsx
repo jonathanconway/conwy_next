@@ -2,7 +2,7 @@
 
 import { loadPrismJSTheme } from "@/framework/client";
 
-import { THEMES, useSelectedTheme } from "../../../app/theme";
+import { THEMES, useSelectedTheme } from "../../theme";
 
 const THEME_EMOJIS = {
   [THEMES.DARK]: "☾",

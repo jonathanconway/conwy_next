@@ -1,6 +1,13 @@
-import { MouseEvent, useEffect } from "react";
+import { MouseEvent, useEffect, useState } from "react";
+
+import { WorkImage } from "@/framework";
+
+import { useCarousel } from "../carousel";
 
 interface UseImageModalParams {
+  readonly workImages: readonly WorkImage[];
+  readonly defaultSelectedWorkImage: WorkImage;
+
   readonly onClose: VoidFunction;
 }
 
@@ -8,32 +15,12 @@ export const ImageModalClasses = {
   Backdrop: "image-modal-backdrop",
 };
 
-function isDescendentOf(element: HTMLElement, parent: HTMLElement) {
-  while (element) {
-    if (element === parent) {
-      return true;
-    }
-    element = element.parentElement as HTMLElement;
-  }
-  return false;
-}
-
-export function getIsElementOutsideContainer(
-  element?: HTMLElement | null,
-  containerElement?: HTMLDivElement | null,
-) {
-  if (!element) {
-    return false;
-  }
-
-  if (!containerElement) {
-    return false;
-  }
-
-  return !isDescendentOf(element as HTMLElement, containerElement);
-}
-
 export function useImageModal(params: UseImageModalParams) {
+  const carousel = useCarousel({
+    items: params.workImages,
+    defaultSelectedItem: params.defaultSelectedWorkImage,
+  });
+
   useEffect(() => {
     const handleWindowKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -58,6 +45,8 @@ export function useImageModal(params: UseImageModalParams) {
   };
 
   return {
+    carousel,
+
     handleBackdropClick,
   };
 }

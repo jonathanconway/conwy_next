@@ -1,4 +1,4 @@
-import { LocalStorageKeys } from "../local-storage-keys";
+import { LocalStorageKeys } from "../../app/local-storage-keys";
 
 import { THEMES, Theme } from "./themes";
 

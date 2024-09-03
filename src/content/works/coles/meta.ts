@@ -91,4 +91,21 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
+  projects: [
+    {
+      title: "Coles Plus account",
+    },
+    {
+      title: "Edit Payment",
+    },
+    {
+      title: "Trolley Messaging",
+    },
+    {
+      title: "Early Access Windows",
+    },
+    {
+      title: "Single Click Sign Up",
+    },
+  ],
 };

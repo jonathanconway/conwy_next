@@ -1,5 +1,6 @@
 export * from "./article";
 export * from "./articles";
+export * from "./carousel";
 export * from "./code-sample";
 export * from "./contact-details";
 export * from "./date";
@@ -21,6 +22,8 @@ export * from "./projects";
 export * from "./redirect";
 export * from "./section";
 export * from "./social-links";
+export * from "./text";
+export * from "./theme";
 export * from "./tooltip";
 export * from "./work";
 export * from "./works";

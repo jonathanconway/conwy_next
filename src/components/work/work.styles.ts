@@ -16,14 +16,12 @@ import {
   ml_2,
   mr_2,
   mt_0,
-  mt_1,
   mt_2,
   pr_0,
   relative,
   text_sm,
   text_xs,
   w_1_on_2,
-  whitespace_pre_line,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../label/label.styles";
@@ -47,6 +45,8 @@ export const aside = cn(w_1_on_2, flex, flex_col, gap_6);
 export const techAndFeedbackContainer = cn(flex, flex_row, gap_4);
 
 export const techContainer = cn(grow, w_1_on_2);
+
+export const otherContainer = cn(grow, w_1_on_2, flex, flex_col, gap_6);
 
 export const techCategory = "";
 

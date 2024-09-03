@@ -6,6 +6,7 @@ import {
   SocialLinkTypes,
 } from "../../framework/client";
 import { Icon, IconTypes } from "../icon";
+import { Link } from "../link";
 
 import * as styles from "./social-links.styles";
 
@@ -34,6 +35,10 @@ const SOCIAL_LINK_PROPS_BY_TYPE: Record<SocialLinkType, any> = {
     iconType: IconTypes.Medium,
     title: "Medium post",
   },
+  [SocialLinkTypes.ProductHunt]: {
+    iconType: IconTypes.X,
+    title: "ProductHunt post",
+  },
   [SocialLinkTypes.Substack]: {
     iconType: IconTypes.Substack,
     title: "Substack article",
@@ -51,18 +56,21 @@ const SOCIAL_LINK_PROPS_BY_TYPE: Record<SocialLinkType, any> = {
 export function SocialLinks({ socialLinks }: SocialLinksProps) {
   return (
     <div className={styles.container()}>
-      {socialLinks.map(({ type, url }) => (
-        <a
-          key={url}
-          href={url}
-          title={SOCIAL_LINK_PROPS_BY_TYPE[type].title}
+      {socialLinks.map((socialLink) => (
+        <Link
+          key={socialLink.url}
+          href={socialLink.url}
           target="_blank"
+          showOpenInNew={false}
+          tooltip={{
+            contents: SOCIAL_LINK_PROPS_BY_TYPE[socialLink.type].title,
+          }}
         >
           <Icon
             className={styles.icon()}
-            icon={SOCIAL_LINK_PROPS_BY_TYPE[type].iconType}
+            icon={SOCIAL_LINK_PROPS_BY_TYPE[socialLink.type].iconType}
           />
-        </a>
+        </Link>
       ))}
     </div>
   );

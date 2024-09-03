@@ -36,7 +36,7 @@ export function ContactDetails() {
     <div className={styles.container}>
       {CONTACTS.map(({ iconType, label, href }) => (
         <Link key={label} href={href} className={styles.link} target="_blank">
-          <Icon icon={iconType} />
+          <Icon className={styles.linkIcon} icon={iconType} />
 
           {label}
         </Link>

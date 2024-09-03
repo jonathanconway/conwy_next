@@ -236,13 +236,14 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/articles/micro-list-item/micro-list-item.styles.ts": {
-    "checksum": "b673bb8f357bf49f72b6aba042f61394",
+    "checksum": "aee09a33f6f36ba1f03989d056e898c5",
     "classNames": [
       "gap-3",
       "h-14",
       "h-full",
       "w-16",
-      "w-full"
+      "w-full",
+      "group/undefined:undefined"
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/articles/tag-filters/index.ts": {
@@ -299,11 +300,8 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/contact-details/contact-details.styles.ts": {
-    "checksum": "f551b77e955c435c9e46d4739111682e",
-    "classNames": [
-      "inline-flex",
-      "items-center"
-    ]
+    "checksum": "01078f1fc5c480750821a7f4353d3cb1",
+    "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/contact-details/index.ts": {
     "checksum": "2f9c030c790829770061323140d500ef",
@@ -395,11 +393,11 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon/icon-types-svg.ts": {
-    "checksum": "ad9e54eadac6bfc85dd53419ce01cd90",
+    "checksum": "64ae52a44e6f77e54a8beaea8b53b398",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon/icon-types.ts": {
-    "checksum": "5bb87177386621fb45dd6db764ec547a",
+    "checksum": "40bfe0eda9d280c7d4bb9526bdb22ad4",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon/index.ts": {
@@ -407,7 +405,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon/svg/index.ts": {
-    "checksum": "998e4a2bf1eba3a16ddac3495c406b61",
+    "checksum": "b4cb7a02185ce96b8c13f479147626e9",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon/svg/svg-props.ts": {
@@ -419,15 +417,15 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/icon-button/icon-button.styles.ts": {
-    "checksum": "fb1f7fbe48219c3248fa502ddaeaf8d7",
+    "checksum": "34e68746ea6d39b1a0ea095e600a6bb2",
     "classNames": [
       "border-stone-600",
       "from-stone-200",
       "from-stone-400",
+      "h-6",
       "to-stone-400",
       "to-stone-600",
-      "hover:from-stone-400",
-      "hover:to-stone-600",
+      "w-6",
       "hover:from-stone-200",
       "hover:to-stone-400",
       "hover:dark:from-stone-400",
@@ -444,7 +442,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/image-cascade/image-cascade.styles.ts": {
-    "checksum": "06c5d250e88546ebf9da51c68f9c7a09",
+    "checksum": "1ef0add30fbfa99a50a1ce0f3a0af10e",
     "classNames": [
       "bg-black",
       "border-black",
@@ -452,8 +450,6 @@
       "border-gray-600",
       "bottom-0",
       "cursor-pointer",
-      "gap-2",
-      "h-6",
       "h-40",
       "justify-center",
       "left-0",
@@ -461,7 +457,8 @@
       "rounded-lg",
       "text-black",
       "text-blue-500",
-      "w-6",
+      "hover:border-stone-700",
+      "hover:dark:border-stone-300",
       "dark:bg-black",
       "hover:border-blue-500",
       "hover:text-blue-500"
@@ -472,7 +469,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/image-modal/image-modal.styles.ts": {
-    "checksum": "698a1f09b0badee8ea1c1b1864c80918",
+    "checksum": "d238713b77b338266e0a36707b1df11b",
     "classNames": [
       "fixed",
       "m-4",
@@ -482,8 +479,7 @@
       "z-0",
       "z-10",
       "`bg-black/50`",
-      "w-[600px]",
-      "h-[377px]"
+      "w-[600px]"
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/image-modal/index.ts": {
@@ -491,11 +487,11 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/image-modal/use-image-modal.hook.ts": {
-    "checksum": "a015741612030d2058d7d3605bb78c04",
+    "checksum": "a724d5dfcd9d313148489a3f95518af3",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/index.ts": {
-    "checksum": "a51b0c598aee4b931d12496cd3160b98",
+    "checksum": "e1cfd38ecf9dcac35106ee9420144b2d",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/label/index.ts": {
@@ -565,8 +561,9 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/link/link.styles.ts": {
-    "checksum": "38c5720fa0faeec0f0d9092e905a01e4",
+    "checksum": "c9a2b2c95660566e1d7bdd8b005e600a",
     "classNames": [
+      "text-inherit",
       "text-sky-300",
       "text-sky-400",
       "text-sky-500",
@@ -785,7 +782,7 @@
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/text/index.ts": {
-    "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+    "checksum": "aac7d76ec532598168c4c654560ef00e",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/text/text.mixin.styles.ts": {
@@ -801,7 +798,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/index.ts": {
-    "checksum": "253bc242bf991e0a12fae83964bf696a",
+    "checksum": "55124d144a8418dbed2b34a6a75d0df3",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-image-cascade/index.ts": {
@@ -825,7 +822,7 @@
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work.styles.ts": {
-    "checksum": "0404039440736fd215ddca8800c86f7b",
+    "checksum": "41b531b441cbf529378852f3947c76c9",
     "classNames": [
       "ml-2",
       "mr-2",
@@ -846,7 +843,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/works/work-list-item/work-list-item.styles.ts": {
-    "checksum": "4c05a02452c4369ce0103bb4b43a1372",
+    "checksum": "82c0f59920c9f4e50f4a086c98f8a470",
     "classNames": [
       "hover:text-stone-950",
       "hover:dark:text-stone-50"
@@ -993,7 +990,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/micros/index.ts": {
-    "checksum": "21c70f8091984ce2c7ee196f046317c4",
+    "checksum": "71ee730c3894da6ef8a29a76a20274fe",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/projects/braggart/index.ts": {
@@ -1037,7 +1034,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/cibc/meta.ts": {
-    "checksum": "ce9a986c2e30dc7f8e1b1c7ee70339b3",
+    "checksum": "8f133699643ee3f83bf500a93d2eaf4d",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/coles/index.ts": {
@@ -1045,7 +1042,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/coles/meta.ts": {
-    "checksum": "238f0f6eddd3230e8ddbe2cb6ed074a3",
+    "checksum": "51586feff7304375ab9f39792f7f84a5",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/demonz/index.ts": {
@@ -1053,7 +1050,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/demonz/meta.ts": {
-    "checksum": "4e979d8ce352c37a52ac5a16ece01623",
+    "checksum": "390971d8c3782f4bddc4081fb7ba6b9e",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/dta/index.ts": {
@@ -1061,7 +1058,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/dta/meta.ts": {
-    "checksum": "47a0b15f30c70a1428db5c6530358d81",
+    "checksum": "5f410bf4b09e703db3a3c075b2325ce9",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/index.ts": {
@@ -1073,7 +1070,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/optus/meta.ts": {
-    "checksum": "b74a3adae53af4cde77ce5bd9b86788b",
+    "checksum": "8ec03c6dc26306a7991d5e0bd159bce2",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/revolut/index.ts": {
@@ -1081,7 +1078,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/revolut/meta.ts": {
-    "checksum": "4121dd3fb8ce2225dbb22c8d0306af9b",
+    "checksum": "25a7435f1cf7aa220ac6eb9050d0fca1",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/villa-plus/index.ts": {
@@ -1089,7 +1086,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/villa-plus/meta.ts": {
-    "checksum": "a2cd651681133943d1b75588238d68fe",
+    "checksum": "888557b9b85aebd726c39b5685eed827",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/wooliesx/index.ts": {
@@ -1097,7 +1094,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/works/wooliesx/meta.ts": {
-    "checksum": "66dd62e4f15e11196698fb18789ed3a2",
+    "checksum": "5ea3a0df9c4535234d3102f490ad7a53",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/client/index.ts": {
@@ -1241,7 +1238,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/meta/social-link.ts": {
-    "checksum": "3cd474c6c47f68cc14e610cd58a2021f",
+    "checksum": "053ec507d6dfd97bb4fbd8936c5d8f9e",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/meta/work/index.ts": {
@@ -1249,7 +1246,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/meta/work/work-meta.ts": {
-    "checksum": "50b9fcff9ca12271fb91b32ee8d9ea27",
+    "checksum": "587516574e4bc4f180d8e67074fc9728",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/meta/work/work.ts": {
@@ -1342,15 +1339,14 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-feedback-carousel/work-feedback-carousel.styles.ts": {
-    "checksum": "ff9d757f374461abe25beb3315f405f8",
+    "checksum": "292aaa305755a27fde18efdd86353ef6",
     "classNames": [
-      "h-24",
       "leading-5",
       "whitespace-pre-line"
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-feedback-carousel/use-work-feedback-carousel.hook.ts": {
-    "checksum": "11ed039c8cfb5ab5f1c43b590f483023",
+    "checksum": "bd7abf83de35deee601a3a22dc9e12ff",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/button/button.styles.ts": {
@@ -1383,13 +1379,75 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/section/section.styles.ts": {
-    "checksum": "f63464cd1fd90c347c50d4b9f046be09",
+    "checksum": "3414701c9da41e3c6138835eed33f67d",
     "classNames": [
       "grow"
     ]
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/framework/utils/props.ts": {
     "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/index.ts": {
+    "checksum": "87627c2c163cd832a74e70d0bc53a4b2",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work/work-projects.mocks.ts": {
+    "checksum": "068689dad09b3cf9436610fe96b4d8d8",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work/work-projects.styles.ts": {
+    "checksum": "ed775d3ea0b06becc65afc72b8db80e6",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work/work-projects.types.ts": {
+    "checksum": "2692fec001fbafb8761ab817a7ce922d",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work-projects.mocks.ts": {
+    "checksum": "6136920b6daa83bd698e0a5fb8411d6b",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work-projects.styles.ts": {
+    "checksum": "47b4760cae9576bafec1c08331de0f88",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/work/work-projects/work-projects.types.ts": {
+    "checksum": "6ab4a3da299e72601bfb5afad1246626",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/carousel/carousel-navigation/carousel-navigation.styles.ts": {
+    "checksum": "6e285de0ce9204418c2dc009d9cf2324",
+    "classNames": [
+      "gap-2"
+    ]
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/carousel/carousel-navigation/index.ts": {
+    "checksum": "0479c4de4f340537b39f258022a68092",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/carousel/index.ts": {
+    "checksum": "d74fce0b9251b762fefd37fe62e8e92e",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/carousel/use-carousel.hook.ts": {
+    "checksum": "dd495f0f470e98f02878b56352fba42d",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/micros/sleeman-tech-debt/index.ts": {
+    "checksum": "6668297c7dc2639f9dd0083f22d20b33",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/micros/sleeman-tech-debt/meta.ts": {
+    "checksum": "1586ccc375fef334557c90e3af4f05c1",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/text/text-expandable/index.ts": {
+    "checksum": "aac7d76ec532598168c4c654560ef00e",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/text/text-expandable/text-expandable.styles.ts": {
+    "checksum": "9bb6c6becb1bb95331aa0d9c89a48614",
     "classNames": []
   }
 }

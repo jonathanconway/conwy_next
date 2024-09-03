@@ -1,4 +1,4 @@
-import { MdxH2, Section } from "@/components";
+import { MdxH2, Section, WorkProjects } from "@/components";
 import { Work as Work_ } from "@/framework";
 
 import { WorkBody } from "./work-body";
@@ -12,7 +12,7 @@ interface WorkProps {
 
 export function Work({ work }: WorkProps) {
   const {
-    meta: { client, jobTitle, images, techs, feedbacks },
+    meta: { client, jobTitle, images, techs, feedbacks, projects },
     content: Content,
   } = work;
 
@@ -58,11 +58,19 @@ export function Work({ work }: WorkProps) {
               </div>
             </div>
 
-            {feedbacks.length > 0 ? (
-              <Section label="Feedback">
-                <WorkFeedbackCarousel workFeedbacks={work.meta.feedbacks} />
-              </Section>
-            ) : null}
+            <div className={styles.otherContainer}>
+              {feedbacks.length > 0 ? (
+                <Section label="Feedback">
+                  <WorkFeedbackCarousel workFeedbacks={work.meta.feedbacks} />
+                </Section>
+              ) : null}
+
+              {projects.length > 0 ? (
+                <Section label="Projects">
+                  <WorkProjects projects={work.meta.projects} />
+                </Section>
+              ) : null}
+            </div>
           </div>
 
           <div className={styles.imageCascadeContainer}>

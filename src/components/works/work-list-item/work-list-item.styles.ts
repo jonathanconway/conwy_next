@@ -5,7 +5,7 @@ import {
   dark,
   font_bold,
   font_medium,
-  group,
+  group_name,
   hover,
   inline_block,
   leading_5,
@@ -22,10 +22,13 @@ import {
   uppercase,
   whitespace_nowrap,
 } from "@jonathanconway/tailwindjs";
+import { text_sm } from "@jonathanconway/tailwindjs";
 
+import * as linkStyles from "../../link/link.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
 export const container = cn(
+  // linkStyles.link,
   listItemStyles.container,
   text_stone_950,
   dark(text_stone_50),
@@ -39,13 +42,17 @@ export const asideColumn = listItemStyles.asideColumn;
 
 export const image = cn(rounded_md);
 
-export const title = cn(font_bold, group(hover.name, underline));
+export const title = cn(font_bold, group_name(hover.name, underline));
 
-export const subTitle = cn(text_xs, font_bold, group(hover.name, underline));
+export const subTitle = cn(
+  text_xs,
+  font_bold,
+  group_name(hover.name, underline),
+);
 
 export const date = text_xs;
 
-export const blurb = cn(text_xs, leading_5);
+export const blurb = cn(text_sm, leading_5);
 
 export const techs = cn(
   text_xs,

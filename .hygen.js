@@ -1,5 +1,5 @@
 const { basename, dirname, join } = require("path");
-const { camelCase, last, startCase } = require("lodash");
+const { camelCase, chain, last, startCase } = require("lodash");
 
 const ROOT_DIR = "./";
 
@@ -11,12 +11,12 @@ function name() {
   return basename(last(process.argv)).split(".")[0];
 }
 
-function namePartLeaf() {
-  return name().split("/").pop();
+function namePartBranches() {
+  return last(process.argv);
 }
 
-function namePartBranches() {
-  return name().split("/").slice(0,-1).join("/");
+function namePartLeaf() {
+  return namePartBranches().split("/").pop();
 }
 
 function nameCamel() {
@@ -25,6 +25,10 @@ function nameCamel() {
 
 function namePascal() {
   return startCase(name()).replaceAll(" ", "");
+}
+
+function nameUpper() {
+  return chain(name()).snakeCase().value().toUpperCase()
 }
 
 function nameSentence() {
@@ -43,5 +47,6 @@ module.exports = {
     namePartBranches,
     namePascal,
     nameSentence,
+    nameUpper,
   }
 }

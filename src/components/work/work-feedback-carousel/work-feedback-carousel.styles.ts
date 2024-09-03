@@ -4,18 +4,15 @@ import {
   flex_col,
   flex_row,
   gap_2,
-  h_24,
   invisible,
   leading_5,
-  ml_arb,
   mt_1,
-  neg,
   text_xs,
   w_full,
   whitespace_pre_line,
 } from "@jonathanconway/tailwindjs";
 
-export const feedbackCarouselContainer = cn(flex, flex_col, gap_2, h_24);
+export const feedbackCarouselContainer = cn(flex, flex_col, gap_2);
 
 export const feedbackItems = cn(flex, flex_row);
 

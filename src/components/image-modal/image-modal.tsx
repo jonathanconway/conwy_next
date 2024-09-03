@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { WorkImage } from "@/framework";
 
+import { CarouselNavigation } from "../carousel";
 import { IconTypes } from "../icon";
 import { IconButton } from "../icon-button";
 
@@ -12,13 +13,14 @@ import * as styles from "./image-modal.styles";
 import { ImageModalClasses, useImageModal } from "./use-image-modal.hook";
 
 interface ImageModalProps {
-  readonly image: WorkImage;
+  readonly workImages: readonly WorkImage[];
+  readonly defaultSelectedWorkImage: WorkImage;
 
   readonly onClose: VoidFunction;
 }
 
 export function ImageModal(props: ImageModalProps) {
-  const { handleBackdropClick } = useImageModal(props);
+  const { carousel, handleBackdropClick } = useImageModal(props);
 
   return (
     <div
@@ -29,23 +31,19 @@ export function ImageModal(props: ImageModalProps) {
         className={styles.imageModal}
         style={{
           maxWidth: "80vw",
-          maxHeight: "80vh",
-          height: "28.5rem",
         }}
       >
         <header className={styles.imageModalHeader}>
-          {props.image.title && (
-            <h2 className={styles.imageModalTitle}>{props.image.title}</h2>
+          {carousel.selectedItem.title && (
+            <h2 className={styles.imageModalTitle}>
+              {carousel.selectedItem.title}
+            </h2>
           )}
 
           <div className={styles.imageModalButtonsContainer}>
-            <IconButton
-              icon={IconTypes.ArrowChevronLeft}
-              tooltip={{ contents: "Previous image" }}
-            />
-            <IconButton
-              icon={IconTypes.ArrowChevronRight}
-              tooltip={{ contents: "Next image" }}
+            <CarouselNavigation
+              carousel={carousel}
+              tabTooltipDescription="Image"
             />
 
             <IconButton
@@ -60,15 +58,15 @@ export function ImageModal(props: ImageModalProps) {
         <div className={styles.imageModalMain}>
           <Image
             className={styles.image}
-            src={props.image.imageUrl}
-            alt={props.image.imageUrl}
+            src={carousel.selectedItem.imageUrl}
+            alt={carousel.selectedItem.imageUrl}
             width={600}
             height={400}
           />
 
-          {props.image.notes.length > 0 && (
+          {carousel.selectedItem.notes.length > 0 && (
             <div className={styles.notesContainer}>
-              {props.image.notes.map((note) => (
+              {carousel.selectedItem.notes.map((note) => (
                 <li key={note.text}>{note.text}</li>
               ))}
             </div>
