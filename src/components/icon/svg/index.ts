@@ -1,3 +1,7 @@
+export * from "./arrow-chevron-left.svg";
+export * from "./arrow-chevron-right.svg";
+export * from "./arrow-triangle-left.svg";
+export * from "./close.svg";
 export * from "./dev.svg";
 export * from "./email.svg";
 export * from "./github.svg";

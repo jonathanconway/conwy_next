@@ -21,11 +21,7 @@ export interface WorkMeta extends MetaBase {
     }[];
   }[];
 
-  readonly feedbacks: readonly {
-    readonly quote: string;
-    readonly author?: string;
-    readonly date?: string;
-  }[];
+  readonly feedbacks: readonly WorkFeedback[];
 
   readonly type: "work";
 }
@@ -38,4 +34,10 @@ export interface WorkImage {
     readonly hospotY: number;
     readonly text: string;
   }[];
+}
+
+export interface WorkFeedback {
+  readonly quote: string;
+  readonly author?: string;
+  readonly date?: string;
 }

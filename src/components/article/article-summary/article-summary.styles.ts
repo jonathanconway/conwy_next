@@ -1,3 +1,9 @@
-import { all, border, cn, mt_0, rounded } from "@jonathanconway/tailwindjs";
+import {
+  border,
+  cn,
+  leading_6,
+  p_4,
+  rounded,
+} from "@jonathanconway/tailwindjs";
 
-export const container = cn(border, rounded, all(mt_0));
+export const summaryContainer = cn(border, rounded, p_4, leading_6);

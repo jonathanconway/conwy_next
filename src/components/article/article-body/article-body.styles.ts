@@ -9,6 +9,8 @@ import {
   top_0,
 } from "@jonathanconway/tailwindjs";
 
-export const container = cn(mt_4, leading_6, text_sm);
+export const container = cn(mt_4);
 
 export const topHeading = cn(absolute, neg(top_0), invisible);
+
+export const content = cn(leading_6, text_sm);

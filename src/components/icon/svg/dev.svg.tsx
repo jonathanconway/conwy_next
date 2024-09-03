@@ -1,15 +1,8 @@
-import { SvgProps } from "./svg-props";
+import { SVG_PROPS_COMMON, SvgProps } from "../icon-svg-props";
 
 export function Dev(props: SvgProps) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      fill="currentColor"
-      viewBox="0 0 864 864"
-      {...props}
-    >
+    <svg {...SVG_PROPS_COMMON} {...props} viewBox="0 0 864 864">
       <defs>
         <clipPath id="clippath">
           <rect className="cls-1" width="864" height="864"></rect>

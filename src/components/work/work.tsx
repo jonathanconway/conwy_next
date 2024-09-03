@@ -1,9 +1,10 @@
-import { ImageCascade, MdxH2 } from "@/components";
+import { MdxH2, Section } from "@/components";
 import { Work as Work_ } from "@/framework";
 
-import { WorkImagesSwitcher } from "./work-images-switcher";
+import { WorkBody } from "./work-body";
+import { WorkFeedbackCarousel } from "./work-feedback-carousel";
+import { WorkImageCascade } from "./work-image-cascade";
 import * as styles from "./work.styles";
-import { workImageFullPath } from "./work.utils";
 
 interface WorkProps {
   readonly work: Work_;
@@ -15,11 +16,6 @@ export function Work({ work }: WorkProps) {
     content: Content,
   } = work;
 
-  const workImages = images.map((image) => ({
-    ...image,
-    imageUrl: workImageFullPath(work.meta)(image),
-  }));
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -30,9 +26,10 @@ export function Work({ work }: WorkProps) {
 
       <div className={styles.main}>
         <div className={styles.blurb}>
+          {/* todo: change the "label"s to headings */}
           <span className={styles.label}>Duties + Achievements</span>
 
-          <div className={styles.blurbContent}>{Content && <Content />}</div>
+          <WorkBody work={work} />
         </div>
 
         <div className={styles.aside}>
@@ -62,30 +59,14 @@ export function Work({ work }: WorkProps) {
             </div>
 
             {feedbacks.length > 0 ? (
-              <div className={styles.feedbackContainer}>
-                <span className={styles.label}>Feedback</span>
-
-                <div className={styles.feedbackItems}>
-                  {feedbacks.map((feedback) => (
-                    <div key={feedback.quote} className={styles.feedbackItem}>
-                      <div className={styles.feedbackItemQuote}>
-                        {feedback.quote}
-                      </div>
-
-                      {feedback.author && (
-                        <div className={styles.feedbackItemAuthor}>
-                          – {feedback.author}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Section label="Feedback">
+                <WorkFeedbackCarousel workFeedbacks={work.meta.feedbacks} />
+              </Section>
             ) : null}
           </div>
 
           <div className={styles.imageCascadeContainer}>
-            <ImageCascade images={workImages} />
+            <WorkImageCascade work={work} />
           </div>
         </div>
       </div>

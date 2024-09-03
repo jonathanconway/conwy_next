@@ -14,7 +14,7 @@ export async function ArticleSummary({ article }: ArticleSummaryProps) {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.summaryContainer}>
       <Summary />
     </div>
   );

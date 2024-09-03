@@ -42,7 +42,7 @@ export const blurb = cn(flex_1);
 
 export const blurbContent = cn(all(mt_2), all(pr_0), all(leading_5));
 
-export const aside = cn(w_1_on_2, flex, flex_col, gap_4);
+export const aside = cn(w_1_on_2, flex, flex_col, gap_6);
 
 export const techAndFeedbackContainer = cn(flex, flex_row, gap_4);
 
@@ -55,16 +55,6 @@ export const techListItem = cn(mt_2, text_sm);
 export const techSubList = cn(ml_2);
 
 export const techSubListItem = cn(text_xs, inline_block, mr_2);
-
-export const feedbackContainer = cn(grow, w_1_on_2, flex, flex_col, gap_4);
-
-export const feedbackItems = cn(flex, flex_col, gap_4);
-
-export const feedbackItem = "";
-
-export const feedbackItemQuote = cn(text_xs, whitespace_pre_line, leading_5);
-
-export const feedbackItemAuthor = cn(mt_1, text_xs);
 
 export const imageCascadeContainer = cn();
 

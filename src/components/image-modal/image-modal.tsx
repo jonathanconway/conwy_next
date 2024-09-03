@@ -1,8 +1,15 @@
+"use client";
+
+import { cn } from "@jonathanconway/tailwindjs";
 import Image from "next/image";
 
 import { WorkImage } from "@/framework";
 
+import { IconTypes } from "../icon";
+import { IconButton } from "../icon-button";
+
 import * as styles from "./image-modal.styles";
+import { ImageModalClasses, useImageModal } from "./use-image-modal.hook";
 
 interface ImageModalProps {
   readonly image: WorkImage;
@@ -11,14 +18,19 @@ interface ImageModalProps {
 }
 
 export function ImageModal(props: ImageModalProps) {
+  const { handleBackdropClick } = useImageModal(props);
+
   return (
-    <div className={styles.imageModalBackdrop} onClick={props.onClose}>
+    <div
+      className={cn(ImageModalClasses.Backdrop, styles.imageModalBackdrop)}
+      onClick={handleBackdropClick}
+    >
       <div
         className={styles.imageModal}
         style={{
           maxWidth: "80vw",
           maxHeight: "80vh",
-          width: "60rem",
+          height: "28.5rem",
         }}
       >
         <header className={styles.imageModalHeader}>
@@ -26,12 +38,23 @@ export function ImageModal(props: ImageModalProps) {
             <h2 className={styles.imageModalTitle}>{props.image.title}</h2>
           )}
 
-          <button
-            className={styles.imageModalCloseButton}
-            onClick={props.onClose}
-          >
-            ✕
-          </button>
+          <div className={styles.imageModalButtonsContainer}>
+            <IconButton
+              icon={IconTypes.ArrowChevronLeft}
+              tooltip={{ contents: "Previous image" }}
+            />
+            <IconButton
+              icon={IconTypes.ArrowChevronRight}
+              tooltip={{ contents: "Next image" }}
+            />
+
+            <IconButton
+              className={styles.imageModalCloseButton}
+              icon={IconTypes.Close}
+              tooltip={{ contents: "Close" }}
+              onClick={props.onClose}
+            />
+          </div>
         </header>
 
         <div className={styles.imageModalMain}>
@@ -43,11 +66,13 @@ export function ImageModal(props: ImageModalProps) {
             height={400}
           />
 
-          <div className={styles.notesContainer}>
-            {props.image.notes.map((note) => (
-              <li key={note.text}>{note.text}</li>
-            ))}
-          </div>
+          {props.image.notes.length > 0 && (
+            <div className={styles.notesContainer}>
+              {props.image.notes.map((note) => (
+                <li key={note.text}>{note.text}</li>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
+import { SvgProps } from "./icon-svg-props";
 import { IconType } from "./icon-types";
 import { ICON_TYPE_SVGS } from "./icon-types-svg";
-import { SvgProps } from "./svg/svg-props";
+import * as styles from "./icon.styles";
 
 export interface IconProps extends SvgProps {
   readonly icon: IconType;
@@ -8,5 +9,5 @@ export interface IconProps extends SvgProps {
 
 export function Icon(props: IconProps) {
   const IconSvg = ICON_TYPE_SVGS[props.icon];
-  return <IconSvg {...props} />;
+  return <IconSvg className={styles.iconSvg} {...props} />;
 }

@@ -11,6 +11,14 @@ function name() {
   return basename(last(process.argv)).split(".")[0];
 }
 
+function namePartLeaf() {
+  return name().split("/").pop();
+}
+
+function namePartBranches() {
+  return name().split("/").slice(0,-1).join("/");
+}
+
 function nameCamel() {
   return camelCase(name()).replaceAll(" ", "");
 }
@@ -31,6 +39,8 @@ module.exports = {
     dir,
     name,
     nameCamel,
+    namePartLeaf,
+    namePartBranches,
     namePascal,
     nameSentence,
   }

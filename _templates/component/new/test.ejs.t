@@ -1,13 +1,13 @@
 ---
-to: src/components/<%= name %>/<%= name %>.test.tsx
+to: src/components/<%= namePartBranches %>/<%= namePartLeaf %>.test.tsx
 ---
 
 import { render } from "@testing-library/react";
-import { <%= h.changeCase.pascalCase(name) %> } from "./<%= name %>";
-import { create<%= h.changeCase.pascalCase(name) %>PropsMock } from "./<%= name %>.mocks";
+import { <%= h.changeCase.pascalCase(namePartLeaf) %> } from "./<%= namePartLeaf %>";
+import { create<%= h.changeCase.pascalCase(namePartLeaf) %>PropsMock } from "./<%= namePartLeaf %>.mocks";
 
-describe("<%= h.changeCase.pascalCase(name) %>", () => {
+describe("<%= h.changeCase.pascalCase(namePartLeaf) %>", () => {
   test("renders", () => {
-    render(<<%= h.changeCase.pascalCase(name) %> {...create<%= h.changeCase.pascalCase(name) %>PropsMock()} />);
+    render(<<%= h.changeCase.pascalCase(namePartLeaf) %> {...create<%= h.changeCase.pascalCase(namePartLeaf) %>PropsMock()} />);
   });
 });

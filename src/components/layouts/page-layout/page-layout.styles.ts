@@ -26,6 +26,7 @@ export const container = cn(
 
   pb_6,
   px_8,
+  gap_8,
 );
 
 export const mainWrapper = cn(flex, flex_col, flex_1, gap_8);

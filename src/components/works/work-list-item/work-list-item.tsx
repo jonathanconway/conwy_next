@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Link } from "@/components";
+import { Link, Tooltip } from "@/components";
 import { WorkMeta } from "@/framework";
 
 import * as styles from "./work-list-item.styles";
@@ -50,9 +50,17 @@ export function WorkListItem({
 
         <p className={styles.blurb}>{blurbShort}</p>
 
-        <p className={styles.techs} title={techNames}>
-          Tech: {techNames}
-        </p>
+        <Tooltip
+          contents={
+            <ul>
+              {techs.map((tech) => (
+                <li key={tech.categoryName}>{tech.categoryName}</li>
+              ))}
+            </ul>
+          }
+        >
+          <p className={styles.techs}>Tech: {techNames}</p>
+        </Tooltip>
       </div>
       <div className={styles.asideColumn}>
         <Image

@@ -7,44 +7,35 @@ import {
   border_black,
   border_gray_600,
   border_stone_300,
+  border_stone_700,
   bottom_0,
   cn,
   dark,
   fixed,
   flex,
-  flex_1,
   flex_col,
   flex_row,
   font_bold,
   gap_2,
   gap_4,
-  h_3_on_4,
   h_6,
-  h_96,
+  h_arb,
   inline_block,
   leading_6,
   left_0,
-  left_2,
+  m_4,
   m_auto,
-  max_w_arb,
   p_1_5,
-  p_2,
   p_4,
   relative,
   right_0,
-  right_1_5,
-  right_2,
   rounded,
   rounded_lg,
   text_black,
   text_sm,
   text_xl,
   top_0,
-  top_1_5,
-  top_2,
-  w_3_on_4,
   w_6,
-  w_96,
   w_arb,
   z_0,
   z_10,
@@ -58,7 +49,7 @@ export const imageModalBackdrop = cn(
   left_0,
   right_0,
   z_0,
-  `bg-black/25`,
+  `bg-black/50`,
   // `${bg_black}/${_25}`, // todo : add _25 to tailwindjs
 );
 
@@ -75,6 +66,7 @@ export const imageModal = cn(
 
   rounded_lg,
   bg_white,
+  dark(bg_black),
   border,
   border_gray_600,
 );
@@ -83,12 +75,20 @@ export const imageModalHeader = cn();
 
 export const imageModalTitle = cn(text_xl, font_bold);
 
-export const imageModalCloseButton = cn(
+export const imageModalButtonsContainer = cn(
   absolute,
+
+  m_4,
+  top_0,
+  right_0,
+
+  flex,
+  gap_2,
+);
+
+export const imageModalCloseButton = cn(
   rounded,
   inline_block,
-  top_2,
-  right_2,
   w_6,
   h_6,
   leading_6,
@@ -101,10 +101,15 @@ export const imageModalCloseButton = cn(
 export const imageModalMain = cn(flex, flex_row, gap_4);
 
 export const image = cn(
-  rounded_lg,
+  w_arb("600px"),
+  h_arb("377px"),
+
   p_1_5,
+
+  rounded_lg,
   border_2,
   border_stone_300,
+  dark(border_stone_700),
   bg_white,
   dark(bg_black),
 );

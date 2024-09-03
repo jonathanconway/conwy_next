@@ -4,3 +4,4 @@ export * from "./logic";
 export * from "./styles";
 export * from "./strings";
 export * from "./typing";
+export * from "./with-component";

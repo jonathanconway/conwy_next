@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { REDIRECTS } from "@/content";
 import {
+  POST_MAIN_IMAGE_DEFAULT,
   ProjectListItem as ProjectListItemModel,
-  getMainImageUrl,
 } from "@/framework";
 
 import { SocialLinks } from "../../social-links";
@@ -30,7 +30,7 @@ export function ProjectListItem(props: ProjectListItemProps) {
       <div className={styles.asideColumn}>
         <Image
           className={styles.image}
-          src={getMainImageUrl(props)}
+          src={`/images/projects/${props.slug}/${props.mainImage ?? POST_MAIN_IMAGE_DEFAULT}`}
           alt="Project main image"
           priority
           unoptimized={true}

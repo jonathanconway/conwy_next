@@ -9,14 +9,13 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-themes",
+    "@chromatic-com/storybook",
   ],
   framework: {
     name: "@storybook/nextjs",
     options: {},
   },
-  docs: {
-    autodocs: "tag",
-  },
+  docs: {},
   staticDirs: ["../public"],
   webpackFinal: async (config) => {
     config.module?.rules?.push({
@@ -24,6 +23,7 @@ const config: StorybookConfig = {
       use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
     });
 
+    console.log("config?.resolve?.alias", config?.resolve?.alias);
     if (config?.resolve?.alias) {
       config.resolve.alias["@"] = path.resolve(__dirname, "..", "src");
     }

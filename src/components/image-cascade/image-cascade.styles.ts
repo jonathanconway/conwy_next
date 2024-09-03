@@ -8,6 +8,7 @@ import {
   border_blue_500,
   border_gray_600,
   border_stone_300,
+  border_stone_700,
   bottom_0,
   cn,
   cursor_pointer,
@@ -43,13 +44,14 @@ export const IMAGE_SIZE_PX = {
   height: 100,
 };
 
-export const image = cn(
+export const imageContainer = cn(
   absolute,
 
   rounded_lg,
   p_1_5,
   border_2,
   border_stone_300,
+  dark(border_stone_700),
   bg_white,
 
   flex,
@@ -61,6 +63,8 @@ export const image = cn(
   bg_white,
   dark(bg_black),
 );
+
+export const image = cn(rounded);
 
 export const imagesNav = cn(absolute, left_0, bottom_0, inline_flex, gap_2);
 

@@ -1,5 +1,5 @@
-import * as layoutStyles from "../src/components/layouts/layouts.styles";
-import * as textStyles from "../src/components/text/text.styles";
+// import * as layoutStyles from "../src/components/layouts/layouts.styles";
+// import * as textStyles from "../src/components/text/text.styles";
 import { convertClassStringToClassList, isClient } from "../src/framework";
 
 export function addBodyClasses() {
@@ -7,10 +7,10 @@ export function addBodyClasses() {
     return;
   }
 
-  const bodyClasses = convertClassStringToClassList(
-    layoutStyles.container(),
-    textStyles.text(),
-  );
+  const bodyClasses =
+    convertClassStringToClassList();
+    // layoutStyles.container(),
+    // textStyles.text(),
 
   const containerElement = document.body.parentElement!;
   containerElement.classList.add(...bodyClasses);

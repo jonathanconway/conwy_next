@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { WorkImage, WorkMeta } from "@/framework";
 
-import { workImageFullPath } from "../work.utils";
+import { workImageFullPath } from "../work-image-cascade/work-image-cascade.utils";
 
 import * as styles from "./work-images-switcher.styles";
 
@@ -53,7 +53,6 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
       </nav>
 
       {state.selectedWorkImage && (
-        // <div className={styles.selectedItem}>
         <Image
           className={styles.selectedItemImage}
           src={workImageFullPath(props.work)(state.selectedWorkImage)}
@@ -66,7 +65,6 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
           width={768}
           height={480}
         />
-        // </div>
       )}
     </div>
   );

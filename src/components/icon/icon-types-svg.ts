@@ -1,5 +1,9 @@
 import { IconTypes } from "./icon-types";
 import {
+  ArrowChevronLeft,
+  ArrowChevronRight,
+  ArrowTriangleLeft,
+  Close,
   Dev,
   Email,
   Github,
@@ -14,12 +18,17 @@ import {
 } from "./svg";
 
 export const ICON_TYPE_SVGS = {
+  [IconTypes.ArrowChevronLeft]: ArrowChevronLeft,
+  [IconTypes.ArrowChevronRight]: ArrowChevronRight,
+  [IconTypes.ArrowTriangleLeft]: ArrowTriangleLeft,
+  [IconTypes.ArrowTriangleRight]: ArrowTriangleLeft,
+  [IconTypes.Close]: Close,
   [IconTypes.Dev]: Dev,
   [IconTypes.Email]: Email,
   [IconTypes.Github]: Github,
   [IconTypes.LinkedIn]: LinkedIn,
-  [IconTypes.Medium]: Medium,
   [IconTypes.Mastodon]: Mastodon,
+  [IconTypes.Medium]: Medium,
   [IconTypes.Quote]: Quote,
   [IconTypes.Substack]: Substack,
   [IconTypes.Telegram]: Telegram,

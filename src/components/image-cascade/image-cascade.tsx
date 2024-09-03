@@ -17,6 +17,7 @@ interface ImageCascadeState {
   readonly openImage?: WorkImage;
 }
 
+// todo: make more abstract and call from work-image-cascade
 export function ImageCascade(props: ImageCascadeProps) {
   const [state, setState] = useState<ImageCascadeState>({});
 
@@ -33,7 +34,7 @@ export function ImageCascade(props: ImageCascadeProps) {
       {props.images?.map((image, imageUrlIndex) => (
         <div
           key={`image-cascade-item-${image.imageUrl}`}
-          className={styles.image}
+          className={styles.imageContainer}
           style={{
             left: `${(100 / props.images.length) * imageUrlIndex}%`,
             top: `${(100 / props.images.length) * imageUrlIndex}%`,
@@ -43,6 +44,7 @@ export function ImageCascade(props: ImageCascadeProps) {
           onClick={handleImageClick(image)}
         >
           <Image
+            className={styles.image}
             src={image.imageUrl}
             alt={image.imageUrl}
             width={styles.IMAGE_SIZE_PX.width}

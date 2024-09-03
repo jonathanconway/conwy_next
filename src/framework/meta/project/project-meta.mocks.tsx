@@ -17,5 +17,6 @@ export function createProjectMetaMock(): ProjectMeta {
         url: "http://github.com/jonathanconway/tailwindjs",
       },
     ],
+    mainImage: "main.svg",
   };
 }
