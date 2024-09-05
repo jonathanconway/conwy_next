@@ -11,6 +11,8 @@ interface UseCarouselParams<T> {
 export interface UseCarouselResult<T> {
   readonly items: readonly T[];
   readonly selectedItem: T;
+  readonly canGoPrevious: boolean;
+  readonly canGoNext: boolean;
   readonly handlePreviousClick: VoidFunction;
   readonly handleNextClick: VoidFunction;
   readonly handleTabClick: (newSelectedItem: T) => () => void;
@@ -28,6 +30,10 @@ export function useCarousel<T>(params: UseCarouselParams<T>) {
   });
 
   const { selectedItem } = state;
+
+  const canGoPrevious = params.items.indexOf(state.selectedItem) > 0;
+  const canGoNext =
+    params.items.indexOf(state.selectedItem) < params.items.length - 1;
 
   const handlePreviousClick = () => {
     const newIndex =
@@ -63,6 +69,8 @@ export function useCarousel<T>(params: UseCarouselParams<T>) {
   return {
     items,
     selectedItem,
+    canGoPrevious,
+    canGoNext,
     handlePreviousClick,
     handleNextClick,
     handleTabClick,

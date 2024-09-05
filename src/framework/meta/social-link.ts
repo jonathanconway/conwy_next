@@ -6,10 +6,11 @@ export const SocialLinkTypes = {
   LinkedIn: "linkedin",
   Mastodon: "mastodon",
   Medium: "medium",
+  ProductHunt: "product-hunt",
   Substack: "substack",
   Twitter: "twitter",
   X: "x",
-  ProductHunt: "product-hunt",
+  Website: "website",
 } as const;
 
 export type SocialLinkType = TypeOfConst<typeof SocialLinkTypes>;

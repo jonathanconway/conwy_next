@@ -11,19 +11,10 @@ interface UseWorkFeedbackCarouselParams {
 export function useWorkFeedbackCarousel(params: UseWorkFeedbackCarouselParams) {
   const sortedWorkFeedbacks = sortWorkFeedbacks(params.workFeedbacks);
 
-  const {
-    selectedItem: selectedWorkFeedback,
-    handlePreviousClick,
-    handleNextClick,
-    handleTabClick,
-  } = useCarousel({ items: sortedWorkFeedbacks });
+  const workFeedbackCarousel = useCarousel({ items: sortedWorkFeedbacks });
 
   return {
-    sortedWorkFeedbacks,
-    selectedWorkFeedback,
-    handlePreviousClick,
-    handleNextClick,
-    handleTabClick,
+    workFeedbackCarousel,
   };
 }
 

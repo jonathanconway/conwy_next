@@ -1,14 +1,36 @@
-import { ProjectMeta, SocialLinkTypes } from "@/framework";
+import { ProjectMeta } from "@/framework";
 
-export const braggart: ProjectMeta = {
+export const meta: ProjectMeta = {
   title: "braggart",
-  blurb: "",
-  date: "2000-01-01",
+  blurb: "Track your work metrics effortlessly",
+  date: "2024-03-01",
   slug: "braggart",
   tags: [],
   type: "project",
-  subType: "library",
-  socialLinks: [],
+  subType: "tool",
+  socialLinks: [
+    {
+      type: "github",
+      url: "https://github.com/jonathanconway/braggart",
+    },
+  ],
   mainImage: "main.svg",
   redirectUrl: "braggart",
+  techs: [
+    {
+      categoryName: "react",
+      items: [
+        {
+          itemName: "chakra-ui",
+        },
+        {
+          itemName: "react-hook-form",
+        },
+        {
+          itemName: "vite",
+        },
+      ],
+    },
+  ],
+  platforms: ["Web"],
 };

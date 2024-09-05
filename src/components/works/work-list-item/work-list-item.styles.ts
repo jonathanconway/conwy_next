@@ -11,8 +11,8 @@ import {
   leading_5,
   overflow_hidden,
   right_3,
-  rounded_md,
   text_ellipsis,
+  text_sm,
   text_stone_50,
   text_stone_400,
   text_stone_500,
@@ -22,13 +22,10 @@ import {
   uppercase,
   whitespace_nowrap,
 } from "@jonathanconway/tailwindjs";
-import { text_sm } from "@jonathanconway/tailwindjs";
 
-import * as linkStyles from "../../link/link.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
 export const container = cn(
-  // linkStyles.link,
   listItemStyles.container,
   text_stone_950,
   dark(text_stone_50),
@@ -39,8 +36,6 @@ export const container = cn(
 export const mainColumn = listItemStyles.mainColumn;
 
 export const asideColumn = listItemStyles.asideColumn;
-
-export const image = cn(rounded_md);
 
 export const title = cn(font_bold, group_name(hover.name, underline));
 

@@ -9,4 +9,5 @@ export const meta: ArticleMeta = {
   slug: "front-end-observability",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [],
 };

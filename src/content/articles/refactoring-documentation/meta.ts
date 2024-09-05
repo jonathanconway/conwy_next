@@ -7,4 +7,5 @@ export const meta: ArticleMeta = {
   slug: "refactoring-documentation",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [],
 };

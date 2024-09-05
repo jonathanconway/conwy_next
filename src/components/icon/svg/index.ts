@@ -15,4 +15,5 @@ export * from "./quote.svg";
 export * from "./substack.svg";
 export * from "./telegram.svg";
 export * from "./twitter.svg";
+export * from "./website.svg";
 export * from "./x.svg";

@@ -15,11 +15,14 @@ export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
       <IconButton
         icon={IconTypes.ArrowChevronLeft}
         tooltip={{ key: "previous", contents: "Previous" }}
+        disabled={!props.carousel.canGoPrevious}
         onClick={props.carousel.handlePreviousClick}
       />
 
       {props.carousel.items.map((tabItem, tabItemIndex) => (
         <IconButton
+          //  todo: try to find a faster way
+          key={JSON.stringify(tabItem)}
           isSelected={tabItem === props.carousel.selectedItem}
           tooltip={{
             key: `tab-${tabItemIndex}`,
@@ -32,6 +35,7 @@ export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
       <IconButton
         icon={IconTypes.ArrowChevronRight}
         tooltip={{ key: "next", contents: "Next" }}
+        disabled={!props.carousel.canGoNext}
         onClick={props.carousel.handleNextClick}
       />
     </div>

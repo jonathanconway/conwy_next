@@ -1,37 +1,21 @@
 import Image from "next/image";
 
-import { Link, Tooltip } from "@/components";
+import { Link, Tooltip, WorkMainImage } from "@/components";
 import { WorkMeta } from "@/framework";
 
 import * as styles from "./work-list-item.styles";
 
 interface WorkListItemProps {
-  readonly workHistory: WorkMeta;
+  readonly workMeta: WorkMeta;
 }
 
-function workHistoryItemImageFullPath(client: string) {
-  return (imageUrl: string) => {
-    return `/images/works/${client}/${imageUrl}`;
-  };
-}
+export function WorkListItem(props: WorkListItemProps) {
+  const { workMeta } = props;
 
-export function WorkListItem({
-  workHistory: {
-    client,
-    jobTitle,
-    blurbShort,
-    images,
-    techs,
-    feedbacks,
-    slug,
-    startDate,
-    endDate,
-  },
-}: WorkListItemProps) {
-  const techNames = techs.map((tech) => tech.categoryName).join(", ");
+  const techNames = workMeta.techs.map((tech) => tech.categoryName).join(", ");
 
   return (
-    <Link className={styles.container} href={`work/${slug}`} target="">
+    <Link className={styles.container} href={`work/${workMeta.slug}`} target="">
       <div className={styles.mainColumn}>
         {/* <div className={styles.date}>
           <Date format="MMM yyyy">{startDate}</Date>
@@ -39,16 +23,14 @@ export function WorkListItem({
           <Date format="MMM yyyy">{endDate}</Date>
         </div> */}
 
-        <div className={styles.title}>{client}</div>
+        <div className={styles.title}>{workMeta.client}</div>
 
-        {/* <div className={styles.subTitle}>{jobTitle}</div> */}
-
-        <p className={styles.blurb}>{blurbShort}</p>
+        <p className={styles.blurb}>{workMeta.blurbShort}</p>
 
         <Tooltip
           contents={
             <ul>
-              {techs.map((tech) => (
+              {workMeta.techs.map((tech) => (
                 <li key={tech.categoryName}>{tech.categoryName}</li>
               ))}
             </ul>
@@ -58,15 +40,7 @@ export function WorkListItem({
         </Tooltip>
       </div>
       <div className={styles.asideColumn}>
-        <Image
-          className={styles.image}
-          src={`/images/works/${slug}/thumbnail.png`}
-          alt={`Work thumbnail image for ${client}`}
-          priority
-          unoptimized={true}
-          width={96}
-          height={64}
-        />
+        <WorkMainImage workMeta={props.workMeta} />
 
         {/* {socialLinks && <SocialLinks socialLinks={socialLinks} />} */}
 

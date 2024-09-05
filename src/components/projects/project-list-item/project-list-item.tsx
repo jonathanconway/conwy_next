@@ -1,36 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { REDIRECTS } from "@/content";
-import {
-  POST_MAIN_IMAGE_DEFAULT,
-  ProjectListItem as ProjectListItemModel,
-} from "@/framework";
+import { POST_MAIN_IMAGE_DEFAULT, ProjectMeta } from "@/framework";
 
 import { SocialLinks } from "../../social-links";
 
 import * as styles from "./project-list-item.styles";
 
-export type ProjectListItemProps = ProjectListItemModel;
+interface ProjectListItemProps {
+  readonly projectMeta: ProjectMeta;
+}
 
 export function ProjectListItem(props: ProjectListItemProps) {
-  const href = props.redirectUrl
-    ? REDIRECTS[props.redirectUrl]
-    : `projects/${props.slug}`;
-
-  const target = props.redirectUrl ? "_blank" : undefined;
+  const { projectMeta } = props;
 
   return (
-    <Link className={styles.container} href={href} target={target}>
+    <div className={styles.container}>
       <div className={styles.mainColumn}>
-        <div className={styles.title}>{props.title}</div>
+        <Link href={`projects/${projectMeta.slug}`}>
+          <div className={styles.title}>{projectMeta.title}</div>
 
-        <p className={styles.blurb}>{props.blurb}</p>
+          <p className={styles.blurb}>{projectMeta.blurb}</p>
+        </Link>
       </div>
       <div className={styles.asideColumn}>
         <Image
           className={styles.image}
-          src={`/images/projects/${props.slug}/${props.mainImage ?? POST_MAIN_IMAGE_DEFAULT}`}
+          src={`/images/projects/${projectMeta.slug}/${projectMeta.mainImage ?? POST_MAIN_IMAGE_DEFAULT}`}
           alt="Project main image"
           priority
           unoptimized={true}
@@ -38,10 +34,12 @@ export function ProjectListItem(props: ProjectListItemProps) {
           height={64}
         />
 
-        {props.socialLinks && <SocialLinks socialLinks={props.socialLinks} />}
+        {projectMeta.socialLinks && (
+          <SocialLinks socialLinks={projectMeta.socialLinks} />
+        )}
 
-        <span className={styles.type}>{props.subType}</span>
+        <span className={styles.type}>{projectMeta.subType}</span>
       </div>
-    </Link>
+    </div>
   );
 }

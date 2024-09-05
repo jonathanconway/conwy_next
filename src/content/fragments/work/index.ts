@@ -1,3 +1,3 @@
-import WorkFragment from "./work.mdx";
+import Work from "./work.mdx";
 
-export { WorkFragment };
+export { Work };

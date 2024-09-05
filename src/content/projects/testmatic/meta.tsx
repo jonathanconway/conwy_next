@@ -1,6 +1,6 @@
 import { ProjectMeta, SocialLinkTypes } from "@/framework";
 
-export const testmatic: ProjectMeta = {
+export const meta: ProjectMeta = {
   title: "testmatic",
   blurb: "Rapid-entry test case management system.",
   date: "2024-05-01",
@@ -9,6 +9,10 @@ export const testmatic: ProjectMeta = {
   type: "project",
   subType: "tool",
   socialLinks: [
+    {
+      type: SocialLinkTypes.Website,
+      url: "https://testmatic-docs.surge.sh/",
+    },
     {
       type: SocialLinkTypes.Twitter,
       url: "http://twitter.com/testmaticapp",
@@ -20,4 +24,6 @@ export const testmatic: ProjectMeta = {
   ],
   mainImage: "main.svg",
   redirectUrl: "testmatic",
+  techs: [],
+  platforms: ["Web", "CLI"],
 };

@@ -1,3 +1,3 @@
-import ProjectsFragment from "./projects.mdx";
+import Projects from "./projects.mdx";
 
-export { ProjectsFragment };
+export { Projects };

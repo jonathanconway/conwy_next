@@ -1,6 +1,11 @@
-import { ContactDetails, PageLayout, TwoColLayout } from "@/components";
+import {
+  ContactDetails,
+  Fragment,
+  PageLayout,
+  TwoColLayout,
+} from "@/components";
 import { site } from "@/content";
-import { ContactFragment } from "@/content/fragments/contact";
+import { Contact as Contact_ } from "@/content/fragments/contact";
 
 export default function Contact() {
   return (
@@ -9,7 +14,9 @@ export default function Contact() {
       main={
         <TwoColLayout>
           <div>
-            <ContactFragment />
+            <Fragment>
+              <Contact_ />
+            </Fragment>
 
             <ContactDetails />
           </div>

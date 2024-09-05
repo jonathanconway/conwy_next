@@ -1,3 +1,3 @@
-import ContactFragment from "./contact.mdx";
+import Contact from "./contact.mdx";
 
-export { ContactFragment };
+export { Contact };

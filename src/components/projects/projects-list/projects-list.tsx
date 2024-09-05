@@ -1,18 +1,18 @@
-import { ProjectListItem as ProjectListItemModel } from "@/framework/client";
+import { ProjectMeta } from "@/framework/client";
 
 import { ProjectListItem } from "../project-list-item";
 
 import * as styles from "./projects-list.styles";
 
 export interface ProjectsListProps {
-  readonly items: readonly ProjectListItemModel[];
+  readonly projectMetas: readonly ProjectMeta[];
 }
 
-export function ProjectsList({ items }: ProjectsListProps) {
+export function ProjectsList({ projectMetas }: ProjectsListProps) {
   return (
     <div className={styles.container()}>
-      {items.map((item) => (
-        <ProjectListItem key={item.slug} {...item} />
+      {projectMetas.map((projectMeta) => (
+        <ProjectListItem key={projectMeta.slug} projectMeta={projectMeta} />
       ))}
     </div>
   );

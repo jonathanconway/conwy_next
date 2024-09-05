@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Visualising execution flows",
@@ -9,4 +9,10 @@ export const meta: ArticleMeta = {
   slug: "visualising-execution-flows",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Dev,
+      url: "https://dev.to/conw_y/visualising-execution-flows-59e7",
+    },
+  ],
 };

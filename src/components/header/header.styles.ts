@@ -5,6 +5,7 @@ import {
   gap_6,
   items_center,
   justify_between,
+  pt_8,
   py_8,
   w_arb,
 } from "@jonathanconway/tailwindjs";
@@ -12,7 +13,7 @@ import {
 export const container = cn(
   flex,
   flex_row,
-  py_8,
+  pt_8,
   items_center,
   justify_between,
 );

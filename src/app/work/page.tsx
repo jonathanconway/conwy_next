@@ -1,23 +1,22 @@
-import { PageLayout, Works } from "@/components";
+import { Fragment, PageLayout, Works } from "@/components";
 import { site } from "@/content";
-import { WorkFragment } from "@/content/fragments";
+import { Work as Work_ } from "@/content/fragments";
 import * as works from "@/content/works";
-import { pickWorkHistories } from "@/framework";
+import { getWorkMetas } from "@/framework";
 
 export default function Page() {
-  const worksMetas = Object.values(works).map((work) => work.meta);
-  // const workHistoryListItems = pickWorkHistories(worksMetas);
+  const workMetas = getWorkMetas(works);
 
   return (
     <PageLayout
       selectedNavPath="/work"
       main={
         <>
-          <div>
-            <WorkFragment />
-          </div>
+          <Fragment>
+            <Work_ />
+          </Fragment>
 
-          <Works workHistories={worksMetas} />
+          <Works workMetas={workMetas} />
         </>
       }
     />

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { AboutMeFragment } from "@/content/fragments";
+import { AboutMe as AboutMe_ } from "@/content/fragments";
 
 import styles2 from "./about-me.module.css";
 
@@ -18,7 +18,7 @@ export function FragmentsAboutMe() {
       />
 
       <div className={styles2.fragmentWrapper}>
-        <AboutMeFragment />
+        <AboutMe_ />
       </div>
     </div>
   );

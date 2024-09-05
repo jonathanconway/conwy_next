@@ -1,7 +1,6 @@
 "use client";
 
-import { loadPrismJSTheme } from "@/framework/client";
-
+import { loadPrismJSTheme } from "../../head/prismjs-theme";
 import { THEMES, useSelectedTheme } from "../../theme";
 
 const THEME_EMOJIS = {

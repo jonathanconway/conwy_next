@@ -1,11 +1,19 @@
 import {
+  absolute,
+  bottom_0,
   cn,
-  dark,
-  pointer_events_none,
-  text_stone_50,
-  text_stone_950,
+  h_full,
+  left_0,
+  relative,
+  right_0,
+  top_0,
+  w_full,
 } from "@jonathanconway/tailwindjs";
 
-export const iconSvgBase = cn(pointer_events_none);
+export const DEFAULT_SIZE = "1rem";
 
-export const iconSvg = cn(iconSvgBase, text_stone_950, dark(text_stone_50));
+export const iconContainer = cn(relative);
+
+export const iconSvg = cn(w_full, h_full);
+
+export const iconOverlay = cn(absolute, left_0, top_0, right_0, bottom_0);

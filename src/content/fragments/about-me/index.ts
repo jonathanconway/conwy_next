@@ -1,3 +1,3 @@
-import AboutMeFragment from "./about-me.mdx";
+import AboutMe from "./about-me.mdx";
 
-export { AboutMeFragment };
+export { AboutMe };

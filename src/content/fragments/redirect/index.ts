@@ -1,3 +1,3 @@
-import RedirectFragment from "./redirect.mdx";
+import Redirect from "./redirect.mdx";
 
-export { RedirectFragment };
+export { Redirect };

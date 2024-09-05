@@ -1,6 +1,6 @@
 import { ProjectMeta, SocialLinkTypes } from "@/framework";
 
-export const tailwindjs: ProjectMeta = {
+export const meta: ProjectMeta = {
   title: "tailwindjs",
   blurb: "Tailwind as Javascript functions for intellisense and type safety.",
   date: "2024-05-02",
@@ -16,4 +16,15 @@ export const tailwindjs: ProjectMeta = {
   ],
   mainImage: "main.svg",
   redirectUrl: "tailwindjs",
+  techs: [
+    {
+      categoryName: "typescript",
+      items: [],
+    },
+    {
+      categoryName: "tailwindcss",
+      items: [],
+    },
+  ],
+  platforms: ["Web"],
 };

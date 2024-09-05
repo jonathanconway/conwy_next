@@ -11,7 +11,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 4000",
-    "dev:watch": "concurrently \"npm run build-tailwind:watch\" \"npm run dev\"",
+    "dev:watch": "concurrently \"npm run build:tailwind:watch\" \"npm run dev\"",
     "build": "next build",
     "build:watch": "nodemon \"npm run build\" ./src --ext ts,tsx,mdx,css --ignore *.test.*",
     "start": "npx serve@latest out  -p 4000",
@@ -21,7 +21,7 @@
     "build-storybook": "storybook build",
     "deploy": "npx surge ./out conwy.surge.sh",
     "build:tailwind": "node ./scripts/build-tailwind.js",
-    "build-tailwind:watch": "nodemon \"./scripts/build-tailwind.js\" ./src --ignore ./src/tailwind-js-classes.json",
+    "build:tailwind:watch": "nodemon \"./scripts/build-tailwind.js\" ./src --ignore ./src/tailwind-js-classes.json",
     "build:custom": "npx tsx ./src/builders/exec.ts",
     "test": "jest"
   },

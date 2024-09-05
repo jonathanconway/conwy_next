@@ -10,6 +10,7 @@ import {
   cn,
   content_center,
   dark,
+  enabled,
   from_stone_100,
   from_stone_200,
   from_stone_400,
@@ -19,6 +20,8 @@ import {
   hover,
   inline_flex,
   items_center,
+  opacity_30,
+  pointer_events_none,
   rounded,
   text_white,
   to_stone_300,
@@ -29,7 +32,7 @@ import {
   w_full,
 } from "@jonathanconway/tailwindjs";
 
-export const iconButton = (isSelected = false) =>
+export const iconButton = ({ isSelected = false }) =>
   cn(
     inline_flex,
     items_center,
@@ -54,20 +57,20 @@ export const iconButton = (isSelected = false) =>
           from_stone_100,
           to_stone_300,
 
-          hover(from_stone_200),
-          hover(to_stone_400),
+          enabled(hover(from_stone_200)),
+          enabled(hover(to_stone_400)),
 
           dark(from_stone_500),
           dark(to_stone_700),
 
-          hover(dark(from_stone_400)),
-          hover(dark(to_stone_600)),
+          enabled(hover(dark(from_stone_400))),
+          enabled(hover(dark(to_stone_600))),
 
           border_stone_300,
-          hover(border_stone_400),
+          enabled(hover(border_stone_400)),
 
           dark(border_stone_700),
-          hover(dark(border_stone_600)),
+          enabled(hover(dark(border_stone_600))),
         ]),
 
     rounded,
@@ -80,3 +83,6 @@ export const iconButton = (isSelected = false) =>
 
     dark(text_white),
   );
+
+export const icon = ({ disabled = false }) =>
+  cn(pointer_events_none, disabled ? opacity_30 : "");

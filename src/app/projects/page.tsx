@@ -1,22 +1,22 @@
-import { PageLayout, ProjectsList } from "@/components";
+import { Fragment, PageLayout, ProjectsList } from "@/components";
 import { site } from "@/content";
-import { ProjectsFragment } from "@/content/fragments";
+import { Projects as Projects_ } from "@/content/fragments";
 import * as projects from "@/content/projects";
-import { sortByDate } from "@/framework";
+import { getProjectMetas } from "@/framework";
 
 export default function Projects() {
-  const projectModules = sortByDate(Object.values(projects));
+  const projectMetas = getProjectMetas(projects);
 
   return (
     <PageLayout
       selectedNavPath="/projects"
       main={
         <>
-          <div>
-            <ProjectsFragment />
-          </div>
+          <Fragment>
+            <Projects_ />
+          </Fragment>
 
-          <ProjectsList items={projectModules} />
+          <ProjectsList projectMetas={projectMetas} />
         </>
       }
     />

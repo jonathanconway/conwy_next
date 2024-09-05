@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Parallel loading in React",
@@ -7,4 +7,10 @@ export const meta: ArticleMeta = {
   slug: "parallel-loading-react",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Dev,
+      url: "https://dev.to/conw_y/parallel-loading-in-react-cci",
+    },
+  ],
 };

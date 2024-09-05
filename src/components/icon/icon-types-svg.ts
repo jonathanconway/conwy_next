@@ -12,10 +12,12 @@ import {
   Mastodon,
   Medium,
   OpenInNew,
+  ProductHunt,
   Quote,
   Substack,
   Telegram,
   Twitter,
+  Website,
   X,
 } from "./svg";
 
@@ -32,10 +34,12 @@ export const ICON_TYPE_SVGS = {
   [IconTypes.LinkedIn]: LinkedIn,
   [IconTypes.Mastodon]: Mastodon,
   [IconTypes.Medium]: Medium,
+  [IconTypes.ProductHunt]: ProductHunt,
   [IconTypes.OpenInNew]: OpenInNew,
   [IconTypes.Quote]: Quote,
   [IconTypes.Substack]: Substack,
   [IconTypes.Telegram]: Telegram,
   [IconTypes.Twitter]: Twitter,
+  [IconTypes.Website]: Website,
   [IconTypes.X]: X,
 };

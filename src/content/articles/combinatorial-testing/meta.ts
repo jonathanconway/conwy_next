@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Combinatorial Testing",
@@ -8,4 +8,10 @@ export const meta: ArticleMeta = {
   slug: "combinatorial-testing",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Dev,
+      url: "https://dev.to/conw_y/increase-your-test-coverage-with-combinatorial-testing-ak2",
+    },
+  ],
 };

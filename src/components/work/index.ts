@@ -1,3 +1,2 @@
 export * from "./work";
-export * from "./work-projects";
-
+export * from "./work-main-image";

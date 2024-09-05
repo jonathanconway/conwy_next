@@ -34,7 +34,11 @@ export function MicroListItem(props: MicroListItemProps) {
       </div>
       <div className={styles.asideColumn}>
         <div className={styles.image}>
-          <Icon icon={IconTypes.Quote} className={styles.iconQuote} />
+          <Icon
+            icon={IconTypes.Quote}
+            className={styles.iconQuote}
+            size="100%"
+          />
         </div>
 
         {props.socialLinks && <SocialLinks socialLinks={props.socialLinks} />}

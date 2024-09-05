@@ -7,4 +7,5 @@ export const meta: ArticleMeta = {
   slug: "testing-steps",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [],
 };

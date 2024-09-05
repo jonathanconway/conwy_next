@@ -21,10 +21,12 @@ function IconButton_(props: IconButtonProps) {
 
   return (
     <button
-      className={cn(styles.iconButton(props.isSelected), props.className ?? "")}
+      className={cn(styles.iconButton(props), props.className ?? "")}
       {...restProps}
     >
-      {props.icon && <Icon icon={props.icon} />}
+      {props.icon && (
+        <Icon className={styles.icon(props)} icon={props.icon} size="100%" />
+      )}
     </button>
   );
 }

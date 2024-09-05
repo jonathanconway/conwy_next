@@ -1,23 +1,23 @@
-import { Children, ComponentPropsWithRef, ReactNode } from "react";
+import { ComponentPropsWithRef } from "react";
+
+import moduleStyles from "./fragment.module.css";
 
 export type FragmentProps = ComponentPropsWithRef<"div">;
 
-function getRenderableChildren(children: ReactNode) {
-  return Children.map(children, (child) => {
-    if (
-      !child ||
-      typeof child !== "object" ||
-      !("type" in child || "props" in child || "key" in child)
-    ) {
-      return null;
-    }
+// function getRenderableChildren(children: ReactNode) {
+//   return Children.map(children, (child) => {
+//     if (
+//       !child ||
+//       typeof child !== "object" ||
+//       !("type" in child || "props" in child || "key" in child)
+//     ) {
+//       return null;
+//     }
 
-    return child;
-  });
-}
+//     return child;
+//   });
+// }
 
-export function Fragment({ children, ...restProps }: FragmentProps) {
-  const childrenRenderable = getRenderableChildren(children);
-
-  return <div {...restProps}>{childrenRenderable}</div>;
+export function Fragment(props: FragmentProps) {
+  return <div className={moduleStyles.fragment} {...props} />;
 }

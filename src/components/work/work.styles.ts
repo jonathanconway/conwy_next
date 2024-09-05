@@ -28,9 +28,13 @@ import * as labelStyles from "../label/label.styles";
 
 export const container = cn(relative, flex, flex_col, gap_8);
 
-export const main = cn(flex, flex_1, flex_row, gap_6);
+export const main = cn(flex, flex_1, flex_row, gap_4);
 
-export const header = cn(flex, flex_col, gap_2);
+export const header = cn(flex, flex_row);
+
+export const headerLeft = cn(flex, flex_col, flex_1, gap_2);
+
+export const headerRight = cn();
 
 export const client = mt_0;
 

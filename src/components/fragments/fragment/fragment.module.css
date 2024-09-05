@@ -1,14 +1,14 @@
-/*  todo: extract common stuff to `fragment` or similar */
-
-.workBody hr {
+.fragment hr {
   margin-top: 1rem;
 }
 
-.workBody p {
+.fragment p {
   padding-top: 0.5rem;
+  font-size: 0.875rem; /* todo: add to variables */
+  line-height: 1.5rem;
 }
 
-.workBody ol {
+.fragment ol {
   list-style-type: decimal;
   margin-left: auto;
   margin-right: auto;
@@ -19,7 +19,7 @@
   padding-bottom: 0;
 }
 
-.workBody ul {
+.fragment ul {
   list-style-type: disc;
   margin-left: 0;
   margin-right: 0;
@@ -30,14 +30,14 @@
   padding-bottom: 0;
 }
 
-.workBody li {
-  margin-top: 0.25rem;
+.fragment li {
+  margin-top: 0.5rem;
   line-height: 1.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.workBody pre {
+.fragment pre {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;

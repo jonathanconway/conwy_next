@@ -10,6 +10,10 @@ export const meta: ArticleMeta = {
   tags: ["software-development"],
   socialLinks: [
     {
+      type: SocialLinkTypes.Dev,
+      url: "https://dev.to/conw_y/streamlining-code-reviews-4016",
+    },
+    {
       type: SocialLinkTypes.LinkedIn,
       url: "https://www.linkedin.com/pulse/streamlining-code-reviews-jonathan-conway",
     },

@@ -16,7 +16,7 @@ const HEADER_NAV_ITEM_TRACE_IMAGE_PATH_VALUE =
 
 export function HeaderNavItem({ title, href, selected }: HeaderNavItemProps) {
   const path = usePathname();
-  const active = selected || Boolean(href === path);
+  const active = selected || path.startsWith(href);
 
   return (
     <Link className={styles.container()} href={href}>

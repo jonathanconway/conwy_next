@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Diagramming Typescript",
@@ -7,4 +7,10 @@ export const meta: ArticleMeta = {
   slug: "diagramming-ts",
   type: "article",
   tags: ["software-development"],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Dev,
+      url: "https://dev.to/conw_y/diagramming-typescript-2ehj",
+    },
+  ],
 };

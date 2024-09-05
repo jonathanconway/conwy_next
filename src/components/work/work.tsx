@@ -1,9 +1,11 @@
-import { MdxH2, Section, WorkProjects } from "@/components";
+import { MdxH2, Section } from "@/components";
 import { Work as Work_ } from "@/framework";
 
 import { WorkBody } from "./work-body";
 import { WorkFeedbackCarousel } from "./work-feedback-carousel";
 import { WorkImageCascade } from "./work-image-cascade";
+import { WorkNavigation } from "./work-navigation";
+import { WorkProjects } from "./work-projects";
 import * as styles from "./work.styles";
 
 interface WorkProps {
@@ -19,9 +21,15 @@ export function Work({ work }: WorkProps) {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <MdxH2 className={styles.client}>{client}</MdxH2>
+        <div className={styles.headerLeft}>
+          <MdxH2 className={styles.client}>{client}</MdxH2>
 
-        <div className={styles.jobTitle}>{jobTitle}</div>
+          <div className={styles.jobTitle}>{jobTitle}</div>
+        </div>
+
+        <div className={styles.headerRight}>
+          <WorkNavigation workMeta={work.meta} />
+        </div>
       </div>
 
       <div className={styles.main}>

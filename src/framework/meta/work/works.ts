@@ -1,11 +1,11 @@
-import { WorkMeta } from "..";
+import { Work, WorkMeta } from "..";
 
 import { orderBy } from "lodash";
 
-export function pickWorkHistories(workHistories: Record<string, WorkMeta>) {
-  return Object.values(workHistories);
+export function sortWorkMetas(workMetas: readonly WorkMeta[]) {
+  return orderBy(workMetas, "endDate", "desc");
 }
 
-export function sortWorkHistories(workHistories: readonly WorkMeta[]) {
-  return orderBy(workHistories, "endDate", "desc");
+export function getWorkMetas(works: Record<string, Work>) {
+  return sortWorkMetas(Object.values(works).map((work) => work.meta));
 }

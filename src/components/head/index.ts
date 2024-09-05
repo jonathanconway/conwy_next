@@ -1,1 +1,1 @@
-export * from "./fav-icons";
+export * from "./head";

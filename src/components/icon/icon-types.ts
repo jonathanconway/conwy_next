@@ -19,6 +19,7 @@ export const IconTypes = {
   Substack: "substack",
   Telegram: "telegram",
   Twitter: "twitter",
+  Website: "website",
   X: "x",
 } as const;
 

@@ -7,4 +7,5 @@ export const meta: ArticleMeta = {
   slug: "interaction-wireframes",
   type: "article",
   tags: ["design"],
+  socialLinks: [],
 };
