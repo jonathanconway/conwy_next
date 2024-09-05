@@ -17,3 +17,4 @@ export * from "./telegram.svg";
 export * from "./twitter.svg";
 export * from "./website.svg";
 export * from "./x.svg";
+export * from "./youtube.svg";

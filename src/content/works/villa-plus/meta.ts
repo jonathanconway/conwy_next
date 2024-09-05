@@ -8,7 +8,20 @@ export const meta: WorkMeta = {
   endDate: "2024-02-20",
   jobTitle: "Technical Lead",
   feedbacks: [],
-  images: [],
+  images: [
+    {
+      imageUrl: "villa-plus-1.png",
+      notes: [],
+    },
+    {
+      imageUrl: "villa-plus-2.jpg",
+      notes: [],
+    },
+    {
+      imageUrl: "villa-plus-screencast.gif",
+      notes: [],
+    },
+  ],
   slug: "villa-plus",
   tags: [],
   type: "work",
@@ -23,7 +36,14 @@ export const meta: WorkMeta = {
     },
     {
       categoryName: "c#",
-      items: [],
+      items: [
+        {
+          itemName: "asp.net",
+        },
+        {
+          itemName: "mvc",
+        },
+      ],
     },
     {
       categoryName: "azure",
@@ -31,8 +51,22 @@ export const meta: WorkMeta = {
         {
           itemName: "app-insights",
         },
+        {
+          itemName: "monitor",
+        },
       ],
     },
+    {
+      categoryName: "prismic",
+      items: [],
+    },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "Resort villas rebuild",
+    },
+    {
+      title: "Reservation flow optimization",
+    },
+  ],
 };

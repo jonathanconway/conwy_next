@@ -8,12 +8,12 @@ import {
   font_bold,
   font_medium,
   gap_3,
-  group,
   group_name,
   h_14,
   h_full,
   hover,
   inline_block,
+  pb_8,
   right_3,
   rounded_md,
   text_sm,
@@ -33,7 +33,7 @@ export const container = listItemStyles.container;
 
 export const mainColumn = listItemStyles.mainColumn;
 
-export const asideColumn = cn(w_16, flex, flex_col, gap_3);
+export const asideColumn = cn(w_16, flex, flex_col, gap_3, pb_8);
 
 export const image = cn(rounded_md, h_14, text_stone_400, dark(text_stone_500));
 

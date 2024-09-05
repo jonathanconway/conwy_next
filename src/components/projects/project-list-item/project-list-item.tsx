@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { POST_MAIN_IMAGE_DEFAULT, ProjectMeta } from "@/framework";
 
-import { SocialLinks } from "../../social-links";
+import { SocialLinksIcons } from "../../social-links";
 
 import * as styles from "./project-list-item.styles";
 
@@ -35,7 +35,7 @@ export function ProjectListItem(props: ProjectListItemProps) {
         />
 
         {projectMeta.socialLinks && (
-          <SocialLinks socialLinks={projectMeta.socialLinks} />
+          <SocialLinksIcons socialLinks={projectMeta.socialLinks} />
         )}
 
         <span className={styles.type}>{projectMeta.subType}</span>

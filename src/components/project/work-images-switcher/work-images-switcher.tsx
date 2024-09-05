@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { WorkImage, WorkMeta } from "@/framework";
+import { ProjectImage, WorkMeta } from "@/framework";
 
-import { workImageFullPath } from "../work-image-cascade/work-image-cascade.utils";
+import { projectImageFullPath } from "../product-image-cascade/product-image-cascade.utils";
 
 import * as styles from "./work-images-switcher.styles";
 
@@ -14,7 +14,7 @@ interface WorkImagesSwitcherProps {
 }
 
 interface WorkImagesSwitcherState {
-  readonly selectedWorkImage?: WorkImage;
+  readonly selectedWorkImage?: ProjectImage;
 }
 
 export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
@@ -22,7 +22,7 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
     selectedWorkImage: props.work.images[0],
   });
 
-  const handleImageThumbnailClick = (workImage: WorkImage) => () => {
+  const handleImageThumbnailClick = (workImage: ProjectImage) => () => {
     setState({
       selectedWorkImage: workImage,
     });
@@ -41,7 +41,7 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
             <Image
               className={styles.imagesNavItemImage}
               onClick={handleImageThumbnailClick(workImage)}
-              src={workImageFullPath(props.work)(workImage)}
+              src={projectImageFullPath(props.work)(workImage)}
               alt={workImage.title ?? `Image ${workImageIndex + 1}`}
               priority
               unoptimized={true}
@@ -55,7 +55,7 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
       {state.selectedWorkImage && (
         <Image
           className={styles.selectedItemImage}
-          src={workImageFullPath(props.work)(state.selectedWorkImage)}
+          src={projectImageFullPath(props.work)(state.selectedWorkImage)}
           alt={
             state.selectedWorkImage.title ??
             `Image ${props.work.images.indexOf(state.selectedWorkImage) + 1}`

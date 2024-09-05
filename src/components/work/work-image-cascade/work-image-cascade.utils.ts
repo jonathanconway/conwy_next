@@ -1,8 +1,8 @@
-import { Work, WorkImage, WorkMeta } from "@/framework";
+import { ProjectImage, Work, WorkMeta } from "@/framework";
 
-export function workImageFullPath({ client }: WorkMeta) {
-  return ({ imageUrl }: WorkImage) => {
-    return `/images/works/${client.toLowerCase()}/${imageUrl}`;
+export function workImageFullPath({ slug }: WorkMeta) {
+  return ({ imageUrl }: ProjectImage) => {
+    return `/images/works/${slug}/${imageUrl}`;
   };
 }
 

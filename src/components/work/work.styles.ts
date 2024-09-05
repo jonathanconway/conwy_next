@@ -6,12 +6,16 @@ import {
   flex_col,
   flex_row,
   font_semibold,
+  gap_1,
   gap_2,
+  gap_3,
   gap_4,
   gap_6,
   gap_8,
   grow,
   inline_block,
+  items_center,
+  justify_between,
   leading_5,
   ml_2,
   mr_2,
@@ -30,9 +34,13 @@ export const container = cn(relative, flex, flex_col, gap_8);
 
 export const main = cn(flex, flex_1, flex_row, gap_4);
 
-export const header = cn(flex, flex_row);
+export const header = cn(flex, flex_row, justify_between);
 
-export const headerLeft = cn(flex, flex_col, flex_1, gap_2);
+export const headerLeft = cn(flex, flex_row, gap_3, items_center);
+
+export const headerLeftImage = cn();
+
+export const headerLeftTitle = cn(flex, flex_col, flex_1, gap_1);
 
 export const headerRight = cn();
 

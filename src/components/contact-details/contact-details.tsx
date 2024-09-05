@@ -17,12 +17,12 @@ const CONTACTS = [
   {
     iconType: IconTypes.Mastodon,
     label: "Mastodon",
-    href: "https://linkedin.com/in/jonathanconway",
+    href: "https://mastodon.social/@conwy",
   },
   {
     iconType: IconTypes.LinkedIn,
     label: "LinkedIn",
-    href: "https://mastodon.social/@conwy",
+    href: "https://linkedin.com/in/jonathanconway",
   },
   {
     iconType: IconTypes.Telegram,

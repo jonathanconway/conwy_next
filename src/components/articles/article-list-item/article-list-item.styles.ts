@@ -5,7 +5,7 @@ import {
   dark,
   font_bold,
   font_medium,
-  group,
+  group_name,
   hover,
   inline_block,
   right_3,
@@ -28,7 +28,7 @@ export const asideColumn = listItemStyles.asideColumn;
 
 export const image = cn(rounded_md);
 
-export const title = cn(font_bold, group(hover.name, underline));
+export const title = cn(font_bold, group_name(hover.name, underline));
 
 export const date = text_xs;
 

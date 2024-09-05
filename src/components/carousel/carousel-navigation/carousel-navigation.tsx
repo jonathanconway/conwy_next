@@ -10,6 +10,10 @@ interface CarouselNavigationProps<T> {
 }
 
 export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
+  if (props.carousel.items.length <= 1) {
+    return null;
+  }
+
   return (
     <div className={styles.switchButtonsContainer}>
       <IconButton

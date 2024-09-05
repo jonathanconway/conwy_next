@@ -12,6 +12,7 @@ import {
   gap_4,
   hidden,
   hover,
+  mb_3,
   md,
   min_h_40,
   overflow_hidden,

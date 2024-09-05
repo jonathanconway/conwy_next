@@ -5,6 +5,7 @@ export interface ProjectMeta extends PostMetaBase {
   readonly type: "project";
   readonly redirectUrl?: string;
   readonly subType: "library" | "standard" | "tool";
+  readonly images: readonly ProjectImage[];
   readonly techs: readonly ProjectTech[];
   readonly platforms: readonly ProjectPlatform[];
 }
@@ -17,3 +18,13 @@ export interface ProjectTech {
 }
 
 export type ProjectPlatform = string;
+
+export interface ProjectImage {
+  readonly imageUrl: string;
+  readonly title?: string;
+  readonly notes: readonly {
+    readonly hospotX: number;
+    readonly hospotY: number;
+    readonly text: string;
+  }[];
+}

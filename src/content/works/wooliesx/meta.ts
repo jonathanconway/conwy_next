@@ -23,6 +23,14 @@ export const meta: WorkMeta = {
       imageUrl: "wooliesx-2.png",
       notes: [],
     },
+    {
+      imageUrl: "wooliesx-3.png",
+      notes: [],
+    },
+    {
+      imageUrl: "wooliesx-4.png",
+      notes: [],
+    },
   ],
   slug: "wooliesx",
   tags: [],

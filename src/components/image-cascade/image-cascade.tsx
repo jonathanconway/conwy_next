@@ -3,18 +3,18 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { WorkImage } from "@/framework";
+import { ProjectImage } from "@/framework";
 
 import { ImageModal } from "../image-modal";
 
 import * as styles from "./image-cascade.styles";
 
 interface ImageCascadeProps {
-  readonly images: readonly WorkImage[];
+  readonly images: readonly ProjectImage[];
 }
 
 interface ImageCascadeState {
-  readonly openImage?: WorkImage;
+  readonly openImage?: ProjectImage;
 }
 
 // todo: make more abstract and call from work-image-cascade
@@ -25,7 +25,7 @@ export function ImageCascade(props: ImageCascadeProps) {
     setState({});
   };
 
-  const handleImageClick = (openImage: WorkImage) => () => {
+  const handleImageClick = (openImage: ProjectImage) => () => {
     setState({ openImage });
   };
 
@@ -36,8 +36,8 @@ export function ImageCascade(props: ImageCascadeProps) {
           key={`image-cascade-item-${image.imageUrl}`}
           className={styles.imageContainer}
           style={{
-            left: `${(100 / props.images.length) * imageUrlIndex}%`,
-            top: `${(100 / props.images.length) * imageUrlIndex}%`,
+            left: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
+            top: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
             width: `${styles.IMAGE_SIZE_PX.width}px`,
             height: `${styles.IMAGE_SIZE_PX.height}px`,
           }}

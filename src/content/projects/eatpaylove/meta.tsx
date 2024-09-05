@@ -37,4 +37,5 @@ export const meta: ProjectMeta = {
     },
   ],
   platforms: ["Mobile Web"],
+  images: [],
 };

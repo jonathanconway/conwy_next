@@ -12,4 +12,5 @@ export const meta: ArticleMeta = {
   slug: "<%= name %>",
   type: "article",
   tags: [""],
+  socialLinks: [],
 };

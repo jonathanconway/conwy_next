@@ -19,6 +19,7 @@ import {
   Twitter,
   Website,
   X,
+  YouTube,
 } from "./svg";
 
 export const ICON_TYPE_SVGS = {
@@ -42,4 +43,5 @@ export const ICON_TYPE_SVGS = {
   [IconTypes.Twitter]: Twitter,
   [IconTypes.Website]: Website,
   [IconTypes.X]: X,
+  [IconTypes.YouTube]: YouTube,
 };

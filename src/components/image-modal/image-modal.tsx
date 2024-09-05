@@ -3,7 +3,7 @@
 import { cn } from "@jonathanconway/tailwindjs";
 import Image from "next/image";
 
-import { WorkImage } from "@/framework";
+import { ProjectImage } from "@/framework";
 
 import { CarouselNavigation } from "../carousel";
 import { IconTypes } from "../icon";
@@ -13,8 +13,8 @@ import * as styles from "./image-modal.styles";
 import { ImageModalClasses, useImageModal } from "./use-image-modal.hook";
 
 interface ImageModalProps {
-  readonly workImages: readonly WorkImage[];
-  readonly defaultSelectedWorkImage: WorkImage;
+  readonly workImages: readonly ProjectImage[];
+  readonly defaultSelectedWorkImage: ProjectImage;
 
   readonly onClose: VoidFunction;
 }

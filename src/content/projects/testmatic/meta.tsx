@@ -26,4 +26,5 @@ export const meta: ProjectMeta = {
   redirectUrl: "testmatic",
   techs: [],
   platforms: ["Web", "CLI"],
+  images: [],
 };

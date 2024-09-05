@@ -21,6 +21,7 @@ export const IconTypes = {
   Twitter: "twitter",
   Website: "website",
   X: "x",
+  YouTube: "youtube",
 } as const;
 
 export type IconType = TypeOfConst<typeof IconTypes>;

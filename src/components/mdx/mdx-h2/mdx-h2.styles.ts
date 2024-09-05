@@ -5,19 +5,14 @@ import {
   flex,
   font_semibold,
   group,
+  group_name,
   hover,
   invisible,
   items_center,
   left_4,
-  left_6,
-  left_7,
   neg,
-  pl_2,
   pl_4,
-  pt_2,
-  pt_5,
   relative,
-  text_3xl,
   text_sky_500,
   text_sm,
   text_stone_500,
@@ -25,10 +20,6 @@ import {
   top_0,
   visible,
 } from "@jonathanconway/tailwindjs";
-
-import * as headingStyles from "../../heading/heading.styles";
-
-// export const h3 = cn(headingStyles.h3, relative);
 
 export const link = cn(
   group,
@@ -48,7 +39,7 @@ export const linkHoverHash = cn(
 
   text_stone_500,
   invisible,
-  group(hover.name, visible),
+  group_name(hover.name, visible),
   pl_4,
   text_sm,
 );

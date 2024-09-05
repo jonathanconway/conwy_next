@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArticleMeta } from "@/framework";
 
 import { Date } from "../../date";
-import { SocialLinks } from "../../social-links";
+import { SocialLinksIcons } from "../../social-links";
 
 import * as styles from "./article-list-item.styles";
 
@@ -20,8 +20,8 @@ export function ArticleListItem({
   type,
 }: ArticleListItemProps) {
   return (
-    <Link className={styles.container} href={`articles/${slug}`}>
-      <div className={styles.mainColumn}>
+    <div className={styles.container}>
+      <Link className={styles.mainColumn} href={`articles/${slug}`}>
         <div className={styles.date}>
           <Date>{date}</Date>
         </div>
@@ -29,7 +29,7 @@ export function ArticleListItem({
         <div className={styles.title}>{title}</div>
 
         <p className={styles.blurb}>{shortBlurb ?? blurb}</p>
-      </div>
+      </Link>
       <div className={styles.asideColumn}>
         <Image
           className={styles.image}
@@ -37,14 +37,14 @@ export function ArticleListItem({
           alt="Article main image"
           priority
           unoptimized={true}
-          width={100}
-          height={75}
+          width={125}
+          height={93.75}
         />
 
-        {socialLinks && <SocialLinks socialLinks={socialLinks} />}
+        {socialLinks && <SocialLinksIcons socialLinks={socialLinks} />}
 
         <span className={styles.type}>{type}</span>
       </div>
-    </Link>
+    </div>
   );
 }

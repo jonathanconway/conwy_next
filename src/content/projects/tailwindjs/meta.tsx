@@ -27,4 +27,5 @@ export const meta: ProjectMeta = {
     },
   ],
   platforms: ["Web"],
+  images: [],
 };

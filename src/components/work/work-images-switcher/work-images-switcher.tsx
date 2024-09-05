@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { WorkImage, WorkMeta } from "@/framework";
+import { ProjectImage, WorkMeta } from "@/framework";
 
 import { workImageFullPath } from "../work-image-cascade/work-image-cascade.utils";
 
@@ -14,7 +14,7 @@ interface WorkImagesSwitcherProps {
 }
 
 interface WorkImagesSwitcherState {
-  readonly selectedWorkImage?: WorkImage;
+  readonly selectedWorkImage?: ProjectImage;
 }
 
 export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
@@ -22,7 +22,7 @@ export function WorkImagesSwitcher(props: WorkImagesSwitcherProps) {
     selectedWorkImage: props.work.images[0],
   });
 
-  const handleImageThumbnailClick = (workImage: WorkImage) => () => {
+  const handleImageThumbnailClick = (workImage: ProjectImage) => () => {
     setState({
       selectedWorkImage: workImage,
     });

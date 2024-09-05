@@ -1,12 +1,12 @@
 import { MouseEvent, useEffect, useState } from "react";
 
-import { WorkImage } from "@/framework";
+import { ProjectImage } from "@/framework";
 
 import { useCarousel } from "../carousel";
 
 interface UseImageModalParams {
-  readonly workImages: readonly WorkImage[];
-  readonly defaultSelectedWorkImage: WorkImage;
+  readonly workImages: readonly ProjectImage[];
+  readonly defaultSelectedWorkImage: ProjectImage;
 
   readonly onClose: VoidFunction;
 }

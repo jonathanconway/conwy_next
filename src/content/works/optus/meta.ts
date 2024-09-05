@@ -58,5 +58,15 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "SubHub Google integration",
+    },
+    {
+      title: "Agent SubHub",
+    },
+    {
+      title: "Credit offer notification",
+    },
+  ],
 };

@@ -7,8 +7,26 @@ export const meta: WorkMeta = {
   startDate: "2014-07-01",
   endDate: "2015-08-01",
   jobTitle: "Senior Software Developer",
-  feedbacks: [],
-  images: [],
+  feedbacks: [
+    {
+      quote: "“I had a quick play; all works seamlessly and easy to use.”",
+      author: "Project Sponsor",
+    },
+  ],
+  images: [
+    {
+      imageUrl: "demonz-1.jpg",
+      notes: [],
+    },
+    {
+      imageUrl: "demonz-2.jpg",
+      notes: [],
+    },
+    {
+      imageUrl: "demonz-3.jpg",
+      notes: [],
+    },
+  ],
   slug: "demonz",
   tags: [],
   type: "work",

@@ -1,11 +1,9 @@
 import {
-  absolute,
   bg_stone_200,
   bg_stone_800,
   border,
   border_stone_300,
   border_stone_700,
-  bottom_3,
   cn,
   dark,
   flex,
@@ -13,40 +11,40 @@ import {
   flex_col,
   flex_row,
   font_bold,
-  font_medium,
   gap_1,
   gap_2,
   gap_4,
   group_name,
   hover,
-  inline_block,
   justify_center,
-  leading_5,
+  opacity_50,
   overflow_hidden,
   p_1,
   relative,
-  right_3,
   rounded_md,
-  text_ellipsis,
+  text_sm,
   text_stone_50,
-  text_stone_400,
-  text_stone_500,
   text_stone_950,
-  text_xs,
   underline,
-  uppercase,
-  w_40,
   w_52,
-  w_72,
-  whitespace_nowrap,
 } from "@jonathanconway/tailwindjs";
-import { text_sm } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../../label/label.styles";
-import * as linkStyles from "../../link/link.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
 export const workNavigationContainer = cn(flex, flex_row, gap_2);
+
+export const containerEmpty = cn(
+  rounded_md,
+
+  w_52,
+
+  p_1,
+
+  bg_stone_200,
+  dark(bg_stone_800),
+  opacity_50,
+);
 
 export const container = cn(
   rounded_md,

@@ -35,41 +35,42 @@ export function WorkNavigation(props: WorkNavigationProps) {
 
   const workMetaPrevious = getPrevious(workMetas, props.workMeta);
   const workMetaNext = getNext(workMetas, props.workMeta);
-  const workMetasPreviousNext = [workMetaPrevious, workMetaNext].filter(
-    isNotNil,
-  );
   const workMetasNavsPreviousNext = [
     {
       type: "previous",
-
       workMeta: workMetaPrevious,
     },
     {
       type: "next",
       workMeta: workMetaNext,
     },
-  ].filter(({ workMeta }) => workMeta) as readonly {
+  ] as readonly {
     readonly type: "previous" | "next";
     readonly workMeta: WorkMeta;
   }[];
+  // .filter(({ workMeta }) => workMeta)
 
   return (
     <div className={styles.workNavigationContainer}>
-      {workMetasNavsPreviousNext.map(({ type, workMeta }) => (
-        <Link key={type} className={styles.container} href={workMeta.slug}>
-          <div className={styles.mainColumn}>
-            <div className={styles.label}>
-              {type === "previous" && "< "}
-              {startCase(type)}
-              {type === "next" && " >"}
+      {workMetasNavsPreviousNext.map(({ type, workMeta }) =>
+        workMeta ? (
+          <Link key={type} className={styles.container} href={workMeta.slug}>
+            <div className={styles.mainColumn}>
+              <div className={styles.label}>
+                {type === "previous" && "< "}
+                {startCase(type)}
+                {type === "next" && " >"}
+              </div>
+              <div className={styles.title}>{workMeta.client}</div>
             </div>
-            <div className={styles.title}>{workMeta.client}</div>
-          </div>
-          <div className={styles.asideColumn}>
-            <WorkMainImage workMeta={workMeta} />
-          </div>
-        </Link>
-      ))}
+            <div className={styles.asideColumn}>
+              <WorkMainImage workMeta={workMeta} />
+            </div>
+          </Link>
+        ) : (
+          <div key={type} className={styles.containerEmpty}></div>
+        ),
+      )}
     </div>
   );
 }

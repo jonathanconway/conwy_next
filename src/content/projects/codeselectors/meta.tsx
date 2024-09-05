@@ -22,4 +22,5 @@ export const meta: ProjectMeta = {
   redirectUrl: "codeselectors",
   techs: [],
   platforms: ["Web", "VSCode"],
+  images: [],
 };

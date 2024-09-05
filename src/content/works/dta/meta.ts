@@ -16,12 +16,29 @@ export const meta: WorkMeta = {
     },
     {
       quote:
-        "“Jonathan is an intelligent, hard working, and passionate front-end developer. His technical skills are strong, and he carefully considers his development choices. He is also quick (and enthusiastic!) to pick up new skills and new frameworks. For example, he initially did not have a large amount of React experience (having worked more in Angular and other frameworks), but had no problems in quickly becoming productive. He was also a passionate advocate of user-centered design; such as being active in attending user research sessions and contributing to the design process in ideation sessions. I would be happy to work with Jonathan in the future!”",
+        "“Jonathan ... was a passionate advocate of user-centered design; such as being active in attending user research sessions and contributing to the design process in ideation sessions.”",
       author: "Technical Architect",
       date: "March 2017",
     },
   ],
-  images: [],
+  images: [
+    {
+      imageUrl: "dta-1.jpg",
+      notes: [],
+    },
+    {
+      imageUrl: "dta-2.png",
+      notes: [],
+    },
+    {
+      imageUrl: "dta-3.png",
+      notes: [],
+    },
+    {
+      imageUrl: "dta-screencast.gif",
+      notes: [],
+    },
+  ],
   slug: "dta",
   tags: [],
   type: "work",
@@ -66,5 +83,18 @@ export const meta: WorkMeta = {
       ],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "GovPass prototypes",
+    },
+    {
+      title: "Business Identity prototypes",
+    },
+    {
+      title: "Exchange prototypes",
+    },
+    {
+      title: "Researcher tools",
+    },
+  ],
 };

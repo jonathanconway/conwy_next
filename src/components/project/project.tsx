@@ -1,10 +1,12 @@
 import { MdxH2, Section } from "@/components";
 import { Project as Project_ } from "@/framework";
 
+import { ProjectImageCascade } from "./product-image-cascade";
 import { ProjectBody } from "./project-body";
 import { ProjectLinks } from "./project-links";
 import { ProjectMainImage } from "./project-main-image";
 import { ProjectNavigation } from "./project-navigation";
+import { ProjectPlatforms } from "./project-platforms";
 // import { WorkFeedbackCarousel } from "./work-feedback-carousel";
 // import { WorkImageCascade } from "./work-image-cascade";
 // import { WorkNavigation } from "./work-navigation";
@@ -34,61 +36,50 @@ export function Project({ project }: ProjectProps) {
 
       <div className={styles.main}>
         <div className={styles.body}>
-          {/* todo: change the "label"s to headings */}
-          <span className={styles.label}>Summary</span>
-
-          <ProjectBody project={project} />
+          <Section label="Summary">
+            <ProjectBody project={project} />
+          </Section>
         </div>
 
         <div className={styles.aside}>
           <div className={styles.techAndFeedbackContainer}>
-            <div className={styles.techContainer}>
-              <span className={styles.label}>Tech</span>
-              <div>
-                <ul>
-                  {projectMeta.techs.map((tech) => (
-                    <li key={tech.categoryName} className={styles.techListItem}>
-                      {tech.categoryName}
+            <Section label="Tech">
+              <ul>
+                {projectMeta.techs.map((tech) => (
+                  <li key={tech.categoryName} className={styles.techListItem}>
+                    {tech.categoryName}
 
-                      <ul className={styles.techSubList}>
-                        {tech.items.map((item) => (
-                          <li
-                            key={item.itemName}
-                            className={styles.techSubListItem}
-                          >
-                            {item.itemName}
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+                    <ul className={styles.techSubList}>
+                      {tech.items.map((item) => (
+                        <li
+                          key={item.itemName}
+                          className={styles.techSubListItem}
+                        >
+                          {item.itemName}
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            </Section>
 
             <div className={styles.otherContainer}>
-              {/* {feedbacks.length > 0 ? ( */}
               <Section label="Links">
                 <ProjectLinks projectMeta={projectMeta} />
               </Section>
-              {/* // ) : null} */}
 
-              {/* {projects.length > 0 ? ( */}
               <Section label="Platforms">
-                <ul>
-                  {projectMeta.platforms.map((platform) => (
-                    <li key={platform}>{platform}</li>
-                  ))}
-                </ul>
-                {/* <WorkProjects projects={work.meta.projects} /> */}
+                <ProjectPlatforms projectMeta={projectMeta} />
               </Section>
-              {/* // ) : null} */}
             </div>
           </div>
 
           <div className={styles.imageCascadeContainer}>
-            <ProjectMainImage projectMeta={projectMeta} />
+            <ProjectImageCascade projectMeta={project.meta} />
           </div>
+
+          <div className={styles.imageCascadeContainer}></div>
         </div>
       </div>
     </div>

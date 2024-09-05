@@ -8,6 +8,10 @@
   line-height: 1.5rem;
 }
 
+.fragment > p:first-child {
+  padding-top: 0;
+}
+
 .fragment ol {
   list-style-type: decimal;
   margin-left: auto;

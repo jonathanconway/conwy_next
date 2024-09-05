@@ -3,7 +3,7 @@ import { MicroMeta } from "@/framework/client";
 import { Date } from "../../date";
 import { Icon, IconTypes } from "../../icon";
 import { Link } from "../../link";
-import { SocialLinks } from "../../social-links";
+import { SocialLinksIcons } from "../../social-links";
 import { TextExpandable } from "../../text";
 
 import * as styles from "./micro-list-item.styles";
@@ -41,7 +41,9 @@ export function MicroListItem(props: MicroListItemProps) {
           />
         </div>
 
-        {props.socialLinks && <SocialLinks socialLinks={props.socialLinks} />}
+        {props.socialLinks && (
+          <SocialLinksIcons socialLinks={props.socialLinks} />
+        )}
 
         <span className={styles.type}>{props.type}</span>
       </div>
