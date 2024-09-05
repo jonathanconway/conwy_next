@@ -4,13 +4,9 @@ import { Project as Project_ } from "@/framework";
 import { ProjectImageCascade } from "./product-image-cascade";
 import { ProjectBody } from "./project-body";
 import { ProjectLinks } from "./project-links";
-import { ProjectMainImage } from "./project-main-image";
 import { ProjectNavigation } from "./project-navigation";
 import { ProjectPlatforms } from "./project-platforms";
-// import { WorkFeedbackCarousel } from "./work-feedback-carousel";
-// import { WorkImageCascade } from "./work-image-cascade";
-// import { WorkNavigation } from "./work-navigation";
-// import { WorkProjects } from "./work-projects";
+import { ProjectTechs } from "./project-techs";
 import * as styles from "./project.styles";
 
 interface ProjectProps {
@@ -43,43 +39,18 @@ export function Project({ project }: ProjectProps) {
 
         <div className={styles.aside}>
           <div className={styles.techAndFeedbackContainer}>
-            <Section label="Tech">
-              <ul>
-                {projectMeta.techs.map((tech) => (
-                  <li key={tech.categoryName} className={styles.techListItem}>
-                    {tech.categoryName}
-
-                    <ul className={styles.techSubList}>
-                      {tech.items.map((item) => (
-                        <li
-                          key={item.itemName}
-                          className={styles.techSubListItem}
-                        >
-                          {item.itemName}
-                        </li>
-                      ))}
-                    </ul>
-                  </li>
-                ))}
-              </ul>
-            </Section>
+            <ProjectTechs projectMeta={projectMeta} />
 
             <div className={styles.otherContainer}>
-              <Section label="Links">
-                <ProjectLinks projectMeta={projectMeta} />
-              </Section>
+              <ProjectLinks projectMeta={projectMeta} />
 
-              <Section label="Platforms">
-                <ProjectPlatforms projectMeta={projectMeta} />
-              </Section>
+              <ProjectPlatforms projectMeta={projectMeta} />
             </div>
           </div>
 
           <div className={styles.imageCascadeContainer}>
             <ProjectImageCascade projectMeta={project.meta} />
           </div>
-
-          <div className={styles.imageCascadeContainer}></div>
         </div>
       </div>
     </div>

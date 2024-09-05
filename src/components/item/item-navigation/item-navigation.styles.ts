@@ -83,39 +83,4 @@ export const asideColumn = listItemStyles.asideColumn;
 
 export const label = labelStyles.label;
 
-// export const image = cn(rounded_md);
-
 export const title = cn(font_bold, group_name(hover.name, underline), text_sm);
-
-// export const subTitle = cn(
-//   text_xs,
-//   font_bold,
-//   group_name(hover.name, underline),
-// );
-
-// export const date = text_xs;
-
-// export const blurb = cn(text_sm, leading_5);
-
-// export const techs = cn(
-//   text_xs,
-//   leading_5,
-//   whitespace_nowrap,
-//   overflow_hidden,
-//   text_ellipsis,
-// );
-
-// export const type = cn(
-//   absolute,
-
-//   inline_block,
-
-//   bottom_3,
-//   right_3,
-
-//   text_xs,
-//   text_stone_400,
-//   dark(text_stone_500),
-//   font_medium,
-//   uppercase,
-// );

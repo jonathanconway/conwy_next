@@ -3,7 +3,7 @@
 import { cn } from "@jonathanconway/tailwindjs";
 import Image from "next/image";
 
-import { ProjectImage } from "@/framework";
+import { WorkImage } from "@/framework";
 
 import { CarouselNavigation } from "../carousel";
 import { IconTypes } from "../icon";
@@ -13,8 +13,8 @@ import * as styles from "./image-modal.styles";
 import { ImageModalClasses, useImageModal } from "./use-image-modal.hook";
 
 interface ImageModalProps {
-  readonly workImages: readonly ProjectImage[];
-  readonly defaultSelectedWorkImage: ProjectImage;
+  readonly workImages: readonly WorkImage[];
+  readonly defaultSelectedWorkImage: WorkImage;
 
   readonly onClose: VoidFunction;
 }
@@ -56,20 +56,40 @@ export function ImageModal(props: ImageModalProps) {
         </header>
 
         <div className={styles.imageModalMain}>
-          <Image
-            className={styles.image}
-            src={carousel.selectedItem.imageUrl}
-            alt={carousel.selectedItem.imageUrl}
-            width={600}
-            height={400}
-          />
+          <div className={styles.imageContainer}>
+            <Image
+              className={styles.image}
+              src={carousel.selectedItem.imageUrl}
+              alt={carousel.selectedItem.imageUrl}
+              width={600}
+              height={400}
+            />
+            {carousel.selectedItem.notes
+              .filter((note) => note.hotspot)
+              .map((note, noteIndex) => (
+                <span
+                  className={styles.noteHotspot}
+                  style={{
+                    left: note.hotspot!.x,
+                    top: note.hotspot!.y,
+                  }}
+                >
+                  {noteIndex + 1}
+                </span>
+              ))}
+          </div>
 
           {carousel.selectedItem.notes.length > 0 && (
-            <div className={styles.notesContainer}>
-              {carousel.selectedItem.notes.map((note) => (
-                <li key={note.text}>{note.text}</li>
+            <ul className={styles.notesContainer}>
+              {carousel.selectedItem.notes.map((note, noteIndex) => (
+                <li key={note.text} className={styles.noteText}>
+                  <span className={styles.noteNumber}>
+                    {note.hotspot ? noteIndex + 1 : "•"}
+                  </span>
+                  {note.text}
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </div>
       </div>

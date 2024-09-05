@@ -27,8 +27,10 @@ export interface WorkImage {
   readonly imageUrl: string;
   readonly title?: string;
   readonly notes: readonly {
-    readonly hospotX: number;
-    readonly hospotY: number;
+    readonly hotspot?: {
+      readonly x: string;
+      readonly y: string;
+    };
     readonly text: string;
   }[];
 }

@@ -24,7 +24,20 @@ export const meta: ProjectMeta = {
   ],
   mainImage: "main.svg",
   redirectUrl: "testmatic",
-  techs: [],
+  techs: [
+    {
+      categoryName: "typescript",
+      items: [],
+    },
+    {
+      categoryName: "nodejs",
+      items: [],
+    },
+    {
+      categoryName: "react",
+      items: [],
+    },
+  ],
   platforms: ["Web", "CLI"],
   images: [],
 };

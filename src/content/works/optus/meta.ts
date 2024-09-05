@@ -7,6 +7,7 @@ export const meta: WorkMeta = {
   startDate: "2023-09-20",
   endDate: "2024-03-22",
   jobTitle: "Senior Backend Engineer",
+  mainImage: "thumbnail.png",
   feedbacks: [
     {
       quote:
@@ -17,7 +18,26 @@ export const meta: WorkMeta = {
   tags: [],
   type: "work",
   images: [
-    { imageUrl: "optus-1.svg", notes: [], title: "Agent SubHub" },
+    {
+      imageUrl: "optus-1.svg",
+      notes: [
+        {
+          text: "In addition to building the whole front-end, implemented back-end calculation logic for the savings and total.",
+          hotspot: {
+            x: "2%",
+            y: "27%",
+          },
+        },
+        {
+          text: "Implemented subscription add/remove logic on the back-end",
+          hotspot: {
+            x: "30%",
+            y: "31%",
+          },
+        },
+      ],
+      title: "Agent SubHub",
+    },
     { imageUrl: "optus-2.svg", notes: [] },
     { imageUrl: "optus-3.png", notes: [] },
   ],

@@ -1,3 +1,4 @@
+import { Section } from "../../section";
 import { SocialLinksList } from "../../social-links";
 
 import { ProjectLinksProps } from "./project-links.types";
@@ -9,5 +10,9 @@ export function ProjectLinks(props: ProjectLinksProps) {
     return null;
   }
 
-  return <SocialLinksList socialLinks={props.projectMeta.socialLinks} />;
+  return (
+    <Section label="Links">
+      <SocialLinksList socialLinks={props.projectMeta.socialLinks} />
+    </Section>
+  );
 }

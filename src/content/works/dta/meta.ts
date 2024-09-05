@@ -7,6 +7,7 @@ export const meta: WorkMeta = {
   startDate: "2016-07-01",
   endDate: "2017-05-01",
   jobTitle: "Senior Front End Engineer",
+  mainImage: "thumbnail.png",
   feedbacks: [
     {
       quote:
@@ -24,19 +25,35 @@ export const meta: WorkMeta = {
   images: [
     {
       imageUrl: "dta-1.jpg",
-      notes: [],
+      notes: [
+        {
+          text: "Accessibility – going beyond the guidelines. Article written in collaboration with DTA content experts and published on the DTA website.",
+        },
+      ],
     },
     {
       imageUrl: "dta-2.png",
-      notes: [],
+      notes: [
+        {
+          text: "Business Identity - Delegation flow. Hand-drawn low-fidelity wireframes.",
+        },
+      ],
     },
     {
       imageUrl: "dta-3.png",
-      notes: [],
+      notes: [
+        {
+          text: "Business Identity - Add team member flow. Interactive mobile prototype built in React.",
+        },
+      ],
     },
     {
       imageUrl: "dta-screencast.gif",
-      notes: [],
+      notes: [
+        {
+          text: "Researcher tools for controlling prototypes during usability testing sessions. Built in React.",
+        },
+      ],
     },
   ],
   slug: "dta",

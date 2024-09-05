@@ -7,6 +7,7 @@ export const meta: WorkMeta = {
   startDate: "2020-02-20",
   endDate: "2024-02-20",
   jobTitle: "Lead Software Engineer",
+  mainImage: "thumbnail.png",
   feedbacks: [
     {
       quote:
@@ -77,5 +78,24 @@ export const meta: WorkMeta = {
       items: [{ itemName: "brain-js" }],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "Rubix",
+    },
+    {
+      title: "OTA Tracker",
+    },
+    {
+      title: "Multi Carrier Config",
+    },
+    {
+      title: "Street Service Time",
+    },
+    {
+      title: "Rubix iOS Prototype",
+    },
+    {
+      title: "BrainJS Suggestions Prototype",
+    },
+  ],
 };

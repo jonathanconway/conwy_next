@@ -1,4 +1,4 @@
-import { MdxH2, Section, WorkMainImage } from "@/components";
+import { MdxH2, WorkMainImage } from "@/components";
 import { Work as Work_ } from "@/framework";
 
 import { WorkBody } from "./work-body";
@@ -6,6 +6,7 @@ import { WorkFeedbackCarousel } from "./work-feedback-carousel";
 import { WorkImageCascade } from "./work-image-cascade";
 import { WorkNavigation } from "./work-navigation";
 import { WorkProjects } from "./work-projects";
+import { WorkTechs } from "./work-techs";
 import * as styles from "./work.styles";
 
 interface WorkProps {
@@ -30,7 +31,7 @@ export function Work({ work }: WorkProps) {
         </div>
 
         <div className={styles.headerRight}>
-          <WorkNavigation workMeta={work.meta} />
+          <WorkNavigation workMeta={workMeta} />
         </div>
       </div>
 
@@ -44,42 +45,12 @@ export function Work({ work }: WorkProps) {
 
         <div className={styles.aside}>
           <div className={styles.techAndFeedbackContainer}>
-            <div className={styles.techContainer}>
-              <span className={styles.label}>Tech</span>
-              <div>
-                <ul>
-                  {workMeta.techs.map((tech) => (
-                    <li key={tech.categoryName} className={styles.techListItem}>
-                      {tech.categoryName}
-
-                      <ul className={styles.techSubList}>
-                        {tech.items.map((item) => (
-                          <li
-                            key={item.itemName}
-                            className={styles.techSubListItem}
-                          >
-                            {item.itemName}
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <WorkTechs workMeta={workMeta} />
 
             <div className={styles.otherContainer}>
-              {workMeta.feedbacks.length > 0 ? (
-                <Section label="Feedback">
-                  <WorkFeedbackCarousel workFeedbacks={work.meta.feedbacks} />
-                </Section>
-              ) : null}
+              <WorkFeedbackCarousel workFeedbacks={workMeta.feedbacks} />
 
-              {workMeta.projects.length > 0 ? (
-                <Section label="Projects">
-                  <WorkProjects projects={work.meta.projects} />
-                </Section>
-              ) : null}
+              <WorkProjects projects={workMeta.projects} />
             </div>
           </div>
 

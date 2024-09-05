@@ -20,7 +20,16 @@ export const meta: ProjectMeta = {
   ],
   mainImage: "main.svg",
   redirectUrl: "codeselectors",
-  techs: [],
+  techs: [
+    {
+      categoryName: "html",
+      items: [],
+    },
+    {
+      categoryName: "vs-code",
+      items: [],
+    },
+  ],
   platforms: ["Web", "VSCode"],
   images: [],
 };

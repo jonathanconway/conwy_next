@@ -3,6 +3,7 @@
 import { WorkFeedback } from "@/framework";
 
 import { CarouselNavigation } from "../../carousel";
+import { Section } from "../../section";
 
 import { useWorkFeedbackCarousel } from "./use-work-feedback-carousel.hook";
 import * as styles from "./work-feedback-carousel.styles";
@@ -16,33 +17,39 @@ interface WorkFeedbackCarouselProps {
 export function WorkFeedbackCarousel(props: WorkFeedbackCarouselProps) {
   const { workFeedbackCarousel } = useWorkFeedbackCarousel(props);
 
+  if (workFeedbackCarousel.items.length === 0) {
+    return null;
+  }
+
   return (
-    <div className={styles.feedbackCarouselContainer}>
-      <div className={styles.feedbackItems}>
-        {workFeedbackCarousel.items.map((feedback) => (
-          <div
-            key={feedback.quote}
-            className={styles.feedbackItem(
-              workFeedbackCarousel.selectedItem === feedback,
-            )}
-          >
-            <div className={styles.feedbackItemQuote}>{feedback.quote}</div>
+    <Section label="Feedback">
+      <div className={styles.feedbackCarouselContainer}>
+        <div className={styles.feedbackItems}>
+          {workFeedbackCarousel.items.map((feedback) => (
+            <div
+              key={feedback.quote}
+              className={styles.feedbackItem(
+                workFeedbackCarousel.selectedItem === feedback,
+              )}
+            >
+              <div className={styles.feedbackItemQuote}>{feedback.quote}</div>
 
-            {feedback.author && (
-              <div className={styles.feedbackItemAuthor}>
-                – {feedback.author}
-              </div>
-            )}
-          </div>
-        ))}
+              {feedback.author && (
+                <div className={styles.feedbackItemAuthor}>
+                  – {feedback.author}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {workFeedbackCarousel.items.length > 1 && (
+          <CarouselNavigation
+            carousel={workFeedbackCarousel}
+            tabTooltipDescription="Feedback"
+          />
+        )}
       </div>
-
-      {workFeedbackCarousel.items.length > 1 && (
-        <CarouselNavigation
-          carousel={workFeedbackCarousel}
-          tabTooltipDescription="Feedback"
-        />
-      )}
-    </div>
+    </Section>
   );
 }

@@ -1,12 +1,13 @@
 import { WorkMeta } from "@/framework";
 
 export const meta: WorkMeta = {
-  client: "Demonz",
+  client: "EPA / Demonz",
   blurbShort:
     "Worked full-stack on the CRC app for municipal waste disposal tracking for NSW EPA.",
   startDate: "2014-07-01",
   endDate: "2015-08-01",
   jobTitle: "Senior Software Developer",
+  mainImage: "thumbnail.png",
   feedbacks: [
     {
       quote: "“I had a quick play; all works seamlessly and easy to use.”",
@@ -48,5 +49,9 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "EPA CRC",
+    },
+  ],
 };

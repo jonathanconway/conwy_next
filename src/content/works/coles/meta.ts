@@ -7,6 +7,7 @@ export const meta: WorkMeta = {
   startDate: "2023-09-20",
   endDate: "2023-11-08",
   jobTitle: "Senior Frontend Engineer",
+  mainImage: "thumbnail.png",
   feedbacks: [
     {
       quote:
