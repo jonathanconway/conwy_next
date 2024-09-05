@@ -1,8 +1,15 @@
 import { pipeline } from "@xenova/transformers";
-import { lstatSync, readFileSync, readdirSync, writeFileSync } from "fs";
-import { JSDOM } from "jsdom";
+import {
+  existsSync,
+  lstatSync,
+  readFileSync,
+  readdirSync,
+  writeFileSync,
+} from "fs";
 import { chain } from "lodash";
 import { marked } from "marked";
+
+import { convertMdxToMd } from "@/framework";
 
 const articlesPath = `${__dirname}/../../content/articles`;
 
@@ -24,24 +31,13 @@ function getMdIntro(md: string) {
     .value();
 }
 
-function convertMdxToMd(mdx: string) {
-  mdx = mdx
-    .split("\n")
-    .filter((line) => !line.trim().startsWith("import "))
-    .join("\n");
-
-  mdx =
-    new JSDOM(
-      `<!DOCTYPE html>${mdx}`,
-    ).window.document.body.textContent?.toString() ?? "";
-
-  mdx = mdx.replace(new RegExp(/{(.*?)}/, "gs"), "");
-
-  return mdx;
-}
-
 async function buildArticleSummary(articleFolderName: string) {
   const articlePath = `${articlesPath}/${articleFolderName}`;
+  const summaryPathFilename = `${articlePath}/summary.mdx`;
+
+  if (existsSync(summaryPathFilename)) {
+    return;
+  }
 
   const md = convertMdxToMd(
     readFileSync(`${articlePath}/content.mdx`).toString(),
@@ -51,7 +47,7 @@ async function buildArticleSummary(articleFolderName: string) {
 
   const summaryText = await summarizeArticleText(mdIntro);
 
-  writeFileSync(`${articlePath}/summary.mdx`, summaryText);
+  writeFileSync(summaryPathFilename, summaryText);
 }
 
 async function summarizeArticleText(articleText: string) {

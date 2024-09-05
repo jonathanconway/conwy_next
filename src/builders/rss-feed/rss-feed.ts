@@ -1,6 +1,7 @@
-import { lstatSync, readdirSync, writeFileSync } from "fs";
+import { lstatSync, readFileSync, readdirSync, writeFileSync } from "fs";
+import { escape } from "lodash";
 
-import { ArticleMeta, sortArticleMetas } from "@/framework";
+import { ArticleMeta, convertMdToHTML, sortArticleMetas } from "@/framework";
 import { packageInfo } from "@/package-info";
 
 function getArticleFolders() {
@@ -23,37 +24,59 @@ async function getArticleMetas(
   );
 }
 
+async function getArticleEscapedHTML(slug: string) {
+  return escape(
+    await convertMdToHTML(
+      readFileSync(
+        `${__dirname}/../../content/articles/${slug}/content.mdx`,
+      ).toString(),
+    ),
+  );
+}
+
 export async function buildRssFeed() {
   const articleMetas = sortArticleMetas(
     await getArticleMetas(getArticleFolders()),
   );
 
+  const articleEscapedHTMLs = Object.fromEntries(
+    await Promise.all(
+      articleMetas.map(async (articleMeta) => [
+        articleMeta.slug,
+        await getArticleEscapedHTML(articleMeta.slug),
+      ]),
+    ),
+  ) as Record<string, string>;
+
   const filename = "feed.xml";
 
-  const rss = `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-      <title>${packageInfo.name}</title>
-      <link>${packageInfo.homepage}</link>
-      <description>${packageInfo.description}</description>
-      <language>en</language>
-      <lastBuildDate>${new Date(articleMetas[0].date).toUTCString()}</lastBuildDate>
-      <atom:link href="https://conwy.co/${filename}" rel="self" type="application/rss+xml"/>
-      ${articleMetas
-        .map(
-          (articleMeta) =>
-            `
-        <item>
-          <guid>${articleMeta.slug}</guid>
-          <title>${articleMeta.title}</title>
-          <link>https://conwy.co/articles/${articleMeta.slug}</link>
-          <description>${articleMeta.blurb}</description>
-          <pubDate>${new Date(articleMeta.date).toUTCString()}</pubDate>
-        </item>
-        `,
-        )
-        .join("")}
-    </channel>
-  </rss>`;
+  const rss = `<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom" xml:base="${packageInfo.homepage}">
+  <title>${packageInfo.name}</title>
+  <subtitle>Blog articles by ${packageInfo.author.name}</subtitle>
+  <link href="${packageInfo.homepage}/feed.xml" rel="self"/>
+  <link href="${packageInfo.homepage}/"/>
+  <updated>${new Date(articleMetas[0].date).toISOString()}</updated>
+  <id>${packageInfo.homepage}</id>
+  <author>
+    <name>${packageInfo.author.name}</name>
+    <email>${packageInfo.author.email}</email>
+  </author>
+  ${articleMetas
+    .map(
+      (articleMeta) =>
+        `
+  <entry>
+    <title>${articleMeta.title}</title>
+    <link href="https://conwy.co/articles/${articleMeta.slug}" />
+    <updated>${new Date(articleMetas[0].date).toISOString()}</updated>
+    <id>${articleMeta.slug}</id>
+    <content xml:lang="en" type="html">${articleEscapedHTMLs[articleMeta.slug]}</content>
+  </entry>
+  `,
+    )
+    .join("\n")}
+  </feed>`;
 
-  writeFileSync(`${__dirname}/../../../public/feed.xml`, rss);
+  writeFileSync(`${__dirname}/../../../public/${filename}`, rss);
 }
