@@ -6,6 +6,7 @@ import { useState } from "react";
 import { ProjectImage } from "@/framework";
 
 import { ImageModal } from "../image-modal";
+import { Tooltip } from "../tooltip";
 
 import * as styles from "./image-cascade.styles";
 
@@ -17,7 +18,6 @@ interface ImageCascadeState {
   readonly openImage?: ProjectImage;
 }
 
-// todo: make more abstract and call from work-image-cascade
 export function ImageCascade(props: ImageCascadeProps) {
   const [state, setState] = useState<ImageCascadeState>({});
 
@@ -32,25 +32,29 @@ export function ImageCascade(props: ImageCascadeProps) {
   return (
     <div className={styles.container}>
       {props.images?.map((image, imageUrlIndex) => (
-        <div
+        <Tooltip
           key={`image-cascade-item-${image.imageUrl}`}
-          className={styles.imageContainer}
-          style={{
-            left: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
-            top: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
-            width: `${styles.IMAGE_SIZE_PX.width}px`,
-            height: `${styles.IMAGE_SIZE_PX.height}px`,
-          }}
-          onClick={handleImageClick(image)}
+          contents={image.title ?? `Image #${imageUrlIndex}`}
         >
-          <Image
-            className={styles.image}
-            src={image.imageUrl}
-            alt={image.imageUrl}
-            width={styles.IMAGE_SIZE_PX.width}
-            height={styles.IMAGE_SIZE_PX.height}
-          />
-        </div>
+          <div
+            className={styles.imageContainer}
+            style={{
+              left: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
+              top: `${(100 / (props.images.length * 2)) * (imageUrlIndex + 1)}%`,
+              width: `${styles.IMAGE_SIZE_PX.width}px`,
+              height: `${styles.IMAGE_SIZE_PX.height}px`,
+            }}
+            onClick={handleImageClick(image)}
+          >
+            <Image
+              className={styles.image}
+              src={image.imageUrl}
+              alt={image.imageUrl}
+              width={styles.IMAGE_SIZE_PX.width}
+              height={styles.IMAGE_SIZE_PX.height}
+            />
+          </div>
+        </Tooltip>
       ))}
 
       {state.openImage && (

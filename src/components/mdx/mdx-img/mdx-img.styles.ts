@@ -19,7 +19,7 @@ import {
 export const container = cn(px_8, py_12);
 
 export const img = cn(
-  w_full,
+  // w_full,
   max_h_80,
 
   p_2,

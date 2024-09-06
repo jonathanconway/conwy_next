@@ -46,8 +46,15 @@ export function useImageModal(params: UseImageModalParams) {
     params.onClose();
   };
 
+  const hasHotspots = Boolean(
+    params.workImages
+      .flatMap((workImage) => workImage.notes)
+      .find((note) => Boolean(note.hotspot)),
+  );
+
   return {
     carousel,
+    hasHotspots,
 
     handleBackdropClick,
   };

@@ -20,7 +20,7 @@ interface ImageModalProps {
 }
 
 export function ImageModal(props: ImageModalProps) {
-  const { carousel, handleBackdropClick } = useImageModal(props);
+  const { carousel, hasHotspots, handleBackdropClick } = useImageModal(props);
 
   return (
     <div
@@ -81,12 +81,12 @@ export function ImageModal(props: ImageModalProps) {
           </div>
 
           {carousel.selectedItem.notes.length > 0 && (
-            <ul className={styles.notesContainer}>
+            <ul className={styles.notesContainer(hasHotspots)}>
               {carousel.selectedItem.notes.map((note, noteIndex) => (
-                <li key={note.text} className={styles.noteText}>
-                  <span className={styles.noteNumber}>
-                    {note.hotspot ? noteIndex + 1 : "•"}
-                  </span>
+                <li key={note.text} className={styles.noteText(hasHotspots)}>
+                  {note.hotspot && (
+                    <span className={styles.noteNumber}>{noteIndex + 1}</span>
+                  )}
                   {note.text}
                 </li>
               ))}

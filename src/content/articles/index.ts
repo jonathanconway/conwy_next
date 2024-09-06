@@ -11,3 +11,5 @@ export * from "./towards-zero-bugs";
 export * from "./visualising-execution-flows";
 export * from "./three-tests-accessibility";
 
+export * from "./studying-calculus";
+

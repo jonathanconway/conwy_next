@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Testing Steps",
@@ -7,5 +7,16 @@ export const meta: ArticleMeta = {
   slug: "testing-steps",
   type: "article",
   tags: ["software-development"],
-  socialLinks: [],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Github,
+      url: "https://github.com/jonathanconway/testing-steps",
+      title: "Github: testing-steps",
+    },
+    {
+      type: SocialLinkTypes.Website,
+      url: "https://testmatic-docs.surge.sh",
+      title: "Testmatic website",
+    },
+  ],
 };

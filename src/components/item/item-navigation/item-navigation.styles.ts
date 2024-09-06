@@ -27,6 +27,7 @@ import {
   text_stone_950,
   underline,
   w_52,
+  w_56,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../../label/label.styles";
@@ -34,10 +35,12 @@ import * as listItemStyles from "../../list-item/list-item.styles";
 
 export const workNavigationContainer = cn(flex, flex_row, gap_2);
 
+const containerWidth = w_56;
+
 export const containerEmpty = cn(
   rounded_md,
 
-  w_52,
+  containerWidth,
 
   p_1,
 
@@ -53,7 +56,7 @@ export const container = cn(
   dark(border_stone_700),
   relative,
 
-  w_52,
+  containerWidth,
 
   flex,
   flex_row,

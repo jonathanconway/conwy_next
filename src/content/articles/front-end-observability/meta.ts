@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta, SocialLinkTypes } from "@/framework";
 
 export const meta: ArticleMeta = {
   title: "Front end observability",
@@ -9,5 +9,10 @@ export const meta: ArticleMeta = {
   slug: "front-end-observability",
   type: "article",
   tags: ["software-development"],
-  socialLinks: [],
+  socialLinks: [
+    {
+      type: SocialLinkTypes.Github,
+      url: "https://github.com/jonathanconway/observability-example-react",
+    },
+  ],
 };

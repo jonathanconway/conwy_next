@@ -1,10 +1,7 @@
-import { max, startCase } from "lodash";
-import Image from "next/image";
+import { startCase } from "lodash";
 
-import * as works from "@/content/works";
-import { ItemMeta, getMainImageUrl, isNotNil } from "@/framework";
+import { ItemMeta } from "@/framework";
 
-// import {Image} from "../../image"
 import { Link } from "../../link";
 import { ItemMainImage } from "../item-main-image";
 

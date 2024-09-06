@@ -26,6 +26,7 @@ import {
   left_0,
   overflow_hidden,
   p_1_5,
+  pointer_events_none,
   relative,
   rounded,
   rounded_lg,
@@ -68,7 +69,7 @@ export const imageContainer = cn(
   dark(bg_black),
 );
 
-export const image = cn(rounded);
+export const image = cn(rounded, pointer_events_none);
 
 export const imagesNav = cn(absolute, left_0, bottom_0, inline_flex, gap_2);
 

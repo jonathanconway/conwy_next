@@ -1,4 +1,5 @@
 import { meta } from "./meta";
+import { MdxAside, MdxAsideHeading } from "@/components";
 
 As the practice of front-end development grows and evolves, front-end developers find themselves working with increasingly complex problem domains, requirements and code-bases. This necessitates increasing usage of solution design and planning tools, such as [wireframes](https://en.wikipedia.org/wiki/Website_wireframe), [component diagrams](https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy), [user stories](https://www.martinfowler.com/bliki/UserStory.html), etc.
 
@@ -10,13 +11,13 @@ But let's first review the utility of diagrams and UML.
 
 ## Why diagrams?
 
-To motivate this article, I want to review the main uses and benefits of diagrams as I see it.
+To motivate this article, I want to review uses and benefits of diagrams.
 
 Diagrams have the following features, distinct from either code or documentation:
 
-- ***Partial*** - diagrams can "sketch" some parts of code while omitting others
-- ***High-level*** - diagrams can depict high-level components while omitting low-level implementation details
-- ***Spatial*** - diagrams are in 2D space, enabling us to better visualise the parts and how they connect to eachother
+- ***Partial.*** Diagrams can "sketch" some parts of code while omitting others
+- ***High-level.*** Diagrams can depict high-level components while omitting low-level implementation details
+- ***Spatial.*** Diagrams are in 2D space, enabling us to better visualise the parts and how they connect to eachother
 
 By virtue of these features, diagrams offer certain unique uses and benefits at different stages of the software lifecycle.
 
@@ -30,9 +31,21 @@ Solution design helps us to conceive our solutions before implementing them. We 
 
 Diagramming is an excellent way to both develop and communicate a solution design. Diagrams, which don't need to be compiled, can be built partially, creating a kind of "code sketch" that communicates software design at a high level while omitting details. Diagrams are laid out spatially, allowing us to organise our thinking outside the constraints of the file system or compiler.
 
-<small>Note 1: In some organisations multiple stakeholders may need to approve a solution – from product owners to designers to security specialists. In these cases it's even more beneficial to develop solution designs and share them with the stakeholders. The stakeholders can then have an opportunity to identify issues and risks before implementation commences. They can co-design the solution with developers, shaping it in beneficial ways before implementation begins.</small>
+<MdxAside>
+  <MdxAsideHeading>Multi-stakeholder solution design</MdxAsideHeading>
+ 
+  In some organisations multiple stakeholders may need to approve a solution – from product owners to designers to security specialists. In these cases it's even more beneficial to develop solution designs and share them with the stakeholders. The stakeholders can then have an opportunity to identify issues and risks before implementation commences. They can co-design the solution with developers, shaping it in beneficial ways before implementation begins.
+</MdxAside>
 
-<small>Note 2: There is a culture in some development teams of avoiding solution design, thinking it is unnecessary and even to be avoided, since it is part of undesirable "big upfront planning" or "waterfall" methodology. The idea is that "agile" is a new and better way of working and, as such, developers should begin coding as soon as possible with minimal planning and preparation ("MVP"). My thinking goes against this, but addressing it in-depth is beyond the scope of this article. But to summarise: if you carefully review the agile literature, it is very rare for it to discourage planning, big picture thinking, solution design or architecture. In fact, some of the most popular agile practitioners, such as Bob Martin and Martin Fowler, have written lengthy books on both architecture and UML. Thus it is apparent that agile is broadly compatible with solution design and planning.</small>
+<MdxAside>
+  <MdxAsideHeading>Agile solution design</MdxAsideHeading>
+
+  There is a culture in some development teams of avoiding solution design, thinking it is unnecessary and even to be avoided, since it is part of undesirable "big upfront planning" or "waterfall" methodology. The idea is that "agile" is a new and better way of working and, as such, developers should begin coding as soon as possible with minimal planning and preparation ("MVP").
+  
+  My thinking goes against this, but addressing it in-depth is beyond the scope of this article. But to summarise: if you carefully review the agile literature, it is very rare for it to discourage planning, big picture thinking, solution design or architecture.
+  
+  In fact, some of the most popular agile practitioners, such as Bob Martin and Martin Fowler, have written lengthy books on both architecture and UML. Thus it is apparent that agile is broadly compatible with solution design and planning.
+</MdxAside>
 
 ### Planning complex changes
 

@@ -1,10 +1,8 @@
-import { cn } from "@jonathanconway/tailwindjs";
-
 import { Article as Article_ } from "@/framework";
 
+import { Fragment } from "../../fragments";
 import { ARTICLE_HEADING_INTRO } from "../article-heading-intro";
 
-import moduleStyles from "./article-body.module.css";
 import * as styles from "./article-body.styles";
 
 export interface ArticleBodyProps {
@@ -15,14 +13,14 @@ export function ArticleBody({
   article: { content: Content },
 }: ArticleBodyProps) {
   return (
-    <div className={cn(styles.container, moduleStyles.articleBody)}>
+    <div className={styles.container}>
       <h2 className={styles.topHeading} id={ARTICLE_HEADING_INTRO.id}>
         {ARTICLE_HEADING_INTRO.title}
       </h2>
 
-      <div className={styles.content}>
+      <Fragment>
         <Content />
-      </div>
+      </Fragment>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { CodeSample, MdxCode, MdxPre, MdxAside, MdxAsideHeading, MdxP } from "@/components";
+import { MdxCode, MdxPre, MdxAside, MdxAsideHeading, MdxP } from "@/components";
 
 I've been reading the book [_Observability Engineering_](https://info.honeycomb.io/observability-engineering-oreilly-book-2022) by Charity Majors and thinking about how to apply the ideas to front end development.
 
@@ -57,9 +57,11 @@ Let's log two structured events:
 
 1. ***changeStakeValid*** - stake was valid; we'll submit a PATCH
 2. ***changeStakeSumError*** - stakes sum was too high; we'll show an error
+
 <br />
 
-<CodeSample language="javascript" lineNumbers linesHighlighted={[[3,9], [18,24]]}>{`
+<MdxPre data-line="3-9, 18-24" className="line-numbers">
+  <MdxCode className="language-javascript">{`
 const handleClickSave = async (e) => {
   if (othersAndThisStakesSum <= 100) {
     captureEvent({
@@ -89,77 +91,9 @@ const handleClickSave = async (e) => {
   }
 }
 `}
-</CodeSample>
+  </MdxCode>
+</MdxPre>
 
-{/* <pre data-line="9-24, 28-34, 43-49">
-<code class="language-javascript">
-function ShareholderStakeEditor({
-  companyId,
-  shareholder,
-  onClickClose,
-}: ShareholderStakeEditorProps) {
-  ...
-
-  const event = {
-    tags: {
-      companyId,
-      shareholderId: shareholder.id,
-      stake,
-      enabledsIds: JSON.stringify(map(enableds, "id")),
-      othersIds: JSON.stringify(map(others, "id")),
-      othersStakesSum,
-      othersAndThisStakesSum,
-    },
-    data: {
-      shareholders: JSON.stringify(shareholders),
-      enableds: JSON.stringify(enableds),
-      others: JSON.stringify(others),
-    },
-  };
-
-  const handleClickSave = async (e) => {
-    if (othersAndThisStakesSum <= 100) {
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakeValid",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakeValid"]: event.data,
-        },
-      });
-
-      await patchShareholderStake({
-        id: shareholder.id,
-        stake,
-      });
-
-      refreshShareholders();
-    } else {
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakeSumError",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakeSumError"]: event.data,
-        },
-      });
-
-      showShareholderStakeError();
-    }
-  }
-  ...
-}
-</code>
-</pre> */}
-{/* 
-<aside class="note">
-  <h3 class="note-heading">Aside: Tags vs. contexts</h3>
-  <p>In the example, you'll notice that we provide two objects to Sentry: tags and contexts.</p>
-  <ul>
-    <li><code>tags</code> is a dictionary of strings, which can be used to query across events.</li>
-    <li><code>contexts</code> is a more flexible dictionary of any object and can be used to store additional contextual data about an event.</li>
-  </ul>
-    
-  <p>My approach is to put as much queryable data as possible into <code>tags</code> and put everything else into <code>contexts</code>.</p>
-</aside> */}
 
 Suppose we subsequently receive a bug report:
 
@@ -227,50 +161,52 @@ So we ask some questions:
 - Was there some other kind of issue?
 
 If we log an event on refresh, it should be easier to find out.
-{/* 
-<pre data-line="12-21, 25-34">
-<code class="language-javascript">
-function ShareholderValueEditor({ companyId, shareholder }) {
-  ...
-  const handleClickSave = async (e) => {
-    if (othersAndThisStakesSum <= 100) {
-      ...
-      const patchStakeResult = await patchShareholderStake({
-        id: shareholder.id,
-        stake,
-      });
 
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakePatchCompleted",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakePatchCompleted"]: {
-            ...event.data,
-            patchStakeResult,
+
+<MdxPre data-line="11-20, 24-33" className="line-numbers">
+  <MdxCode className="language-javascript">{`
+  function ShareholderValueEditor({ companyId, shareholder }) {
+    ...
+    const handleClickSave = async (e) => {
+      if (othersAndThisStakesSum <= 100) {
+        ...
+        const patchStakeResult = await patchShareholderStake({
+          id: shareholder.id,
+          stake,
+        });
+
+        captureEvent({
+          message: "useShareholderStakeEditor/changeStakePatchCompleted",
+          tags: event.tags,
+          contexts: {
+            ["useShareholderStakeEditor/changeStakePatchCompleted"]: {
+              ...event.data,
+              patchStakeResult,
+            },
           },
-        },
-      });
+        });
 
-      const refetchShareholdersResult = await refetchShareholders();
+        const refetchShareholdersResult = await refetchShareholders();
 
-      captureEvent({
-        message: "useShareholderStakeEditor/changeStakeRefreshCompleted",
-        tags: event.tags,
-        contexts: {
-          ["useShareholderStakeEditor/changeStakeRefreshCompleted"]: {
-            ...event.data,
-            refetchShareholdersResult,
+        captureEvent({
+          message: "useShareholderStakeEditor/changeStakeRefreshCompleted",
+          tags: event.tags,
+          contexts: {
+            ["useShareholderStakeEditor/changeStakeRefreshCompleted"]: {
+              ...event.data,
+              refetchShareholdersResult,
+            },
           },
-        },
-      });
-    } else {
-      ...
+        });
+      } else {
+        ...
+      }
     }
+    ...
   }
-  ...
-}
-</code>
-</pre> */}
+`}
+  </MdxCode>
+</MdxPre>
 
 As in the previous example, let's query Sentry for:
 
@@ -282,12 +218,12 @@ We find our two events - `changeStakePatchCompleted` and `changeStakeRefreshComp
 
 ![Sentry query results, indicating that both the patch and refresh completed successfully](/images/articles/front-end-observability/example-stake-sentry-update-results.png)
 
-
 However, examining the refresh event, we see that the new stake value was not provided.
 
 ![Sentry refresh details, showing stale value for stake of id: 113](/images/articles/front-end-observability/example-stake-sentry-update-result-detail-refetch.png)
 
 Now we know why the stake did not refresh properly – the back end is returning stale data! We'll need to discuss cache-busting with the back end developers.
+
 
 ## Example 3 - Browser event
 

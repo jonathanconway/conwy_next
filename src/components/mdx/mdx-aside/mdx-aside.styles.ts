@@ -9,9 +9,9 @@ import {
   first,
   font_semibold,
   m_4,
-  mt_0,
   my_4,
   p_4,
+  pt_0,
   rounded,
   rounded_md,
   text_base,
@@ -28,7 +28,7 @@ export const aside = () =>
     border_stone_400,
     bg_stone_200,
     dark(bg_stone_800),
-    all(first(mt_0)),
+    all(first(pt_0)),
   );
 
 export const asideHeading = () => cn(text_base, font_semibold);

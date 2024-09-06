@@ -25,7 +25,20 @@ export const meta: WorkMeta = {
       author: "KYB Analyst",
     },
   ],
-  images: [],
+  images: [
+    {
+      imageUrl: "revolut-1.png",
+      notes: [],
+    },
+    {
+      imageUrl: "revolut-2.png",
+      notes: [],
+    },
+    {
+      imageUrl: "revolut-3.webp",
+      notes: [],
+    },
+  ],
   slug: "revolut",
   tags: [],
   type: "work",
@@ -115,5 +128,36 @@ export const meta: WorkMeta = {
       ],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "Agent aggregated chat",
+    },
+    {
+      title: "Region-sensitive messaging",
+    },
+    {
+      title: "Contextual history",
+    },
+    {
+      title: "Termination cross-check",
+    },
+    {
+      title: "Shared devices listing",
+    },
+    {
+      title: "Decoupling checks from Backend",
+    },
+    {
+      title: "Ticket routing for junior escalation",
+    },
+    {
+      title: "Hierarchical shareholder editor",
+    },
+    {
+      title: "Document folder management",
+    },
+    {
+      title: "Region-specific features",
+    },
+  ],
 };

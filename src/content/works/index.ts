@@ -8,3 +8,5 @@ export * from "./revolut";
 export * from "./service-nsw";
 export * from "./villa-plus";
 export * from "./wooliesx";
+export * from "./refugee-connect";
+

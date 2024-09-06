@@ -1,4 +1,4 @@
-import { Project, ProjectImage, ProjectMeta } from "@/framework";
+import { ProjectImage, ProjectMeta } from "@/framework";
 
 export function projectImageFullPath({ slug }: ProjectMeta) {
   return ({ imageUrl }: ProjectImage) => {

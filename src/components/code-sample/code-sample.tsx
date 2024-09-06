@@ -60,7 +60,6 @@ export function CodeSample({
       suppressHydrationWarning
       data-line={linesHighlightedString}
     >
-      {language}
       <code
         className={cn(styles.code, `language-${language}`)}
         ref={codeRef}

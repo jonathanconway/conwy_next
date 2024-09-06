@@ -4,12 +4,16 @@ import { UseCarouselResult } from "../use-carousel.hook";
 
 import * as styles from "./carousel-navigation.styles";
 
-interface CarouselNavigationProps<T> {
+type WithTitle = { readonly title?: string };
+
+interface CarouselNavigationProps<T extends WithTitle> {
   readonly carousel: UseCarouselResult<T>;
   readonly tabTooltipDescription?: string;
 }
 
-export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
+export function CarouselNavigation<T extends WithTitle>(
+  props: CarouselNavigationProps<T>,
+) {
   if (props.carousel.items.length <= 1) {
     return null;
   }
@@ -30,7 +34,9 @@ export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
           isSelected={tabItem === props.carousel.selectedItem}
           tooltip={{
             key: `tab-${tabItemIndex}`,
-            contents: `${props.tabTooltipDescription ?? "Item"} #${tabItemIndex + 1}`,
+            contents:
+              tabItem.title ??
+              `${props.tabTooltipDescription ?? "Item"} #${tabItemIndex + 1}`,
           }}
           onClick={props.carousel.handleTabClick(tabItem)}
         />

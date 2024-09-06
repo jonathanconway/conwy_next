@@ -16,7 +16,7 @@ export function ArticleSidebarHeadings({
   const { selectedHeadingId } =
     useArticleSidebarHeadingsHighlighter(articleHeadings);
 
-  if (articleHeadings.length <= 1) {
+  if (articleHeadings.length <= 2) {
     return null;
   }
 

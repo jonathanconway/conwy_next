@@ -25,6 +25,7 @@ export const meta: WorkMeta = {
   images: [
     {
       imageUrl: "dta-1.jpg",
+      title: "Accessibility article",
       notes: [
         {
           text: "Accessibility – going beyond the guidelines. Article written in collaboration with DTA content experts and published on the DTA website.",
@@ -33,6 +34,7 @@ export const meta: WorkMeta = {
     },
     {
       imageUrl: "dta-2.png",
+      title: "Business identity - Delegation",
       notes: [
         {
           text: "Business Identity - Delegation flow. Hand-drawn low-fidelity wireframes.",
@@ -41,6 +43,7 @@ export const meta: WorkMeta = {
     },
     {
       imageUrl: "dta-3.png",
+      title: "Business identity - Add team member",
       notes: [
         {
           text: "Business Identity - Add team member flow. Interactive mobile prototype built in React.",
@@ -49,9 +52,28 @@ export const meta: WorkMeta = {
     },
     {
       imageUrl: "dta-screencast.gif",
+      title: "Researcher tools",
       notes: [
         {
           text: "Researcher tools for controlling prototypes during usability testing sessions. Built in React.",
+        },
+      ],
+    },
+    {
+      imageUrl: "dta-5.png",
+      title: "Business identity - Manage team members",
+      notes: [
+        {
+          text: "Business Identity - Manage team members. Interactive mobile prototype built in React.",
+        },
+      ],
+    },
+    {
+      imageUrl: "dta-4.png",
+      title: "Business identity - Technical architecture",
+      notes: [
+        {
+          text: "Technical architecture for Business identity.",
         },
       ],
     },

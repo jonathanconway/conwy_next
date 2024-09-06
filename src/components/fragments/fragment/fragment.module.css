@@ -38,7 +38,7 @@
   margin-top: 0.5rem;
   line-height: 1.75rem;
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
 }
 
 .fragment pre {
@@ -51,4 +51,8 @@
   white-space: pre-wrap;
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.fragment * > p:first-child {
+  padding-top: 0;
 }

@@ -18,8 +18,8 @@ export function MdxImg(props: MdxImgProps) {
           className={styles.img}
           alt={alt ?? title ?? ""}
           src={src ?? ""}
-          width={Number(width) || 200}
-          height={Number(height) || 300}
+          width={Number(width) || 600}
+          height={Number(height) || 400}
           placeholder="empty"
         />
       </a>
