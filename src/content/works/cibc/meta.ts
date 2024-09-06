@@ -11,6 +11,11 @@ export const meta: WorkMeta = {
   feedbacks: [
     {
       quote:
+        "“Just wanted to let you know, great work with the Symphony stuff.”",
+      author: "Executive Director, Digital Markets Initiatives",
+    },
+    {
+      quote:
         "“Mosaic is looking good in production, well done for getting this out on time!”",
       author: "Executive Director",
     },
@@ -59,5 +64,27 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "MifIID Structured Quotes",
+    },
+    {
+      title: "Mosaic Core",
+    },
+    {
+      title: "Symfony Chat Bot Prototype",
+    },
+    {
+      title: "Security UI",
+    },
+    {
+      title: "Structured Note Quote Blotter",
+    },
+    {
+      title: "CRM UI",
+    },
+    {
+      title: "Collateral API Integration",
+    },
+  ],
 };

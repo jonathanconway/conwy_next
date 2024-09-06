@@ -1,6 +1,6 @@
 import { PageLayout, Redirect as RedirectComponent } from "@/components";
 import { REDIRECTS, site } from "@/content";
-import { RedirectFragment } from "@/content/fragments";
+import { Redirect as Redirect_ } from "@/content/fragments";
 
 interface RedirectProps {
   readonly params: { readonly slug: string };
@@ -13,7 +13,7 @@ export default async function Redirect({ params: { slug } }: RedirectProps) {
     <PageLayout
       main={
         <div>
-          <RedirectFragment />
+          <Redirect_ />
 
           <RedirectComponent redirectUrl={redirectUrl} />
         </div>

@@ -1,5 +1,8 @@
 import {
   cn,
+  flex,
+  flex_col,
+  gap_2,
   inline_block,
   ml_2,
   mr_2,
@@ -8,6 +11,8 @@ import {
 } from "@jonathanconway/tailwindjs";
 
 export const techCategory = "";
+
+export const techList = cn(flex, flex_col, gap_2);
 
 export const techListItem = cn(text_sm);
 

@@ -23,7 +23,6 @@ const config: StorybookConfig = {
       use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
     });
 
-    console.log("config?.resolve?.alias", config?.resolve?.alias);
     if (config?.resolve?.alias) {
       config.resolve.alias["@"] = path.resolve(__dirname, "..", "src");
     }

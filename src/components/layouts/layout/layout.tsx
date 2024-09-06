@@ -1,8 +1,8 @@
+import { cn } from "@jonathanconway/tailwindjs";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
 import { Head } from "@/components";
-import { cn } from "@/framework";
 
 import * as styles from "./layout.styles";
 

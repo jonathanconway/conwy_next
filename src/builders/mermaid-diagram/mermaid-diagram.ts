@@ -1,84 +1,86 @@
-// import { renderMermaid } from "@mermaid-js/mermaid-cli";
-// import { existsSync, writeFileSync } from "fs";
-// import { join } from "path";
-// import pluralize from "pluralize";
-// import { launch } from "puppeteer";
+import { renderMermaid } from "@mermaid-js/mermaid-cli";
+import { existsSync, writeFileSync } from "fs";
+import { join } from "path";
+import pluralize from "pluralize";
+import { launch } from "puppeteer";
 
-// import {
-//   Meta,
-//   getPublicStaticContentPath,
-//   hashString,
-//   mkDirSyncIfNotExists,
-// } from "@/framework";
+import {
+  Meta,
+  getPublicStaticContentPath,
+  hashString,
+  mkDirSyncIfNotExists,
+} from "@/framework";
 
-// export async function buildMermaidDiagramImage(
-//   mermaidDiagramText: string,
-//   item: Meta,
-// ) {
-//   const mermaidDiagramTextHash = hashString(mermaidDiagramText);
-//   const mermaidPath = generateMermaidPath(item);
-//   const mermaidFilename = generateMermaidFilename(mermaidDiagramTextHash);
-//   const mermaidPathAndFilename = generateMermaidPathAndFilename(
-//     mermaidPath,
-//     mermaidFilename,
-//   );
+export async function buildMermaidDiagramImage(
+  mermaidDiagramText: string,
+  item: Meta,
+) {
+  return;
 
-//   if (!existsSync(mermaidPathAndFilename)) {
-//     return buildMermaidFile(
-//       mermaidPath,
-//       mermaidPathAndFilename,
-//       mermaidDiagramText,
-//     );
-//   }
-// }
+  const mermaidDiagramTextHash = hashString(mermaidDiagramText);
+  const mermaidPath = generateMermaidPath(item);
+  const mermaidFilename = generateMermaidFilename(mermaidDiagramTextHash);
+  const mermaidPathAndFilename = generateMermaidPathAndFilename(
+    mermaidPath,
+    mermaidFilename,
+  );
 
-// export function generateMermaidDiagramImageUrl(
-//   mermaidDiagramText: string,
-//   item: Meta,
-// ) {
-//   const mermaidDiagramTextHash = hashString(mermaidDiagramText);
-//   const mermaidFilename = generateMermaidFilename(mermaidDiagramTextHash);
-//   const mermaidUrl = generateMermaidUrl(mermaidFilename, item);
+  if (!existsSync(mermaidPathAndFilename)) {
+    return buildMermaidFile(
+      mermaidPath,
+      mermaidPathAndFilename,
+      mermaidDiagramText,
+    );
+  }
+}
 
-//   return mermaidUrl;
-// }
+export function generateMermaidDiagramImageUrl(
+  mermaidDiagramText: string,
+  item: Meta,
+) {
+  const mermaidDiagramTextHash = hashString(mermaidDiagramText);
+  const mermaidFilename = generateMermaidFilename(mermaidDiagramTextHash);
+  const mermaidUrl = generateMermaidUrl(mermaidFilename, item);
 
-// async function buildMermaidFile(
-//   mermaidPath: string,
-//   mermaidPathAndFilename: string,
-//   children: string,
-// ) {
-//   mkDirSyncIfNotExists(mermaidPath);
+  return mermaidUrl;
+}
 
-//   const browser = await launch({
-//     executablePath: "/opt/homebrew/bin/chromium",
-//   });
+async function buildMermaidFile(
+  mermaidPath: string,
+  mermaidPathAndFilename: string,
+  children: string,
+) {
+  mkDirSyncIfNotExists(mermaidPath);
 
-//   await browser.newPage();
+  const browser = await launch({
+    executablePath: "/opt/homebrew/bin/chromium",
+  });
 
-//   const { data: mermaidSvgData } = await renderMermaid(
-//     browser,
-//     children,
-//     "svg",
-//   );
+  await browser.newPage();
 
-//   const mermaidSvg = mermaidSvgData.toString();
+  const { data: mermaidSvgData } = await renderMermaid(
+    browser,
+    children,
+    "svg",
+  );
 
-//   writeFileSync(mermaidPathAndFilename, mermaidSvg);
-// }
+  const mermaidSvg = mermaidSvgData.toString();
 
-// function generateMermaidFilename(input: string) {
-//   return `mermaid_${input}.svg`;
-// }
+  writeFileSync(mermaidPathAndFilename, mermaidSvg);
+}
 
-// function generateMermaidUrl(mermaidFilename: string, item: Meta) {
-//   return `/images/${pluralize(item.type)}/${item.slug}/mermaid/${mermaidFilename}`;
-// }
+function generateMermaidFilename(input: string) {
+  return `mermaid_${input}.svg`;
+}
 
-// function generateMermaidPathAndFilename(path: string, filename: string) {
-//   return join(path, filename);
-// }
+function generateMermaidUrl(mermaidFilename: string, item: Meta) {
+  return `/images/${pluralize(item.type)}/${item.slug}/mermaid/${mermaidFilename}`;
+}
 
-// function generateMermaidPath(item: Meta) {
-//   return getPublicStaticContentPath("images", item.type, item.slug, "mermaid");
-// }
+function generateMermaidPathAndFilename(path: string, filename: string) {
+  return join(path, filename);
+}
+
+function generateMermaidPath(item: Meta) {
+  return getPublicStaticContentPath("images", item.type, item.slug, "mermaid");
+}

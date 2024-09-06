@@ -1,8 +1,8 @@
-import { Post } from "..";
-
 import { orderBy, sortBy, uniq } from "lodash";
 
 import { toPicked } from "@/framework/utils";
+
+import { Post } from "./post";
 
 export function sortByDate<T extends { readonly date: string }>(
   items: readonly T[],

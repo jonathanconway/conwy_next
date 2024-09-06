@@ -1,6 +1,7 @@
-import { Work, WorkMeta } from "..";
-
 import { orderBy } from "lodash";
+
+import { Work } from "./work";
+import { WorkMeta } from "./work-meta";
 
 export function sortWorkMetas(workMetas: readonly WorkMeta[]) {
   return orderBy(workMetas, "endDate", "desc");

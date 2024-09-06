@@ -24,10 +24,10 @@ export function SocialLinksList({ socialLinks }: SocialLinksListProps) {
           className={styles.link}
           target="_blank"
         >
-          <Icon
+          {/* <Icon
             className={styles.linkIcon}
             icon={SOCIAL_LINKS_DETAILS_BY_TYPE[socialLink.type].iconType}
-          />
+          /> */}
 
           <span className={styles.linkText}>
             {socialLink.title ??

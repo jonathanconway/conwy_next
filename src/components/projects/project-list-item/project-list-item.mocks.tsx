@@ -1,7 +1,5 @@
-import { createProjectMetaMock } from "@/framework";
+import { PROJECT_META_MOCK } from "@/framework";
 
-import { ProjectListItemProps } from "./project-list-item";
-
-export function createProjectListItemPropsMock(): ProjectListItemProps {
-  return createProjectMetaMock();
+export function createProjectListItemPropsMock(): any {
+  return PROJECT_META_MOCK;
 }

@@ -19,4 +19,5 @@ export const PROJECT_META_MOCK: ProjectMeta = {
   mainImage: "main.svg",
   techs: [],
   platforms: [],
+  images: [],
 };

@@ -5,7 +5,7 @@ import { SOCIAL_LINKS_DETAILS_BY_TYPE } from "../social-links-details-by-type";
 
 import * as styles from "./social-links-icons.styles";
 
-interface SocialLinksIconsProps {
+export interface SocialLinksIconsProps {
   readonly socialLinks: readonly SocialLink[];
 }
 

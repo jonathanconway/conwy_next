@@ -1,10 +1,11 @@
 import { render } from "@testing-library/react";
 
+import { PROJECT_META_MOCK } from "@/framework/client";
+
 import { ProjectLinks } from "./project-links";
-import { WORK_PROJECTS_PROPS_MOCK } from "./project-links.mocks";
 
 describe("ProjectLinks", () => {
   it("renders", () => {
-    render(<ProjectLinks {...WORK_PROJECTS_PROPS_MOCK} />);
+    render(<ProjectLinks projectMeta={PROJECT_META_MOCK} />);
   });
 });

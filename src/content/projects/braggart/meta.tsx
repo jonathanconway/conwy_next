@@ -33,5 +33,14 @@ export const meta: ProjectMeta = {
     },
   ],
   platforms: ["Web"],
-  images: [],
+  images: [
+    {
+      imageUrl: "braggart-1.png",
+      notes: [],
+    },
+    {
+      imageUrl: "braggart-2.png",
+      notes: [],
+    },
+  ],
 };

@@ -1,7 +1,6 @@
 export function getStaticCache(fs: any, path: any) {
   function getItem(key: string) {
     const cacheFilePath = path.join(__dirname, `../../static/cache/${key}`);
-    console.log("getItem", { cacheFilePath });
     return fs.readFileSync(`${cacheFilePath}`).toString();
   }
 

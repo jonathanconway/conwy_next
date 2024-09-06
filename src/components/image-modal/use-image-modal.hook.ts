@@ -33,6 +33,8 @@ export function useImageModal(params: UseImageModalParams) {
     return () => {
       window.removeEventListener("keydown", handleWindowKeyDown);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBackdropClick = (event: MouseEvent<HTMLElement>) => {

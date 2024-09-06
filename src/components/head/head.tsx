@@ -1,14 +1,16 @@
+import Head_ from "next/head";
+
 import { FavIcons } from "./fav-icons";
 import { PrismJSThemeLink } from "./prismjs-theme";
 
 export function Head() {
   return (
-    <head>
+    <Head_>
       <FavIcons />
 
       <PrismJSThemeLink />
 
       <script src="//embed.typeform.com/next/embed.js" defer></script>
-    </head>
+    </Head_>
   );
 }

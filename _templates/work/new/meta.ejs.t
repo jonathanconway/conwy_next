@@ -10,10 +10,12 @@ export const meta: WorkMeta = {
   startDate: "2020-02-20",
   endDate: "2024-02-20",
   jobTitle: "",
+  mainImage: "thumbnail.png",
   feedbacks: [],
   images: [],
   slug: "<%= name %>",
   tags: [],
   type: "work",
   techs: [],
+  projects: [],
 };

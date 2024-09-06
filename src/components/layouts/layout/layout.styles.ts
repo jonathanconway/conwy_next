@@ -12,8 +12,7 @@ import {
   relative,
   selection,
 } from "@jonathanconway/tailwindjs";
-
-import { cn } from "@/framework";
+import { cn } from "@jonathanconway/tailwindjs";
 
 import * as textStyles from "../../text/text.mixin.styles";
 

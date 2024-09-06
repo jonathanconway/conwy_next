@@ -1,6 +1,5 @@
+import { cn } from "@jonathanconway/tailwindjs";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-
-import { cn } from "@/framework";
 
 import * as styles from "./figure.styles";
 

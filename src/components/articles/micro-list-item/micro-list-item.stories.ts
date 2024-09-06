@@ -6,13 +6,13 @@ import { createMicroListItemPropsMock } from "./micro-list-item.mocks";
 const meta = {
   title: "Components/Articles/MicroListItem",
   component: MicroListItem,
-  argTypes: {
-    title: { control: "text" },
-    date: { control: "date" },
-    slug: { control: "text" },
-    tags: { control: "array" },
-    socialLinks: { control: "array" },
-  },
+  // argTypes: {
+  //   title: { control: "text" },
+  //   date: { control: "date" },
+  //   slug: { control: "text" },
+  //   tags: { option= },
+  //   socialLinks: { control: "array" },
+  // },
 } satisfies Meta<typeof MicroListItem>;
 
 export default meta;

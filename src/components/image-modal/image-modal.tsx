@@ -68,6 +68,7 @@ export function ImageModal(props: ImageModalProps) {
               .filter((note) => note.hotspot)
               .map((note, noteIndex) => (
                 <span
+                  key={note.text}
                   className={styles.noteHotspot}
                   style={{
                     left: note.hotspot!.x,

@@ -1,6 +1,6 @@
-import { ArticleMeta } from "../article";
-import { MicroMeta } from "../micro";
-import { ProjectMeta } from "../project";
+import { ArticleMeta } from "../article/article-meta";
+import { MicroMeta } from "../micro/micro-meta";
+import { ProjectMeta } from "../project/project-meta";
 
 export type PostMeta = ArticleMeta | MicroMeta | ProjectMeta;
 

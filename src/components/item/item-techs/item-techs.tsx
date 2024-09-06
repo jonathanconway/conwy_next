@@ -17,7 +17,7 @@ export function ItemTechs<TMeta extends WorkMeta | ProjectMeta>(
 
   return (
     <Section label="Tech">
-      <ul>
+      <ul className={styles.techList}>
         {props.itemMeta.techs.map((tech) => (
           <li key={tech.categoryName} className={styles.techListItem}>
             {tech.categoryName}
