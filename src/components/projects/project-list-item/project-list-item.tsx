@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { POST_MAIN_IMAGE_DEFAULT, ProjectMeta } from "@/framework";
+import { POST_MAIN_IMAGE_DEFAULT, ProjectMeta } from "@/framework/client";
 
 import { SocialLinksIcons } from "../../social-links";
 

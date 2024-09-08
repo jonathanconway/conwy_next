@@ -1,4 +1,4 @@
-import { ProjectMeta } from "@/framework";
+import { ProjectMeta } from "@/framework/client";
 
 import { ImageCascade } from "../../image-cascade";
 

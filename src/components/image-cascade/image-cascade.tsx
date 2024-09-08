@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { ProjectImage } from "@/framework";
+import { ProjectImage } from "@/framework/client";
 
 import { ImageModal } from "../image-modal";
 import { Tooltip } from "../tooltip";

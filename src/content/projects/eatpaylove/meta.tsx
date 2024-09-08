@@ -1,4 +1,4 @@
-import { ProjectMeta, SocialLinkTypes } from "@/framework";
+import { ProjectMeta, SocialLinkTypes } from "@/framework/client";
 
 export const meta: ProjectMeta = {
   title: "eatpaylove",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ProjectMeta } from "@/framework";
+import { ProjectMeta } from "@/framework/client";
 
 import * as styles from "./project-main-image.styles";
 

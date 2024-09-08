@@ -1,19 +1,19 @@
+import { get, isObject } from "lodash";
+
 import { IconTypes } from "../../icon";
 import { IconButton } from "../../icon-button";
 import { UseCarouselResult } from "../use-carousel.hook";
 
 import * as styles from "./carousel-navigation.styles";
 
-type WithTitle = { readonly title?: string };
+// type MaybeWithTitle = Partial<{ readonly title?: string }>;
 
-interface CarouselNavigationProps<T extends WithTitle> {
+interface CarouselNavigationProps<T> {
   readonly carousel: UseCarouselResult<T>;
   readonly tabTooltipDescription?: string;
 }
 
-export function CarouselNavigation<T extends WithTitle>(
-  props: CarouselNavigationProps<T>,
-) {
+export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
   if (props.carousel.items.length <= 1) {
     return null;
   }
@@ -35,8 +35,9 @@ export function CarouselNavigation<T extends WithTitle>(
           tooltip={{
             key: `tab-${tabItemIndex}`,
             contents:
-              tabItem.title ??
-              `${props.tabTooltipDescription ?? "Item"} #${tabItemIndex + 1}`,
+              isObject(tabItem) && "title" in tabItem
+                ? String(tabItem.title)
+                : `${props.tabTooltipDescription ?? "Item"} #${tabItemIndex + 1}`,
           }}
           onClick={props.carousel.handleTabClick(tabItem)}
         />

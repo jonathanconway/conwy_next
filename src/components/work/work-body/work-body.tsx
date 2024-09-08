@@ -1,4 +1,4 @@
-import { Work as Work_ } from "@/framework";
+import { Work as Work_ } from "@/framework/client";
 
 import { Fragment } from "../../fragments";
 
@@ -13,6 +13,3 @@ export function WorkBody({ work: { content: Content } }: WorkBodyProps) {
     </Fragment>
   );
 }
-
-// <div className={cn(styles.content, moduleStyles.workBody)}>
-// </div>

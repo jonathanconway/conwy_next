@@ -1,5 +1,5 @@
 import * as works from "@/content/works";
-import { WorkMeta, getWorkMetas } from "@/framework";
+import { WorkMeta, getWorkMetas } from "@/framework/client";
 
 import { ItemNavigation } from "../../item";
 

@@ -1,4 +1,4 @@
-import { Article as Article_ } from "@/framework";
+import { Article as Article_ } from "@/framework/client";
 
 import { Fragment } from "../../fragments";
 import { ARTICLE_HEADING_INTRO } from "../article-heading-intro";

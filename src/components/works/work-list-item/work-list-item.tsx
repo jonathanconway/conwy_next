@@ -1,7 +1,5 @@
-import Image from "next/image";
-
 import { Link, Tooltip, WorkMainImage } from "@/components";
-import { WorkMeta } from "@/framework";
+import { WorkMeta } from "@/framework/client";
 
 import * as styles from "./work-list-item.styles";
 

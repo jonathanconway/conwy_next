@@ -1,6 +1,6 @@
 "use client";
 
-import { WorkFeedback } from "@/framework";
+import { WorkFeedback } from "@/framework/client";
 
 import { CarouselNavigation } from "../../carousel";
 import { Section } from "../../section";

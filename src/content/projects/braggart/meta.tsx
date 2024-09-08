@@ -1,4 +1,4 @@
-import { ProjectMeta } from "@/framework";
+import { ProjectMeta } from "@/framework/client";
 
 export const meta: ProjectMeta = {
   title: "braggart",

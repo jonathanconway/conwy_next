@@ -1,5 +1,5 @@
 import { MdxH2, Section } from "@/components";
-import { Project as Project_ } from "@/framework";
+import { Project as Project_ } from "@/framework/client";
 
 import { ProjectImageCascade } from "./product-image-cascade";
 import { ProjectBody } from "./project-body";

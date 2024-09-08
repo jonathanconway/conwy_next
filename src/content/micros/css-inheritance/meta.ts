@@ -1,4 +1,4 @@
-import { MicroMeta } from "@/framework";
+import { MicroMeta } from "@/framework/client";
 
 export const meta: MicroMeta = {
   blurb: `Thought: CSS inheritance seems to cause similar maintainability issues to OO inheritance.`,

@@ -1,7 +1,4 @@
-import { scanTailwindJSClasses } from "@jonathanconway/tailwindjs/build";
 import type { Config } from "tailwindcss";
-
-scanTailwindJSClasses(`${__dirname}/src`);
 
 module.exports = {
   darkMode: "selector",

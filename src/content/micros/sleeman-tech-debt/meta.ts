@@ -1,4 +1,4 @@
-import { MicroMeta, SocialLinkTypes } from "@/framework";
+import { MicroMeta, SocialLinkTypes } from "@/framework/client";
 
 export const meta: MicroMeta = {
   blurb: `Brilliant talk! The “debt” metaphor in “tech debt” is problematic. Code quality is best seen as a continuous process, which needs to be supported by frequent delivery, appropriate timeframes, continuous learning, transparency and advocacy.`,

@@ -1,6 +1,6 @@
 import { orderBy } from "lodash";
 
-import { WorkFeedback } from "@/framework";
+import { WorkFeedback } from "@/framework/client";
 
 import { useCarousel } from "../../carousel";
 

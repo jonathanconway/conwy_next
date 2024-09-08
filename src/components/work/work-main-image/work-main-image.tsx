@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { WorkMeta } from "@/framework";
+import { WorkMeta } from "@/framework/client";
 
 import * as styles from "./work-main-image.styles";
 

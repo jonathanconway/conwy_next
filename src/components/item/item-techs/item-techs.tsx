@@ -1,4 +1,4 @@
-import { ProjectMeta, WorkMeta } from "@/framework";
+import { ProjectMeta, WorkMeta } from "@/framework/client";
 
 import { Section } from "../../section";
 

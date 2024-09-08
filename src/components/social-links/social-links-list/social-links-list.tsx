@@ -1,4 +1,4 @@
-import { SocialLink } from "@/framework";
+import { SocialLink } from "@/framework/client";
 
 import { Icon } from "../../icon";
 import { Link } from "../../link";

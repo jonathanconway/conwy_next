@@ -1,7 +1,7 @@
 import Image from "next/image";
 import pluralize from "pluralize";
 
-import { ItemMeta } from "@/framework";
+import { ItemMeta } from "@/framework/client";
 
 import * as styles from "./item-main-image.styles";
 

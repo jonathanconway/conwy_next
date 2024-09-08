@@ -1,4 +1,4 @@
-import { Project as Project_ } from "@/framework";
+import { Project as Project_ } from "@/framework/client";
 
 import { Fragment } from "../../fragments";
 

@@ -3,7 +3,7 @@
 import { cn } from "@jonathanconway/tailwindjs";
 import Image from "next/image";
 
-import { WorkImage } from "@/framework";
+import { WorkImage } from "@/framework/client";
 
 import { CarouselNavigation } from "../carousel";
 import { IconTypes } from "../icon";

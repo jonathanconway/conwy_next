@@ -1,4 +1,4 @@
-import { WorkMeta } from "@/framework";
+import { WorkMeta } from "@/framework/client";
 
 export const meta: WorkMeta = {
   client: "Service NSW",

@@ -1,4 +1,4 @@
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta } from "@/framework/client";
 
 import { Section } from "../../../section";
 import { SocialLinksList } from "../../../social-links";

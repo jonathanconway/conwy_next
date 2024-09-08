@@ -1,4 +1,4 @@
-import { createArticleMetaMock } from "@/framework";
+import { createArticleMetaMock } from "@/framework/client";
 
 import { ArticleListItemProps } from "./article-list-item";
 

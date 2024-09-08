@@ -3,7 +3,7 @@ import type { Preview } from "@storybook/react";
 
 import "../src/app/globals.css";
 
-import { addBodyClasses } from "./add-body-classes";
+// import { addBodyClasses } from "./add-body-classes";
 
 const preview: Preview = {
   parameters: {
@@ -25,4 +25,4 @@ const preview: Preview = {
 
 export default preview;
 
-addBodyClasses();
+// addBodyClasses();

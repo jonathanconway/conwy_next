@@ -25,6 +25,8 @@
     "build:tailwind:watch": "nodemon \"./scripts/build-tailwind.js\" ./src --ignore ./src/tailwind-js-classes.json",
     "build:custom": "npx tsx ./src/builders/exec.ts",
     "build:custom:all": "npx tsx ./src/builders/exec.ts --all",
+    "rebuild": "rm -rf .next out && npm run build",
+    "rebuild-and-deploy": "rm -rf .next out && npm run build && npm run deploy",
     "test": "jest"
   },
   "dependencies": {

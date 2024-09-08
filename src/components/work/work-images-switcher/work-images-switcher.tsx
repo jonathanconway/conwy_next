@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import { ProjectImage, WorkMeta } from "@/framework";
+import { ProjectImage, WorkMeta } from "@/framework/client";
 
 import { workImageFullPath } from "../work-image-cascade/work-image-cascade.utils";
 

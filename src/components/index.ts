@@ -1,7 +1,6 @@
 export * from "./article";
 export * from "./articles";
 export * from "./carousel";
-export * from "./code-sample";
 export * from "./contact-details";
 export * from "./date";
 export * from "./figure";

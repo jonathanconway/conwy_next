@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta } from "@/framework/client";
 
 import { Date } from "../../date";
 import { SocialLinksIcons } from "../../social-links";

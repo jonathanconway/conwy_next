@@ -1,5 +1,5 @@
 import { ItemTechs } from "@/components/item";
-import { ProjectMeta } from "@/framework";
+import { ProjectMeta } from "@/framework/client";
 
 interface ProjectTechsProps {
   readonly projectMeta: ProjectMeta;

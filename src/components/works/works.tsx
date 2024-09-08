@@ -1,4 +1,4 @@
-import { WorkMeta, sortWorkMetas } from "@/framework";
+import { WorkMeta, sortWorkMetas } from "@/framework/client";
 
 import { WorkListItem } from "./work-list-item";
 import * as styles from "./works.styles";

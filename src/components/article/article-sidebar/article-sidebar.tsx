@@ -1,4 +1,4 @@
-import { Article as Article_ } from "@/framework";
+import { Article as Article_ } from "@/framework/client";
 
 import { getArticleHeadings } from "../article-headings";
 

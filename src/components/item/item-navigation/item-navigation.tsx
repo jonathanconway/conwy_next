@@ -1,6 +1,6 @@
 import { startCase } from "lodash";
 
-import { ItemMeta } from "@/framework";
+import { ItemMeta } from "@/framework/client";
 
 import { Link } from "../../link";
 import { ItemMainImage } from "../item-main-image";

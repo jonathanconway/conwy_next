@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ArticleMeta } from "@/framework";
+import { ArticleMeta } from "@/framework/client";
 
 import * as styles from "./article-sidebar-image.styles";
 

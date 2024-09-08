@@ -1,7 +1,7 @@
 import { kebabCase, takeWhile } from "lodash";
 import { FunctionComponent, JSXElementConstructor, ReactElement } from "react";
 
-import { Article as Article_ } from "@/framework";
+import { Article as Article_ } from "@/framework/client";
 
 import { MdxH2, MdxH2Short } from "../mdx";
 

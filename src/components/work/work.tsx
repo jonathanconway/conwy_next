@@ -1,5 +1,5 @@
 import { MdxH2, WorkMainImage } from "@/components";
-import { Work as Work_ } from "@/framework";
+import { Work as Work_ } from "@/framework/client";
 
 import { WorkBody } from "./work-body";
 import { WorkFeedbackCarousel } from "./work-feedback-carousel";

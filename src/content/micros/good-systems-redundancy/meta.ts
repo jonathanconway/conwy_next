@@ -1,4 +1,4 @@
-import { MicroMeta } from "@/framework";
+import { MicroMeta } from "@/framework/client";
 
 export const meta: MicroMeta = {
   blurb: `Good systems tend to have a lot of redundancy (“fall-backs”), and thus, have some inefficiency. Designers often seem to understand this better than engineers.`,

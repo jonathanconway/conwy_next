@@ -1,5 +1,5 @@
 import * as projects from "@/content/projects";
-import { ProjectMeta, getProjectMetas } from "@/framework";
+import { ProjectMeta, getProjectMetas } from "@/framework/client";
 
 import { ItemNavigation } from "../../item";
 

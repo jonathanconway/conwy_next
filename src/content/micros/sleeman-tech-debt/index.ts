@@ -1,4 +1,4 @@
-import { Micro } from "@/framework";
+import { Micro } from "@/framework/client";
 
 import { meta } from "./meta";
 

@@ -1,6 +1,6 @@
 import { MouseEvent, useEffect, useState } from "react";
 
-import { ProjectImage } from "@/framework";
+import { ProjectImage } from "@/framework/client";
 
 import { useCarousel } from "../carousel";
 
