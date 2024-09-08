@@ -15,6 +15,7 @@ import {
   gap_2,
   gap_4,
   group_name,
+  hidden,
   hover,
   justify_center,
   opacity_50,
@@ -22,22 +23,35 @@ import {
   p_1,
   relative,
   rounded_md,
+  sm,
+  text_ellipsis,
   text_sm,
   text_stone_50,
   text_stone_950,
+  text_xs,
   underline,
-  w_52,
+  visible,
   w_56,
+  w_full,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../../label/label.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
-export const workNavigationContainer = cn(flex, flex_row, gap_2);
+export const navigationsContainer = cn(
+  flex,
+  flex_col,
+  sm(flex_row),
+  flex_1,
+  gap_2,
+);
 
-const containerWidth = w_56;
+const containerWidth = cn(w_full);
 
 export const containerEmpty = cn(
+  hidden,
+  sm(flex),
+
   rounded_md,
 
   containerWidth,
@@ -49,7 +63,7 @@ export const containerEmpty = cn(
   opacity_50,
 );
 
-export const container = cn(
+export const navigationContainer = cn(
   rounded_md,
   border,
   border_stone_300,
@@ -86,4 +100,11 @@ export const asideColumn = listItemStyles.asideColumn;
 
 export const label = labelStyles.label;
 
-export const title = cn(font_bold, group_name(hover.name, underline), text_sm);
+export const title = cn(
+  font_bold,
+  group_name(hover.name, underline),
+  text_xs,
+  sm(text_sm),
+  text_ellipsis,
+  overflow_hidden,
+);

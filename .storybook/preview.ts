@@ -3,8 +3,6 @@ import type { Preview } from "@storybook/react";
 
 import "../src/app/globals.css";
 
-// import { addBodyClasses } from "./add-body-classes";
-
 const preview: Preview = {
   parameters: {
     controls: {
@@ -18,11 +16,9 @@ const preview: Preview = {
     withThemeByClassName({
       themes: { dark: "dark", light: "light" },
       defaultTheme: "dark",
-      parentSelector: "body",
+      parentSelector: "html",
     }),
   ],
 };
 
 export default preview;
-
-// addBodyClasses();

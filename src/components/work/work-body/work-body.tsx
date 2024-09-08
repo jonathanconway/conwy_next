@@ -1,6 +1,7 @@
 import { Work as Work_ } from "@/framework/client";
 
 import { Fragment } from "../../fragments";
+import { Section } from "../../section";
 
 export interface WorkBodyProps {
   readonly work: Work_;
@@ -8,8 +9,10 @@ export interface WorkBodyProps {
 
 export function WorkBody({ work: { content: Content } }: WorkBodyProps) {
   return (
-    <Fragment>
-      <Content />
-    </Fragment>
+    <Section label="Duties + Achievements">
+      <Fragment>
+        <Content />
+      </Fragment>
+    </Section>
   );
 }

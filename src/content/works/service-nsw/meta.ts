@@ -6,7 +6,7 @@ export const meta: WorkMeta = {
     "Led development of MyServiceNSW front-end, working with design, infrastructure and service providers.",
   startDate: "2020-02-20",
   endDate: "2024-02-20",
-  jobTitle: "",
+  jobTitle: "Front End Practice Lead",
   mainImage: "thumbnail.png",
   feedbacks: [
     {

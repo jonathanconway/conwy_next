@@ -3,6 +3,8 @@ import { TypeOfConst } from "@/framework/client";
 export const IconTypes = {
   ArrowChevronLeft: "arrow-chevron-left",
   ArrowChevronRight: "arrow-chevron-right",
+  ArrowChevronUp: "arrow-chevron-up",
+  ArrowChevronDown: "arrow-chevron-down",
   ArrowTriangleLeft: "arrow-triangle-left",
   ArrowTriangleRight: "arrow-triangle-right",
   Close: "close",
@@ -10,6 +12,7 @@ export const IconTypes = {
   Dev: "dev",
   Email: "email",
   Github: "github",
+  Hamburger: "hamburger",
   LinkedIn: "linkedin",
   Mastodon: "mastodon",
   Medium: "medium",

@@ -16,7 +16,7 @@ export const meta: WorkMeta = {
     },
     {
       imageUrl: "villa-plus-2.jpg",
-      notes: [],
+      notes: [], //Collaborative Kan-ban-style planning on whiteboard
     },
     {
       imageUrl: "villa-plus-screencast.gif",

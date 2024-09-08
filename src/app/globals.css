@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind forms;
 
 @import url("react-tooltip/dist/react-tooltip.css");
 
@@ -36,10 +37,12 @@ html.dark {
   --text-selection-color: rgb(68 64 60);
 
   --list-item-hover-background-color: rgb(41 37 36); /* bg-stone-800 */
+
+  color-scheme: dark;
 }
 
-:root {
-  color-scheme: light dark;
+html.light {
+  color-scheme: light;
 }
 
 * {

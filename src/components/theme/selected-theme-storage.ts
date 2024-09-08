@@ -1,8 +1,8 @@
 import { LocalStorageKeys } from "../../app/local-storage-keys";
 
-import { THEMES, Theme } from "./themes";
+import { Theme, Themes } from "./themes";
 
-const DEFAULT_THEME = THEMES.LIGHT;
+const DEFAULT_THEME = Themes.Light;
 
 export class SelectedThemeChangedEvent extends Event {
   static type = "selectedThemeChange";

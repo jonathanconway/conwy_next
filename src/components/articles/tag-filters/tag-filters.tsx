@@ -1,5 +1,6 @@
 "use client";
 
+import { MobileCollapsible } from "@/components/mobile";
 import { Post, getItemsTags } from "@/framework/client";
 
 import { ALL } from "./tag-filters.const";
@@ -21,23 +22,25 @@ export function TagFilters({ items }: TagFiltersProps) {
   const { selectedTags, onSelectTag } = useTagFiltersSwitch(allTags);
 
   return (
-    <div
-      className={styles.container()}
-      aria-description="Filter articles by tag"
-    >
-      {tags.map((tag) => (
-        <span
-          key={tag}
-          className={styles.tagFilter()}
-          aria-description="Filter tag"
-          onClick={onSelectTag(tag)}
-        >
+    <MobileCollapsible title="Filter articles by tag">
+      <div
+        className={styles.container}
+        aria-description="Filter articles by tag"
+      >
+        {tags.map((tag) => (
           <span
-            className={styles.tagFilterBox(selectedTags.includes(tag))}
-          ></span>
-          <span className={styles.tagFilterLabel()}>{sentenceCase(tag)}</span>
-        </span>
-      ))}
-    </div>
+            key={tag}
+            className={styles.tagFilter}
+            aria-description="Filter tag"
+            onClick={onSelectTag(tag)}
+          >
+            <span
+              className={styles.tagFilterBox(selectedTags.includes(tag))}
+            ></span>
+            <span className={styles.tagFilterLabel}>{sentenceCase(tag)}</span>
+          </span>
+        ))}
+      </div>
+    </MobileCollapsible>
   );
 }

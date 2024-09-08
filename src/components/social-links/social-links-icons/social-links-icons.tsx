@@ -11,7 +11,7 @@ export interface SocialLinksIconsProps {
 
 export function SocialLinksIcons({ socialLinks }: SocialLinksIconsProps) {
   return (
-    <div className={styles.container} style={{ zIndex: 1000 }}>
+    <div className={styles.container}>
       {socialLinks.map((socialLink) => (
         <Link
           key={socialLink.url}

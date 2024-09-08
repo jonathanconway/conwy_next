@@ -64,6 +64,7 @@ export function ImageModal(props: ImageModalProps) {
               width={600}
               height={400}
             />
+
             {carousel.selectedItem.notes
               .filter((note) => note.hotspot)
               .map((note, noteIndex) => (

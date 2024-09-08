@@ -11,9 +11,9 @@ import {
   addSelectedThemeStorageListener,
   removeSelectedThemeStorageListener,
 } from "./selected-theme-storage-watcher";
-import { THEMES, Theme } from "./themes";
+import { Theme, Themes } from "./themes";
 
-const DEFAULT_THEME = THEMES.LIGHT;
+const DEFAULT_THEME = Themes.Light;
 
 export function useSelectedTheme() {
   const [selectedThemeState, setSelectedThemeState] =

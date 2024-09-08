@@ -25,17 +25,25 @@ import {
   inline_block,
   inline_flex,
   items_center,
+  justify_between,
   justify_center,
   leading_6,
   left_0,
+  left_3,
   left_7,
   m_4,
   m_auto,
+  max_h_arb,
+  mb_4,
   neg,
+  order_1,
+  order_2,
+  overflow_scroll,
   p_1_5,
   p_4,
   pl_2,
   pl_4,
+  pl_6,
   pt_0_5,
   relative,
   right_0,
@@ -44,12 +52,12 @@ import {
   rounded_lg,
   shadow,
   shadow_md,
+  sm,
   text_black,
   text_sm,
   text_white,
   text_xl,
   top_0,
-  top_0_5,
   w_6,
   w_60,
   w_arb,
@@ -87,18 +95,20 @@ export const imageModal = cn(
   border_gray_600,
 );
 
-export const imageModalHeader = cn();
+export const imageModalHeader = cn(flex, flex_col, sm(flex_row));
 
-export const imageModalTitle = cn(text_xl, font_bold);
+export const imageModalTitle = cn(text_xl, font_bold, order_1, sm(order_2));
 
 export const imageModalButtonsContainer = cn(
-  absolute,
+  sm(absolute),
 
-  m_4,
+  mb_4,
+  sm(m_4),
   top_0,
   right_0,
 
   flex,
+  justify_between,
   gap_2,
 );
 
@@ -114,9 +124,9 @@ export const imageModalCloseButton = cn(
   text_black,
 );
 
-export const imageModalMain = cn(flex, flex_row, gap_8);
+export const imageModalMain = cn(flex, flex_col, sm(flex_row), gap_8);
 
-export const imageContainer = cn(relative);
+export const imageContainer = cn(relative, max_h_arb("80vh"), overflow_scroll);
 
 export const image = cn(
   w_arb("600px"),
@@ -156,12 +166,13 @@ export const notesContainer = (hasHotspots: boolean) =>
   cn(hasHotspots ? pl_4 : "", flex, flex_col, gap_4, w_60);
 
 export const noteText = (hasHotspots: boolean) =>
-  cn(text_sm, hasHotspots ? pl_2 : "", relative, pt_0_5);
+  cn(text_sm, hasHotspots ? cn(pl_6, sm(pl_2)) : "", relative, pt_0_5);
 
 export const noteNumber = cn(
   absolute,
-  neg(left_7),
-  neg(top_0_5),
+
+  neg(left_3),
+  sm(neg(left_7)),
 
   bg_stone_700,
   border_yellow_400,

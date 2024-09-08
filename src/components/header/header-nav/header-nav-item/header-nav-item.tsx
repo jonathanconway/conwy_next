@@ -19,8 +19,8 @@ export function HeaderNavItem({ title, href, selected }: HeaderNavItemProps) {
   const active = selected || path.startsWith(href);
 
   return (
-    <Link className={styles.container()} href={href}>
-      <span className={styles.text()}>{title}</span>
+    <Link className={styles.container} href={href}>
+      <span className={styles.text}>{title}</span>
 
       {active && (
         <div className={styles.activeIndicator}>

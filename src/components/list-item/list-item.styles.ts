@@ -10,17 +10,15 @@ import {
   gap_1_5,
   gap_3,
   gap_4,
-  hidden,
   hover,
-  mb_3,
-  md,
-  min_h_40,
+  min_h_36,
+  min_h_arb,
   overflow_hidden,
   relative,
-  w_24,
-  w_44,
+  sm,
   w_72,
   w_arb,
+  w_full,
 } from "@jonathanconway/tailwindjs";
 
 import * as boxStyles from "../box/box.styles";
@@ -28,7 +26,10 @@ import * as boxStyles from "../box/box.styles";
 export const container = cn(
   relative,
 
-  w_72,
+  w_full,
+  sm(w_72),
+
+  min_h_36,
 
   boxStyles.container,
 

@@ -37,9 +37,6 @@ export function Work({ work }: WorkProps) {
 
       <div className={styles.main}>
         <div className={styles.blurb}>
-          {/* todo: change the "label"s to headings */}
-          <span className={styles.label}>Duties + Achievements</span>
-
           <WorkBody work={work} />
         </div>
 

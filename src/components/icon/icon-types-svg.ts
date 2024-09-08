@@ -1,13 +1,16 @@
 import { IconTypes } from "./icon-types";
 import {
+  ArrowChevronDown,
   ArrowChevronLeft,
   ArrowChevronRight,
+  ArrowChevronUp,
   ArrowTriangleLeft,
   CheckBox,
   Close,
   Dev,
   Email,
   Github,
+  Hamburger,
   LinkedIn,
   Mastodon,
   Medium,
@@ -25,6 +28,8 @@ import {
 export const ICON_TYPE_SVGS = {
   [IconTypes.ArrowChevronLeft]: ArrowChevronLeft,
   [IconTypes.ArrowChevronRight]: ArrowChevronRight,
+  [IconTypes.ArrowChevronUp]: ArrowChevronUp,
+  [IconTypes.ArrowChevronDown]: ArrowChevronDown,
   [IconTypes.ArrowTriangleLeft]: ArrowTriangleLeft,
   [IconTypes.ArrowTriangleRight]: ArrowTriangleLeft,
   [IconTypes.Close]: Close,
@@ -32,6 +37,7 @@ export const ICON_TYPE_SVGS = {
   [IconTypes.Dev]: Dev,
   [IconTypes.Email]: Email,
   [IconTypes.Github]: Github,
+  [IconTypes.Hamburger]: Hamburger,
   [IconTypes.LinkedIn]: LinkedIn,
   [IconTypes.Mastodon]: Mastodon,
   [IconTypes.Medium]: Medium,

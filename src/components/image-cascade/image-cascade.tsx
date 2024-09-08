@@ -29,6 +29,10 @@ export function ImageCascade(props: ImageCascadeProps) {
     setState({ openImage });
   };
 
+  if (props.images?.length === 0) {
+    return;
+  }
+
   return (
     <div className={styles.container}>
       {props.images?.map((image, imageUrlIndex) => (

@@ -4,21 +4,19 @@ import {
   cn,
   flex,
   flex_1,
+  group,
   h_2,
+  lowercase,
+  px_2,
+  py_2,
+  relative,
+  text_lg,
   w_full,
 } from "@jonathanconway/tailwindjs";
 
-export const container = () => `
-  relative
-  lowercase
-  py-2
-  group
-`;
+export const container = cn(relative, lowercase, py_2, group);
 
-export const text = () => `
-  text-lg
-  px-2
-`;
+export const text = cn(text_lg, px_2);
 
 export const activeIndicator = cn(w_full, flex, h_2);
 

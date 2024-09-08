@@ -10,15 +10,10 @@ import {
   flex_row,
   gap_6,
   items_start,
-  leading_8,
-  max_w_96,
-  md,
   mt_4,
   my_10,
   pb_10,
   rounded_full,
-  w_3_on_5,
-  w_4_on_5,
   w_14,
 } from "@jonathanconway/tailwindjs";
 
@@ -35,8 +30,6 @@ export const container = cn(
   border_stone_300,
   dark(border_stone_700),
 );
-
-export const fragmentWrapper = cn(w_4_on_5, md(w_3_on_5), max_w_96, leading_8);
 
 export const face = cn(
   w_14,

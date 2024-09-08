@@ -3,9 +3,7 @@ import * as styles from "./header-logo.styles";
 export function HeaderLogoImage() {
   return (
     <svg
-      className={styles.logo()}
-      width="160"
-      height="42"
+      className={styles.logo}
       viewBox="0 0 130 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -6,6 +6,7 @@ import { Link } from "../../link";
 import { ItemMainImage } from "../item-main-image";
 
 import * as styles from "./item-navigation.styles";
+import { useItemNavigation } from "./use-item-navigation.hook";
 
 interface ItemNavigationProps<TMeta extends ItemMeta> {
   readonly itemMetas: readonly TMeta[];
@@ -13,48 +14,19 @@ interface ItemNavigationProps<TMeta extends ItemMeta> {
   readonly titleKey: keyof TMeta;
 }
 
-function getPrevious<T>(items: readonly T[], item: T) {
-  const itemIndex = items.indexOf(item);
-  if (itemIndex <= 0) {
-    return undefined;
-  }
-  return items[itemIndex - 1];
-}
-
-function getNext<T>(items: readonly T[], item: T) {
-  const itemIndex = items.indexOf(item);
-  if (itemIndex >= items.length - 1) {
-    return undefined;
-  }
-  return items[itemIndex + 1];
-}
-
 export function ItemNavigation<TMeta extends ItemMeta>(
   props: ItemNavigationProps<TMeta>,
 ) {
-  const { itemMetas } = props;
-
-  const itemMetaPrevious = getPrevious(itemMetas, props.itemMeta);
-  const itemMetaNext = getNext(itemMetas, props.itemMeta);
-  const itemMetasNavsPreviousNext = [
-    {
-      type: "previous",
-      itemMeta: itemMetaPrevious,
-    },
-    {
-      type: "next",
-      itemMeta: itemMetaNext,
-    },
-  ] as readonly {
-    readonly type: "previous" | "next";
-    readonly itemMeta: TMeta;
-  }[];
-
+  const { itemMetasNavsPreviousNext } = useItemNavigation(props);
   return (
-    <div className={styles.workNavigationContainer}>
+    <div className={styles.navigationsContainer}>
       {itemMetasNavsPreviousNext.map(({ type, itemMeta }) =>
         itemMeta ? (
-          <Link key={type} className={styles.container} href={itemMeta.slug}>
+          <Link
+            key={type}
+            className={styles.navigationContainer}
+            href={itemMeta.slug}
+          >
             <div className={styles.mainColumn}>
               <div className={styles.label}>
                 {type === "previous" && "< "}

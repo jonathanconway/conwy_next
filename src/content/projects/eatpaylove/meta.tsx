@@ -37,5 +37,11 @@ export const meta: ProjectMeta = {
     },
   ],
   platforms: ["Mobile Web"],
-  images: [],
+  images: [
+    {
+      imageUrl: "eatpaylove-01.png",
+      title: "EatPayLove - Mobile web app",
+      notes: [],
+    },
+  ],
 };

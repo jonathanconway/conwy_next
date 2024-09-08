@@ -56,5 +56,24 @@ export const meta: WorkMeta = {
       items: [],
     },
   ],
-  projects: [],
+  projects: [
+    {
+      title: "Make a Payment",
+    },
+    {
+      title: "Make a Transfer",
+    },
+    {
+      title: "Payments back-end",
+    },
+    {
+      title: "Accounts",
+    },
+    {
+      title: "Payments",
+    },
+    {
+      title: "Component library",
+    },
+  ],
 };

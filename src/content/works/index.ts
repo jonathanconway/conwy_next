@@ -10,3 +10,7 @@ export * from "./villa-plus";
 export * from "./wooliesx";
 export * from "./refugee-connect";
 
+export * from "./amaysim";
+
+export * from "./ninemsn";
+

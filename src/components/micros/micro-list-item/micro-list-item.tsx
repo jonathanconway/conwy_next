@@ -8,26 +8,28 @@ import { TextExpandable } from "../../text";
 
 import * as styles from "./micro-list-item.styles";
 
-export type MicroListItemProps = MicroMeta;
+export interface MicroListItemProps {
+  readonly microMeta: MicroMeta;
+}
 
 export function MicroListItem(props: MicroListItemProps) {
   return (
     <div className={styles.container}>
       <div className={styles.mainColumn}>
         <div className={styles.date}>
-          <Date>{props.date}</Date>
+          <Date>{props.microMeta.date}</Date>
         </div>
 
         <TextExpandable height="5rem">
-          <div className={styles.blurb}>{props.blurb}</div>
+          <div className={styles.blurb}>{props.microMeta.blurb}</div>
 
-          {props.mainLink && (
+          {props.microMeta.mainLink && (
             <Link
               className={styles.mainLink}
-              href={props.mainLink}
+              href={props.microMeta.mainLink}
               target="_blank"
             >
-              {props.mainLink}
+              {props.microMeta.mainLink}
             </Link>
           )}
         </TextExpandable>
@@ -41,11 +43,11 @@ export function MicroListItem(props: MicroListItemProps) {
           />
         </div>
 
-        {props.socialLinks && (
-          <SocialLinksIcons socialLinks={props.socialLinks} />
+        {props.microMeta.socialLinks && (
+          <SocialLinksIcons socialLinks={props.microMeta.socialLinks} />
         )}
 
-        <span className={styles.type}>{props.type}</span>
+        <span className={styles.type}>{props.microMeta.type}</span>
       </div>
     </div>
   );
