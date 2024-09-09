@@ -12,7 +12,7 @@ import {
   w_auto,
 } from "@jonathanconway/tailwindjs";
 
-export const headerNavContainer = cn(
+export const container = cn(
   relative,
   flex,
 

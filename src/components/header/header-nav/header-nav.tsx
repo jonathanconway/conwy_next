@@ -13,7 +13,7 @@ export function HeaderNav({ selectedNavPath }: HeaderNavProps) {
 
   return (
     <HeaderHamburger>
-      <div className={styles.headerNavContainer}>
+      <div className={styles.container}>
         {navItems.map((navItem) => (
           <HeaderNavItem key={navItem.href} {...navItem} />
         ))}

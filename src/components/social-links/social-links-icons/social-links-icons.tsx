@@ -1,4 +1,5 @@
-import { SocialLink } from "../../../framework/client";
+import { SocialLink } from "@/framework/client";
+
 import { Icon } from "../../icon";
 import { Link } from "../../link";
 import { SOCIAL_LINKS_DETAILS_BY_TYPE } from "../social-links-details-by-type";

@@ -11,6 +11,9 @@ import {
 } from "@jonathanconway/tailwindjs";
 
 import * as headingStyles from "../../heading/heading.styles";
+import * as textStyles from "../../text/text.styles";
+
+export const container = cn();
 
 export const h2 = cn(mt_0, headingStyles.h2);
 
@@ -23,3 +26,5 @@ export const articles = cn(
   items_center,
   mt_4,
 );
+
+export const bodyText = textStyles.bodyText;

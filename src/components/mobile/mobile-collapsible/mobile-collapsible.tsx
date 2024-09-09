@@ -3,9 +3,8 @@
 import { cn } from "@jonathanconway/tailwindjs";
 import { ReactNode, useId, useRef } from "react";
 
-import { IconTypes } from "@/components/icon";
-
-import { Icon } from "../../icon";
+import { Heading } from "../../heading";
+import { Icon, IconTypes } from "../../icon";
 
 import moduleStyles from "./mobile-collapsible.module.css";
 import * as styles from "./mobile-collapsible.styles";
@@ -33,7 +32,9 @@ export function MobileCollapsible(props: MobileCollapsibleProps) {
         className={cn(moduleStyles.header, styles.header)}
         htmlFor={inputId}
       >
-        <h3 className={styles.title}>{props.title}</h3>
+        <Heading level={3} className={styles.title}>
+          {props.title}
+        </Heading>
 
         <Icon
           className={cn(moduleStyles.expandButton, styles.expandCollapseButton)}

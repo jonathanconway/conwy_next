@@ -1,14 +1,11 @@
-import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
 import { Layout } from "@/components";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
-  title: "conwy",
+  title: "conwy - Homepage of Jonathan Conway",
   description: "Homepage of Jonathan Conway",
 };
 

@@ -1,5 +1,6 @@
-import { Theme, addSelectedThemeStorageListener } from "@/components/theme";
 import { isClient } from "@/framework/client";
+
+import { Theme, addSelectedThemeStorageListener } from "../../theme";
 
 import { PRISM_JS_THEME_CSS_FILENAME_BY_THEME } from "./prismjs-theme-filenames";
 

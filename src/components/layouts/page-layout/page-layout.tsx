@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
-import { Footer, Header } from "@/components";
+import { Footer } from "../../footer";
+import { Header } from "../../header";
 
 import * as styles from "./page-layout.styles";
 

@@ -1,16 +1,17 @@
-import Link from "next/link";
+import { Link } from "../../link";
 
 import { HeaderLogoImage } from "./header-logo-image.svg";
 import * as styles from "./header-logo.styles";
 
 export function HeaderLogo() {
   return (
-    <div className={styles.faceAndLogoContainer}>
+    <h1 className={styles.faceAndLogoContainer}>
+      <span className={styles.text}>conwy.co</span>
       <div className={styles.logoContainer}>
-        <Link href="/">
+        <Link href="/" tooltip={{ contents: "Click to go home" }}>
           <HeaderLogoImage />
         </Link>
       </div>
-    </div>
+    </h1>
   );
 }

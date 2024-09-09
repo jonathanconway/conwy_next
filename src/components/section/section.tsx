@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { Heading } from "../heading";
+
 import * as styles from "./section.styles";
 
 interface SectionProps {
@@ -10,7 +12,9 @@ interface SectionProps {
 export function Section(props: SectionProps) {
   return (
     <div className={styles.container}>
-      <h3 className={styles.label}>{props.label}</h3>
+      <Heading level={3} className={styles.label}>
+        {props.label}
+      </Heading>
 
       {props.children}
     </div>

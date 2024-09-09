@@ -42,7 +42,6 @@ function SwitchOption(props: SwitchOptionGrouped) {
         type="radio"
         name={props.name}
         className={styles.optionInput}
-        defaultChecked={props.defaultChecked}
         checked={props.defaultChecked}
         onClick={props.onClick}
       />

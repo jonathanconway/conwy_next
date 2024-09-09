@@ -8,7 +8,7 @@ import moduleStyles from "./about-me.module.css";
 
 export function FragmentsAboutMe() {
   return (
-    <div className={`${moduleStyles.container}`}>
+    <div className={moduleStyles.container}>
       <Image
         className={moduleStyles.face}
         src="/face.png"

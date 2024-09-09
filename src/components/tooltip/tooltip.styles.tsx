@@ -7,6 +7,7 @@ import {
   items_center,
   justify_center,
   p_2,
+  text_green_200,
   z_50,
 } from "@jonathanconway/tailwindjs";
 
@@ -19,4 +20,9 @@ export const childrenContainer = cn(
   border_red_100,
 );
 
-export const tooltip = cn(p_2, z_50);
+export const tooltip = cn(
+  p_2,
+  z_50,
+
+  text_green_200,
+);

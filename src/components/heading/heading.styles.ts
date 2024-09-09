@@ -1,10 +1,8 @@
 import {
   cn,
   font_semibold,
-  mb_4,
   mt_5,
   my_5,
-  pt_5,
   text_2xl,
   text_3xl,
   text_4xl,

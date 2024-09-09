@@ -2,13 +2,13 @@ import { cn } from "@jonathanconway/tailwindjs";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 
-import { Head } from "@/components";
+import { Head } from "../../head";
 
 import * as styles from "./layout.styles";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Layout({ children }: { children: ReactNode }) {
+export function Layout({ children }: { readonly children: ReactNode }) {
   return (
     <html lang="en" className={cn(styles.html, inter.className)}>
       <Head />

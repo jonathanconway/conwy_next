@@ -1,4 +1,4 @@
-import { ArticlesList, FragmentsAboutMe, PageLayout } from "@/components";
+import { FragmentsAboutMe, PageLayout, RecentArticlesList } from "@/components";
 import * as articles from "@/content/articles";
 import * as micros from "@/content/micros";
 import { sliceAllTopListItems } from "@/framework";
@@ -14,7 +14,8 @@ export default function Home() {
       main={
         <>
           <FragmentsAboutMe />
-          <ArticlesList items={items} />
+
+          <RecentArticlesList items={items} />
         </>
       }
     />

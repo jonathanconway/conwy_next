@@ -1,7 +1,8 @@
 "use client";
 
-import { MobileCollapsible } from "@/components/mobile";
 import { Post, getItemsTags } from "@/framework/client";
+
+import { MobileCollapsible } from "../../mobile";
 
 import { ALL } from "./tag-filters.const";
 import * as styles from "./tag-filters.styles";

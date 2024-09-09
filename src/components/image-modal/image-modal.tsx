@@ -6,6 +6,7 @@ import Image from "next/image";
 import { WorkImage } from "@/framework/client";
 
 import { CarouselNavigation } from "../carousel";
+import { Heading } from "../heading";
 import { IconTypes } from "../icon";
 import { IconButton } from "../icon-button";
 
@@ -35,9 +36,9 @@ export function ImageModal(props: ImageModalProps) {
       >
         <header className={styles.imageModalHeader}>
           {carousel.selectedItem.title && (
-            <h2 className={styles.imageModalTitle}>
+            <Heading level={2} className={styles.imageModalTitle}>
               {carousel.selectedItem.title}
-            </h2>
+            </Heading>
           )}
 
           <div className={styles.imageModalButtonsContainer}>

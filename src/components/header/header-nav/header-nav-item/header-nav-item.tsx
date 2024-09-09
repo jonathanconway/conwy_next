@@ -19,7 +19,7 @@ export function HeaderNavItem({ title, href, selected }: HeaderNavItemProps) {
   const active = selected || path.startsWith(href);
 
   return (
-    <Link className={styles.container} href={href}>
+    <Link className={styles.link} href={href}>
       <span className={styles.text}>{title}</span>
 
       {active && (

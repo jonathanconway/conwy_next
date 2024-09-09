@@ -5,6 +5,7 @@ export function HeaderLogoImage() {
     <svg
       className={styles.logo}
       viewBox="0 0 130 34"
+      width="130px"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

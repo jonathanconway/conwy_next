@@ -9,7 +9,7 @@ import { useTagFiltersSwitch } from "../tag-filters/use-tag-filters-switch.hook"
 
 import * as styles from "./articles-list.styles";
 
-export interface ArticlesListProps {
+interface ArticlesListProps {
   readonly items: readonly Post[];
 }
 
@@ -23,7 +23,7 @@ export function ArticlesList({ items }: ArticlesListProps) {
     : items.filter((item) => getAreSomeSame(item.meta.tags, selectedTags));
 
   return (
-    <div className={styles.container}>
+    <div className={styles.articles}>
       {filteredItems
         .map((item) => {
           switch (item.meta.type) {

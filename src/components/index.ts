@@ -1,5 +1,6 @@
 export * from "./article";
 export * from "./articles";
+export * from "./breadcrumb";
 export * from "./carousel";
 export * from "./contact-details";
 export * from "./date";

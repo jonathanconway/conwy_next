@@ -11,7 +11,6 @@ export function Header({ selectedNavPath }: HeaderProps) {
     <div className={styles.container}>
       <HeaderLogo />
 
-      {/* todo: figure out a hook-based way instead */}
       <HeaderNav selectedNavPath={selectedNavPath} />
     </div>
   );

@@ -17,7 +17,7 @@ import {
   sm,
 } from "@jonathanconway/tailwindjs";
 
-import * as textStyles from "../../text/text.mixin.styles";
+import * as textStyles from "../../text/text.styles";
 
 export const html = cn(bg_stone_900, dark(bg_white), h_screen);
 

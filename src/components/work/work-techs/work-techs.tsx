@@ -1,5 +1,6 @@
-import { ItemTechs } from "@/components/item";
 import { WorkMeta } from "@/framework/client";
+
+import { ItemTechs } from "../../item";
 
 interface WorkTechsProps {
   readonly workMeta: WorkMeta;

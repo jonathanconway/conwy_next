@@ -16,8 +16,6 @@ import {
   right_0,
   right_2,
   right_auto,
-  shadow_arb,
-  shadow_black,
   shadow_lg,
   shadow_none,
   sm,
@@ -30,7 +28,7 @@ import {
   z_20,
 } from "@jonathanconway/tailwindjs";
 
-import { bodyBackground } from "@/components/layouts/layout/layout.styles";
+import { bodyBackground } from "../../layouts/layout/layout.styles";
 
 export const hamburgerHiddenCheckbox = cn(hidden);
 

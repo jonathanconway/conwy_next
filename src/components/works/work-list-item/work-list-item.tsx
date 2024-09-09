@@ -1,5 +1,8 @@
-import { Link, Tooltip, WorkMainImage } from "@/components";
 import { WorkMeta } from "@/framework/client";
+
+import { Link } from "../../link";
+import { Tooltip } from "../../tooltip";
+import { WorkMainImage } from "../../work";
 
 import * as styles from "./work-list-item.styles";
 

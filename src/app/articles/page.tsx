@@ -18,6 +18,7 @@ export default function Page() {
           </Fragment>
 
           <TagFilters items={items} />
+
           <ArticlesList items={items} />
         </>
       }

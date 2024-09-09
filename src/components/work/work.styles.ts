@@ -7,7 +7,6 @@ import {
   flex_row,
   font_semibold,
   gap_1,
-  gap_2,
   gap_3,
   gap_4,
   gap_6,
@@ -15,7 +14,6 @@ import {
   grow,
   inline_block,
   items_center,
-  justify_between,
   leading_5,
   ml_2,
   mr_2,
@@ -28,7 +26,6 @@ import {
   text_xs,
   w_1_on_2,
   w_16,
-  w_auto,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../label/label.styles";

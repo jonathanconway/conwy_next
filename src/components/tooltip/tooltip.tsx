@@ -59,6 +59,7 @@ export function Tooltip(props: TooltipProps) {
           focus: true,
           mouseenter: true,
         }}
+        className={styles.tooltip}
       >
         {contents}
       </Tooltip_>

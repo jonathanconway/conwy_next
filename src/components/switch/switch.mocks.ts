@@ -3,11 +3,11 @@ import { SwitchProps } from "./switch.types";
 export const SWITCH_PROPS_MOCK: SwitchProps = {
   options: [
     {
-      key: "light",
+      name: "light",
       content: "Light",
     },
     {
-      key: "dark",
+      name: "dark",
       content: "Dark",
     },
   ],

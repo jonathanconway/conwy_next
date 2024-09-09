@@ -1,5 +1,4 @@
-import { Icon, IconTypes } from "@/components";
-
+import { Icon, IconTypes } from "../../icon";
 import { Section } from "../../section";
 
 import * as styles from "./work-projects.styles";

@@ -12,7 +12,7 @@ import {
 } from "@jonathanconway/tailwindjs";
 
 import * as linkStyles from "../../../link/link.styles";
-import * as textStyles from "../../../text/text.mixin.styles";
+import * as textStyles from "../../../text/text.styles";
 
 export const list = cn(list_none, flex, flex_col, gap_1);
 
