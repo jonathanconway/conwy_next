@@ -1,19 +1,17 @@
-import { get, isObject } from "lodash";
+import { isObject } from "lodash";
 
 import { IconTypes } from "../../icon";
 import { IconButton } from "../../icon-button";
 import { UseCarouselResult } from "../use-carousel.hook";
 
-import * as styles from "./carousel-navigation.styles";
+import * as styles from "./carousel-nav.styles";
 
-// type MaybeWithTitle = Partial<{ readonly title?: string }>;
-
-interface CarouselNavigationProps<T> {
+interface CarouselNavProps<T> {
   readonly carousel: UseCarouselResult<T>;
   readonly tabTooltipDescription?: string;
 }
 
-export function CarouselNavigation<T>(props: CarouselNavigationProps<T>) {
+export function CarouselNav<T>(props: CarouselNavProps<T>) {
   if (props.carousel.items.length <= 1) {
     return null;
   }

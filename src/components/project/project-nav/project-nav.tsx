@@ -1,16 +1,16 @@
 import * as projects from "@/content/projects";
 import { ProjectMeta, getProjectMetas } from "@/framework/client";
 
-import { ItemNavigation } from "../../item";
+import { ItemNav } from "../../item";
 
-interface ProjectNavigationProps {
+interface ProjectNavProps {
   readonly projectMeta: ProjectMeta;
 }
 
-export function ProjectNavigation(props: ProjectNavigationProps) {
+export function ProjectNav(props: ProjectNavProps) {
   const projectMetas = getProjectMetas(projects);
   return (
-    <ItemNavigation<ProjectMeta>
+    <ItemNav
       itemMeta={props.projectMeta}
       itemMetas={projectMetas}
       titleKey="title"

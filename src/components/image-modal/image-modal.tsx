@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { WorkImage } from "@/framework/client";
 
-import { CarouselNavigation } from "../carousel";
+import { CarouselNav } from "../carousel";
 import { Heading } from "../heading";
 import { IconTypes } from "../icon";
 import { IconButton } from "../icon-button";
@@ -42,10 +42,7 @@ export function ImageModal(props: ImageModalProps) {
           )}
 
           <div className={styles.imageModalButtonsContainer}>
-            <CarouselNavigation
-              carousel={carousel}
-              tabTooltipDescription="Image"
-            />
+            <CarouselNav carousel={carousel} tabTooltipDescription="Image" />
 
             <IconButton
               className={styles.imageModalCloseButton}

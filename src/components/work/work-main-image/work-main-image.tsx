@@ -11,6 +11,7 @@ interface WorkMainImageProps extends ImageProps {
 }
 
 export function WorkMainImage(props: WorkMainImageProps) {
+  const { workMeta, ...restProps } = props;
   return (
     <Image
       className={styles.image}
@@ -18,7 +19,7 @@ export function WorkMainImage(props: WorkMainImageProps) {
       unoptimized={true}
       width={96}
       height={64}
-      {...props}
+      {...restProps}
       src={`/images/works/${props.workMeta.slug}/thumbnail.png`}
       alt={`Work thumbnail image for ${props.workMeta.client}`}
     />

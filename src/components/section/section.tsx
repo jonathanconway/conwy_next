@@ -1,13 +1,7 @@
-import { ReactNode } from "react";
-
 import { Heading } from "../heading";
 
 import * as styles from "./section.styles";
-
-interface SectionProps {
-  readonly label: ReactNode;
-  readonly children: ReactNode;
-}
+import { SectionProps } from "./section.types";
 
 export function Section(props: SectionProps) {
   return (

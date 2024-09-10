@@ -1,20 +1,13 @@
-import { startCase } from "lodash";
-
 import { ItemMeta } from "@/framework/client";
 
-import { Link } from "../../link";
-import { ItemMainImage } from "../item-main-image";
-
-import * as styles from "./item-navigation.styles";
-
-interface UseItemNavigationParams<TMeta extends ItemMeta> {
+interface UseItemNavParams<TMeta extends ItemMeta> {
   readonly itemMetas: readonly TMeta[];
   readonly itemMeta: TMeta;
   readonly titleKey: keyof TMeta;
 }
 
-export function useItemNavigation<TMeta extends ItemMeta>(
-  params: UseItemNavigationParams<TMeta>,
+export function useItemNav<TMeta extends ItemMeta>(
+  params: UseItemNavParams<TMeta>,
 ) {
   const { itemMetas } = params;
 

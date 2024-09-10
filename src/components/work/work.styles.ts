@@ -72,9 +72,9 @@ export const techAndFeedbackContainer = cn(
   sm(all(w_1_on_2)),
 );
 
-export const techContainer = cn(grow, sm(w_1_on_2));
+export const techContainer = cn(flex, flex_1);
 
-export const otherContainer = cn(grow, sm(w_1_on_2), flex, flex_col, gap_6);
+export const otherContainer = cn(flex, flex_1, flex_col, gap_6);
 
 export const techCategory = "";
 

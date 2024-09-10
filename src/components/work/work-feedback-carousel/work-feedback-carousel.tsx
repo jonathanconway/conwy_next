@@ -2,7 +2,7 @@
 
 import { WorkFeedback } from "@/framework/client";
 
-import { CarouselNavigation } from "../../carousel";
+import { CarouselNav } from "../../carousel";
 import { Section } from "../../section";
 
 import { useWorkFeedbackCarousel } from "./use-work-feedback-carousel.hook";
@@ -44,7 +44,7 @@ export function WorkFeedbackCarousel(props: WorkFeedbackCarouselProps) {
         </div>
 
         {workFeedbackCarousel.items.length > 1 && (
-          <CarouselNavigation
+          <CarouselNav
             carousel={workFeedbackCarousel}
             tabTooltipDescription="Feedback"
           />

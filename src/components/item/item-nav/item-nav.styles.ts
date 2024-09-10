@@ -30,21 +30,13 @@ import {
   text_stone_950,
   text_xs,
   underline,
-  visible,
-  w_56,
   w_full,
 } from "@jonathanconway/tailwindjs";
 
 import * as labelStyles from "../../label/label.styles";
 import * as listItemStyles from "../../list-item/list-item.styles";
 
-export const navigationsContainer = cn(
-  flex,
-  flex_col,
-  sm(flex_row),
-  flex_1,
-  gap_2,
-);
+export const navsContainer = cn(flex, flex_col, sm(flex_row), flex_1, gap_2);
 
 const containerWidth = cn(w_full);
 
@@ -63,7 +55,7 @@ export const containerEmpty = cn(
   opacity_50,
 );
 
-export const navigationContainer = cn(
+export const navContainer = cn(
   rounded_md,
   border,
   border_stone_300,

@@ -1,2 +1,2 @@
 export * from "./use-carousel.hook";
-export * from "./carousel-navigation";
+export * from "./carousel-nav";

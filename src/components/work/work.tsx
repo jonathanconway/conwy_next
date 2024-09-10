@@ -6,7 +6,7 @@ import { WorkMainImage } from "../work";
 import { WorkBody } from "./work-body";
 import { WorkFeedbackCarousel } from "./work-feedback-carousel";
 import { WorkImageCascade } from "./work-image-cascade";
-import { WorkNavigation } from "./work-navigation";
+import { WorkNav } from "./work-nav";
 import { WorkProjects } from "./work-projects";
 import { WorkTechs } from "./work-techs";
 import * as styles from "./work.styles";
@@ -33,7 +33,7 @@ export function Work({ work }: WorkProps) {
         </div>
 
         <div className={styles.headerRight}>
-          <WorkNavigation workMeta={workMeta} />
+          <WorkNav workMeta={workMeta} />
         </div>
       </div>
 

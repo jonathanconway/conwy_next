@@ -1,16 +1,16 @@
 import * as works from "@/content/works";
 import { WorkMeta, getWorkMetas } from "@/framework/client";
 
-import { ItemNavigation } from "../../item";
+import { ItemNav } from "../../item";
 
-interface WorkNavigationProps {
+interface WorkNavProps {
   readonly workMeta: WorkMeta;
 }
 
-export function WorkNavigation(props: WorkNavigationProps) {
+export function WorkNav(props: WorkNavProps) {
   const workMetas = getWorkMetas(works);
   return (
-    <ItemNavigation<WorkMeta>
+    <ItemNav
       itemMeta={props.workMeta}
       itemMetas={workMetas}
       titleKey="client"

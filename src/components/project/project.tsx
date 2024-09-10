@@ -6,7 +6,7 @@ import { Section } from "../section";
 import { ProjectImageCascade } from "./product-image-cascade";
 import { ProjectBody } from "./project-body";
 import { ProjectLinks } from "./project-links";
-import { ProjectNavigation } from "./project-navigation";
+import { ProjectNav } from "./project-nav";
 import { ProjectPlatforms } from "./project-platforms";
 import { ProjectTechs } from "./project-techs";
 import * as styles from "./project.styles";
@@ -16,7 +16,7 @@ interface ProjectProps {
 }
 
 export function Project({ project }: ProjectProps) {
-  const { meta: projectMeta, content: Content } = project;
+  const { meta: projectMeta } = project;
 
   return (
     <div className={styles.container}>
@@ -28,7 +28,7 @@ export function Project({ project }: ProjectProps) {
         </div>
 
         <div className={styles.headerRight}>
-          <ProjectNavigation projectMeta={projectMeta} />
+          <ProjectNav projectMeta={projectMeta} />
         </div>
       </div>
 
