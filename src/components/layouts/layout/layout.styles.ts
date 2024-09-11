@@ -10,7 +10,6 @@ import {
   flex_col,
   flex_row,
   gap_16,
-  h_screen,
   overflow_y_visible,
   relative,
   selection,
@@ -19,7 +18,7 @@ import {
 
 import * as textStyles from "../../text/text.styles";
 
-export const html = cn(bg_stone_900, dark(bg_white), h_screen);
+export const html = cn(bg_stone_900, dark(bg_white));
 
 export const bodyBackground = cn(bg_stone_100, dark(bg_stone_900));
 
@@ -28,8 +27,6 @@ export const body = cn(
 
   relative,
   overflow_y_visible,
-
-  h_screen,
 
   flex,
   flex_col,

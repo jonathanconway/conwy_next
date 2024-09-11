@@ -3,7 +3,7 @@ import { WorkMeta } from "@/framework/client";
 export const meta: WorkMeta = {
   client: "Refugee Connect",
   blurbShort:
-    "Prototying an app to help refugees connect with local people and institutions",
+    "Prototyped an app to help refugees connect with local people and institutions",
   startDate: "2016-06-01",
   endDate: "2016-12-01",
   jobTitle: "Interaction Designer",

@@ -14,3 +14,17 @@ export * from "./amaysim";
 
 export * from "./ninemsn";
 
+export * from "./tal";
+
+export * from "./bupa";
+
+export * from "./community-engine";
+
+export * from "./news-limited";
+
+export * from "./mycastingnet";
+
+export * from "./coin";
+
+export * from "./razorfish";
+

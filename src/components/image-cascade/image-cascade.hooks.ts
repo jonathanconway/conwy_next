@@ -1,6 +1,6 @@
 "use client";
 
-import { max, min } from "lodash";
+import { reverse } from "lodash";
 import { useState } from "react";
 
 interface UseImageCascadeParams<T> {
@@ -25,15 +25,15 @@ interface UseImageCascadeState<T> {
 function sortItems<T>(items: readonly T[], selectedItem: T) {
   const selectedItemIndex = items.indexOf(selectedItem);
   if (selectedItemIndex === items.length - 1) {
-    return items.toReversed();
+    return reverse(items);
   } else if (selectedItemIndex > 0) {
-    return [
+    return reverse([
       ...items.slice(selectedItemIndex + 1),
       ...items.slice(0, selectedItemIndex),
       selectedItem,
-    ].toReversed();
+    ]);
   } else {
-    return [...items.slice(1), selectedItem].toReversed();
+    return reverse([...items.slice(1), selectedItem]);
   }
 }
 

@@ -20,7 +20,7 @@ export function WorkMainImage(props: WorkMainImageProps) {
       width={96}
       height={64}
       {...restProps}
-      src={`/images/works/${props.workMeta.slug}/thumbnail.png`}
+      src={`/images/works/${props.workMeta.slug}/${props.workMeta.mainImage ?? "thumbnail.png"}`}
       alt={`Work thumbnail image for ${props.workMeta.client}`}
     />
   );

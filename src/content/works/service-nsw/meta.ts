@@ -4,8 +4,8 @@ export const meta: WorkMeta = {
   client: "Service NSW",
   blurbShort:
     "Led development of MyServiceNSW front-end, working with design, infrastructure and service providers.",
-  startDate: "2020-02-20",
-  endDate: "2024-02-20",
+  startDate: "2015-03-01",
+  endDate: "2016-07-01",
   jobTitle: "Front End Practice Lead",
   mainImage: "thumbnail.png",
   feedbacks: [
@@ -21,14 +21,14 @@ export const meta: WorkMeta = {
   type: "work",
   techs: [
     {
-      categoryName: "angular-1.3",
+      categoryName: "Angular 1.3",
       items: [],
     },
     {
-      categoryName: "salesforce",
+      categoryName: "Salesforce",
       items: [
         {
-          itemName: "apex",
+          itemName: "Apex",
         },
         {
           itemName: "lightning",

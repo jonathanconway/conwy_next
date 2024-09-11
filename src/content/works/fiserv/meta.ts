@@ -3,9 +3,9 @@ import { WorkMeta } from "@/framework/client";
 export const meta: WorkMeta = {
   client: "Fiserv",
   blurbShort:
-    "Full-stack work on Westpac Online Banking: payments, statements, accounts.",
-  startDate: "2020-02-20",
-  endDate: "2024-02-20",
+    "Worked full-stack on Westpac Online Banking: payments, statements, accounts.",
+  startDate: "2012-05-01",
+  endDate: "2014-03-01",
   mainImage: "thumbnail.png",
   jobTitle: "Senior Software Developer",
   feedbacks: [
@@ -14,6 +14,11 @@ export const meta: WorkMeta = {
         "“Jonathan was the type of developer I wish I could replicate! Hard working, dedicated, talented in all aspects of development, always a team player willing to help out and always dependable.”",
       author: "Program Director",
     },
+    {
+      quote:
+        "“Jonathan has an excellent web development skill, the passion to go along with it, and the dedication to finish the job no matter what. It has been a pleasure working with Jon during my tenure at Fiserv within the Westpac project.”",
+      author: "Technical Lead",
+    },
   ],
   images: [],
   slug: "fiserv",
@@ -21,38 +26,58 @@ export const meta: WorkMeta = {
   type: "work",
   techs: [
     {
-      categoryName: "c#",
-      items: [],
-    },
-    {
-      categoryName: "sql-server",
-      items: [],
-    },
-    {
-      categoryName: "javascript",
+      categoryName: ".NET",
       items: [
         {
-          itemName: "knockout",
+          itemName: "C#",
         },
         {
-          itemName: "qunit",
+          itemName: "NUnit",
+        },
+        {
+          itemName: "WCF",
+        },
+        {
+          itemName: "FluentValidation",
+        },
+        {
+          itemName: "CQRS",
         },
       ],
     },
     {
-      categoryName: "selenium",
+      categoryName: "SQL Server",
       items: [],
     },
     {
-      categoryName: "java",
+      categoryName: "Javascript",
       items: [
         {
-          itemName: "spring",
+          itemName: "Knockout",
+        },
+        {
+          itemName: "QUnit",
         },
       ],
     },
     {
-      categoryName: "selenium",
+      categoryName: "PowerShell",
+      items: [],
+    },
+    {
+      categoryName: "Teamcity",
+      items: [],
+    },
+    {
+      categoryName: "Java",
+      items: [
+        {
+          itemName: "Spring",
+        },
+      ],
+    },
+    {
+      categoryName: "Selenium",
       items: [],
     },
   ],

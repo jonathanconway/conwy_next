@@ -26,6 +26,8 @@ export function WorkListItem(props: WorkListItemProps) {
 
         <div className={styles.title}>{workMeta.client}</div>
 
+        <p className={styles.subTitle}>{workMeta.jobTitle}</p>
+
         <p className={styles.blurb}>{workMeta.blurbShort}</p>
 
         <Tooltip
