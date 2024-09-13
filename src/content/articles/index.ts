@@ -17,3 +17,5 @@ export * from "./ai-patterns";
 
 export * from "./manual-testing";
 
+export * from "./mindfulness";
+
