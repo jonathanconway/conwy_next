@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
   <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://conwy.co">
   <title>conwy</title>
-  <subtitle>Homepage of Jonathan Conway</subtitle>
+  <subtitle>Blog articles by Jonathan Conway</subtitle>
   <link href="https://conwy.co/feed.xml" rel="self"/>
   <link href="https://conwy.co/"/>
-  <updated>2023-08-06T00:00:00.000Z</updated>
+  <updated>2024-09-13T00:00:00.000Z</updated>
   <id>https://conwy.co</id>
   <author>
     <name>Jonathan Conway</name>
@@ -12,9 +12,360 @@
   </author>
   
   <entry>
+    <title>AI user interface patterns</title>
+    <link href="https://conwy.co/articles/ai-patterns" />
+    <updated>2024-09-13T00:00:00.000Z</updated>
+    <id>ai-patterns</id>
+    <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
+&lt;p&gt;As AI capabilities become increasingly available to everyday development teams, it might be useful to explore way to surface these capabilities to end-users.&lt;/p&gt;
+&lt;p&gt;This article describes some user interface patterns for surfacing AI.&lt;/p&gt;
+&lt;p&gt;Using &lt;em&gt;&lt;strong&gt;&amp;quot;treat it like a person&amp;quot;&lt;/strong&gt;&lt;/em&gt; as a core principle, I provide patterns,
+examples and ways in which they mimick humans.&lt;/p&gt;
+&lt;h2&gt;Principles&lt;/h2&gt;
+&lt;p&gt;As the definition of &amp;quot;AI&amp;quot; is still somewhat in flux, I want to assume a definition for the purposes of this article:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;The capability of software/machines to do things that are normally thought of a human, in a rational way.&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The fact AI mimicks human thinking/behaviour suggests that we user interfaces should expose AI capabilities in a human way.&lt;/p&gt;
+&lt;p&gt;As Ethan Mollick puts it in the book &lt;em&gt;Co-Intelligence&lt;/em&gt; (bold mine):&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AI doesn’t act like software, but it does act like a human being. I’m not suggesting that AI systems are sentient like humans,
+or that they will ever be. Instead, I’m proposing a pragmatic approach: &lt;em&gt;&lt;strong&gt;treat AI as if it were human&lt;/strong&gt;&lt;/em&gt; because, in many ways,
+it behaves like one. This mindset, which echoes my “treat it like a person” principle of AI, can significantly improve your
+understanding of how and when to use AI in a practical, if not technical, sense.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So let&amp;#39;s look at the patterns...&lt;/p&gt;
+&lt;h2&gt;Pattern: Inline suggestion&lt;/h2&gt;
+&lt;p&gt;While performing a task, relevant ideas are displayed nearby in text or even imagery.&lt;/p&gt;
+&lt;p&gt;The user might be invited to provide input, such as selecting between variants or filling in a blank. (See &lt;a href=&quot;#pattern-fill-in-the-blanks&quot;&gt;Fill-in-the-blanks pattern&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/articles/ai-patterns/ai-ui-patterns-inline-suggestion.svg&quot; alt=&quot;Example: inline suggestion for a product owner entering a task&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; As a product owner enters a story into a task tracking system, the AI suggests edge cases they didn&amp;#39;t yet consider.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mimicks:&lt;/strong&gt; 🧍 Colleague, mentor, friend, etc. sitting nearby verbally offering a suggestion and/or physically pointing to a part of the screen.&lt;/p&gt;
+&lt;h2&gt;Pattern: Single-agent chat&lt;/h2&gt;
+&lt;p&gt;A specialised chat bot is available for back-and-forth discussion.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/articles/ai-patterns/ai-ui-patterns-single-agent-chat.svg&quot; alt=&quot;Example: specialised single-agent chat bot on an e-commerce website&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;: Customer on an e-commerce website starts entering a question about a product. A specialised chat-bot replies with a detailed response. An input box allows the customer to respond with a follow-up question.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mimicks:&lt;/strong&gt; 💬 Colleague, mentor, customer service, etc. communicating with the user via chat.&lt;/p&gt;
+&lt;h2&gt;Pattern: Multi-agent chat&lt;/h2&gt;
+&lt;p&gt;Multiple chat bots appear in the same chat window. Each bot has a different persona and perspective, and only contributes where applicable.&lt;/p&gt;
+&lt;p&gt;By splitting AI responses among multiple bots, rather than just one, it&amp;#39;s easier for the user to mentally divide the AI output into different &amp;quot;buckets&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Also, because this is analagous to real human-human team-work, it&amp;#39;s intuitive for people.&lt;/p&gt;
+&lt;p&gt;Users can address individual bots by name, to ask for further assistance on a specific topic or aspect covered by just that bot.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/articles/ai-patterns/ai-ui-patterns-multi-agent-chat.svg&quot; alt=&quot;Example: specialised multi-agent chat bots embedded in a financial advisor tool&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Financial advisor tool for recommending products to customers. Agents representing analysts and compliance each offer a perspective. The advisor uses these insights to prepare for a meeting with the client.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mimicks:&lt;/strong&gt; 👭 Group of people working together, such as a team meeting.&lt;/p&gt;
+&lt;h2&gt;Pattern: Fill-in-the-blanks&lt;/h2&gt;
+&lt;p&gt;A stencil is displayed, with some areas for user input and some ares for AI generated content.&lt;/p&gt;
+&lt;p&gt;As the user fills in the inputs, the AI uses contextual information to generate more of the content. User and AI both work together until the full output has been generated.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/articles/ai-patterns/ai-ui-patterns-fill-in-the-blanks.svg&quot; alt=&quot;Example: fill-in-the-blanks AI for CV editing tool&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Writing a CV for a job. You start to fill in work history items. The AI suggests additional bullet points, which you accept or refuse. The AI suggests shorter more focussed descriptions and word removal, which you accept or refuse.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mimicks:&lt;/strong&gt; 📈 Collaborative whiteboarding with colleagues (virtually or physically), collaborative card sorting exercises with a team.&lt;/p&gt;
+&lt;h2&gt;Pattern: Nudging controls&lt;/h2&gt;
+&lt;p&gt;A &amp;quot;work in progress&amp;quot; is displayed in the center while command-buttons for &amp;quot;nudging&amp;quot; are displayed around the edges or off to the side. By clicking the buttons, you can ask the AI to change the work along some dimension.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/articles/ai-patterns/ai-ui-patterns-nudging.svg&quot; alt=&quot;Example: nudging controls for AI-assisted logo editing tool&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; 3D image manipulation. We ask the AI to make the shape more or less rounded, more or less flat, etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Mimicks:&lt;/strong&gt; 💺 Pairing with a designer, where the designer is tweaking this or that based on your input.&lt;/p&gt;
+&lt;h2&gt;Further reading&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://martinfowler.com/articles/exploring-gen-ai.html&quot;&gt;&lt;em&gt;Exploring Generative AI&lt;/em&gt;&lt;/a&gt; by Birgitta BÖCKELER&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aima.cs.berkeley.edu/&quot;&gt;&lt;em&gt;Artificial Intelligence: A Modern Approach&lt;/em&gt;&lt;/a&gt; by Stuart RUSSELL, Peter NORVIG&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.penguin.com.au/books/co-intelligence-9780753560778&quot;&gt;&lt;em&gt;Co-Intelligence&lt;/em&gt;&lt;/a&gt; by Ethan MOLLICK&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+
+  <entry>
+    <title>Manual testing</title>
+    <link href="https://conwy.co/articles/manual-testing" />
+    <updated>2024-09-13T00:00:00.000Z</updated>
+    <id>manual-testing</id>
+    <content xml:lang="en" type="html">&lt;p&gt;While automated testing methods have been established for a long time in the software development process (e.g. unit, integration and end-to-end tests), relatively less attention has been paid to manual testing.&lt;/p&gt;
+&lt;p&gt;However manual testing is far from &amp;quot;dead&amp;quot;. Software developers still routinely verify their work by using products manually. Further, developers are usually required to take responsibility for the end-to-end functioning of their software, not just writing quality code and passing unit tests. They are usually encouraged not lean too heavily on QA.&lt;/p&gt;
+&lt;p&gt;In this article, I will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Review the distinct benefits of manual testing.&lt;/li&gt;
+&lt;li&gt;Present a real-life scenario where manual testing adds value.&lt;/li&gt;
+&lt;li&gt;Provide guidance for structuring your manual testing, so you can get maximum benefit from it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Benefits of manual testing&lt;/h2&gt;
+&lt;p&gt;Manual testing allows you to achieve certain specific goals which may not be available through automated testing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Discover &lt;em&gt;&lt;strong&gt;actual behaviour&lt;/strong&gt;&lt;/em&gt; – how the system &lt;em&gt;&lt;strong&gt;currently&lt;/strong&gt;&lt;/em&gt; to behaves at runtime. (This information is not always readily available by other means.)&lt;/li&gt;
+&lt;li&gt;Determine &lt;em&gt;&lt;strong&gt;intended behaviour&lt;/strong&gt;&lt;/em&gt; – how the system is &lt;em&gt;&lt;strong&gt;expected&lt;/strong&gt;&lt;/em&gt; to behave. (Also not always readily available.)&lt;/li&gt;
+&lt;li&gt;Perform testing &lt;em&gt;&lt;strong&gt;immediately&lt;/strong&gt;&lt;/em&gt; – without setting up test frameworks, etc.&lt;/li&gt;
+&lt;li&gt;Perform testing in &lt;em&gt;&lt;strong&gt;any environment&lt;/strong&gt;&lt;/em&gt; you can access – not just local or QA environments.&lt;/li&gt;
+&lt;li&gt;Put yourself &lt;em&gt;&lt;strong&gt;in the end-user&amp;#39;s shoes&lt;/strong&gt;&lt;/em&gt; – letting you experience the system as an end-user would.&lt;/li&gt;
+&lt;li&gt;Verify &lt;em&gt;&lt;strong&gt;complex, lengthy workflows&lt;/strong&gt;&lt;/em&gt; – which might be too difficult to automate. For example, complex interactions between an end-user and the system or complex data processing activities on the backend.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As with any activity, manual testing can offer maximal benefit when performed in a structured manner.&lt;/p&gt;
+&lt;p&gt;In my experience this involves:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing clear, structured test cases - e.g. heading, description, numbered steps with actions and expected results&lt;/li&gt;
+&lt;li&gt;Organising test cases for rapid retrieval, by using consistent naming and tags&lt;/li&gt;
+&lt;li&gt;Sharing test cases within the team/organisation, so others can leverage them&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Example of a test case&lt;/h2&gt;
+&lt;p&gt;Here&amp;#39;s a simple example of a test case involving a user logging in:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user_can_login.md:
+
+# User can login
+
+Users who have an account should be able to log in.
+
+## Steps
+
+1. Go to the homepage
+2. Click the login button
+3. Expect that the login screen is shown
+4. Enter username
+5. Enter password
+6. Click login screen submit button
+7. Expect that you are shown logged in, in the header section
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Notice we have a brief heading and description, followed by neatly numbered steps.&lt;/p&gt;
+&lt;p&gt;Steps can be:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; (e.g. &amp;quot;click the login button&amp;quot;) or&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Expectations&lt;/strong&gt;&lt;/em&gt; (e.g. &amp;quot;expect that the login screen is shown&amp;quot;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This format allows us to quickly follow the steps of the test case (actions) and know what to look at to determine whether the test passed or failed (expectations).&lt;/p&gt;
+&lt;h2&gt;Scenario: critical fixes for a startup&lt;/h2&gt;
+&lt;p&gt;A realistic scenario might make it easier for you to see how manual testing can help.&lt;/p&gt;
+&lt;p&gt;Imagine you begin work as a software engineer at a rapidly growing startup, building a complex product with many user flows.&lt;/p&gt;
+&lt;p&gt;You are assigned to work on the sign up experience. Users provide various personal details such as their country of residence. Based on these, the system provides various prompts then accepts payment.&lt;/p&gt;
+&lt;p&gt;You are given your first development task:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;Please fix the flow for Japanese customers. They are getting stuck at the point where they submit their personal details, but before they have paid for the product.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is based on direct customer contact. No one in the company can tell you exactly what &amp;quot;stuck&amp;quot; means or in exactly which part of the flow this is occurring.&lt;/p&gt;
+&lt;p&gt;There is also minimal unit test code, code quality is not good and there&amp;#39;s little documentation. Remember, it&amp;#39;s a fast-growth startup – they don&amp;#39;t have the same time and resources as a more mature company.&lt;/p&gt;
+&lt;p&gt;How would you go about solving this? Your approach might look like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;You go through the flow manually, simulating a Japanese customer (perhaps setting your browser location to Japan).&lt;/li&gt;
+&lt;li&gt;As you go, you write down the steps you are taking, such as which details you entered, which buttons you clicked, etc. (This makes it easier to keep track of what you&amp;#39;re doing, in case you need to restart the process). &lt;/li&gt;
+&lt;li&gt;You find the exact point where the system is stuck - the submit button on screen 5 doesn&amp;#39;t do anything.&lt;/li&gt;
+&lt;li&gt;Examining the requests/responses, you discover that the system skipped the collection of the user&amp;#39;s driver licence details, which are required for customers in certain countries, including Japan, causing an underlying API call to fail if not provided.&lt;/li&gt;
+&lt;li&gt;Your verify this requirement with Backend engineers and the Product owner. Now you know what the fix is: you need to enable drivers licence details collection for Japanese customers.&lt;/li&gt;
+&lt;li&gt;You make the fix in the relevant part of the code-base.&lt;/li&gt;
+&lt;li&gt;Testing your work manually, you realise this data can be collected  earlier in the sign-up flow, with a skip option given for customers who don&amp;#39;t have the details on hand. This will be a nicer user experience and increase the number of potential customers in the sales funnel.&lt;/li&gt;
+&lt;li&gt;You complete all your changes, cover them with a unit test, save your manual testing steps in a markdown document (linked to from the pull-request) and push your changes.&lt;/li&gt;
+&lt;li&gt;Once in Prod, you do a quick verification and see that everything works as expected. &lt;/li&gt;
+&lt;li&gt;You can now report to the team that your task is completed with (hopefully) zero bugs!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Notice how documented manual testing helped you to solve this problem:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You found the actual error by manually going through the flow (step 1).&lt;/li&gt;
+&lt;li&gt;You kept track of your testing by writing down the steps, allowing you to quickly and efficiently repeat your test efforts whenever needed (steps 2, 7, 9).&lt;/li&gt;
+&lt;li&gt;You easily verified your work in Prod (step 9).&lt;/li&gt;
+&lt;li&gt;You empathised with the end-user and even found an opportunity to improve their experience as well as the onboarding rate (step 7).&lt;/li&gt;
+&lt;li&gt;You added value to the team by documenting your manual testing steps (step 8).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;As we&amp;#39;ll soon see, this is only the beginning of the benefits! &lt;/p&gt;
+&lt;h2&gt;Tagging your test cases&lt;/h2&gt;
+&lt;p&gt;Tagging can be a powerful way of making your whole test case collection searchable.&lt;/p&gt;
+&lt;p&gt;Suppose every time you refer to the login screen in your Markdown files, you use the exact phrase: &amp;quot;login screen&amp;quot;. Perhaps wrap it in brackets: &amp;quot;(login scren)&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Now this exact phrase is searchable, via a simple find-in-files in your text editor. By searching for the string &amp;quot;(login screen)&amp;quot; you can find every test case involving that screen.&lt;/p&gt;
+&lt;p&gt;For example, your search might yield the following results:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;user_can_login.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_can_recover_forgotten_password.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_cannot_login_with_wrong_credentials.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_can_login_from_another_country.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_can_login_with_a_linked_google_account.md&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This gives you powerful new capabilities such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Regression-testing&lt;/strong&gt; - checking various test cases, in case your change might have broken something.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Exploratory-testing&lt;/strong&gt; - observing how the application behaves in various scenarios, generating ideas for improvement or uncovering hidden bugs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Determining which unit tests to write&lt;/strong&gt; - to boost test coverage in a critical area of the application.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Test data&lt;/h2&gt;
+&lt;p&gt;Suppose a feature you want to test relies on certain data existing in the system beforehand.&lt;/p&gt;
+&lt;p&gt;For example, you might need a certain kind of user account, such as a user who has their country set to Japan.&lt;/p&gt;
+&lt;p&gt;You could create a test user in your testing environment - &lt;code&gt;hiroshi@yompail&lt;/code&gt; – and save it in your test case under a &amp;quot;Test data&amp;quot; heading.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user_can_login.md:
+
+# User can login
+
+## Steps
+
+1. Go to the homepage
+...
+
+## Test data
+
+- User: hiroshi@yopmail.com / P@ssw0rd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Results and artifacts&lt;/h2&gt;
+&lt;p&gt;It can be very useful to know the full list of dates/times when you ran your test and what the result was on each run.&lt;/p&gt;
+&lt;p&gt;These can be added to a &amp;quot;runs&amp;quot; section of the test case file.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;user_can_login.md:
+
+# User can login
+
+## Steps
+
+1. Go to the homepage
+...
+
+## Runs
+
+| Date/time               | Result    |
+| ----------------------- | --------- |
+| 2024-10-01 9:00 AM      | Succeeded |
+| 2024-09-04 10:00 AM     | Failed    |
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;How might this be useful?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Spotting a pattern in failures&lt;/strong&gt; can indicate a systemic problem, such as insufficient compute resources or code quality issues with a particular part of the code base.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Correlating failures with code changes&lt;/strong&gt; can narrow your version control system search. For example, if you know the failure happened within the last week, you can limit your search changes made within that timeframe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When with manual testing, it is common for engineers to capture artifacts of their work, such as screenshots, screen recordings and copies of log output. These serve to demonstrate work done, prove that things worked correctly at a certain date/time and capture additional information that could help identify additional problems or improvement opportunities.&lt;/p&gt;
+&lt;p&gt;Artifacts from manual tests can be organised alongside test cases, using a structured folder naming system.&lt;/p&gt;
+&lt;p&gt;I have found it best to keep artifacts in folders named after the test cases and test run dates from which they were generated.&lt;/p&gt;
+&lt;p&gt;Here&amp;#39;s an example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/test_cases&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;user_can_login.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_can_recover_forgotten_password.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;... etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/test_artifacts&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/user_can_login&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/2024_10_01_9_00_AM&lt;/code&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Screen Recording 2024-10-01 at 9.01.55 am.mov&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Untitled2.png&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/user_can_recover_forgotten_password&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;... etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Manual testing workflow&lt;/h2&gt;
+&lt;p&gt;You can make manual testing a regular, consistent part of your workflow. As you strengthen this habit, your work quality and overall knowledge of the system should improve.&lt;/p&gt;
+&lt;p&gt;Here are some ideas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Write a test case at the beginning of working on a major feature.&lt;/li&gt;
+&lt;li&gt;Include or link to the test case in the task tracking system.&lt;/li&gt;
+&lt;li&gt;Perform a test case of every major feature you deliver, writing a test case if one doesn&amp;#39;t already exist.&lt;/li&gt;
+&lt;li&gt;Include or link to your test case from every pull request you submit.&lt;/li&gt;
+&lt;li&gt;Keep all your test cases in a shared knowledge system, such as your project&amp;#39;s wiki.&lt;/li&gt;
+&lt;li&gt;Copy relevant parts of a test cases in chat conversations about a feature or bug.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Manual testing tools&lt;/h2&gt;
+&lt;p&gt;There are a range of software tools to help you write and manage test cases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/projects/testmatic&quot;&gt;Testmatic&lt;/a&gt;. Shamless plug – I built this! It includes a web-based UI and CLI and saves everything to Markdown.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/products/devops/test-plans&quot;&gt;Azure Test Plans&lt;/a&gt;. This one has a nice web-based UI and integrates with the Azure suite.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://does.qa/test-automation/codeless-vs-code&quot;&gt;DoesQA&lt;/a&gt;. An interesting product that apparently allows you to write &amp;quot;codeless&amp;quot; but runnable tests.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Manual testing offers distinct and powerful benefits, not offered by automated testing, such as understanding and representing current and desired system behaviour, making fast progress in challenging environments with limited documentation and test coverage, verifying changes in multiple environments, verifying complex workflows and empathising with end-users.&lt;/p&gt;
+&lt;p&gt;Structuring your manual test efforts compounds these benefits: you can quickly locate related tests (enabling regression and exploratory testing), ease your test efforts (using test data) and keep track of test results (helping you identify patterns in failures or find the root cause of an issue).&lt;/p&gt;
+&lt;h2&gt;Further reading&lt;/h2&gt;
+&lt;p&gt;These resources inspired this article:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.routledge.com/Software-Testing-A-Craftsmans-Approach-Fifth-Edition/Jorgensen-DeVries/p/book/9780367767624&quot;&gt;&lt;em&gt;Software Testing - A Craftsman&amp;#39;s Approach&lt;/em&gt;&lt;/a&gt; by Paul JORGENSEN&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+
+  <entry>
+    <title>Mindfulness</title>
+    <link href="https://conwy.co/articles/mindfulness" />
+    <updated>2024-09-13T00:00:00.000Z</updated>
+    <id>mindfulness</id>
+    <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Let all those beings which exist --
+without enemies, without obstacles, overcoming their grief
+and attaining happiness, be able to move freely,
+each in the path destined for them.”&lt;br /&gt;
+– BUDDHAGHOSA • Visuddhimagga&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“We are what we repeatedly do.”&lt;br /&gt;
+– ARISTOTLE&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Mindfulness is not merely a concept or a good idea. It is a way of being.”&lt;br /&gt;
+– John KABAT-ZINN&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;During my most recent sabbatical I experimented with mindfulness-meditation.&lt;/p&gt;
+&lt;p&gt;Starting with 10 minutes then moving up to 20 minutes per day, I sat in an small spot outdoors, observing my surroundings and well as my body and mental activities.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;m glad to report that, with a little persistence, this has now become a firm daily habit and something that I quite look forward to!&lt;/p&gt;
+&lt;p&gt;During this period I was reading a number of books that seemed relevant, including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Full Catastrophe Living&lt;/em&gt; by John Kabbat Zinn&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Zen Mind, Beginner&amp;#39;s Mind&lt;/em&gt; by Shunryo Suzuki&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;The Tao Te Ching&lt;/em&gt; by Lao Tzu (various translations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I had some interesting experiences and thoughts, which I thought I&amp;#39;d share.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transformed experiences.&lt;/strong&gt; When I experienced sounds and sights, I observed my (rather overactive) mind reacting to them. I observed a tendency to distinguish and label objects, animals, people, etc. Over time I gently nudged myself away from labels, focussing more on the wordless experience of these phenomena. I also found my experience broadening to encompass the &lt;em&gt;overall atmosphere&lt;/em&gt; of the spot – the &amp;quot;total combination&amp;quot; (if you will) of all these phenomena. I found this practice began to subtly transform my experience of the environment, especially over time and repetition. I began to feel a greater sense of unity with the world. I don&amp;#39;t think this was necessarily due to to any intellectual realisation, but more from developing a habit of &lt;em&gt;&lt;strong&gt;not distinguishing&lt;/strong&gt;&lt;/em&gt; myself from my surroundings. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Enhanced memory.&lt;/strong&gt; I noticed an ability to recall things more easily – from facts and figures I&amp;#39;ve been learning in various studies to even imagery from dreams. I&amp;#39;m not sure whether this is attributable to my meditation practice, but at least it seems to have coincided with it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Beauty.&lt;/strong&gt; I catch myself more often being struck by beauty. Not only sunsets but also the beauty of peoples&amp;#39; dress, of language, of various animals (magpies, various insects) and plants, and also landscape features like hills. I don&amp;#39;t experience the beauty of these separately (though it probably seems that way because of how I write about them), but more often together as part of the same scene. It&amp;#39;s a great joy!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Observing non-critically, withholding judgement.&lt;/strong&gt; I&amp;#39;ve been practicing a more mindful approach generally. For example, when reading code or someone&amp;#39;s writing, I try to practice a small hesitation. I hold back from assuming that my initial understanding is correct and re-read the material to check if I really understood it. I&amp;#39;m hopeful that this will help me to avoid mistakes in future and also make the reading experience more engaging (both for code and writing).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Seeing obstacles as opportunities.&lt;/strong&gt; Initially I had to somewhat coax myself into mindfulness. I have been mindful many times throughout my life, but carving out a specific time in my day just for this practice took a bit of persistence. There is a saying that no meditation is &amp;quot;bad&amp;quot; – what matters most is that you simply do it. In this spirit, I tried to look at my effort (and the resistance to it) as an obstacle leading to an opportunity – the opportunity to increase awareness and inner peace.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Moving quickly without rushing.&lt;/strong&gt; In the &lt;em&gt;Catastrophe&lt;/em&gt; book, Zinn refers to: &amp;quot;being aware even when moving quickly&amp;quot; and suggests: &amp;quot;shift your awareness ... to a sense of your body as a whole moving through space&amp;quot;. I practiced this awareness during busy moments, such as shopping and commuting. It really took the stress out of these and at times made them quite enjoyable.&lt;/p&gt;
+&lt;p&gt;I hope you found these insights interesting and that perhaps I&amp;#39;ve whetted your appetite for practicing mindfulness – in whichever way works best for you.&lt;/p&gt;
+&lt;p&gt;Namaste!&lt;/p&gt;
+</content>
+  </entry>
+  
+
+  <entry>
+    <title>What I learned studying Calculus</title>
+    <link href="https://conwy.co/articles/studying-calculus" />
+    <updated>2024-09-13T00:00:00.000Z</updated>
+    <id>studying-calculus</id>
+    <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;
+import { MdxImg } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“I never regretted the time I spent on history and on math. Math sharpens your mind, history gives you some idea of your limitations and what’s going on in the world.”
+– Bjarne STROUSTRUP (&lt;a href=&quot;https://www.youtube.com/watch?v=-QxI-RP6-HM&quot;&gt;Video&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Recently I completed &lt;a href=&quot;https://www.coursera.org/learn/introduction-to-calculus&quot;&gt;&lt;em&gt;Introduction to Calculus&lt;/em&gt;&lt;/a&gt; on Coursera.&lt;/p&gt;
+&lt;p&gt;My motivations were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To improve my foundational math skills, enabling a better understanding of computing foundations and machine learning.&lt;/li&gt;
+&lt;li&gt;To test and improve my learning skills by studying a less familiar field outside comfort zone.&lt;/li&gt;
+&lt;li&gt;Ok... the real reason... to gain entry to the Sydney University B. Adv. Comp. program! 😄&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The course has been fascinating and engaging. It&amp;#39;s not only introduced me to Calculus but also helped me to brush up on basic arithmetic and algebra where I discovered I had serious gaps. &lt;a href=&quot;https://www.sydney.edu.au/science/about/our-people/academic-staff/david-easdown.html&quot;&gt;Prof David Easdown&amp;#39;s&lt;/a&gt; regular participation in the forums was valuable gift to us students!&lt;/p&gt;
+&lt;p&gt;Some reflections in no particular order:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Understanding fundamentals.&lt;/strong&gt; The hard part often isn&amp;#39;t the highest level concepts, but the foundations you need in order to (properly) understand and use them. I had to understand concepts such as &lt;em&gt;completing the square&lt;/em&gt;, &lt;em&gt;long division of polynomials&lt;/em&gt; and &lt;em&gt;derivatives&lt;/em&gt;, not only theoretically, but well enough to apply them correctly to solve an unexpected problem. I&amp;#39;ve &lt;a href=&quot;https://news.ycombinator.com/item?id=40083488&quot;&gt;commented&lt;/a&gt; about this on HackerNews.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Benefits of drawing, visualising.&lt;/strong&gt; Using a high quality notebook and pen helped with enjoyment and motivation to study! Fleshing out problems on paper, down to the fine details, helped me to see how the pieces of a problem fit together, which was quite fascinating. &lt;MdxImg alt=&quot;Scan of drawings I made while studying sinusoidal curves&quot; src=&quot;/images/articles/studying-calculus/studying-calculus-1.jpg&quot; width={300} /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Geometric analogies.&lt;/strong&gt; I found it incredibly helpful when David presented an idea &lt;em&gt;geometrically&lt;/em&gt;. Simple shapes such as triangles are intuitive to many learners. And the &lt;a href=&quot;https://en.wikipedia.org/wiki/Pythagorean_theorem&quot;&gt;Theorem of Pythagoras&lt;/a&gt; is now widely understood. The curve sketching exercises and Riemann sum rectangles were memorable examples but there were so many other cases where David made the idea clearer by some kind of geometric metaphor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Parts vs. whole.&lt;/strong&gt; I found that solving a non-trivial math problem typically requires also understanding all the parts of the problem. (This is in contrast to my usual profession, software development, where many problems can be solved using &amp;quot;black-box&amp;quot; solutions such as libraries, without understanding their internals.) This experience of the parts/whole adds a dimension to my understanding of problem solving generally.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focussing on mistakes.&lt;/strong&gt; Trying out the examples and practice tests and observing what I got wrong helped me narrow down specifically where my knowledge gaps lay and then actively correct them, which also helped improve my long-term memory of the concepts. (This way of thinking is also helping me in other areas of life beyond math.)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Different learning methods at different stages.&lt;/strong&gt; I found different learning techniques useful at different stages of the course. Early in the course, I found repeated practice and deep thinking most useful. Midway through, I found sketching and visualisation more productive. Late in the course, I found all the above useful, plus reading various additional sources such as books.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Thinking deeply about small things.&lt;/strong&gt; Prof David mentioned this in one of the videos - such a powerful insight! Sometimes on a walk or another repetitive activity I turned over an idea in my head to try and understand it in its essentials (e.g. I did this a lot with Leibniz notation, trying to understand it at some deeper level than words).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Temporarily suspending understanding.&lt;/strong&gt; Introspectively, I found that getting stuck (what people call &amp;quot;writers block&amp;quot;, &amp;quot;analysis paralysis&amp;quot;, etc) often happens when I&amp;#39;m trying to understand an interconnected complex of ideas and am uncertain how to break them down. Here the usual approach of &amp;quot;divide and conquer&amp;quot; or breaking down the problem into smaller pieces doesn&amp;#39;t work because I don&amp;#39;t know how or according to what criteria to break them down. One way to proceed is to temporarily suspend trying to understand some parts so that I can focus on others. I&amp;#39;ll treat them as small &amp;quot;black boxes&amp;quot; so that I can skip learning them. This enables me to move on to other problems and not be blocked.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Concepts vs. application.&lt;/strong&gt; Abstract conceptual knowledge is not the same thing as knowledge that can be applied. I could read a book on Calculus without really understanding it, but doing the practice tests in this course was better. After this course it&amp;#39;s more likely that I&amp;#39;ll be able to see a problem, see where Calculus might help, identify/name the components and then try to solve it using appropriate methods.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The power of good notation.&lt;/strong&gt; Prof David mentioned this in one of the videos on Leibniz notation. Amazing, rich insight. This immediately inspired ideas that I&amp;#39;ve been translating into my software development practices. Representing a problem differently can open the way to unexpected solutions. This inspired my &lt;a href=&quot;/projects/codeselectors&quot;&gt;code selectors&lt;/a&gt; project.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mathematics as a language.&lt;/strong&gt; Sometimes thinking of a mathematical idea as language or &amp;quot;description&amp;quot; helped me understand it. Rather than trying to understand a concept&amp;#39;s full meaning immediately, I try to think of it as a just label – in object-oriented programmer-speak, a &amp;quot;class&amp;quot;. Then I gradually add &amp;quot;properties&amp;quot; or &amp;quot;attributes&amp;quot; to that label as my understanding increases. For example, I found this method useful for understanding &lt;a href=&quot;https://en.wikipedia.org/wiki/E_(mathematical_constant)&quot;&gt;Euler&amp;#39;s number&lt;/a&gt;. Rather than thinking of it as a particular number (which stumped me for a while) I found it better to think of it as the &lt;em&gt;criteria&lt;/em&gt; for some number which I don&amp;#39;t yet know. In SQL programming terms: a &lt;code&gt;SELECT&lt;/code&gt; statement, with multiple &lt;code&gt;WHERE&lt;/code&gt;/&lt;code&gt;AND&lt;/code&gt; clauses, which yields a single scalar result which is &lt;em&gt;e&lt;/em&gt;. In these terms, &lt;em&gt;e&lt;/em&gt; is &amp;quot;the number which yields has a slope (rise over run) of 1 at 1&amp;quot;, etc. Thinking this way helped me reason about the use of &lt;em&gt;e&lt;/em&gt; in graphs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Directions for further study.&lt;/strong&gt; I greatly appreciated David&amp;#39;s frequent references and pointers to areas for further study. Explaining the &lt;em&gt;proofs&lt;/em&gt; of a method, rather than just the method itself, is one example – I could use this knowledge for &lt;a href=&quot;https://en.wikipedia.org/wiki/Formal_verification&quot;&gt;formal verification&lt;/a&gt;. Referencing more advanced concepts such as series expansions is another example. This makes me curious and motivates me to study the field further.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I started this course with some trepidation and had many challenges along the way, but I feel a great sense of satisfaction after completing it.&lt;/p&gt;
+&lt;p&gt;Now I can&amp;#39;t wait to jump into my next learning challenge: &lt;a href=&quot;https://www.coursera.org/learn/introduction-to-linear-algebra&quot;&gt;Linear Algebra&lt;/a&gt;!&lt;/p&gt;
+&lt;h2&gt;Further reading&lt;/h2&gt;
+&lt;p&gt;Books that helped me along this journey:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.amazon.com.au/Precalculus-Mathematics-Calculus-James-Stewart/dp/1305071751&quot;&gt;&lt;em&gt;Precalculus: Mathematics for Calculus, Seventh Edition&lt;/em&gt;&lt;/a&gt; • James STEWART, Lothar REDLIN, Saleem WATSON&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  
+
+  <entry>
     <title>Streamlining code reviews</title>
     <link href="https://conwy.co/articles/code-reviews" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>code-reviews</id>
     <content xml:lang="en" type="html">&lt;p&gt;For myself and others, I&amp;#39;ve found that code reviews can be a challenging part of being a software developer.&lt;/p&gt;
 &lt;p&gt;There may be many code changes to go through, many possible mistakes to be found and limited time to find and communicate them. Even before considering mistakes, the sheer amount and complexity of the code and changes can feel overwhelming – you don&amp;#39;t know where to begin. It often feels like code review is chaotic and random, and it&amp;#39;s down to luck whether or not it will be constructive.&lt;/p&gt;
@@ -98,7 +449,7 @@
   <entry>
     <title>Visualising execution flows</title>
     <link href="https://conwy.co/articles/visualising-execution-flows" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>visualising-execution-flows</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { MdxAside, MdxAsideHeading, MdxCode, MdxH2Short, MdxP, MdxPre, MdxMermaid } from &amp;quot;@/components&amp;quot;;
 import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
@@ -411,9 +762,9 @@ sequenceDiagram
   <entry>
     <title>Front end observability</title>
     <link href="https://conwy.co/articles/front-end-observability" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>front-end-observability</id>
-    <content xml:lang="en" type="html">&lt;p&gt;import { CodeSample, MdxCode, MdxPre, MdxAside, MdxAsideHeading, MdxP } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
+    <content xml:lang="en" type="html">&lt;p&gt;import { MdxCode, MdxPre, MdxAside, MdxAsideHeading, MdxP } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
 &lt;p&gt;I&amp;#39;ve been reading the book &lt;a href=&quot;https://info.honeycomb.io/observability-engineering-oreilly-book-2022&quot;&gt;&lt;em&gt;Observability Engineering&lt;/em&gt;&lt;/a&gt; by Charity Majors and thinking about how to apply the ideas to front end development.&lt;/p&gt;
 &lt;p&gt;She describes the concept of a &lt;strong&gt;&lt;em&gt;structured event&lt;/em&gt;&lt;/strong&gt; - an event &amp;quot;which captures everything that occurred while one particular request interacted with your service&amp;quot; (Chapter 5).&lt;/p&gt;
 &lt;p&gt;On the front end, a structured event might capture everything that happened during, say, a user interaction or receipt of an HTTP response. This might be done by placing logging calls at key points in the code, similar to how we might place &lt;code&gt;console.log&lt;/code&gt; statements for local debugging.&lt;/p&gt;
@@ -454,18 +805,22 @@ sequenceDiagram
 &lt;p&gt;Let&amp;#39;s log two structured events:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;changeStakeValid&lt;/strong&gt;&lt;/em&gt; - stake was valid; we&amp;#39;ll submit a PATCH&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;changeStakeSumError&lt;/strong&gt;&lt;/em&gt; - stakes sum was too high; we&amp;#39;ll show an error&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;changeStakeSumError&lt;/strong&gt;&lt;/em&gt; - stakes sum was too high; we&amp;#39;ll show an error&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;CodeSample language=&amp;quot;javascript&amp;quot; lineNumbers linesHighlighted={[[3,9], [18,24]]}&amp;gt;{`
-const handleClickSave = async (e) =&amp;gt; {
-  if (othersAndThisStakesSum &amp;lt;= 100) {
+&lt;br /&gt;
+
+&lt;MdxPre data-line=&quot;3-9, 18-24&quot; className=&quot;line-numbers&quot;&gt;
+  &lt;MdxCode className=&quot;language-javascript&quot;&gt;{`
+const handleClickSave = async (e) =&gt; {
+  if (othersAndThisStakesSum &lt;= 100) {
     captureEvent({
-      message: &amp;quot;useShareholderStakeEditor/changeStakeValid&amp;quot;,
+      message: &quot;useShareholderStakeEditor/changeStakeValid&quot;,
       tags: event.tags,
       contexts: {
-        [&amp;quot;useShareholderStakeEditor/changeStakeValid&amp;quot;]: event.data,
+        [&quot;useShareholderStakeEditor/changeStakeValid&quot;]: event.data,
       },
-    });&lt;/p&gt;
+    });
+
 &lt;pre&gt;&lt;code&gt;await patchShareholderStake({
   id: shareholder.id,
   stake,
@@ -486,75 +841,8 @@ refreshShareholders();
 &lt;p&gt;  }
 }
 `}
-&lt;/CodeSample&gt;&lt;/p&gt;
-&lt;p&gt;{/* &lt;pre data-line=&quot;9-24, 28-34, 43-49&quot;&gt;
-&lt;code class=&quot;language-javascript&quot;&gt;
-function ShareholderStakeEditor({
-  companyId,
-  shareholder,
-  onClickClose,
-}: ShareholderStakeEditorProps) {
-  ...&lt;/p&gt;
-&lt;p&gt;  const event = {
-    tags: {
-      companyId,
-      shareholderId: shareholder.id,
-      stake,
-      enabledsIds: JSON.stringify(map(enableds, &quot;id&quot;)),
-      othersIds: JSON.stringify(map(others, &quot;id&quot;)),
-      othersStakesSum,
-      othersAndThisStakesSum,
-    },
-    data: {
-      shareholders: JSON.stringify(shareholders),
-      enableds: JSON.stringify(enableds),
-      others: JSON.stringify(others),
-    },
-  };&lt;/p&gt;
-&lt;p&gt;  const handleClickSave = async (e) =&gt; {
-    if (othersAndThisStakesSum &lt;= 100) {
-      captureEvent({
-        message: &quot;useShareholderStakeEditor/changeStakeValid&quot;,
-        tags: event.tags,
-        contexts: {
-          [&quot;useShareholderStakeEditor/changeStakeValid&quot;]: event.data,
-        },
-      });&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;  await patchShareholderStake({
-    id: shareholder.id,
-    stake,
-  });
-
-  refreshShareholders();
-} else {
-  captureEvent({
-    message: &amp;quot;useShareholderStakeEditor/changeStakeSumError&amp;quot;,
-    tags: event.tags,
-    contexts: {
-      [&amp;quot;useShareholderStakeEditor/changeStakeSumError&amp;quot;]: event.data,
-    },
-  });
-
-  showShareholderStakeError();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;  }
-  ...
-}
-&lt;/code&gt;
-&lt;/pre&gt; &lt;em&gt;/}
-{/&lt;/em&gt; &lt;/p&gt;
-&lt;aside class=&quot;note&quot;&gt;
-  &lt;h3 class=&quot;note-heading&quot;&gt;Aside: Tags vs. contexts&lt;/h3&gt;
-  &lt;p&gt;In the example, you&#39;ll notice that we provide two objects to Sentry: tags and contexts.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;code&gt;tags&lt;/code&gt; is a dictionary of strings, which can be used to query across events.&lt;/li&gt;
-    &lt;li&gt;&lt;code&gt;contexts&lt;/code&gt; is a more flexible dictionary of any object and can be used to store additional contextual data about an event.&lt;/li&gt;
-  &lt;/ul&gt;
-    
-  &lt;p&gt;My approach is to put as much queryable data as possible into &lt;code&gt;tags&lt;/code&gt; and put everything else into &lt;code&gt;contexts&lt;/code&gt;.&lt;/p&gt;
-&lt;/aside&gt; */}
-
+  &lt;/MdxCode&gt;
+&lt;/MdxPre&gt;&lt;/p&gt;
 &lt;p&gt;Suppose we subsequently receive a bug report:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The user attempted to enter a 20% stake for one node, but got an error, despite the enabled nodes having a total &amp;lt;= 80%.&lt;/p&gt;
@@ -604,52 +892,52 @@ function ShareholderStakeEditor({
 &lt;li&gt;Did the front end code handling of the PATCH request fail?&lt;/li&gt;
 &lt;li&gt;Was there some other kind of issue?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If we log an event on refresh, it should be easier to find out.
-{/* &lt;/p&gt;
-&lt;pre data-line=&quot;12-21, 25-34&quot;&gt;
-&lt;code class=&quot;language-javascript&quot;&gt;
-function ShareholderValueEditor({ companyId, shareholder }) {
-  ...
-  const handleClickSave = async (e) =&gt; {
-    if (othersAndThisStakesSum &lt;= 100) {
-      ...
-      const patchStakeResult = await patchShareholderStake({
-        id: shareholder.id,
-        stake,
-      });
+&lt;p&gt;If we log an event on refresh, it should be easier to find out.&lt;/p&gt;
+&lt;MdxPre data-line=&quot;11-20, 24-33&quot; className=&quot;line-numbers&quot;&gt;
+  &lt;MdxCode className=&quot;language-javascript&quot;&gt;{`
+  function ShareholderValueEditor({ companyId, shareholder }) {
+    ...
+    const handleClickSave = async (e) =&gt; {
+      if (othersAndThisStakesSum &lt;= 100) {
+        ...
+        const patchStakeResult = await patchShareholderStake({
+          id: shareholder.id,
+          stake,
+        });
 
-      captureEvent({
-        message: &quot;useShareholderStakeEditor/changeStakePatchCompleted&quot;,
-        tags: event.tags,
-        contexts: {
-          [&quot;useShareholderStakeEditor/changeStakePatchCompleted&quot;]: {
-            ...event.data,
-            patchStakeResult,
-          },
+&lt;pre&gt;&lt;code&gt;    captureEvent({
+      message: &amp;quot;useShareholderStakeEditor/changeStakePatchCompleted&amp;quot;,
+      tags: event.tags,
+      contexts: {
+        [&amp;quot;useShareholderStakeEditor/changeStakePatchCompleted&amp;quot;]: {
+          ...event.data,
+          patchStakeResult,
         },
-      });
+      },
+    });
 
-      const refetchShareholdersResult = await refetchShareholders();
+    const refetchShareholdersResult = await refetchShareholders();
 
-      captureEvent({
-        message: &quot;useShareholderStakeEditor/changeStakeRefreshCompleted&quot;,
-        tags: event.tags,
-        contexts: {
-          [&quot;useShareholderStakeEditor/changeStakeRefreshCompleted&quot;]: {
-            ...event.data,
-            refetchShareholdersResult,
-          },
+    captureEvent({
+      message: &amp;quot;useShareholderStakeEditor/changeStakeRefreshCompleted&amp;quot;,
+      tags: event.tags,
+      contexts: {
+        [&amp;quot;useShareholderStakeEditor/changeStakeRefreshCompleted&amp;quot;]: {
+          ...event.data,
+          refetchShareholdersResult,
         },
-      });
-    } else {
-      ...
-    }
+      },
+    });
+  } else {
+    ...
   }
-  ...
 }
-&lt;/code&gt;
-&lt;/pre&gt; */}
-
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;  }
+`}
+  &lt;/MdxCode&gt;
+&lt;/MdxPre&gt;&lt;/p&gt;
 &lt;p&gt;As in the previous example, let&amp;#39;s query Sentry for:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Events generated by this component - &lt;code&gt;message:&amp;quot;useShareholderStakeEditor*&amp;quot;&lt;/code&gt;&lt;/li&gt;
@@ -744,7 +1032,7 @@ function ShareholderValueEditor({ companyId, shareholder }) {
   <entry>
     <title>Refactoring vs Documentation</title>
     <link href="https://conwy.co/articles/refactoring-documentation" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>refactoring-documentation</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;
 import { MdxAside } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
@@ -851,7 +1139,7 @@ import { MdxAside } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
   <entry>
     <title>Three tests for accessibility</title>
     <link href="https://conwy.co/articles/three-tests-accessibility" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>three-tests-accessibility</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
 &lt;p&gt;There are many good reasons to make our software applications accessible. But to achieve this goal, we must undertake rigorous accessibility testing. &lt;/p&gt;
@@ -944,7 +1232,7 @@ import { MdxAside } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
   <entry>
     <title>Combinatorial Testing</title>
     <link href="https://conwy.co/articles/combinatorial-testing" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>combinatorial-testing</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;
 import { MdxMermaid } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
@@ -1207,7 +1495,7 @@ twenty-eight days each year&lt;/p&gt;
   <entry>
     <title>Testing Steps</title>
     <link href="https://conwy.co/articles/testing-steps" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>testing-steps</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
@@ -1307,20 +1595,21 @@ THEN z
   <entry>
     <title>Diagramming Typescript</title>
     <link href="https://conwy.co/articles/diagramming-ts" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>diagramming-ts</id>
-    <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
+    <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;
+import { MdxAside, MdxAsideHeading } from &amp;quot;@/components&amp;quot;;&lt;/p&gt;
 &lt;p&gt;As the practice of front-end development grows and evolves, front-end developers find themselves working with increasingly complex problem domains, requirements and code-bases. This necessitates increasing usage of solution design and planning tools, such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Website_wireframe&quot;&gt;wireframes&lt;/a&gt;, &lt;a href=&quot;https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy&quot;&gt;component diagrams&lt;/a&gt;, &lt;a href=&quot;https://www.martinfowler.com/bliki/UserStory.html&quot;&gt;user stories&lt;/a&gt;, etc.&lt;/p&gt;
 &lt;p&gt;In recent work on large, complex Typescript code-bases I&amp;#39;ve found myself doing a significant amount of upfront solution design, planning modifications or additions to the code by way of high-level diagrams.&lt;/p&gt;
 &lt;p&gt;In this article I want to share a &amp;#39;tweaked&amp;#39; form of UML that I&amp;#39;ve been using in solution designs on Typescript code-bases.&lt;/p&gt;
 &lt;p&gt;But let&amp;#39;s first review the utility of diagrams and UML.&lt;/p&gt;
 &lt;h2&gt;Why diagrams?&lt;/h2&gt;
-&lt;p&gt;To motivate this article, I want to review the main uses and benefits of diagrams as I see it.&lt;/p&gt;
+&lt;p&gt;To motivate this article, I want to review uses and benefits of diagrams.&lt;/p&gt;
 &lt;p&gt;Diagrams have the following features, distinct from either code or documentation:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Partial&lt;/strong&gt;&lt;/em&gt; - diagrams can &amp;quot;sketch&amp;quot; some parts of code while omitting others&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;High-level&lt;/strong&gt;&lt;/em&gt; - diagrams can depict high-level components while omitting low-level implementation details&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&lt;strong&gt;Spatial&lt;/strong&gt;&lt;/em&gt; - diagrams are in 2D space, enabling us to better visualise the parts and how they connect to eachother&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Partial.&lt;/strong&gt;&lt;/em&gt; Diagrams can &amp;quot;sketch&amp;quot; some parts of code while omitting others&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;High-level.&lt;/strong&gt;&lt;/em&gt; Diagrams can depict high-level components while omitting low-level implementation details&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;Spatial.&lt;/strong&gt;&lt;/em&gt; Diagrams are in 2D space, enabling us to better visualise the parts and how they connect to eachother&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;By virtue of these features, diagrams offer certain unique uses and benefits at different stages of the software lifecycle.&lt;/p&gt;
 &lt;ul&gt;
@@ -1331,8 +1620,18 @@ THEN z
 &lt;h3&gt;Solution design&lt;/h3&gt;
 &lt;p&gt;Solution design helps us to conceive our solutions before implementing them. We can begin to assemble the pieces of the solution and envisage how they will interact with eachother in advance of writing any code. This helps us to clarify our work, avoid costly mistakes and rework and come up with better time estimates. The benefits are multiplied when solution design is shared between multiple team members and improved based on their feedback.&lt;/p&gt;
 &lt;p&gt;Diagramming is an excellent way to both develop and communicate a solution design. Diagrams, which don&amp;#39;t need to be compiled, can be built partially, creating a kind of &amp;quot;code sketch&amp;quot; that communicates software design at a high level while omitting details. Diagrams are laid out spatially, allowing us to organise our thinking outside the constraints of the file system or compiler.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Note 1: In some organisations multiple stakeholders may need to approve a solution – from product owners to designers to security specialists. In these cases it&amp;#39;s even more beneficial to develop solution designs and share them with the stakeholders. The stakeholders can then have an opportunity to identify issues and risks before implementation commences. They can co-design the solution with developers, shaping it in beneficial ways before implementation begins.&lt;/small&gt;&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Note 2: There is a culture in some development teams of avoiding solution design, thinking it is unnecessary and even to be avoided, since it is part of undesirable &amp;quot;big upfront planning&amp;quot; or &amp;quot;waterfall&amp;quot; methodology. The idea is that &amp;quot;agile&amp;quot; is a new and better way of working and, as such, developers should begin coding as soon as possible with minimal planning and preparation (&amp;quot;MVP&amp;quot;). My thinking goes against this, but addressing it in-depth is beyond the scope of this article. But to summarise: if you carefully review the agile literature, it is very rare for it to discourage planning, big picture thinking, solution design or architecture. In fact, some of the most popular agile practitioners, such as Bob Martin and Martin Fowler, have written lengthy books on both architecture and UML. Thus it is apparent that agile is broadly compatible with solution design and planning.&lt;/small&gt;&lt;/p&gt;
+&lt;MdxAside&gt;
+  &lt;MdxAsideHeading&gt;Multi-stakeholder solution design&lt;/MdxAsideHeading&gt;
+ 
+&lt;p&gt;  In some organisations multiple stakeholders may need to approve a solution – from product owners to designers to security specialists. In these cases it&amp;#39;s even more beneficial to develop solution designs and share them with the stakeholders. The stakeholders can then have an opportunity to identify issues and risks before implementation commences. They can co-design the solution with developers, shaping it in beneficial ways before implementation begins.
+&lt;/MdxAside&gt;&lt;/p&gt;
+&lt;MdxAside&gt;
+  &lt;MdxAsideHeading&gt;Agile solution design&lt;/MdxAsideHeading&gt;
+
+&lt;p&gt;  There is a culture in some development teams of avoiding solution design, thinking it is unnecessary and even to be avoided, since it is part of undesirable &amp;quot;big upfront planning&amp;quot; or &amp;quot;waterfall&amp;quot; methodology. The idea is that &amp;quot;agile&amp;quot; is a new and better way of working and, as such, developers should begin coding as soon as possible with minimal planning and preparation (&amp;quot;MVP&amp;quot;).&lt;/p&gt;
+&lt;p&gt;  My thinking goes against this, but addressing it in-depth is beyond the scope of this article. But to summarise: if you carefully review the agile literature, it is very rare for it to discourage planning, big picture thinking, solution design or architecture.&lt;/p&gt;
+&lt;p&gt;  In fact, some of the most popular agile practitioners, such as Bob Martin and Martin Fowler, have written lengthy books on both architecture and UML. Thus it is apparent that agile is broadly compatible with solution design and planning.
+&lt;/MdxAside&gt;&lt;/p&gt;
 &lt;h3&gt;Planning complex changes&lt;/h3&gt;
 &lt;p&gt;As our software grows in multiple directions (code size and complexity, users, features, etc.) the complexity of making changes increases. Any change, from renaming a field to adding cross-cutting functionality such as monitoring, can involve changes to many components across the code-base. We may need to envisage the impacts of these changes and carefully plan them out, paying regard to constraints such as time, system resources, performance, etc.&lt;/p&gt;
 &lt;p&gt;This is where diagramming can come in handy. As we analyse the code directly, we can also begin to sketch out a partial model of the code, focussing on just the components that will need to be changed. We can then add our changes to this model and use annotations, dashed rectangles or whitespace to mark our which parts are changing.&lt;/p&gt;
@@ -1706,7 +2005,7 @@ classDiagram
   <entry>
     <title>Uses of mock data</title>
     <link href="https://conwy.co/articles/mock-data" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>mock-data</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { MdxH2Short, MdxMermaid } from &amp;quot;@/components&amp;quot;;
 import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
@@ -1971,7 +2270,7 @@ class AccountsAPI {
   <entry>
     <title>Parallel loading in React</title>
     <link href="https://conwy.co/articles/parallel-loading-react" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>parallel-loading-react</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;
 import { MdxAside } from &amp;quot;@/components&amp;quot;&lt;/p&gt;
@@ -2130,7 +2429,7 @@ graph TD
   <entry>
     <title>Wireframing techniques</title>
     <link href="https://conwy.co/articles/interaction-wireframes" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>interaction-wireframes</id>
     <content xml:lang="en" type="html">&lt;p&gt;It&amp;rsquo;s nearly 2021, so I thought I&amp;rsquo;d share a small achievement of 2020:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;A way of depicting interactions in UI wireframes!&lt;/strong&gt;&lt;/p&gt;
@@ -2198,7 +2497,7 @@ graph TD
   <entry>
     <title>Towards zero bugs</title>
     <link href="https://conwy.co/articles/towards-zero-bugs" />
-    <updated>2023-08-06T00:00:00.000Z</updated>
+    <updated>2024-09-13T00:00:00.000Z</updated>
     <id>towards-zero-bugs</id>
     <content xml:lang="en" type="html">&lt;p&gt;import { meta } from &amp;quot;./meta&amp;quot;;&lt;/p&gt;
 &lt;p&gt;Software with zero bugs may seem like an ambitious goal. Over time, defects in software have increased and have become so normalised that some developers and users even expect them.&lt;/p&gt;

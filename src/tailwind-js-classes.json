@@ -60,7 +60,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/builders/index.ts": {
-    "checksum": "74ef25ce17e3ff94fb9f963436fa94f0",
+    "checksum": "e4a47c30a3718bc3c6879070f7920e84",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/builders/mermaid-diagram/index.ts": {
@@ -951,7 +951,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/index.ts": {
-    "checksum": "4c63636406382f40275d3c8664eb1c58",
+    "checksum": "d16e970cde69653a6250f7d34c36e0ac",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/interaction-wireframes/index.ts": {
@@ -1923,7 +1923,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/studying-calculus/meta.ts": {
-    "checksum": "1b1dfe10d70b15636dcc0c52e431b066",
+    "checksum": "0695fade4fa2d0569e42092ea62ede28",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/components/switch/index.ts": {
@@ -2374,7 +2374,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/ai-patterns/meta.ts": {
-    "checksum": "e087383977f54cc303f0f5ff1b6e0910",
+    "checksum": "20989b778014139567fc0ff909ed3220",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/manual-testing/index.ts": {
@@ -2382,7 +2382,7 @@
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/manual-testing/meta.ts": {
-    "checksum": "81ad9aeef6019e34f0814ca2321d0b60",
+    "checksum": "336479178acec5ed13592391d1c6eff2",
     "classNames": []
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/fragments/about-me-long/index.ts": {
@@ -2391,6 +2391,14 @@
   },
   "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/fragments/ideas/index.ts": {
     "checksum": "060544c6ed4c65333e957423657dda81",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/mindfulness/index.ts": {
+    "checksum": "91690f055eadeef45d6e45ca710adb26",
+    "classNames": []
+  },
+  "/Users/jonathanconway/Sources/jonathanconway/conwy_next/conwy/src/content/articles/mindfulness/meta.ts": {
+    "checksum": "e19fe0471b148e3ac7c37ae467a715ac",
     "classNames": []
   }
 }
