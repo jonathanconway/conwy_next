@@ -14,6 +14,7 @@ import {
   ml_1_5,
   neg,
   pointer_events_none,
+  relative,
   sm,
   w_32,
   w_40,
@@ -22,6 +23,7 @@ import {
 export const faceAndLogoContainer = cn(flex, flex_row, gap_4, items_center);
 
 export const logoContainer = cn(
+  relative,
   h_6,
   hover(brightness_110),
   focus(brightness_110),
@@ -36,3 +38,8 @@ export const logo = cn(
 );
 
 export const text = cn(hidden);
+
+export const tooltip = {
+  backgroundColor: "var(--color-sky-300)",
+  color: "black",
+};

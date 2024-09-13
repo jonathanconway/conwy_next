@@ -13,4 +13,9 @@ export const meta: ArticleMeta = {
       url: "https://dev.to/conw_y/towards-zero-bugs-1bop",
     },
   ],
+  discussionLink: {
+    type: SocialLinkTypes.Dev,
+    url: "https://dev.to/conw_y/towards-zero-bugs-1bop#comments",
+    commentCount: 23,
+  },
 };

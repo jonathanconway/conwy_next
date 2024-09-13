@@ -25,7 +25,16 @@ export const meta: WorkMeta = {
       author: "Delivery Manager",
     },
   ],
-  images: [],
+  images: [
+    {
+      imageUrl: "bupa-01.jpg",
+      notes: [],
+    },
+    {
+      imageUrl: "bupa-02.jpg",
+      notes: [],
+    },
+  ],
   slug: "bupa",
   tags: [],
   type: "work",

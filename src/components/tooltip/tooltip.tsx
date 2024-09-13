@@ -1,8 +1,10 @@
 "use client";
 
 import { isArray, isObject, isString } from "lodash";
-import { Children, ReactNode, cloneElement, useId } from "react";
+import { CSSProperties, Children, ReactNode, cloneElement, useId } from "react";
 import { Tooltip as Tooltip_ } from "react-tooltip";
+
+import { TypeOfConst } from "@/framework";
 
 import * as styles from "./tooltip.styles";
 
@@ -10,6 +12,7 @@ export interface TooltipProps {
   readonly key?: string;
   readonly children?: readonly ReactNode[] | ReactNode;
   readonly contents?: ReactNode | string;
+  readonly style?: CSSProperties;
 }
 
 function convertContentsToReactNode(contents?: ReactNode | string) {
@@ -59,7 +62,11 @@ export function Tooltip(props: TooltipProps) {
           focus: true,
           mouseenter: true,
         }}
-        className={styles.tooltip}
+        style={{
+          ...styles.tooltip,
+          ...props.style,
+        }}
+        opacity={1}
       >
         {contents}
       </Tooltip_>

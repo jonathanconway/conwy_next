@@ -1,6 +1,7 @@
 import { Article as Article_ } from "@/framework/client";
 
 import { ArticleBody } from "./article-body";
+import { ArticleDiscussionLink } from "./article-discussion-link";
 import { ArticleHeader } from "./article-header";
 import { ArticleSummary } from "./article-summary";
 
@@ -16,6 +17,8 @@ export function Article({ article }: ArticleProps) {
       <ArticleSummary article={article} />
 
       <ArticleBody article={article} />
+
+      <ArticleDiscussionLink article={article} />
     </>
   );
 }

@@ -13,3 +13,7 @@ export * from "./three-tests-accessibility";
 
 export * from "./studying-calculus";
 
+export * from "./ai-patterns";
+
+export * from "./manual-testing";
+

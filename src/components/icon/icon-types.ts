@@ -14,6 +14,7 @@ export const IconTypes = {
   Github: "github",
   Hamburger: "hamburger",
   LinkedIn: "linkedin",
+  Like: "like",
   Mastodon: "mastodon",
   Medium: "medium",
   OpenInNew: "open-in-new",

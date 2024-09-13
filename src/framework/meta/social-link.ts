@@ -14,6 +14,20 @@ export const SocialLinkTypes = {
   YouTube: "youtube",
 } as const;
 
+export const SocialLinkLabels = {
+  [SocialLinkTypes.Dev]: "DEV.to",
+  [SocialLinkTypes.Github]: "GitHub",
+  [SocialLinkTypes.LinkedIn]: "LinkedIn",
+  [SocialLinkTypes.Mastodon]: "Mastodon",
+  [SocialLinkTypes.Medium]: "Medium",
+  [SocialLinkTypes.ProductHunt]: "Product Hunt",
+  [SocialLinkTypes.Substack]: "Substack",
+  [SocialLinkTypes.Twitter]: "Twitter",
+  [SocialLinkTypes.Website]: "Website",
+  [SocialLinkTypes.X]: "X",
+  [SocialLinkTypes.YouTube]: "YouTube",
+};
+
 export type SocialLinkType = TypeOfConst<typeof SocialLinkTypes>;
 
 export interface SocialLink {
